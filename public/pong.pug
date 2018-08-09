@@ -1,0 +1,12 @@
+extends layoutNav
+append head
+append content
+  #m0ncentrageCV
+    h1#clickable-element Realtime Multiplayer Game
+    form#adm1n
+      label.pseudo Enter your Name
+      input#pseudo.pseudo(type='text' name='pseudo')
+      input#playPong.pseudo(type='submit' value='Play')
+append scripts
+  script(src='/static/js/socket.io.js')
+  script(src='/static/js/pong.js' defer)

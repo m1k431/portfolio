@@ -1,0 +1,11 @@
+extends layoutNav.pug
+append head
+  title Admin
+append content
+  h1 Admin
+  form#popo(action='/OkF0rm' method='post')
+    label(for='POST-nom') user
+    input#POST-nom(type='text' name='nom')
+    label(for='POST-prenom') pass
+    input#POST-prenom(type='text' name='prenom')
+    input(type='submit' value='log')

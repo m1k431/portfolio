@@ -1,0 +1,122 @@
+extends layoutNav
+append head
+  link(rel='stylesheet' href='/static/css/cv.css')
+append content
+  #m0ncentrageCV
+    .moi#moi
+      p.moiPara Mika&euml;l GARCIA
+        img.foto(src='/static/img/photoCV.jpg' alt='Mafoto' onclick='openlinkedin();')
+      p.moiPara 35 y/o
+      p.moiPara +33 695 490 777
+      p.moiPara 22 rue du Bourg Tibourg
+      p.moiPara 75004 Paris, FR
+      a(href='mailto:garcia.mikael@gmail.com') garcia.mikael@gmail.com
+    .metier#metier
+      h1 Junior FullStack Javascript Developer
+    .competences#competences
+      h3 Skills
+      .informatiques#informatique
+        h4 Development
+        .infoJeu Coding websites in HTML5, CSS3 and JavaScript (JQuery, Bootstrap)
+        .infoJeu Create and structure databases (MongoDB, noSQL)
+        .infoJeu Develop an internet application (Node.js, ExpressJS, AngularJS)
+        .infoJeu Architect and develop a back office
+        .infoJeu Building and securing relational data (WebSocket)
+        .infoJeu To proceed to the tests of verification
+        .infoJeu Write a technical specification (OpenOffice)
+        .infolast Develop graphic charts (Photoshop)
+      .btp#btp
+        h4 Techniques &amp; Design
+        .infoJeu Conduct the technical study of a construction project and estimate the cost
+        .infoJeu Realize the graphic representation of a construction or interior design.
+        .infoJeu Autocad, ArchiCAD, VectorWorks, Artlantis
+        .infolast Make a project execution details folder (Autocad, VectorWorks)
+      .commerciales#commerciales
+        h4 H to H
+        .infoJeu Assistant director at Palais des Festivals in Cannes and in a television productions company
+        .infoJeu Conduct interviews of products or services negotiations
+        .infolast Incoming, service and commercial advice
+    .competences#experiences
+      h3 Experiences
+      .jobs
+        h4 Webmaster
+        .infojob Update of the Ecommerce website database (magento) www.snow-concept.com, Alpe d'Huez, December 2016
+        hr
+      .jobs
+        h4 Audio-visual technician
+        .infojob Props manager: JLA productions, Martigues 2015
+        .infojob Assistant director: Auteurs Associ&eacute;s, Grasse 2014
+        .infojob Ripper and figuration: Gazelle Cie, DEMD, Europacorp, Marseille 2013
+        hr
+      .jobs
+        h4 HVAC designer
+        .infojob Study of construction projects ERP "Castorama" Toulouse union and Antibes, AUXITEC engineering, Hyères, September 2012
+        hr
+      .jobs
+        h4 PHP CSS HTML Developer
+        .infojob Introduction to JavaScript (JQuery) www.stand-service.com Alphabet Stand Service La Garde, 2012
+        hr
+      .jobs
+        h4 Design and Decoration technician
+        .infojob Alphabet Stand Service (MIPCOM/MIPTV, MIDEM, FIF&mldr;), La Garde, 2010-2012
+        hr
+      .jobs
+        h4 Ski Salesman and Technician
+        .infojob Nevada Sports l&rsquo;Alpe d&rsquo;Huez, 2008-2009
+        hr
+      .jobs
+        h4 ADSL Technician
+        .infojob British Telecom Critical Systems Le Plessis-robinson, 2008
+        hr
+      .jobs
+        h4 Ski and Snowboard Technician
+        .infojob Intersport, l&rsquo;Alpe d&rsquo;Huez, 2007-2008
+        hr
+      .jobs
+        h4 Technician and Administrator Systems and Networks microsoft
+        .infojob Windows server administration and GNU / LINUX clients Maintenance and installation of computer systems SECOB html php development (backup script), St Jean-de-la-Ruelle, 2005-2007
+        hr
+      .jobs
+        h4 Systems and networks technician
+        .infojob Maintenance and installation of computer systems PHP html development of a secured quote site Emergence, Orléans, 2004
+        hr
+      .jobs
+        h4 Assistant to the store manager
+        .infojob Micromania, St Jean de la Ruelle, 2003
+        hr
+      .jobs
+        h4 Student jobs
+        .infojob Cultural sales consultant Leclerc, waiter / bartender, Bakery worker, multi-purpose employee at intermarché
+
+    .competences#formation
+      h3 Training
+      .jobs
+        h4 FullStack Javascript Developer
+        .infojob Development and management of a web project
+        .infojob Creating Static Rich Front-end JS Websites
+        .infojob Creating rich web and mobile applications backend JS
+        hr
+      .jobs
+        h4 Construction Engineer Technician Drawing Option
+        .infojob Photoshop, Autocad, Archicad, Artlantis
+        .infojob Design, techniques and construction standards
+        .infojob Notions of town planning and roads
+        hr
+      .jobs
+        h4 IUT informatique d&apos;Orl&eacute;ans
+        h5 Systems and Networks: Administration and deployment network of systems in Linux environment, regexp assembler notions
+        h5 Database: Analysis (merise), design (MCD, MCT), maintenance
+        h5 Programming: Langage C, C++, SQL, bsh, assembleur
+        hr
+      .jobs
+        h4 Scientific Baccalaureate
+        .infojob specialty physics-chemistry
+    .complementaire#complementaire
+      h3 Complementary Elements
+      img#linkedIn.linkedin(src='/static/img/LinkedIn_Logo.svg' alt='logolinkedin')
+      p.jeu Driving Licences: car, motorcycle.
+      p.jeu Sports: gym, board sports, mountain biking.
+      p.jeu Hobbies: electronics, decoration, design, renovation.
+      .web www.mikael.ml
+append scripts
+  script(src='/static/js/BrickBreaker.js' defer)

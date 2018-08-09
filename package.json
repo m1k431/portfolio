@@ -1,0 +1,37 @@
+{
+  "name": "monsite",
+  "version": "1.0.0",
+  "description": "brickbreaker",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "author": "https://github.com/m1k431",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "express-minify": "^1.0.0",
+    "express-session": "^1.15.6",
+    "helmet": "^3.13.0",
+    "mongodb": "^3.1.1",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.4.2"
+  }
+}

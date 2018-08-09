@@ -1,0 +1,313 @@
+@charset "UTF-8";
+@media print {
+    body {
+        width: auto!important;
+        margin: auto!important;
+        font-family: serif;
+        font-size: 12pt;
+        background-color: #fff!important;
+        color: #000!important;
+    }
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    blockquote,
+    ul,
+    ol {
+        color: #000!important;
+        margin: auto!important;
+    }
+    .print {
+        display: block;
+        /* affichage des éléments de classe print */
+    }
+    blockquote,
+    ul,
+    ol {
+        page-break-inside: avoid;
+        /* pas de coupure dans ces élements */
+    }
+    h1 {
+        page-break-before: always;
+        /* chaque titre commence sur une nouvelle page */
+    }
+    h1,
+    h2,
+    h3,
+    caption {
+        page-break-after: avoid;
+        /* pas de saut après ces éléments */
+    }
+    a {
+        color: #000!important;
+        text-decoration: underline!important;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        /* affichage des URL des liens */
+    }
+}
+
+
+/*****
+$$$$$$  BALISES HTML   $$$$$
+****/
+
+p {
+    margin: 0;
+    margin-left: 5px;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+a {
+    margin: 0;
+    margin-left: 5px;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+html {
+    margin: 0.1%;
+    height: 700px;
+    background-color: rgba(106, 244, 153, 0.96);
+    min-width: 400px;
+}
+
+h1 {
+    margin-top: 1px;
+    font-size: 1.3em;
+    margin-bottom: 0;
+}
+
+h2 {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 1.2em;
+    margin-top: 0;
+    padding-bottom: 2px;
+}
+
+h3 {
+    font-family: monospace;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+h4 {
+    margin: 0;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+
+h5 {
+    margin-top: auto;
+    margin: 0;
+    font-family: monospace;
+    font-size: 1em;
+}
+
+
+/*****
+$$$$$$  POLICES &&& background:   $$$$$
+****/
+
+.bold {
+    font-weight: bold;
+}
+
+
+/*a, p {
+  text-decoration: none;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 3px;
+  font-family: $f0nt;
+}
+*/
+
+
+/********** CLAAAAAAAÃAaaaaaaaaaaaāaaaaasssssssssssSSSSSSSSSS*****************/
+.english {
+    display: none;
+}
+
+.spanish {
+    display: none;
+}
+.flags {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.moi,
+.complementaire {
+    margin: 0;
+    border: 1px solid #08021f;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+.foto {
+    position: relative;
+    margin: 10px;
+    text-align: right;
+    border-radius: 10px;
+    float: right;
+}
+
+.linkedin {
+    /*  animation: anim2 4s;
+  animation-iteration-count: infinite;*/
+    position: relative;
+    border-radius: 10px;
+    float: right;
+    height: 35px;
+    margin: 5px;
+}
+
+.metier {
+    text-align: center;
+    font-family: monospace;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-top: 0.5%;
+    border: 1px solid #08021f;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    overflow: hidden;
+}
+
+.competencesJeu {
+    border: 1px solid #08021f;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    padding-bottom: 175px;
+    text-align: center;
+}
+
+.competences {
+    border: 1px solid #08021f;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    text-align: center;
+}
+
+.competencelast {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 0;
+    border: 1px solid #08021f;
+    border-radius: 10px;
+}
+
+.informatiques {
+    width: 31.5%;
+    text-align: center;
+    background-color: rgba(245, 247, 246, 0.6);
+    border-radius: 10px;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+    margin-right: 0.5%;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: visible;
+}
+
+.informatiquesIUT {
+    width: 98%;
+    text-align: center;
+    background-color: rgba(245, 247, 246, 0.6);
+    border-radius: 10px;
+    margin: 1%;
+    vertical-align: bottom;
+    display: inline-block;
+    overflow: visible;
+}
+
+.info {
+    font-family: monospace;
+    margin-bottom: 2px;
+    font-size: 1em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    overflow: visible;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.info:hover,
+.info:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+}
+
+.infolast {
+    font-family: monospace;
+    font-size: 1em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    overflow: visible;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.infolast:hover,
+.infolast:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+}
+
+.btp {
+    width: 31.5%;
+    text-align: center;
+    background-color: rgba(245, 247, 246, 0.6);
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    vertical-align: middle;
+    overflow: visible;
+}
+
+.commerciales {
+    width: 31.5%;
+    color: black;
+    text-align: center;
+    background-color: rgba(245, 247, 246, 0.6);
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+    vertical-align: middle;
+    margin-left: 0.5%;
+    overflow: visible;
+}
+
+
+/*# sourceMappingURL=cv.css.map */

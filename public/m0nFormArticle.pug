@@ -1,0 +1,13 @@
+include layoutAdmin.pug
+block content
+  #m0ncentrageCV
+    #maDivTest
+      h1 New Article
+      form#newArticle(action='/OkArticle' method='post')
+        label.LabelArticle(for='POST-titre') Titre
+        input#POST-titre.InputTitre(type='text' name='titre')
+        label.LabelArticle(for='POST-article') Article
+        textarea#POST-article(name='article', cols="30", rows="10")
+        label.LabelArticle(for='POST-writer') writer
+        input#POST-writer.InputAdmin(type='text' name='writer')
+        input#subArticle(type='submit' value='envoyer')
