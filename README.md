@@ -1,7 +1,7 @@
-# Portfolio source files
+# Javascript Portfolio source files
 
-## nodeJS expressJS webserver
+## node expressJS webserver
 
-## Brickbreaker.js "resume" game
+## Brickbreaker.js "resumé" game
 
 ## socketIO multiplayer game under development
