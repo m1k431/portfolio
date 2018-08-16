@@ -135,7 +135,6 @@
                 setTimeout(animSprite, 64)
             }
             var paddle = function() {
-            //let monPaddle = window.document.getElementsByClassName('linkedInT')
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
                     ballLeft = true

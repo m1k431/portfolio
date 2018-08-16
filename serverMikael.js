@@ -263,5 +263,5 @@ MongoClient.connect(urldb, {
     })
 })
 server.listen(p0rt, () => {
-    console.log('listening on *:' + p0rt)
+    console.log(`Listening on ${server.address().address} ${server.address().port}`)
 })

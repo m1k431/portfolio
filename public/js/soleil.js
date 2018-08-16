@@ -36,19 +36,6 @@
         m0nCiel.style.height = '100%'
         m0nCiel.id = 'ci3l'
         m0nsoleil.appendChild(m0nCiel)
-        /*
-            let m4Star = window.document.createElement('canvas')
-            m4Star.style.position = 'absolute'
-            m4Star.style.display = 'block'
-            m4Star.width = 40
-            m4Star.height = 40
-            m4Star.style.width = '100%'
-            m4Star.style.right = '240px'
-            m4Star.style.height = '300px'
-            m4Star.id = 'st4r'
-            m0nsoleil.appendChild(m4Star)
-    */
-        /*  var m0nCanva = document.getElementById('c4nv4')*/
         let m0nCanva = document.createElement('canvas')
         m0nCanva.width = 40
         m0nCanva.height = 40
@@ -79,7 +66,6 @@
         m4colline.style.top = '-12%'
         m0nsoleil.appendChild(m4colline)
         let m0n4tari = window.document.createElement('img')
-        m0n4tari.src = '/static/img/loader.gif'
         m0n4tari.id = 'a7ari'
         m0n4tari.style.position = 'absolute'
         m0nsoleil.appendChild(m0n4tari)
@@ -134,18 +120,6 @@
                 gradient.addColorStop(0.9, 'yellow')
                 ctx.fillStyle = gradient
                 ctx.fillRect(0, 0, 40, 40)
-                /*starrsssssssssssss
-                var ctxStar = m0nCanva.getContext('2d')
-                ctxStar.clearRect(0, 0, 40, 40)
-                var cp1x = 200
-                var cp1y = 200
-                var cp2x = 200
-                var cp2y = 200
-                ctxStar.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, 400, 400)
-                ctxStar.fillStyle = gradient
-                ctxStar.closePath()
-                ctxStar.stroke()
-                ctxStar.fill()*/
                 c00rdX = c00rdX + 0.1
                 setTimeout(dessinerM0n, 12)
             } else {
