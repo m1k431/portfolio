@@ -4,7 +4,8 @@
   "description": "brickbreaker",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npx babel --watch ./public/js/src --out-dir ./public/js/ --presets react-app/prod"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,6 @@
   "author": "https://github.com/m1k431",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
@@ -28,11 +28,15 @@
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-pug": "^6.0.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.2.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react-pug": "^0.3.2",
     "eslint-plugin-standard": "^3.1.0",
     "jest": "^23.4.2"
   }

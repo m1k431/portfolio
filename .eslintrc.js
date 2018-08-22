@@ -21,7 +21,13 @@ module.exports = {
         "semi": [
             "error",
             "never"
+        ],
+        "extends": [
+            "plugin:react-pug/all"
         ]
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"]
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "plugins": [
+        "react-pug"
+    ]
 };
