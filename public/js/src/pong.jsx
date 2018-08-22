@@ -17,11 +17,11 @@
             }
             render() {
               if (this.state.liked) {
-                return 'This game is under contruction. Come back soon'
+                return <h1>This game is under contruction. Come back soon</h1>
               }
               return (
                 <button onClick={() => this.setState({ liked: true }) }>
-                  Play
+                Play
                 </button>
               )
             }

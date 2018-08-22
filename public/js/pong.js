@@ -37,7 +37,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
           var _this2 = this;
 
           if (this.state.liked) {
-            return 'This game is under contruction. Come back soon';
+            return React.createElement(
+              'h1',
+              null,
+              'This game is under contruction. Come back soon'
+            );
           }
           return React.createElement(
             'button',
