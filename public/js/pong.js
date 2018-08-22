@@ -18,7 +18,7 @@
             }
             render() {
                 if (this.state.clicked) {
-                    return 'This game is under contruction, come back soon'
+                    return 'This game is under contruction. Come back soon'
                 }
                 return e(
                     'button',
@@ -28,7 +28,7 @@
             }
         }
 
-        const domContainer = document.querySelector('#like_button_container')
+        const domContainer = document.querySelector('#play_button_container')
         ReactDOM.render(e(submitButton), domContainer)
     })
 })()
