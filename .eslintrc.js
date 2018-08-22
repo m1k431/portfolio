@@ -22,12 +22,7 @@ module.exports = {
             "error",
             "never"
         ],
-        "extends": [
-            "plugin:react-pug/all"
-        ]
+        "no-console": "off"
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
-    "plugins": [
-        "react-pug"
-    ]
+    "extends": ["eslint:recommended", "plugin:react/recommended"]
 };

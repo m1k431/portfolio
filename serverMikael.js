@@ -1,19 +1,19 @@
-var compression = require('compression')
-var minify = require('express-minify')
-var favicon = require('serve-favicon')
-var path = require('path')
-var express = require('express')
-var helmet = require('helmet')
+const compression = require('compression')
+const minify = require('express-minify')
+const favicon = require('serve-favicon')
+const path = require('path')
+const express = require('express')
+const helmet = require('helmet')
 require('pug')
-var bodyParser = require('body-parser')
-var MongoClient = require('mongodb').MongoClient
-var session = require('express-session')
-//var objectId = require('mongodb').ObjectID
-var app = express()
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const bodyParser = require('body-parser')
+const MongoClient = require('mongodb').MongoClient
+const session = require('express-session')
+//const objectId = require('mongodb').ObjectID
+const app = express()
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 let p0rt = 80
-var urldb = 'mongodb://127.0.0.1:27017/exo19'
-var urldb20 = 'mongodb://127.0.0.1:27017/exo20'
+const urldb = 'mongodb://127.0.0.1:27017/exo19'
+const urldb20 = 'mongodb://127.0.0.1:27017/exo20'
 const n0mBd = 'exo19'
 const n0mBd20 = 'exo20'
 var sess = {
@@ -22,9 +22,9 @@ var sess = {
     resave: false,
     saveUninitialized: true
 }
-var server = require('http').createServer(app)
-var io = require('socket.io')
-var socketIO = io(server)
+const server = require('http').createServer(app)
+const io = require('socket.io')
+const socketIO = io(server)
 
 socketIO.on('connection', function(socket) {
     console.log('a user is connected')
@@ -241,7 +241,7 @@ app.post('/OkArticle', urlencodedParser, (req, res) => {
 app.use((req, res) => {
     res.status(404).render('404.pug')
 })
-app.use((error, req, res, next) => {
+app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
 
