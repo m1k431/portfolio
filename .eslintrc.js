@@ -22,5 +22,6 @@ module.exports = {
             "error",
             "never"
         ]
-    }
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"]
 };
