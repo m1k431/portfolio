@@ -2,13 +2,8 @@ extends layoutNav
 append head
 append content
   #m0ncentrageCV
-    h1#clickable-element Realtime Multiplayer Game
-    form#adm1n
-      label.pseudo Enter your Name
-      input#pseudo.pseudo(type='text' name='pseudo')
-      #play_button_container.pseudo
 append scripts
   script(src='/static/js/socket.io.js')
+  script(src='/static/js/pong.js' defer)
   script(src='/static/js/react.development.js' crossorigin)
   script(src='/static/js/react-dom.development.js' crossorigin)
-  script(src='/static/js/pong.js' defer)

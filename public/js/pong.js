@@ -10,17 +10,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 (function () {
     window.addEventListener('DOMContentLoaded', function () {
-        var socket = io('http://mikael.ml/');
-        var clickTitre = window.document.getElementById('clickable-element');
-        clickTitre.addEventListener('click', function () {
-            console.log('cliiiick');
-            socket.emit('pingEvt', { texte: 'Piiiing !' });
-        });
-        socket.on('pongEvt', function (data) {
-            console.log(data);
-        });
         //reactJS test zone
-
         var LikeButton = function (_React$Component) {
             _inherits(LikeButton, _React$Component);
 
@@ -40,14 +30,23 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
                     if (this.state.liked) {
                         return React.createElement(
-                            'h1',
+                            'div',
                             null,
-                            'This game is under contruction. Come back soon'
+                            React.createElement(
+                                'h1',
+                                { id: 'clickable-element' },
+                                'This game is under contruction.'
+                            ),
+                            React.createElement(
+                                'h2',
+                                null,
+                                'Come back soon'
+                            )
                         );
                     }
                     return React.createElement(
                         'button',
-                        { onClick: function onClick() {
+                        { className: 'pseudo', onClick: function onClick() {
                                 return _this2.setState({ liked: true });
                             } },
                         'Play'
@@ -58,6 +57,36 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
             return LikeButton;
         }(React.Component);
 
-        ReactDOM.render(React.createElement(LikeButton, null), document.querySelector('#play_button_container'));
+        var element = React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'h1',
+                { id: 'clickable-element' },
+                'Realtime Multiplayer Game'
+            ),
+            React.createElement(
+                'form',
+                { id: 'adm1n' },
+                React.createElement(
+                    'label',
+                    { className: 'pseudo' },
+                    'Enter your Name'
+                ),
+                React.createElement('input', { className: 'pseudo', id: 'pseudo', type: 'text', name: 'pseudo' })
+            ),
+            React.createElement(LikeButton, null)
+        );
+        ReactDOM.render(element, document.querySelector('#m0ncentrageCV'));
+        //JAVASCRIPT
+        var socket = io('http://mikael.ml/');
+        var clickTitre = window.document.getElementById('clickable-element');
+        clickTitre.addEventListener('click', function () {
+            console.log('cliiiick');
+            socket.emit('pingEvt', { texte: 'Piiiing !' });
+        });
+        socket.on('pongEvt', function (data) {
+            console.log(data);
+        });
     });
 })();
