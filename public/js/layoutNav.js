@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 function tick() {
     var element = React.createElement(
-        'h1',
-        null,
+        "h1",
+        { className: "myclock" },
         new Date().toLocaleTimeString()
     );
     // highlight-next-line
