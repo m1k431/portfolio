@@ -87,6 +87,15 @@
         vertical-align: baseline;
     }
     
+    #myclock {
+        position: absolute;
+        font-size: 2em;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        top: 0.2em;
+    }
+
     #img404 {
         width: 50%;
         margin-left: 25%;
