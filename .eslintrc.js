@@ -22,7 +22,9 @@ module.exports = {
             "error",
             "never"
         ],
-        "no-console": "off"
+        "no-console": "off",
+        "react/react-in-jsx-scope": "off",
+        "no-undef": "off"
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"]
 };
