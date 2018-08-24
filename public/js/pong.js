@@ -57,27 +57,45 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
             return LikeButton;
         }(React.Component);
 
-        var element = React.createElement(
-            'div',
-            null,
-            React.createElement(
-                'h1',
-                { id: 'clickable-element' },
-                'Realtime Multiplayer Game'
-            ),
-            React.createElement(
-                'form',
-                { id: 'adm1n' },
-                React.createElement(
-                    'label',
-                    { className: 'pseudo' },
-                    'Enter your Name'
-                ),
-                React.createElement('input', { className: 'pseudo', id: 'pseudo', type: 'text', name: 'pseudo' })
-            ),
-            React.createElement(LikeButton, null)
-        );
-        ReactDOM.render(element, document.querySelector('#m0ncentrageCV'));
+        var AccueilPong = function (_React$Component2) {
+            _inherits(AccueilPong, _React$Component2);
+
+            function AccueilPong() {
+                _classCallCheck(this, AccueilPong);
+
+                return _possibleConstructorReturn(this, (AccueilPong.__proto__ || Object.getPrototypeOf(AccueilPong)).apply(this, arguments));
+            }
+
+            _createClass(AccueilPong, [{
+                key: 'render',
+                value: function render() {
+                    return React.createElement(
+                        'div',
+                        null,
+                        React.createElement(
+                            'h1',
+                            { id: 'clickable-element' },
+                            'Realtime Multiplayer Game'
+                        ),
+                        React.createElement(
+                            'form',
+                            { id: 'adm1n' },
+                            React.createElement(
+                                'label',
+                                { className: 'pseudo' },
+                                'Enter your Name'
+                            ),
+                            React.createElement('input', { className: 'pseudo', id: 'pseudo', type: 'text', name: 'pseudo' })
+                        ),
+                        React.createElement(LikeButton, null)
+                    );
+                }
+            }]);
+
+            return AccueilPong;
+        }(React.Component);
+
+        ReactDOM.render(React.createElement(AccueilPong, null), document.querySelector('#m0ncentrageCV'));
         //JAVASCRIPT
         var socket = io('http://mikael.ml/');
         var clickTitre = window.document.getElementById('clickable-element');

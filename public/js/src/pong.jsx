@@ -22,17 +22,21 @@
                 )
             }
         }
-        const element = (
-            <div>
-                <h1 id="clickable-element">Realtime Multiplayer Game</h1>
-                <form id="adm1n">
-                    <label className="pseudo">Enter your Name</label>
-                    <input className="pseudo" id="pseudo" type="text" name="pseudo"></input>
-                </form>
-                <LikeButton />
-            </div>
-        )
-        ReactDOM.render(element, document.querySelector('#m0ncentrageCV'))
+        class AccueilPong extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1 id="clickable-element">Realtime Multiplayer Game</h1>
+                        <form id="adm1n">
+                            <label className="pseudo">Enter your Name</label>
+                            <input className="pseudo" id="pseudo" type="text" name="pseudo"></input>
+                        </form>
+                        <LikeButton />
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<AccueilPong />, document.querySelector('#m0ncentrageCV'))
         //JAVASCRIPT
         var socket = io('http://mikael.ml/')
         var clickTitre = window.document.getElementById('clickable-element')
