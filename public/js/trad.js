@@ -10,22 +10,22 @@
         let anglais = window.document.getElementsByClassName('english')
         let espagnol = window.document.getElementsByClassName('spanish')
         window.document.getElementById('french').onclick = () => {
-            $('.english').hide()
-            $('.spanish').hide()
-            $('.french').hide()
-            $('.french').toggle('bounce')
+            $('.english').fadeOut()
+            $('.spanish').fadeOut()
+            $('.french').fadeOut()
+            $('.french').show(1000)
         }
         window.document.getElementById('english').onclick = () => {
-            $('.french').hide()
-            $('.spanish').hide()
-            $('.english').hide()
-            $('.english').toggle('bounce')
+            $('.french').fadeOut()
+            $('.spanish').fadeOut()
+            $('.english').fadeOut()
+            $('.english').show(1000)
         }
         window.document.getElementById('spanish').onclick = () => {
-            $('.french').hide()
-            $('.english').hide()
-            $('.spanish').hide()
-            $('.spanish').toggle('bounce')
+            $('.french').fadeOut()
+            $('.english').fadeOut()
+            $('.spanish').fadeOut()
+            $('.spanish').show(1000)
         }
     })
 })()

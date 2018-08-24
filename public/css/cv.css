@@ -21,7 +21,7 @@ $$$$$$  BALISES HTML   $$$$$
         font-family: monospace;
     }
     
-    a {
+    a.mail {
         margin: 0;
         margin-left: 5px;
         text-decoration: none;
@@ -34,10 +34,19 @@ $$$$$$  BALISES HTML   $$$$$
         min-width: 400px;
     }
     
-    h1 {
+    h1.french,
+    h1.english,
+    h1.spanish {
         margin-top: 1px;
         font-size: 1.3em;
         margin-bottom: 0;
+    }
+    .myclock {
+        position: absolute;
+        font-size: 1.4em;
+        left: 5%;
+        right: 5%;
+        color: #ffffff
     }
     
     h2 {

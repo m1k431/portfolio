@@ -5,7 +5,8 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "jest",
-    "build": "npx babel --watch ./public/js/src --out-dir ./public/js/ --presets react-app/prod"
+    "build": "npx babel --watch ./public/js/src --out-dir ./public/js/ --presets react-app/prod",
+    "scss": "sass --watch ./public/scss:./public/css"
   },
   "repository": {
     "type": "git",
