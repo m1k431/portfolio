@@ -41,13 +41,6 @@ $$$$$$  BALISES HTML   $$$$$
         font-size: 1.3em;
         margin-bottom: 0;
     }
-    .myclock {
-        position: absolute;
-        font-size: 1.4em;
-        left: 5%;
-        right: 5%;
-        color: #ffffff
-    }
     
     h2 {
         text-transform: capitalize;
