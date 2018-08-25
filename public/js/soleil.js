@@ -19,7 +19,7 @@
         m0nimg.src = '/static/img/Atari.png'
         m0nimg.style.top = '36%'
         m0nimg.id = 'snowB'
-        let m0nIDanimation
+        //let m0nIDanimation
         let m0nsoleil = window.document.getElementById('s0leil')
         m0nsoleil.style.position = 'relative'
         m0nsoleil.style.display = 'block'
@@ -104,7 +104,7 @@
         gradientCi3l.addColorStop(1, 'blue')
         ctxCi3l.fillStyle = gradientCi3l
         ctxCi3l.fillRect(0, 0, 600, 300)
-        var dessinerM0n = (m0ntimestamp) => {
+        var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 105) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
                 m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'

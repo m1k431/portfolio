@@ -47,8 +47,8 @@
         socket.on('pongEvt', (data) => {
             console.log(data)
         })
-        var $pseudo = $('#pseudo')
-        var $currentPseudo = $pseudo.focus()
+        //var $pseudo = $('#pseudo')
+        //var $currentPseudo = $pseudo.focus()
         
     })
 })()
