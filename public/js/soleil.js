@@ -13,6 +13,7 @@
             }
         })
         $('#m0ncentrage').fadeIn(1000)
+        $('#jugglejungle').fadeIn(1000)
         let m0nimg = window.document.createElement('img')
         m0nimg.style.position = 'absolute'
         m0nimg.src = '/static/img/Atari.png'

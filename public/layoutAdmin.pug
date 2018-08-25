@@ -1,5 +1,6 @@
 extends layoutNav.pug
 append head
+  link(rel='stylesheet' href='/static/css/layoutAdmin.css')
   img#menuAdmin(src='/static/img/sideNav.svg' onclick='openSideNav();')
   #m0nSideNav.sidenav
     a.closebtn(href='javascript:void(0)' onclick='closeSideNav();') &times;

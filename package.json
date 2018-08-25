@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "npx babel --watch ./public/js/src --out-dir ./public/js/ --presets react-app/prod",
-    "scss": "sass --watch ./public/scss:./public/css"
+    "scss": "sass --watch ./public/css/scss:./public/css"
   },
   "repository": {
     "type": "git",

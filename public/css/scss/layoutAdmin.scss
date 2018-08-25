@@ -1,0 +1,122 @@
+#menuAdmin {
+    position: absolute;
+    height: 4%;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: rgba(19, 43, 121, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: monospace;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+textarea {
+    resize: none;
+}
+
+#idArticle {
+    display: inline-block;
+}
+
+#titreArticle {
+    display: inline-block;
+}
+
+.LabelAdmin,
+.LabelArticle {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: block;
+    text-align: center;
+}
+    
+    #subAdm1n,
+    #subArticle {
+    display: block;
+    width: 10%;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 40px;
+}
+    
+#POST-article {
+    height: 100px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+    margin-bottom: 3%;
+}
+
+#mesArticles {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    overflow: hidden;
+}
+
+#adm1n {
+    height: 60%;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.LabelAdmin {
+    top: 10px;
+}
+
+
+.InputAdmin {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: block;
+    margin-bottom: 3%;
+}
+
+#newArticle {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2px;
+
+}
+.InputTitre {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+}
