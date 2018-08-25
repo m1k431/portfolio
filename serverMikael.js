@@ -35,18 +35,7 @@ socketIO.on('connection', function(socket) {
 })
 app.use(helmet())
 app.use(compression())
-app.use(minify({
-    cache: false,
-    uglifyJsModule: null,
-    errorHandler: null,
-    jsMatch: /js/,
-    cssMatch: /css/,
-    jsonMatch: /json/,
-    sassMatch: /scss/,
-    lessMatch: /less/,
-    stylusMatch: /stylus/,
-    coffeeScriptMatch: /coffeescript/,
-}))
+app.use(minify())
 app.use('/static', express.static(__dirname + '/public', { maxage: '0d' }))
 app.use(session(sess))
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
