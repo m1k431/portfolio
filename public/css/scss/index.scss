@@ -5,6 +5,8 @@ $colorBody: rgba(19, 42, 121, 0.773);
 %videoSoleil {
     display: none;
     width: 100%;
+    border-radius: 28px;
+    margin-top: 5px;
 }
 %css3Button {
     width: 70px;
@@ -52,6 +54,14 @@ nav {
     z-index: 1;
 }
 
+.competen {
+    border: 1px solid #08021f;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    text-align: center;
+  }
+
 a.nav {
     margin: 10px;
     display: inline-block;
@@ -63,12 +73,19 @@ a.nav {
     font-family: $myFont;
 }
 
+.css3but {
+    width: 70px;
+    border-radius: 28px;
+    margin-bottom: 10px;
+    background: rgba(19, 43, 121, 0.449);
+    background-image: linear-gradient(to bottom, rgba(52, 152, 219, 0.476), rgba(19, 43, 121, 0.5));
+}
+
 .css3button {
     @extend %css3Button;
     background: rgba(19, 43, 121, 0.449);
     background-image: linear-gradient(to bottom, rgba(52, 152, 219, 0.476), rgba(19, 43, 121, 0.5));
 }
-
 .css3buttonRed {
     @extend %css3Button;
     background: rgba(145, 31, 31, 0.49);
@@ -126,19 +143,23 @@ a.nav {
 }
 
 #jugglejungle,
-#s0leil {
+#s0leil,
+#ci3l,
+#m0nC4nvaM3r,
+#m0nC4nvaC0lline {
     @extend %videoSoleil;
 }
 
 #BtnJs0nPl4Y {
-    width: 24%;
+    position: absolute;
     background-color: transparent;
     color: white;
-    margin-left: 38%;
-    margin-right: 38%;
+    left: 40%;
+    right: 40%;
+    top: 300px;
     font-family: $myFont;
     border-radius: 28px;
-    font-size: 1.4em;
+    font-size: 1em;
     padding: 5px 15px 5px 15px;
 }
 

@@ -46,7 +46,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                     }
                     return React.createElement(
                         'button',
-                        { className: 'pseudo', onClick: function onClick() {
+                        { className: 'css3but', onClick: function onClick() {
                                 return _this2.setState({ liked: true });
                             } },
                         'Play'
@@ -71,7 +71,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                 value: function render() {
                     return React.createElement(
                         'div',
-                        null,
+                        { className: 'competen' },
                         React.createElement(
                             'h1',
                             { id: 'clickable-element' },

@@ -3,23 +3,21 @@ append head
  link(rel='stylesheet' href='/static/css/admin.css') 
 append content
   #m0ncentrageAdmin
-    .meteo
-      div(ng-init="ville = 'Paris, fr';")
-      select(name="ville" ng-model='ville')
-        option(value="Paris, fr") Paris, fr
-        option(value='London, uk') London, uk
-        option(value='Madrid, es') Madrid, sp
-      br
-      br
-      ng-include(src="'http://api.openweathermap.org/data/2.5/weather?q=' + ville + '&mode=html&appid=bb026e3b05ebaf33312aeea8b300ef73'")
-      hr
-    h1 LOGIN
-    form#adm1n(action='/layoutAdmin' method='post')
-      label.LabelAdmin(for='POST-user') user
-      input#POST-nom.InputAdmin(type='text' name='user')
-      label.LabelAdmin(for='POST-pass') pass
-      input#POST-prenom.InputAdmin(type='text' name='pass')
-      input#subAdm1n(type='submit' value='log')
+    .competen
+      //.meteo
+        //div(ng-init="ville = 'Paris, fr';")
+        //select(name="ville" ng-model='ville')
+          //option(value="Paris, fr") Paris, fr
+          //option(value='London, uk') London, uk--/
+          //option(value='Madrid, es') Madrid, sp
+        //ng-include(src="'http://api.openweathermap.org/data/2.5/weather?q=' + ville + '&mode=html&appid=bb026e3b05ebaf33312aeea8b300ef73'")
+      h1 LOGIN
+      form#adm1n(action='/layoutAdmin' method='post')
+        label.LabelAdmin(for='POST-user') user
+        input#POST-nom.InputAdmin(type='text' name='user')
+        label.LabelAdmin(for='POST-pass') pass
+        input#POST-prenom.InputAdmin(type='text' name='pass')
+        input#subAdm1n(type='submit' class="css3but" value='log')
 append scripts
   script(src='/static/js/angular.min.js')
   script.

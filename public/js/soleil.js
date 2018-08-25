@@ -17,7 +17,7 @@
         let m0nimg = window.document.createElement('img')
         m0nimg.style.position = 'absolute'
         m0nimg.src = '/static/img/Atari.png'
-        m0nimg.style.top = '30%'
+        m0nimg.style.top = '36%'
         m0nimg.id = 'snowB'
         let m0nIDanimation
         let m0nsoleil = window.document.getElementById('s0leil')
@@ -42,13 +42,13 @@
         m0nCanva.height = 40
         m0nCanva.style.width = '5%'
         m0nCanva.id = 'c4nv4'
-        m0nCanva.style.position = 'relative'
+        m0nCanva.style.position = 'absolute'
         m0nsoleil.appendChild(m0nCanva)
         let m4m3r = document.createElement('canvas')
         m4m3r.width = 600
         m4m3r.height = 400
         m4m3r.style.width = '100%'
-        m4m3r.style.height = '400px'
+        m4m3r.style.height = '100%'
         m4m3r.id = 'm0nC4nvaM3r'
         m4m3r.style.position = 'absolute'
         m4m3r.style.display = 'block'
@@ -57,7 +57,7 @@
         m4colline.width = 600
         m4colline.height = 400
         m4colline.style.width = '100%'
-        m4colline.style.height = '400px'
+        m4colline.style.height = '100%'
         m4colline.id = 'm0nC4nvaC0lline'
         m4colline.style.display = 'block'
         m4colline.style.position = 'absolute'
@@ -108,7 +108,7 @@
             if (c00rdX < 105) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
                 m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
-                m0nCanva.style.left = c00rdX * 1.3 - 100 + '%'
+                m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
                 // s00000000000000LLLLLLLLL333333333333311111111111111LLLLLLLLLLLLLLL
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)

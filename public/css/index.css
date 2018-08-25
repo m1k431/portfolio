@@ -331,9 +331,14 @@ template {
 }
 
 #jugglejungle,
-#s0leil {
+#s0leil,
+#ci3l,
+#m0nC4nvaM3r,
+#m0nC4nvaC0lline {
   display: none;
   width: 100%;
+  border-radius: 28px;
+  margin-top: 5px;
 }
 
 .css3buttonRed, .css3button {
@@ -380,6 +385,14 @@ nav a {
   z-index: 1;
 }
 
+.competen {
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+
 a.nav {
   margin: 10px;
   display: inline-block;
@@ -389,6 +402,14 @@ a.nav {
   font-size: 1.1em;
   text-align: center;
   font-family: monospace;
+}
+
+.css3but {
+  width: 70px;
+  border-radius: 28px;
+  margin-bottom: 10px;
+  background: rgba(19, 43, 121, 0.449);
+  background-image: linear-gradient(to bottom, rgba(52, 152, 219, 0.476), rgba(19, 43, 121, 0.5));
 }
 
 .css3button {
@@ -452,14 +473,15 @@ a.nav {
 }
 
 #BtnJs0nPl4Y {
-  width: 24%;
+  position: absolute;
   background-color: transparent;
   color: white;
-  margin-left: 38%;
-  margin-right: 38%;
+  left: 40%;
+  right: 40%;
+  top: 300px;
   font-family: monospace;
   border-radius: 28px;
-  font-size: 1.4em;
+  font-size: 1em;
   padding: 5px 15px 5px 15px;
 }
 
