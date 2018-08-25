@@ -4,7 +4,6 @@ $myFont: monospace;
 $colorBody: rgba(19, 42, 121, 0.773);
 %videoSoleil {
     display: none;
-    position: relative;
     width: 100%;
 }
 %css3Button {
@@ -12,7 +11,6 @@ $colorBody: rgba(19, 42, 121, 0.773);
     border-radius: 28px;
     color: #ffffff;
     padding: 10px 2px 12px 2px;
-    text-decoration: none;
 }
 
 body {
@@ -27,7 +25,7 @@ nav,
 p   {
     color: white;
     text-align: center;
-    font-family: monospace;
+    font-family: $myFont;
     margin-left: 7px;
     margin-right: 7px;
     }
@@ -38,9 +36,9 @@ nav {
         padding: 0;
         list-style: none;
     }
-
+    
     li { display: inline-block; }
-
+    
     a {
         display: block;
         padding: 6px 12px;
@@ -99,7 +97,7 @@ a.nav {
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 80px;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
     display: none;
 }
 
@@ -109,6 +107,7 @@ a.nav {
     left: 3%;
     right: 3%;
     margin-top: 70px;
+    margin-bottom: 20px;
 }
 
 #m0ncentrageAdmin {
@@ -137,17 +136,20 @@ a.nav {
 }
 
 #BtnJs0nPl4Y {
-    position: absolute;
     width: 24%;
     background-color: transparent;
     color: white;
     margin-left: 38%;
     margin-right: 38%;
-    margin-top: -9%;
-    font-family: monospace;
+    font-family: $myFont;
     border-radius: 28px;
     font-size: 1.4em;
     padding: 5px 15px 5px 15px;
+}
+
+#BtnJs0nPl4Y:hover {
+    background: #3cb0fd;
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
 }
 

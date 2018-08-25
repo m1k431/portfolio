@@ -333,7 +333,6 @@ template {
 #jugglejungle,
 #s0leil {
   display: none;
-  position: relative;
   width: 100%;
 }
 
@@ -342,7 +341,6 @@ template {
   border-radius: 28px;
   color: #ffffff;
   padding: 10px 2px 12px 2px;
-  text-decoration: none;
 }
 
 body {
@@ -425,7 +423,7 @@ a.nav {
   margin-left: 3%;
   margin-right: 3%;
   margin-top: 80px;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
   display: none;
 }
 
@@ -435,6 +433,7 @@ a.nav {
   left: 3%;
   right: 3%;
   margin-top: 70px;
+  margin-bottom: 20px;
 }
 
 #m0ncentrageAdmin {
@@ -458,17 +457,20 @@ a.nav {
 }
 
 #BtnJs0nPl4Y {
-  position: absolute;
   width: 24%;
   background-color: transparent;
   color: white;
   margin-left: 38%;
   margin-right: 38%;
-  margin-top: -9%;
   font-family: monospace;
   border-radius: 28px;
   font-size: 1.4em;
   padding: 5px 15px 5px 15px;
+}
+
+#BtnJs0nPl4Y:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
 

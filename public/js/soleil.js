@@ -2,7 +2,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         var m4vide0 = window.document.getElementById('jugglejungle')
         var BtnJs0nPl4Y = window.document.getElementById('BtnJs0nPl4Y')
-        BtnJs0nPl4Y.innerHTML = 'PLAY'
+        BtnJs0nPl4Y.innerHTML = 'Play'
         BtnJs0nPl4Y.addEventListener('click', () => {
             if (m4vide0.paused) {
                 m4vide0.play()
@@ -25,7 +25,7 @@
         m0nsoleil.style.display = 'block'
         m0nsoleil.width = 600
         m0nsoleil.height = 400
-        m0nsoleil.style.width = '100%'
+        m0nsoleil.style.top = '2%'
         m0nsoleil.style.height = '400px'
         m0nsoleil.id = 's0leil'
         let m0nCiel = document.createElement('canvas')
@@ -43,8 +43,6 @@
         m0nCanva.style.width = '5%'
         m0nCanva.id = 'c4nv4'
         m0nCanva.style.position = 'relative'
-        m0nCanva.style.marginTop = '220px'
-        m0nCanva.style.marginLeft = '27%'
         m0nsoleil.appendChild(m0nCanva)
         let m4m3r = document.createElement('canvas')
         m4m3r.width = 600
@@ -54,7 +52,6 @@
         m4m3r.id = 'm0nC4nvaM3r'
         m4m3r.style.position = 'absolute'
         m4m3r.style.display = 'block'
-        m4m3r.style.top = '-25%'
         m0nsoleil.appendChild(m4m3r)
         let m4colline = document.createElement('canvas')
         m4colline.width = 600
@@ -64,7 +61,6 @@
         m4colline.id = 'm0nC4nvaC0lline'
         m4colline.style.display = 'block'
         m4colline.style.position = 'absolute'
-        m4colline.style.top = '-12%'
         m0nsoleil.appendChild(m4colline)
         let m0n4tari = window.document.createElement('img')
         m0n4tari.id = 'a7ari'
@@ -79,8 +75,8 @@
         ctx2M4col.beginPath()
         ctx2M4col.moveTo(0, 600)
         ctx2M4col.lineTo(600, 400)
-        ctx2M4col.lineTo(600, 250)
-        ctx2M4col.bezierCurveTo(150, 258, 650, 242, 0, 250)
+        ctx2M4col.lineTo(600, 170)
+        ctx2M4col.bezierCurveTo(170, 178, 650, 172, 0, 170)
         ctx2M4col.closePath()
         ctx2M4col.stroke()
         ctx2M4col.fill()
@@ -110,9 +106,9 @@
         ctxCi3l.fillRect(0, 0, 600, 300)
         var dessinerM0n = (m0ntimestamp) => {
             if (c00rdX < 105) {
-                c00rdY = Math.cos(c00rdX / 24) * 44
-                m0nCanva.style.top = c00rdY * 1.1 + '%'
-                m0nCanva.style.left = c00rdX * 1.3 - 77 + '%'
+                c00rdY = Math.cos(c00rdX / 24) * 54
+                m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
+                m0nCanva.style.left = c00rdX * 1.3 - 100 + '%'
                 // s00000000000000LLLLLLLLL333333333333311111111111111LLLLLLLLLLLLLLL
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
