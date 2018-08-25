@@ -476,9 +476,10 @@ a.nav {
   position: absolute;
   background-color: transparent;
   color: white;
+  width: 20%;
   left: 40%;
   right: 40%;
-  top: 300px;
+  margin-top: -50px;
   font-family: monospace;
   border-radius: 28px;
   font-size: 1em;
