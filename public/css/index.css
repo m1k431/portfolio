@@ -339,7 +339,6 @@ template {
 .css3buttonRed, .css3button {
   width: 70px;
   border-radius: 28px;
-  color: #ffffff;
   padding: 10px 2px 12px 2px;
 }
 
@@ -356,8 +355,6 @@ p {
   color: white;
   text-align: center;
   font-family: monospace;
-  margin-left: 7px;
-  margin-right: 7px;
 }
 
 nav ul {
@@ -369,8 +366,6 @@ nav li {
   display: inline-block;
 }
 nav a {
-  display: block;
-  padding: 6px 12px;
   text-decoration: none;
 }
 

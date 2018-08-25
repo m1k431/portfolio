@@ -17,7 +17,7 @@
         let m0nimg = window.document.createElement('img')
         m0nimg.style.position = 'absolute'
         m0nimg.src = '/static/img/Atari.png'
-        m0nimg.style.top = '23%'
+        m0nimg.style.top = '30%'
         m0nimg.id = 'snowB'
         let m0nIDanimation
         let m0nsoleil = window.document.getElementById('s0leil')

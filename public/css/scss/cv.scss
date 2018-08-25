@@ -1,0 +1,523 @@
+$myfont: monospace;
+%parag {
+    margin: 0;
+    margin-left: 5px;
+    color: black;
+    text-decoration: none;
+    font-family: monospace;
+}
+    /*****
+$$$$$$  BALISES HTML   $$$$$
+****/
+
+    p.jeu {
+        @extend %parag;
+        text-align: center;
+    }
+    
+    p.moiPara {
+        @extend %parag;
+        text-align: left;
+    }
+    
+    a.mail {
+        margin: 0;
+        margin-left: 5px;
+        text-decoration: none;
+        font-family: monospace;
+    }
+    
+    html {
+        margin: 0.1%;
+        height: 700px;
+        min-width: 400px;
+    }
+    
+    h1.french,
+    h1.english,
+    h1.spanish {
+        margin-top: 1px;
+        font-size: 1.3em;
+        margin-bottom: 0;
+    }
+    
+    h2 {
+        text-transform: capitalize;
+        margin: 0;
+        font-size: 1.2em;
+        margin-top: 0;
+        padding-bottom: 2px;
+    }
+    
+    h3 {
+        font-family: monospace;
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 0;
+        margin-bottom: 0.2em;
+        border-radius: 10px;
+        font-size: 1.2em;
+    }
+    
+    h4 {
+        margin: 0;
+        color: black;
+        font-family: monospace;
+        font-size: 1.1em;
+    }
+    
+    h5 {
+        margin-top: auto;
+        margin: 0;
+        font-family: monospace;
+        font-size: 1em;
+    }
+    
+    hr {
+        margin-top: 0.1em;
+        margin-bottom: 0.2em;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        color: black;
+    }
+    /*****
+$$$$$$  POLICES &&& background:   $$$$$
+****/
+    
+    .bold {
+        font-weight: bold;
+    }
+    /*a, p {
+  text-decoration: none;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 3px;
+  font-family: $f0nt;
+}
+*/
+    /********** CLAAAAAAAÃAaaaaaaaaaaaāaaaaasssssssssssSSSSSSSSSS*****************/
+    
+    .french {
+        display: none;
+    }
+    
+    .spanish {
+        display: none;
+    }
+    
+    .english {
+        display: none;
+    }
+    
+    .web {
+        font-family: monospace;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 10px;
+        font-size: 1.2em;
+    }
+    
+    .pdf {
+        position: absolute;
+        width: 40%;
+        margin-left: 30%;
+        margin-right: 30%;
+        top: 5px;
+    }
+    
+    .moi {
+        margin: 0;
+        border: 1px solid #08021f;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        display: none;
+    }
+    
+    .complementaire {
+        margin: 0;
+        border: 1px solid #08021f;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-bottom: 60px;
+        display: none;
+    }
+    
+    .complemen {
+        margin: 0;
+        border: 1px solid #08021f;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-bottom: 60px;
+        display: none;
+    }
+    
+    .complementaireT {
+        margin: 0;
+        border: 1px solid #08021f;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-bottom: 60px;
+    }
+    
+    .linkedinT {
+        /*  animation: anim2 4s;
+  animation-iteration-count: infinite;*/
+        display: block;
+        border: 2px solid #08021f;
+        position: absolute;
+        border-radius: 10px;
+        height: 25px;
+        margin: 5px;
+        top: 630px;
+        background-color: yellowgreen;
+    }
+    
+    .experiencesT {
+        display: none;
+        border: 1px solid #08021f;
+        color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        text-align: center;
+        transform: scale(0, 0) translate(0%, 400%);
+    }
+    
+    .formationT {
+        display: none;
+        border: 1px solid #08021f;
+        color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        text-align: center;
+        transform: scale(0, 0) translate(0%, 400%);
+    }
+    
+    .start {
+        position: absolute;
+        height: 60px;
+        width: 10%;
+        left: 45%;
+        right: 45%;
+        top: 15px;
+    }
+    
+    .flags {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 2px;
+        margin-bottom: 0px;
+        display: none;
+    }
+    
+    #french,
+    #english,
+    #spanish {
+        display: inline-block;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .foto {
+        position: relative;
+        margin: 10px;
+        text-align: right;
+        border-radius: 10px;
+        float: right;
+    }
+    
+    .linkedin {
+        /*  animation: anim2 4s;
+  animation-iteration-count: infinite;*/
+        display: none;
+        position: absolute;
+        border-radius: 10px;
+        float: right;
+        height: 35px;
+        margin: 5px;
+        top: -100px;
+    }
+    
+    .metier {
+        text-align: center;
+        font-family: monospace;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: 1px solid #08021f;
+        border-radius: 10px;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: .5%;
+        overflow: hidden;
+        display: none;
+    }
+    
+    .competencesJeu {
+        border: 1px solid #08021f;
+        color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        padding-bottom: 175px;
+        text-align: center;
+    }
+    
+    .competences {
+        border: 1px solid #08021f;
+        color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        text-align: center;
+        display: none;
+    }
+    
+    .competen {
+        border: 1px solid #08021f;
+        color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        text-align: center;
+        display: none;
+    }
+    
+    .competencelast {
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 0;
+        border: 1px solid #08021f;
+        border-radius: 10px;
+    }
+    
+    .competencesT {
+        border: 1px solid #08021f;
+        color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5%;
+        margin-top: 0.5%;
+        text-align: center;
+        background-image: url(/static/img/picPr0.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 450px;
+    }
+    
+    .BrickBall {
+        position: absolute;
+        overflow: visible;
+        top: 155px;
+        right: 0;
+    }
+    
+    .informatiques {
+        width: 31.5%;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.2);
+        border-radius: 10px;
+        margin-top: 0.1%;
+        margin-bottom: 0.5%;
+        margin-right: 0.5%;
+        vertical-align: middle;
+        display: inline-block;
+        overflow: visible;
+    }
+    
+    .jobs {
+        width: 99%;
+        text-align: center;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 0.1%;
+        margin-bottom: 0.1%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        vertical-align: middle;
+        overflow: visible;
+    }
+    
+    .infojob {
+        font-family: monospace;
+        font-size: 1em;
+    }
+    
+    .informatiquesIUT {
+        width: 96%;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.6);
+        border-radius: 10px;
+        margin: 1%;
+        vertical-align: bottom;
+        display: inline-block;
+        overflow: visible;
+    }
+    
+    .informatiquesT {
+        width: 31.5%;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.6);
+        border-radius: 10px;
+        margin-top: 0.1%;
+        margin-bottom: 0.5%;
+        margin-right: 0.5%;
+        vertical-align: top;
+        display: inline-block;
+        overflow: visible;
+    }
+    
+    .info {
+        font-family: monospace;
+        margin-bottom: 2px;
+        font-size: 1em;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        overflow: visible;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .infoJeu {
+        font-family: monospace;
+        margin-bottom: 2px;
+        font-size: 1em;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 5px;
+        overflow: visible;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .infoT {
+        font-family: monospace;
+        margin-bottom: 2px;
+        font-size: 1em;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 5px;
+        overflow: visible;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .info:hover,
+    .info:focus {
+        transform: scale(1.05);
+        box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+    }
+    
+    .infolast {
+        font-family: monospace;
+        font-size: 1em;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        overflow: visible;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .infolast:hover,
+    .infolast:focus {
+        transform: scale(1.05);
+        box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+    }
+    
+    .infoJeu:hover,
+    .infoJeu:focus {
+        transform: scale(1.05);
+        box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+    }
+    
+    .btp {
+        width: 31.5%;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.2);
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 0.1%;
+        margin-bottom: 0.1%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        vertical-align: middle;
+        overflow: visible;
+    }
+    
+    .btpT {
+        width: 31.5%;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.6);
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 0.1%;
+        margin-bottom: 0.1%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        vertical-align: top;
+        overflow: visible;
+    }
+    
+    .commerciales {
+        width: 31.5%;
+        color: black;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.2);
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 0.1%;
+        margin-bottom: 0.1%;
+        vertical-align: middle;
+        margin-left: 0.5%;
+        overflow: visible;
+    }
+    
+    .commercialesT {
+        width: 31.5%;
+        color: black;
+        text-align: center;
+        background-color: rgba(245, 247, 246, 0.6);
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 0.1%;
+        margin-bottom: 0.1%;
+        vertical-align: top;
+        margin-left: 0.5%;
+        overflow: visible;
+    }
+    
+    #m0ncentrageJeu {
+        display: block;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 80%;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+    
