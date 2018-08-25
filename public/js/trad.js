@@ -6,9 +6,6 @@
         $('.flags').fadeIn()
         $('.metier').fadeIn()
         $('.english').fadeIn()
-        let francais = window.document.getElementsByClassName('french')
-        let anglais = window.document.getElementsByClassName('english')
-        let espagnol = window.document.getElementsByClassName('spanish')
         window.document.getElementById('french').onclick = () => {
             $('.english').fadeOut()
             $('.spanish').fadeOut()

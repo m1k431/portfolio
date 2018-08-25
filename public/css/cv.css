@@ -224,7 +224,8 @@ $$$$$$  POLICES &&& background:   $$$$$
     .flags {
         margin-left: 10%;
         margin-right: 10%;
-        margin-top: 5px;
+        margin-top: 2px;
+        margin-bottom: 0px;
         display: none;
     }
     

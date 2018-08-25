@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"pong.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/pong.scss"],"names":[],"mappings":"AAGA;EACI,kBAHQ","file":"pong.css"}

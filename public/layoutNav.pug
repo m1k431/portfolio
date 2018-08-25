@@ -11,21 +11,27 @@ html(lang="en")
       link(rel='stylesheet' href='/static/css/normalize.css')
   body
     nav#navBar
-      a.nav(href='./nomPage?r=index' class='css3button') Intro
-      a.nav(href='./nomPage?r=jeuCV' class='css3buttonRed') CV Game
-      a.nav(href='./nomPage?r=cv' class='css3button') Resume
-      a.nav(href='./nomPage?r=pong' class='css3buttonRed') P0NG
-      a.nav(href='./nomPage?r=adm1n' class='css3button') Admin
+      ul
+        li 
+          a.nav(href='./nomPage?r=index' class='css3button') Intro
+        li
+          a.nav(href='./nomPage?r=jeuCV' class='css3buttonRed') CV Game
+        li
+          a.nav(href='./nomPage?r=cv' class='css3button') Resume
+        li
+          a.nav(href='./nomPage?r=pong' class='css3buttonRed') P0NG
+        li
+          a.nav(href='./nomPage?r=adm1n' class='css3button') Admin
     block content
     block foot
       #footer
         p.LogoNode
-          a(href='https://github.com/m1k431')
-            img.minilogL(src='/static/img/gitHubMark.png' alt='git' height='30')
-            img.minilogL(src='/static/img/gitHubW.png' alt='git' height='35')
+          a.minilogL(href='https://github.com/m1k431')
+            img(src='/static/img/gitHubMark.png' alt='git' height='35')
+            img(src='/static/img/gitHubW.png' alt='git' height='35')
           a#myclock
-          a(href='https://www.linkedin.com/in/mika%C3%ABl-garcia/')
-            img.minilogR(src='/static/img/LinkedIn_Logo.svg' alt='linkedin' height='35')
+          a.minilogR(href='https://www.linkedin.com/in/mika%C3%ABl-garcia/')
+            img(src='/static/img/LinkedIn_Logo.svg' alt='linkedin' height='35')
     block scripts
       script(src='/static/js/jquery-3.3.1.min.js' defer)
       script(src='/static/js/jquery-ui.min.js' defer)
