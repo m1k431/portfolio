@@ -106,7 +106,7 @@
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
                 switch(c00rdX) {
-                case 45: 
+                case 48: 
                     $('#s0leil' ).animate({
                         backgroundColor: '#0a15db'
                     }, 3000 )
