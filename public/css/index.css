@@ -444,7 +444,6 @@ a.nav {
   height: 100%;
   width: 94%;
   margin-left: 3%;
-  margin-top: 3%;
 }
 
 .table-cell {
@@ -456,6 +455,8 @@ a.nav {
 #m0ncentrage {
   display: none;
   margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 #m0ncentrageCV {
