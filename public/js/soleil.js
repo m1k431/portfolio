@@ -95,17 +95,11 @@
         ctxM4col.closePath()
         ctxM4col.stroke()
         ctxM4col.fill()
-        //CIEEEEELLLLLL
         let c00rdX = 45
         let c00rdY = 2
-        let ctxCi3l = m0nCiel.getContext('2d')
-        let gradientCi3l = ctxCi3l.createLinearGradient(0, 0, c00rdY * 1.2, c00rdY / 1.8)
-        let gradientCi3lN = ctxCi3l.createLinearGradient(0, 0, c00rdY * 1.2, c00rdY / 1.8)
-        gradientCi3l.addColorStop(0, 'cyan')
-        gradientCi3l.addColorStop(1, 'blue')
-        gradientCi3lN.addColorStop(0,'purple')
-        gradientCi3lN.addColorStop(1,'black')
-                
+        $('#s0leil' ).animate({
+            backgroundColor: '#0a15db'
+        }, 1000 )
         var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 110) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
@@ -114,23 +108,24 @@
                 // s00000000000000LLLLLLLLL333333333333311111111111111LLLLLLLLLLLLLLL
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
-                if (c00rdX < 100 && c00rdX > 55 ) {
-                    ctxCi3l.clearRect(0, 0, 600, 300)
-                    ctxCi3l.fillStyle = gradientCi3l
-                    ctxCi3l.fillRect(0, 0, 600, 300)
-                }
-                else {
-                    ctxCi3l.clearRect(0, 0, 600, 300)
-                    ctxCi3l.fillStyle = gradientCi3lN
-                    ctxCi3l.fillRect(0, 0, 600, 300)
-
+                switch(c00rdX) {
+                case 45: 
+                    $('#s0leil' ).animate({
+                        backgroundColor: '#0a15db'
+                    }, 3000 )
+                    break
+                case 90:
+                    $('#s0leil' ).animate({
+                        backgroundColor: '#000114'
+                    }, 3000 )
+                    break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
                 gradient.addColorStop(0, 'transparent')
                 gradient.addColorStop(0.9, 'yellow')
                 ctx.fillStyle = gradient
                 ctx.fillRect(0, 0, 40, 40)
-                c00rdX = c00rdX + 0.1
+                c00rdX = (c00rdX * 10 + 0.1 * 10) / 10
                 setTimeout(dessinerM0n, 12)
             } else {
                 c00rdX = 45
