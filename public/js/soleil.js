@@ -19,7 +19,6 @@
         m0nimg.src = '/static/img/Atari.png'
         m0nimg.style.top = '36%'
         m0nimg.id = 'snowB'
-        //let m0nIDanimation
         let m0nsoleil = window.document.getElementById('s0leil')
         m0nsoleil.style.position = 'relative'
         m0nsoleil.style.display = 'block'
@@ -82,7 +81,6 @@
         ctx2M4col.fill()
         //C00000000000000000000000000000llllllllllllllllOLLLLIIIIIINNNNNNE 1
         let ctxM4col = m4colline.getContext('2d')
-        //ctxM4col.clearRect(0,0,600,400)
         let gradientC0lline = ctxM4col.createLinearGradient(0, 0, 0, 600)
         gradientC0lline.addColorStop(0, 'lime')
         gradientC0lline.addColorStop(1, 'black')
@@ -105,7 +103,6 @@
                 c00rdY = Math.cos(c00rdX / 24) * 54
                 m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
                 m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
-                // s00000000000000LLLLLLLLL333333333333311111111111111LLLLLLLLLLLLLLL
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
                 switch(c00rdX) {
