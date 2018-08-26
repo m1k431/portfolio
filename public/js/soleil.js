@@ -43,6 +43,16 @@
         m0nCanva.id = 'c4nv4'
         m0nCanva.style.position = 'absolute'
         m0nsoleil.appendChild(m0nCanva)
+        let maLune = document.createElement('canvas')
+        maLune.width = 40
+        maLune.height = 40
+        maLune.style.width = '5%'
+        maLune.id = 'moon'
+        maLune.style.position = 'absolute'
+        maLune.style.marginTop = '50px'
+        maLune.style.marginLeft = '130px'
+        maLune.style.display = 'none'
+        m0nsoleil.appendChild(maLune)
         let m4m3r = document.createElement('canvas')
         m4m3r.width = 600
         m4m3r.height = 400
@@ -95,6 +105,12 @@
         ctxM4col.fill()
         let c00rdX = 45
         let c00rdY = 2
+        let ctxLune = maLune.getContext('2d')
+        let gradientLune = ctxLune.createRadialGradient(16, 16, 16, 16, 16, 14)
+        gradientLune.addColorStop(0, 'transparent')
+        gradientLune.addColorStop(0.9, 'white')
+        ctxLune.fillStyle = gradientLune
+        ctxLune.fillRect(0, 0, 40, 40)
         $('#s0leil' ).animate({
             backgroundColor: '#0a15db'
         }, 1000 )
@@ -107,14 +123,20 @@
                 ctx.clearRect(0, 0, 40, 40)
                 switch(c00rdX) {
                 case 48: 
-                    $('#s0leil' ).animate({
+                    $('#s0leil').animate({
                         backgroundColor: '#0a15db'
                     }, 3000 )
                     break
+                case 55:
+                    $('#moon').fadeOut(1000)
+                    break    
                 case 93:
-                    $('#s0leil' ).animate({
+                    $('#s0leil').animate({
                         backgroundColor: '#000114'
                     }, 3000 )
+                    break
+                case 100:
+                    $('#moon').fadeIn(3000)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
