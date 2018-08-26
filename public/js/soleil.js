@@ -111,7 +111,7 @@
                         backgroundColor: '#0a15db'
                     }, 3000 )
                     break
-                case 90:
+                case 93:
                     $('#s0leil' ).animate({
                         backgroundColor: '#000114'
                     }, 3000 )
