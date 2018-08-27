@@ -143,7 +143,7 @@
             if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
-                setTimeout(monkeyDown, 64)
+                setTimeout(monkeyDown, 32)
             }
             else {
                 back = true
@@ -153,7 +153,7 @@
             if (cpt > 0) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
                 cpt--
-                setTimeout(monkeyUp, 64)
+                setTimeout(monkeyUp, 32)
             }
             else {
                 back = false
@@ -186,7 +186,13 @@
                 case 55:
                     $('#moon').fadeOut(1000)
                     requestAnimationFrame(monkeyDown)
-                    break    
+                    break
+                case 70:
+                    requestAnimationFrame(monkeyUp)
+                    break
+                case 80:
+                    requestAnimationFrame(monkeyDown)
+                    break
                 case 93:
                     $('#s0leil').animate({
                         backgroundColor: '#000114'
