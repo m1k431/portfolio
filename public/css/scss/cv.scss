@@ -349,7 +349,22 @@ $$$$$$  POLICES &&& background:   $$$$$
         text-align: center;
         border-radius: 10px;
         margin-top: 0.5%;
-        margin-bottom: 3%;
+        margin-bottom: 0.1%;
+        margin-left: 5px;
+        margin-right: 5px;
+        vertical-align: middle;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow: visible;
+    }
+
+    .informatiquesLast {
+        background-color: rgba(245, 247, 246, 0.2);
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 0.5%;
+        margin-bottom: 5px;
         margin-left: 5px;
         margin-right: 5px;
         vertical-align: middle;
@@ -398,10 +413,11 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .info {
         font-family: monospace;
-        margin-bottom: 2px;
         font-size: 1.2em;
+        margin-bottom: 2px;
+        margin-top: 2px;
         text-align: center;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.4);
         border-radius: 5px;
         overflow: visible;
         margin-left: 5px;
@@ -415,8 +431,9 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .infoJeu {
         font-family: monospace;
+        font-size: 1.2em;
         margin-bottom: 2px;
-        margin-top: 12px;
+        margin-top: 2px;
         text-align: center;
         background-color: rgba(255, 255, 255, 0.4);
         border-radius: 5px;
@@ -427,8 +444,9 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .infoT {
         font-family: monospace;
+        margin-top: 2px;
         margin-bottom: 2px;
-        font-size: 1em;
+        font-size: 1.2em;
         text-align: center;
         background-color: rgba(255, 255, 255, 0.4);
         border-radius: 5px;
@@ -445,7 +463,7 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .infolast {
         font-family: monospace;
-        font-size: 1em;
+        font-size: 1.2em;
         text-align: center;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 5px;
@@ -475,7 +493,7 @@ $$$$$$  POLICES &&& background:   $$$$$
         border-radius: 10px;
         display: inline-block;
         margin-top: 0.1%;
-        margin-bottom: 0.1%;
+        margin-bottom: 5px;
         margin-left: 0.5%;
         margin-right: 0.5%;
         vertical-align: middle;
