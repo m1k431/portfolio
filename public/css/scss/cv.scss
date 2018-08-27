@@ -54,14 +54,14 @@ $$$$$$  BALISES HTML   $$$$$
         margin-top: 0;
         margin-bottom: 0.2em;
         border-radius: 10px;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     
     h4 {
         margin: 0;
         color: black;
         font-family: monospace;
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     
     h5 {
@@ -348,16 +348,15 @@ $$$$$$  POLICES &&& background:   $$$$$
         background-color: rgba(245, 247, 246, 0.2);
         text-align: center;
         border-radius: 10px;
-        margin-top: 0.1%;
-        margin-bottom: 0.5%;
-        margin-right: 0.5%;
+        margin-top: 0.5%;
+        margin-bottom: 3%;
+        margin-left: 5px;
+        margin-right: 5px;
         vertical-align: middle;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         overflow: visible;
-        margin-left: 3%;
-        margin-right: 3%;
     }
     
     .jobs {
@@ -371,11 +370,6 @@ $$$$$$  POLICES &&& background:   $$$$$
         margin-right: 0.5%;
         vertical-align: middle;
         overflow: visible;
-    }
-    
-    .infojob {
-        font-family: monospace;
-        font-size: 1em;
     }
     
     .informatiquesIUT {
@@ -405,7 +399,7 @@ $$$$$$  POLICES &&& background:   $$$$$
     .info {
         font-family: monospace;
         margin-bottom: 2px;
-        font-size: 1em;
+        font-size: 1.2em;
         text-align: center;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 5px;
@@ -414,9 +408,15 @@ $$$$$$  POLICES &&& background:   $$$$$
         margin-right: 5px;
     }
     
+    .infojob {
+        font-family: monospace;
+        font-size: 1.1em;
+    }
+    
     .infoJeu {
         font-family: monospace;
         margin-bottom: 2px;
+        margin-top: 12px;
         text-align: center;
         background-color: rgba(255, 255, 255, 0.4);
         border-radius: 5px;
