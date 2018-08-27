@@ -11,19 +11,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 (function () {
     window.addEventListener('DOMContentLoaded', function () {
         //reactJS test zone
-        var LikeButton = function (_React$Component) {
-            _inherits(LikeButton, _React$Component);
+        var PlayButton = function (_React$Component) {
+            _inherits(PlayButton, _React$Component);
 
-            function LikeButton(props) {
-                _classCallCheck(this, LikeButton);
+            function PlayButton(props) {
+                _classCallCheck(this, PlayButton);
 
-                var _this = _possibleConstructorReturn(this, (LikeButton.__proto__ || Object.getPrototypeOf(LikeButton)).call(this, props));
+                var _this = _possibleConstructorReturn(this, (PlayButton.__proto__ || Object.getPrototypeOf(PlayButton)).call(this, props));
 
                 _this.state = { liked: false };
                 return _this;
             }
 
-            _createClass(LikeButton, [{
+            _createClass(PlayButton, [{
                 key: 'render',
                 value: function render() {
                     var _this2 = this;
@@ -54,7 +54,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                 }
             }]);
 
-            return LikeButton;
+            return PlayButton;
         }(React.Component);
 
         var AccueilPong = function (_React$Component2) {
@@ -87,7 +87,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                             ),
                             React.createElement('input', { className: 'pseudo', id: 'pseudo', type: 'text', name: 'pseudo' })
                         ),
-                        React.createElement(LikeButton, null)
+                        React.createElement(PlayButton, null)
                     );
                 }
             }]);

@@ -1,7 +1,7 @@
 (() => {
     window.addEventListener('DOMContentLoaded', () => {
         //reactJS test zone
-        class LikeButton extends React.Component {
+        class PlayButton extends React.Component {
             constructor(props) {
                 super(props)
                 this.state = { liked: false }
@@ -31,7 +31,7 @@
                             <label className="pseudo">Enter your Name</label>
                             <input className="pseudo" id="pseudo" type="text" name="pseudo"></input>
                         </form>
-                        <LikeButton />
+                        <PlayButton />
                     </div>
                 )
             }
