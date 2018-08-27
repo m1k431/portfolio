@@ -114,8 +114,8 @@
         divSprite.style.position = 'absolute'
         divSprite.style.height = '140px'
         divSprite.style.width = '95px'
-        divSprite.style.top = '103px'
-        divSprite.style.left = '356px'
+        divSprite.style.top = '102px'
+        divSprite.style.left = '355px'
         //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
         divSprite.style.overflow = 'hidden'
         m0nsoleil.appendChild(divSprite)
