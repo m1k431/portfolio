@@ -124,7 +124,7 @@
         imgMonkey.className = 'monkey'
         imgMonkey.style.position = 'absolute'
         imgMonkey.style.height = '100%'
-        imgMonkey.style.left = '0px'
+        imgMonkey.style.left = '-2215px'
         imgMonkey.style.top = '0%'
         imgMonkey.src = '/static/img/monkey.png'
         divSprite.appendChild(imgMonkey)
@@ -141,22 +141,20 @@
         var back = false
         var cpt = 0
         var animSprite = function() {
-            if (parseFloat(imgMonkey.style.left) > -1140 && !back) {
-                console.log('iffff 1' + back)
-                imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
+            if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
+                imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
             } else {
                 back = true
                 if (cpt > 0) {
-                    console.log('else 1' + back)
-                    imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
+                    imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
                     cpt--
                 }
                 else {
                     back = false
                 }
             } 
-            setTimeout(animSprite, 256)
+            setTimeout(animSprite, 220)
         }
         requestAnimationFrame(animSprite)
         let c00rdX = 45
