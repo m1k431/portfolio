@@ -95,8 +95,8 @@
         //C00000000000000000000000000000llllllllllllllllOLLLLIIIIIINNNNNNE 1
         let ctxM4col = m4colline.getContext('2d')
         let gradientC0lline = ctxM4col.createLinearGradient(0, 0, 0, 600)
-        gradientC0lline.addColorStop(0, 'lime')
-        gradientC0lline.addColorStop(1, 'black')
+        gradientC0lline.addColorStop(0, 'yellow')
+        gradientC0lline.addColorStop(0.8, 'black')
         ctxM4col.fillStyle = gradientC0lline
         ctxM4col.beginPath()
         ctxM4col.moveTo(0, 400)
