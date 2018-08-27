@@ -14,11 +14,13 @@
         })
         $('#m0ncentrage').fadeIn(1000)
         $('#jugglejungle').fadeIn(1000)
+        //ATARIIIIIIIIII
         let m0nimg = window.document.createElement('img')
         m0nimg.style.position = 'absolute'
         m0nimg.src = '/static/img/Atari.png'
         m0nimg.style.top = '36%'
         m0nimg.id = 'snowB'
+        //DIV SOLEILLLLLLLLL
         let m0nsoleil = window.document.getElementById('s0leil')
         m0nsoleil.style.position = 'relative'
         m0nsoleil.style.display = 'block'
@@ -27,6 +29,7 @@
         m0nsoleil.style.top = '2%'
         m0nsoleil.style.height = '400px'
         m0nsoleil.id = 's0leil'
+        //Cielllllllllllll
         let m0nCiel = document.createElement('canvas')
         m0nCiel.style.position = 'absolute'
         m0nCiel.style.display = 'block'
@@ -103,6 +106,59 @@
         ctxM4col.closePath()
         ctxM4col.stroke()
         ctxM4col.fill()
+
+        //SONIC PALM TREEEEEEEE
+        var divSprite = window.document.createElement('div')
+        divSprite.id = 'divSprite'
+        divSprite.className = 'divsprite'
+        divSprite.style.position = 'absolute'
+        divSprite.style.height = '140px'
+        divSprite.style.width = '95px'
+        divSprite.style.top = '103px'
+        divSprite.style.left = '356px'
+        //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
+        divSprite.style.overflow = 'hidden'
+        m0nsoleil.appendChild(divSprite)
+        var imgMonkey = window.document.createElement('img')
+        imgMonkey.id = 'monkey'
+        imgMonkey.className = 'monkey'
+        imgMonkey.style.position = 'absolute'
+        imgMonkey.style.height = '100%'
+        imgMonkey.style.left = '0px'
+        imgMonkey.style.top = '0%'
+        imgMonkey.src = '/static/img/monkey.png'
+        divSprite.appendChild(imgMonkey)
+        var imgSonicPalm = window.document.createElement('img')
+        imgSonicPalm.id = 'palmTree'
+        imgSonicPalm.className = 'palmTree'
+        imgSonicPalm.style.position = 'absolute'
+        imgSonicPalm.style.height = '50%'
+        imgSonicPalm.style.left = '300px'
+        imgSonicPalm.style.top = '20%'
+        imgSonicPalm.src = '/static/img/palmTree.png'
+        m0nsoleil.appendChild(imgSonicPalm)
+
+        var back = false
+        var cpt = 0
+        var animSprite = function() {
+            if (parseFloat(imgMonkey.style.left) > -1140 && !back) {
+                console.log('iffff 1' + back)
+                imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
+                cpt++
+            } else {
+                back = true
+                if (cpt > 0) {
+                    console.log('else 1' + back)
+                    imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
+                    cpt--
+                }
+                else {
+                    back = false
+                }
+            } 
+            setTimeout(animSprite, 256)
+        }
+        requestAnimationFrame(animSprite)
         let c00rdX = 45
         let c00rdY = 2
         let ctxLune = maLune.getContext('2d')
