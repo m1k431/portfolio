@@ -137,26 +137,28 @@
         imgSonicPalm.style.top = '20%'
         imgSonicPalm.src = '/static/img/palmTree.png'
         m0nsoleil.appendChild(imgSonicPalm)
-
         var back = false
         var cpt = 0
-        var animSprite = function() {
+        var monkeyDown = function() {
             if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
-            } else {
+                setTimeout(monkeyDown, 64)
+            }
+            else {
                 back = true
-                if (cpt > 0) {
-                    imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
-                    cpt--
-                }
-                else {
-                    back = false
-                }
-            } 
-            setTimeout(animSprite, 220)
+            }
         }
-        requestAnimationFrame(animSprite)
+        var monkeyUp = function() {
+            if (cpt > 0) {
+                imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
+                cpt--
+                setTimeout(monkeyUp, 64)
+            }
+            else {
+                back = false
+            }
+        }
         let c00rdX = 45
         let c00rdY = 2
         let ctxLune = maLune.getContext('2d')
@@ -183,6 +185,7 @@
                     break
                 case 55:
                     $('#moon').fadeOut(1000)
+                    requestAnimationFrame(monkeyDown)
                     break    
                 case 93:
                     $('#s0leil').animate({
@@ -191,6 +194,7 @@
                     break
                 case 100:
                     $('#moon').fadeIn(3000)
+                    requestAnimationFrame(monkeyUp)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
