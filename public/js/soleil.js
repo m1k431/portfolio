@@ -19,6 +19,7 @@
         m0nimg.style.position = 'absolute'
         m0nimg.src = '/static/img/Atari.png'
         m0nimg.style.top = '36%'
+        m0nimg.style.right = '6%'
         m0nimg.id = 'snowB'
         //DIV SOLEILLLLLLLLL
         let m0nsoleil = window.document.getElementById('s0leil')
@@ -127,8 +128,8 @@
         divSprite.style.position = 'absolute'
         divSprite.style.height = '140px'
         divSprite.style.width = '95px'
-        divSprite.style.top = '102px'
-        divSprite.style.left = '355px'
+        divSprite.style.top = '82px'
+        divSprite.style.left = '104.55px'
         //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
         divSprite.style.overflow = 'hidden'
         m0nsoleil.appendChild(divSprite)
@@ -146,8 +147,8 @@
         imgSonicPalm.className = 'palmTree'
         imgSonicPalm.style.position = 'absolute'
         imgSonicPalm.style.height = '50%'
-        imgSonicPalm.style.left = '300px'
-        imgSonicPalm.style.top = '20%'
+        imgSonicPalm.style.top = '60px'
+        imgSonicPalm.style.left = '50px'
         imgSonicPalm.src = '/static/img/palmTree.png'
         m0nsoleil.appendChild(imgSonicPalm)
         var back = false
