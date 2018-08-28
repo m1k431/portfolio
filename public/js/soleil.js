@@ -46,6 +46,19 @@
         m0nCanva.id = 'c4nv4'
         m0nCanva.style.position = 'absolute'
         m0nsoleil.appendChild(m0nCanva)
+        let myStars = document.createElement('canvas')
+        myStars.width = 600
+        myStars.height = 400
+        myStars.style.width = '100%'
+        myStars.style.height = '100%'
+        myStars.id = 'space'
+        myStars.style.position = 'absolute'
+        myStars.style.backgroundColor = '#000000'
+        myStars.style.borderRadius = '28px'
+        myStars.style.top = '0px'
+        myStars.style.left = '0px'
+        myStars.style.display = 'none'
+        m0nsoleil.appendChild(myStars)
         let maLune = document.createElement('canvas')
         maLune.width = 40
         maLune.height = 40
@@ -161,12 +174,132 @@
         }
         let c00rdX = 45
         let c00rdY = 2
+        
+        
+        //TESSSSSSSST ZOOOOOOOONE
+
+        var context
+        var screenH
+        var screenW
+        var stars = []
+        var numStars = 2000
+        
+        $('document').ready(function() {
+          
+            // Calculate the screen size
+            screenH = 400
+            screenW = 600
+            
+            // Get the myStars
+            myStars = $('#space')
+            
+            // Fill out the canvas
+            myStars.attr('height', screenH)
+            myStars.attr('width', screenW)
+            context = myStars[0].getContext('2d')
+            
+            // Create all the stars
+            for(var i = 0; i < numStars; i++) {
+                var x = Math.round(Math.random() * screenW)
+                var y = Math.round(Math.random() * screenH)
+                var length = 1 + Math.random() * 2
+                var opacity = Math.random()
+                
+                // Create a new star and draw
+                var star = new Star(x, y, length, opacity)
+                
+                // Add the the stars array
+                stars.push(star)
+            }
+            
+            animate()
+        })
+        
+        /**
+         * Animate the canvas
+         */
+        function animate() {
+            context.clearRect(0, 0, screenW, screenH)
+            $.each(stars, function() {
+                this.draw(context)
+            })
+        }
+        
+        /**
+         * Star
+         * 
+         * @param int x
+         * @param int y
+         * @param int length
+         * @param opacity
+         */
+        function Star(x, y, length, opacity) {
+            this.x = parseInt(x)
+            this.y = parseInt(y)
+            this.length = parseInt(length)
+            this.opacity = opacity
+            this.factor = 1
+            this.increment = Math.random() * .03
+        }
+        
+        /**
+         * Draw a star
+         * 
+         * This function draws a start.
+         * You need to give the contaxt as a parameter 
+         * 
+         * @param context
+         */
+        Star.prototype.draw = function() {
+            context.rotate((Math.PI * 1 / 10))
+            
+            // Save the context
+            context.save()
+            
+            // move into the middle of the canvas, just to make room
+            context.translate(this.x, this.y)
+            
+            // Change the opacity
+            if(this.opacity > 1) {
+                this.factor = -1
+            }
+            else if(this.opacity <= 0) {
+                this.factor = 1
+                
+                this.x = Math.round(Math.random() * screenW)
+                this.y = Math.round(Math.random() * screenH)
+            }
+                
+            this.opacity += this.increment * this.factor
+            
+            context.beginPath()
+            for (var i = 5; i--;) {
+                context.lineTo(0, this.length)
+                context.translate(0, this.length)
+                context.rotate((Math.PI * 2 / 10))
+                context.lineTo(0, - this.length)
+                context.translate(0, - this.length)
+                context.rotate(-(Math.PI * 6 / 10))
+            }
+            context.lineTo(0, this.length)
+            context.closePath()
+            context.fillStyle = 'rgba(255, 255, 200, ' + this.opacity + ')'
+            context.shadowBlur = 5
+            context.shadowColor = '#ffff33'
+            context.fill()
+            
+            context.restore()
+        }
+
+        //ENDDDDDDD TESTTTTTTTT ZOOOOOOOONE
+
         let ctxLune = maLune.getContext('2d')
         let gradientLune = ctxLune.createRadialGradient(16, 16, 16, 16, 16, 14)
         gradientLune.addColorStop(0, 'transparent')
         gradientLune.addColorStop(0.9, 'white')
         ctxLune.fillStyle = gradientLune
         ctxLune.fillRect(0, 0, 40, 40)
+        
         $('#s0leil' ).animate({
             backgroundColor: '#0a15db'
         }, 1000 )
@@ -185,6 +318,7 @@
                     break
                 case 55:
                     $('#moon').fadeOut(1000)
+                    $('#space').fadeOut(1000)
                     requestAnimationFrame(monkeyDown)
                     break
                 case 70:
@@ -200,6 +334,7 @@
                     break
                 case 100:
                     $('#moon').fadeIn(3000)
+                    $('#space').fadeIn(3000)
                     requestAnimationFrame(monkeyUp)
                     break
                 }
