@@ -174,18 +174,14 @@
         }
         let c00rdX = 45
         let c00rdY = 2
-        
-        
-        //TESSSSSSSST ZOOOOOOOONE
-
+        //TESSSSSSSST ZOOOOOOOONE code from https://codepen.io/WillemCrnlssn/pen/JgFGs
         var context
         var screenH
         var screenW
         var stars = []
         var numStars = 2000
-        
+    
         $('document').ready(function() {
-          
             // Calculate the screen size
             screenH = 400
             screenW = 600
@@ -290,7 +286,6 @@
             
             context.restore()
         }
-
         //ENDDDDDDD TESTTTTTTTT ZOOOOOOOONE
 
         let ctxLune = maLune.getContext('2d')
