@@ -309,8 +309,8 @@
                 case 48: 
                     $('#s0leil').animate({
                         backgroundColor: '#0a15db'
-                        $('#space').fadeOut(1000)
                     }, 3000 )
+                    $('#space').fadeOut(1000)
                     break
                 case 55:
                     $('#moon').fadeOut(1000)
