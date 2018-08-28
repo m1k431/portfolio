@@ -156,7 +156,7 @@
             if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
-                setTimeout(monkeyDown, 32)
+                setTimeout(monkeyDown, 60)
             }
             else {
                 back = true
@@ -166,7 +166,7 @@
             if (cpt > 0) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
                 cpt--
-                setTimeout(monkeyUp, 32)
+                setTimeout(monkeyUp, 60)
             }
             else {
                 back = false
@@ -181,36 +181,33 @@
         var stars = []
         var numStars = 2000
     
-        $('document').ready(function() {
-            // Calculate the screen size
-            screenH = 400
-            screenW = 600
+
+        // Calculate the screen size
+        screenH = 400
+        screenW = 600
             
-            // Get the myStars
-            myStars = $('#space')
+        // Get the myStars
+        myStars = $('#space')
             
-            // Fill out the canvas
-            myStars.attr('height', screenH)
-            myStars.attr('width', screenW)
-            context = myStars[0].getContext('2d')
+        // Fill out the canvas
+        myStars.attr('height', screenH)
+        myStars.attr('width', screenW)
+        context = myStars[0].getContext('2d')
             
-            // Create all the stars
-            for(var i = 0; i < numStars; i++) {
-                var x = Math.round(Math.random() * screenW)
-                var y = Math.round(Math.random() * screenH)
-                var length = 1 + Math.random() * 2
-                var opacity = Math.random()
+        // Create all the stars
+        for(var i = 0; i < numStars; i++) {
+            var x = Math.round(Math.random() * screenW)
+            var y = Math.round(Math.random() * screenH)
+            var length = 1 + Math.random() * 2
+            var opacity = Math.random()
                 
-                // Create a new star and draw
-                var star = new Star(x, y, length, opacity)
+            // Create a new star and draw
+            var star = new Star(x, y, length, opacity)
                 
-                // Add the the stars array
-                stars.push(star)
-            }
-            
-            requestAnimationFrame(animate)
-        })
-        
+            // Add the the stars array
+            stars.push(star)
+        }
+        var id2         
         /**
          * Animate the canvas
          */
@@ -219,8 +216,8 @@
             $.each(stars, function() {
                 this.draw(context)
             })
+            id2 = setTimeout(animate,1/100000)
         }
-        
         /**
          * Star
          * 
@@ -299,14 +296,15 @@
             backgroundColor: '#0a15db'
         }, 1000 )
         var dessinerM0n = (/*m0ntimestamp*/) => {
-            if (c00rdX < 110) {
+            if (c00rdX < 101) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
                 m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
                 m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
                 switch(c00rdX) {
-                case 48: 
+                case 48:
+                    clearTimeout(id2)
                     $('#s0leil').animate({
                         backgroundColor: '#0a15db'
                     }, 3000 )
@@ -326,11 +324,12 @@
                     $('#s0leil').animate({
                         backgroundColor: '#000114'
                     }, 3000 )
+                    requestAnimationFrame(monkeyUp)
                     break
                 case 100:
                     $('#moon').fadeIn(3000)
                     $('#space').fadeIn(3000)
-                    requestAnimationFrame(monkeyUp)
+                    requestAnimationFrame(animate)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
