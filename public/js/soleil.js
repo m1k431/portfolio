@@ -309,9 +309,9 @@
                         backgroundColor: '#0a15db'
                     }, 3000 )
                     $('#space').fadeOut(1000)
+                    $('#moon').fadeOut(2000)
                     break
                 case 55:
-                    $('#moon').fadeOut(1000)
                     requestAnimationFrame(monkeyDown)
                     break
                 case 70:
