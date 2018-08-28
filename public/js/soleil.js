@@ -208,7 +208,7 @@
                 stars.push(star)
             }
             
-            animate()
+            requestAnimationFrame(animate)
         })
         
         /**
