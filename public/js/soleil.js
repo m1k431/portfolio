@@ -312,19 +312,19 @@
                     $('#space').fadeOut(1000)
                     $('#moon').fadeOut(2000)
                     break
-                case 55:
+                case 52:
                     requestAnimationFrame(monkeyDown)
                     break
-                case 70:
+                case 67:
                     requestAnimationFrame(monkeyUp)
                     break
-                case 80:
+                case 83:
                     requestAnimationFrame(monkeyDown)
                     break
-                case 93:
+                case 95:
                     $('#s0leil').animate({
                         backgroundColor: '#000114'
-                    }, 3000 )
+                    }, 2000 )
                     requestAnimationFrame(monkeyUp)
                     break
                 case 100:
