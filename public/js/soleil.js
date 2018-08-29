@@ -326,9 +326,9 @@
                         backgroundColor: '#000114'
                     }, 2000 )
                     requestAnimationFrame(monkeyUp)
-                    break
-                case 100:
                     $('#moon').fadeIn(3000)
+                    break
+                case 98:
                     $('#space').fadeIn(3000)
                     requestAnimationFrame(animate)
                     break
