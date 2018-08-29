@@ -129,7 +129,7 @@
         divSprite.style.height = '140px'
         divSprite.style.width = '95px'
         divSprite.style.top = '82px'
-        divSprite.style.left = '104.55px'
+        divSprite.style.left = '59.55px'
         //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
         divSprite.style.overflow = 'hidden'
         m0nsoleil.appendChild(divSprite)
@@ -148,7 +148,7 @@
         imgSonicPalm.style.position = 'absolute'
         imgSonicPalm.style.height = '50%'
         imgSonicPalm.style.top = '60px'
-        imgSonicPalm.style.left = '50px'
+        imgSonicPalm.style.left = '5px'
         imgSonicPalm.src = '/static/img/palmTree.png'
         m0nsoleil.appendChild(imgSonicPalm)
         var back = false
