@@ -25,9 +25,9 @@
         let m0nsoleil = window.document.getElementById('s0leil')
         m0nsoleil.style.position = 'relative'
         m0nsoleil.style.display = 'block'
+        m0nsoleil.style.overflow = 'hidden'
         m0nsoleil.width = 600
         m0nsoleil.height = 400
-        m0nsoleil.style.top = '2%'
         m0nsoleil.style.height = '400px'
         m0nsoleil.id = 's0leil'
         //Cielllllllllllll
@@ -36,6 +36,7 @@
         m0nCiel.style.display = 'block'
         m0nCiel.width = 600
         m0nCiel.height = 400
+        m0nCiel.style.margin = 0
         m0nCiel.style.width = '100%'
         m0nCiel.style.height = '100%'
         m0nCiel.style.backgroundColor = 'blue'
@@ -55,6 +56,7 @@
         myStars.style.height = '100%'
         myStars.id = 'space'
         myStars.style.position = 'absolute'
+        myStars.style.display = 'none'
         myStars.style.backgroundColor = '#000000'
         myStars.style.borderRadius = '28px'
         myStars.style.top = '0px'
@@ -156,17 +158,18 @@
         divSonic.id = 'divSonic'
         divSonic.className = 'divsonic'
         divSonic.style.position = 'absolute'
+        divSonic.overflow = 'hidden'
         divSonic.style.height = '48px'
         divSonic.style.width = '48px'
-        divSonic.style.top = '200px'
-        divSonic.style.left = '1%'
+        divSonic.style.top = '250px'
+        divSonic.style.left = '-10%'
         //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
         divSonic.style.overflow = 'hidden'
         m0nsoleil.appendChild(divSonic)
         var imgSonic = window.document.createElement('img')
         imgSonic.id = 'sonic'
         imgSonic.className = 'sonic'
-        imgSonic.style.position = 'absolute'
+        imgSonic.style.position = 'relative'
         imgSonic.style.left = '-55px'
         imgSonic.style.top = '-21px'
         imgSonic.src = '/static/img/sonic2.png'
@@ -207,7 +210,12 @@
         
         
         var moveSonicRight = function() {
-            if (parseFloat(divSonic.style.left) < 95) divSonic.style.left = parseFloat(divSonic.style.left) + 0.5 + '%'
+            if (parseFloat(divSonic.style.left) < 100)  divSonic.style.left = parseFloat(divSonic.style.left) + 0.5 + '%'
+            else {
+                divSonic.style.left = '-10%'
+                clearInterval(idM)
+                clearInterval(idW)
+            }
         }
 
         
@@ -344,7 +352,7 @@
             context.restore()
         }
         //ENDDDDDDD TESTTTTTTTT ZOOOOOOOONE
-        let cptSonic = 0
+        //let cptSonic = 0
         let ctxLune = maLune.getContext('2d')
         let gradientLune = ctxLune.createRadialGradient(16, 16, 16, 16, 16, 14)
         gradientLune.addColorStop(0, 'transparent')
@@ -363,18 +371,23 @@
                 ctx.clearRect(0, 0, 40, 40)
                 switch(c00rdX) {
                 case 45:
+                    clearInterval(idMU)
+                    $('#s0leil').animate({
+                        backgroundColor: '#0a15db'
+                    }, 500 )
                     //cancelAnimationFrame(id2)
-                    if (cptSonic == 0) {
-                        idW = setInterval(sonicWalk,30)
-                        idM = setInterval(moveSonicRight, 120)
-                    }
-                    else idB = setInterval(sonicBored,120)
+                    //if (cptSonic == 0) {
+                    //}
+                    /*else*/ 
                     $('#space').fadeOut(1000)
                     $('#moon').fadeOut(2000)
                     break
                 case 52:
                     //requestAnimationFrame(monkeyDown)
                     idMD = setInterval(monkeyDown,120)
+                    clearInterval(idB)
+                    idW = setInterval(sonicWalk,30)
+                    idM = setInterval(moveSonicRight, 120)
                     break
                 case 67:
                     //requestAnimationFrame(monkeyUp)
@@ -383,25 +396,28 @@
                     break
                 case 78:
                     //cancelAnimationFrame(idW)
+                    clearInterval(idMU)
                     //requestAnimationFrame(sonicBored)
                     break
                 case 83:
                     //requestAnimationFrame(monkeyDown)
-                    clearInterval(idMU)
+                    clearInterval(idM)
+                    clearInterval(idW)
+                    idB = setInterval(sonicBored,120)
                     idMD = setInterval(monkeyDown,120)
+                    $('#s0leil').animate({
+                        backgroundColor: '#000114'
+                    }, 1200 )
                     break
                 case 95:
                     //requestAnimationFrame(monkeyUp)
+                    $('#moon').fadeIn(1500)
                     clearInterval(idMD)
-                    clearInterval(idW)
-                    clearInterval(idM)
-                    if (cptSonic == 0) idB = setInterval(sonicBored,120)
+                    clearInterval(idB)
                     idMU = setInterval(monkeyUp,120)
-                    $('#moon').fadeIn(2000)
                     break
                 case 100:
-                    $('#space').fadeIn(1000)
-                    clearInterval(idB)
+                    $('#space').fadeIn(500)
                     //cancelAnimationFrame(idB)
                     break
                 }
@@ -415,7 +431,7 @@
             }
             else {
                 c00rdX = 45
-                cptSonic++
+                //cptSonic++
                 requestAnimationFrame(dessinerM0n)
             }
         }
