@@ -174,7 +174,7 @@
         
         var bool1 = false
         var bool2 = false
-        var idB, idW
+        var idB, idW, idMU, idMD
         var sonicBored = function() {
             if (bool1 == false) {
                 imgSonic.style.left = '-55px'
@@ -199,12 +199,17 @@
             else {
                 if (parseFloat(imgSonic.style.left) > -200) {
                     imgSonic.style.left = parseFloat(imgSonic.style.left) - 49 + 'px'
-                    divSonic.style.left = parseFloat(divSonic.style.left) + 0.3 + '%'
                 }
                 else bool2 = false
             }
             //idW = requestAnimationFrame(sonicWalk)
         }
+        
+        
+        var moveSonicRight = function() {
+            if (parseFloat(divSonic.style.left) < 95) divSonic.style.left = parseFloat(divSonic.style.left) + 0.5 + '%'
+        }
+
         
         var back = false
         var cpt = 0
@@ -212,7 +217,7 @@
             if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
-                requestAnimationFrame(monkeyDown)
+                //requestAnimationFrame(monkeyDown)
             }
             else {
                 back = true
@@ -222,7 +227,7 @@
             if (cpt > 0) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
                 cpt--
-                requestAnimationFrame(monkeyUp)
+                //requestAnimationFrame(monkeyUp)
             }
             else {
                 back = false
@@ -339,7 +344,7 @@
             context.restore()
         }
         //ENDDDDDDD TESTTTTTTTT ZOOOOOOOONE
-
+        let cptSonic = 0
         let ctxLune = maLune.getContext('2d')
         let gradientLune = ctxLune.createRadialGradient(16, 16, 16, 16, 16, 14)
         gradientLune.addColorStop(0, 'transparent')
@@ -348,6 +353,7 @@
         ctxLune.fillRect(0, 0, 40, 40)
         requestAnimationFrame(animate)
         //requestAnimationFrame(sonicWalk)
+        
         var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 110) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
@@ -358,27 +364,39 @@
                 switch(c00rdX) {
                 case 45:
                     //cancelAnimationFrame(id2)
-                    idW = setInterval(sonicWalk,60)
+                    if (cptSonic == 0) {
+                        idW = setInterval(sonicWalk,30)
+                        idM = setInterval(moveSonicRight, 120)
+                    }
+                    else idB = setInterval(sonicBored,120)
                     $('#space').fadeOut(1000)
                     $('#moon').fadeOut(2000)
                     break
                 case 52:
-                    requestAnimationFrame(monkeyDown)
+                    //requestAnimationFrame(monkeyDown)
+                    idMD = setInterval(monkeyDown,120)
                     break
                 case 67:
-                    requestAnimationFrame(monkeyUp)
+                    //requestAnimationFrame(monkeyUp)
+                    clearInterval(idMD)
+                    idMU = setInterval(monkeyUp,120)
                     break
                 case 78:
-                    clearInterval(idW)
-                    idB = setInterval(sonicBored,120)
                     //cancelAnimationFrame(idW)
                     //requestAnimationFrame(sonicBored)
                     break
                 case 83:
-                    requestAnimationFrame(monkeyDown)
+                    //requestAnimationFrame(monkeyDown)
+                    clearInterval(idMU)
+                    idMD = setInterval(monkeyDown,120)
                     break
                 case 95:
-                    requestAnimationFrame(monkeyUp)
+                    //requestAnimationFrame(monkeyUp)
+                    clearInterval(idMD)
+                    clearInterval(idW)
+                    clearInterval(idM)
+                    if (cptSonic == 0) idB = setInterval(sonicBored,120)
+                    idMU = setInterval(monkeyUp,120)
                     $('#moon').fadeIn(2000)
                     break
                 case 100:
@@ -397,6 +415,7 @@
             }
             else {
                 c00rdX = 45
+                cptSonic++
                 requestAnimationFrame(dessinerM0n)
             }
         }
