@@ -89,19 +89,19 @@
                     //ball move left right limit
                     if (ballX < competences.offsetWidth - 25 && !ballLeft) {
                         if (angle) {
-                            ballX = ballX + 2
+                            ballX = ballX + 4
                             divSprite.style.left = ballX + 'px'
                         } else {
-                            ballX = ballX + 4
+                            ballX = ballX + 8
                             divSprite.style.left = ballX + 'px'
                         }
                     } else if (ballX > competences.offsetLeft) {
                         ballLeft = true
                         if (angle) {
-                            ballX = ballX - 2
+                            ballX = ballX - 4
                             divSprite.style.left = ballX + 'px'
                         } else {
-                            ballX = ballX - 4
+                            ballX = ballX - 8
                             divSprite.style.left = ballX + 'px'
                         }
                     } else {
@@ -109,17 +109,17 @@
                     }
                     //ball move up down limit
                     if (ballY > competences.offsetTop && !ballDown) {
-                        ballY = ballY - 2
+                        ballY = ballY - 4
                         divSprite.style.top = ballY + 'px'
                     } else if (ballY < linkedIn.offsetTop - 10) {
                         ballDown = true
-                        ballY = ballY + 2
+                        ballY = ballY + 4
                         divSprite.style.top = ballY + 'px'
                     } else {
                         paddle()
                     }
                     brickBroken()
-                    setTimeout(moveBall, 12)
+                    requestAnimationFrame(moveBall)
                 }
             }
             var animSprite = function() {
@@ -132,8 +132,8 @@
                     imgSoccer.style.left = -13 + 'px'
                     imgSoccer.style.top = -18 + 'px'
                 }
-                setTimeout(animSprite, 64)
             }
+            setInterval(animSprite, 50)
             var paddle = function() {
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
@@ -205,7 +205,6 @@
                     window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth + 'px'
                 }
             }
-            requestAnimationFrame(animSprite)
             requestAnimationFrame(moveBall)
         })
     })

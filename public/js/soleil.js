@@ -38,6 +38,7 @@
         m0nCiel.height = 400
         m0nCiel.style.width = '100%'
         m0nCiel.style.height = '100%'
+        m0nCiel.style.backgroundColor = 'blue'
         m0nCiel.id = 'ci3l'
         m0nsoleil.appendChild(m0nCiel)
         let m0nCanva = document.createElement('canvas')
@@ -139,7 +140,6 @@
         imgMonkey.style.position = 'absolute'
         imgMonkey.style.height = '100%'
         imgMonkey.style.left = '-2215px'
-        imgMonkey.style.top = '0%'
         imgMonkey.src = '/static/img/monkey.png'
         divSprite.appendChild(imgMonkey)
         var imgSonicPalm = window.document.createElement('img')
@@ -151,13 +151,68 @@
         imgSonicPalm.style.left = '5px'
         imgSonicPalm.src = '/static/img/palmTree.png'
         m0nsoleil.appendChild(imgSonicPalm)
+        //SONICCCCCCCCC
+        var divSonic = window.document.createElement('div')
+        divSonic.id = 'divSonic'
+        divSonic.className = 'divsonic'
+        divSonic.style.position = 'absolute'
+        divSonic.style.height = '48px'
+        divSonic.style.width = '48px'
+        divSonic.style.top = '200px'
+        divSonic.style.left = '1%'
+        //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
+        divSonic.style.overflow = 'hidden'
+        m0nsoleil.appendChild(divSonic)
+        var imgSonic = window.document.createElement('img')
+        imgSonic.id = 'sonic'
+        imgSonic.className = 'sonic'
+        imgSonic.style.position = 'absolute'
+        imgSonic.style.left = '-55px'
+        imgSonic.style.top = '-21px'
+        imgSonic.src = '/static/img/sonic2.png'
+        divSonic.appendChild(imgSonic)
+        
+        var bool1 = false
+        var bool2 = false
+        var idB, idW
+        var sonicBored = function() {
+            if (bool1 == false) {
+                imgSonic.style.left = '-55px'
+                imgSonic.style.top = '-21px'
+                bool1 = true
+            }
+            else {
+                if (parseFloat(imgSonic.style.left) > -200) {
+                    imgSonic.style.left = parseFloat(imgSonic.style.left) - 49 + 'px'
+                }
+                else bool1 = false
+            }
+            idB = requestAnimationFrame(sonicBored)
+        }
+        
+        var sonicWalk = function() {
+            if (bool2 == false) {
+                imgSonic.style.left = '-50px'    
+                imgSonic.style.top = '-95px'
+                bool2 = true
+            }
+            else {
+                if (parseFloat(imgSonic.style.left) > -200) {
+                    imgSonic.style.left = parseFloat(imgSonic.style.left) - 49 + 'px'
+                    divSonic.style.left = parseFloat(divSonic.style.left) + 0.3 + '%'
+                }
+                else bool2 = false
+            }
+            idW = requestAnimationFrame(sonicWalk)
+        }
+
         var back = false
         var cpt = 0
         var monkeyDown = function() {
             if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
-                setTimeout(monkeyDown, 60)
+                requestAnimationFrame(monkeyDown)
             }
             else {
                 back = true
@@ -167,7 +222,7 @@
             if (cpt > 0) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
                 cpt--
-                setTimeout(monkeyUp, 60)
+                requestAnimationFrame(monkeyUp)
             }
             else {
                 back = false
@@ -180,7 +235,7 @@
         var screenH
         var screenW
         var stars = []
-        var numStars = 2000
+        var numStars = 200
     
 
         // Calculate the screen size
@@ -208,7 +263,6 @@
             // Add the the stars array
             stars.push(star)
         }
-        var id2         
         /**
          * Animate the canvas
          */
@@ -217,7 +271,7 @@
             $.each(stars, function() {
                 this.draw(context)
             })
-            id2 = setTimeout(animate,1/100000)
+            id2 = requestAnimationFrame(animate)
         }
         /**
          * Star
@@ -292,23 +346,18 @@
         gradientLune.addColorStop(0.9, 'white')
         ctxLune.fillStyle = gradientLune
         ctxLune.fillRect(0, 0, 40, 40)
-        
-        $('#s0leil' ).animate({
-            backgroundColor: '#0a15db'
-        }, 1000 )
+        requestAnimationFrame(animate)
+        requestAnimationFrame(sonicWalk)
         var dessinerM0n = (/*m0ntimestamp*/) => {
-            if (c00rdX < 101) {
+            if (c00rdX < 110) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
                 m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
                 m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
                 let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
                 switch(c00rdX) {
-                case 48:
-                    clearTimeout(id2)
-                    $('#s0leil').animate({
-                        backgroundColor: '#0a15db'
-                    }, 3000 )
+                case 45:
+                    //cancelAnimationFrame(id2)
                     $('#space').fadeOut(1000)
                     $('#moon').fadeOut(2000)
                     break
@@ -318,19 +367,20 @@
                 case 67:
                     requestAnimationFrame(monkeyUp)
                     break
+                case 78:
+                    cancelAnimationFrame(idW)
+                    requestAnimationFrame(sonicBored)
+                    break
                 case 83:
                     requestAnimationFrame(monkeyDown)
                     break
                 case 95:
-                    $('#s0leil').animate({
-                        backgroundColor: '#000114'
-                    }, 1000 )
                     requestAnimationFrame(monkeyUp)
-                    $('#moon').fadeIn(3000)
+                    $('#moon').fadeIn(2000)
                     break
                 case 100:
-                    $('#space').fadeIn(3000)
-                    requestAnimationFrame(animate)
+                    $('#space').fadeIn(1000)
+                    cancelAnimationFrame(idB)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
@@ -339,10 +389,11 @@
                 ctx.fillStyle = gradient
                 ctx.fillRect(0, 0, 40, 40)
                 c00rdX = (c00rdX * 10 + 0.1 * 10) / 10
-                setTimeout(dessinerM0n, 12)
-            } else {
+                requestAnimationFrame(dessinerM0n)
+            }
+            else {
                 c00rdX = 45
-                setTimeout(dessinerM0n, 12)
+                requestAnimationFrame(dessinerM0n)
             }
         }
         requestAnimationFrame(dessinerM0n)
