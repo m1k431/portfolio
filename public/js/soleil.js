@@ -187,7 +187,7 @@
                 }
                 else bool1 = false
             }
-            idB = requestAnimationFrame(sonicBored)
+            //idB = requestAnimationFrame(sonicBored)
         }
         
         var sonicWalk = function() {
@@ -203,9 +203,9 @@
                 }
                 else bool2 = false
             }
-            idW = requestAnimationFrame(sonicWalk)
+            //idW = requestAnimationFrame(sonicWalk)
         }
-
+        
         var back = false
         var cpt = 0
         var monkeyDown = function() {
@@ -347,7 +347,7 @@
         ctxLune.fillStyle = gradientLune
         ctxLune.fillRect(0, 0, 40, 40)
         requestAnimationFrame(animate)
-        requestAnimationFrame(sonicWalk)
+        //requestAnimationFrame(sonicWalk)
         var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 110) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
@@ -358,6 +358,7 @@
                 switch(c00rdX) {
                 case 45:
                     //cancelAnimationFrame(id2)
+                    idW = setInterval(sonicWalk,60)
                     $('#space').fadeOut(1000)
                     $('#moon').fadeOut(2000)
                     break
@@ -368,8 +369,10 @@
                     requestAnimationFrame(monkeyUp)
                     break
                 case 78:
-                    cancelAnimationFrame(idW)
-                    requestAnimationFrame(sonicBored)
+                    clearInterval(idW)
+                    idB = setInterval(sonicBored,120)
+                    //cancelAnimationFrame(idW)
+                    //requestAnimationFrame(sonicBored)
                     break
                 case 83:
                     requestAnimationFrame(monkeyDown)
@@ -380,7 +383,8 @@
                     break
                 case 100:
                     $('#space').fadeIn(1000)
-                    cancelAnimationFrame(idB)
+                    clearInterval(idB)
+                    //cancelAnimationFrame(idB)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
