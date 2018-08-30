@@ -61,7 +61,6 @@
         myStars.style.borderRadius = '28px'
         myStars.style.top = '0px'
         myStars.style.left = '0px'
-        myStars.style.display = 'none'
         m0nsoleil.appendChild(myStars)
         let maLune = document.createElement('canvas')
         maLune.width = 40
@@ -71,7 +70,6 @@
         maLune.style.position = 'absolute'
         maLune.style.marginTop = '50px'
         maLune.style.marginLeft = '130px'
-        maLune.style.display = 'none'
         m0nsoleil.appendChild(maLune)
         let m4m3r = document.createElement('canvas')
         m4m3r.width = 600
@@ -177,7 +175,7 @@
         
         var bool1 = false
         var bool2 = false
-        var idB, idW, idMU, idMD
+        var idB, idW, idMU, idMD, idS
         var sonicBored = function() {
             if (bool1 == false) {
                 imgSonic.style.left = '-55px'
@@ -190,7 +188,6 @@
                 }
                 else bool1 = false
             }
-            //idB = requestAnimationFrame(sonicBored)
         }
         
         var sonicWalk = function() {
@@ -205,7 +202,6 @@
                 }
                 else bool2 = false
             }
-            //idW = requestAnimationFrame(sonicWalk)
         }
         
         
@@ -225,7 +221,6 @@
             if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
                 cpt++
-                //requestAnimationFrame(monkeyDown)
             }
             else {
                 back = true
@@ -235,7 +230,6 @@
             if (cpt > 0) {
                 imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
                 cpt--
-                //requestAnimationFrame(monkeyUp)
             }
             else {
                 back = false
@@ -243,36 +237,30 @@
         }
         let c00rdX = 45
         let c00rdY = 2
+        
         //TESSSSSSSST ZOOOOOOOONE code from https://codepen.io/WillemCrnlssn/pen/JgFGs
         var context
         var screenH
         var screenW
         var stars = []
-        var numStars = 200
-    
-
+        var numStars = 1200
         // Calculate the screen size
         screenH = 400
         screenW = 600
-            
         // Get the myStars
         myStars = $('#space')
-            
         // Fill out the canvas
         myStars.attr('height', screenH)
         myStars.attr('width', screenW)
         context = myStars[0].getContext('2d')
-            
         // Create all the stars
         for(var i = 0; i < numStars; i++) {
             var x = Math.round(Math.random() * screenW)
             var y = Math.round(Math.random() * screenH)
             var length = 1 + Math.random() * 2
             var opacity = Math.random()
-                
             // Create a new star and draw
             var star = new Star(x, y, length, opacity)
-                
             // Add the the stars array
             stars.push(star)
         }
@@ -284,7 +272,6 @@
             $.each(stars, function() {
                 this.draw(context)
             })
-            id2 = requestAnimationFrame(animate)
         }
         /**
          * Star
@@ -302,7 +289,6 @@
             this.factor = 1
             this.increment = Math.random() * .03
         }
-        
         /**
          * Draw a star
          * 
@@ -313,13 +299,10 @@
          */
         Star.prototype.draw = function() {
             context.rotate((Math.PI * 1 / 10))
-            
             // Save the context
             context.save()
-            
             // move into the middle of the canvas, just to make room
             context.translate(this.x, this.y)
-            
             // Change the opacity
             if(this.opacity > 1) {
                 this.factor = -1
@@ -330,9 +313,7 @@
                 this.x = Math.round(Math.random() * screenW)
                 this.y = Math.round(Math.random() * screenH)
             }
-                
             this.opacity += this.increment * this.factor
-            
             context.beginPath()
             for (var i = 5; i--;) {
                 context.lineTo(0, this.length)
@@ -348,20 +329,15 @@
             context.shadowBlur = 5
             context.shadowColor = '#ffff33'
             context.fill()
-            
             context.restore()
         }
         //ENDDDDDDD TESTTTTTTTT ZOOOOOOOONE
-        //let cptSonic = 0
         let ctxLune = maLune.getContext('2d')
         let gradientLune = ctxLune.createRadialGradient(16, 16, 16, 16, 16, 14)
         gradientLune.addColorStop(0, 'transparent')
         gradientLune.addColorStop(0.9, 'white')
         ctxLune.fillStyle = gradientLune
         ctxLune.fillRect(0, 0, 40, 40)
-        requestAnimationFrame(animate)
-        //requestAnimationFrame(sonicWalk)
-        
         var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 110) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
@@ -372,53 +348,39 @@
                 switch(c00rdX) {
                 case 45:
                     clearInterval(idMU)
-                    $('#s0leil').animate({
-                        backgroundColor: '#0a15db'
-                    }, 500 )
-                    //cancelAnimationFrame(id2)
-                    //if (cptSonic == 0) {
-                    //}
-                    /*else*/ 
+                    clearInterval(idS)
                     $('#space').fadeOut(1000)
                     $('#moon').fadeOut(2000)
                     break
                 case 52:
-                    //requestAnimationFrame(monkeyDown)
                     idMD = setInterval(monkeyDown,120)
                     clearInterval(idB)
                     idW = setInterval(sonicWalk,30)
-                    idM = setInterval(moveSonicRight, 120)
+                    idM = setInterval(moveSonicRight, 60)
                     break
                 case 67:
-                    //requestAnimationFrame(monkeyUp)
                     clearInterval(idMD)
-                    idMU = setInterval(monkeyUp,120)
+                    idMU = setInterval(monkeyUp,60)
                     break
                 case 78:
-                    //cancelAnimationFrame(idW)
-                    clearInterval(idMU)
-                    //requestAnimationFrame(sonicBored)
                     break
                 case 83:
-                    //requestAnimationFrame(monkeyDown)
                     clearInterval(idM)
                     clearInterval(idW)
-                    idB = setInterval(sonicBored,120)
-                    idMD = setInterval(monkeyDown,120)
-                    $('#s0leil').animate({
-                        backgroundColor: '#000114'
-                    }, 1200 )
+                    idB = setInterval(sonicBored,60)
+                    clearInterval(idMU)
+                    idMD = setInterval(monkeyDown,60)
                     break
                 case 95:
-                    //requestAnimationFrame(monkeyUp)
-                    $('#moon').fadeIn(1500)
                     clearInterval(idMD)
                     clearInterval(idB)
-                    idMU = setInterval(monkeyUp,120)
+                    idMU = setInterval(monkeyUp,60)
                     break
                 case 100:
-                    $('#space').fadeIn(500)
-                    //cancelAnimationFrame(idB)
+                    clearInterval(idMU)
+                    idS = setInterval(animate,1)
+                    $('#moon').fadeIn(1000)
+                    $('#space').fadeIn(2000)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
@@ -431,7 +393,6 @@
             }
             else {
                 c00rdX = 45
-                //cptSonic++
                 requestAnimationFrame(dessinerM0n)
             }
         }
