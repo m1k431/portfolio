@@ -106,7 +106,5 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         socket.on('pongEvt', function (data) {
             console.log(data);
         });
-        //var $pseudo = $('#pseudo')
-        //var $currentPseudo = $pseudo.focus()
     });
 })();
