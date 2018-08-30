@@ -67,7 +67,7 @@
         maLune.height = 40
         maLune.style.width = '7%'
         maLune.id = 'moon'
-        maLune.style.display: 'none'
+        maLune.style.display = 'none'
         maLune.style.position = 'absolute'
         maLune.style.marginTop = '50px'
         maLune.style.marginLeft = '130px'
