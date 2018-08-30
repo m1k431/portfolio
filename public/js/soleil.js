@@ -380,7 +380,7 @@
                     clearInterval(idMU)
                     idS = setInterval(animate,1)
                     $('#moon').fadeIn(1000)
-                    $('#space').fadeIn(2000)
+                    $('#space').fadeIn(1000)
                     break
                 }
                 let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
