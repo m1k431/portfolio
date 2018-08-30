@@ -89,19 +89,19 @@
                     //ball move left right limit
                     if (ballX < competences.offsetWidth - 25 && !ballLeft) {
                         if (angle) {
-                            ballX = ballX + 4
+                            ballX = ballX + 2
                             divSprite.style.left = ballX + 'px'
                         } else {
-                            ballX = ballX + 8
+                            ballX = ballX + 4
                             divSprite.style.left = ballX + 'px'
                         }
                     } else if (ballX > competences.offsetLeft) {
                         ballLeft = true
                         if (angle) {
-                            ballX = ballX - 4
+                            ballX = ballX - 2
                             divSprite.style.left = ballX + 'px'
                         } else {
-                            ballX = ballX - 8
+                            ballX = ballX - 4
                             divSprite.style.left = ballX + 'px'
                         }
                     } else {
@@ -109,11 +109,11 @@
                     }
                     //ball move up down limit
                     if (ballY > competences.offsetTop && !ballDown) {
-                        ballY = ballY - 4
+                        ballY = ballY - 2
                         divSprite.style.top = ballY + 'px'
                     } else if (ballY < linkedIn.offsetTop - 10) {
                         ballDown = true
-                        ballY = ballY + 4
+                        ballY = ballY + 2
                         divSprite.style.top = ballY + 'px'
                     } else {
                         paddle()
