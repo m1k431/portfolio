@@ -1,4 +1,5 @@
 (() => {
+    $('#m0ncentrage').fadeIn(1000)
     document.addEventListener('DOMContentLoaded', function () {
         $('.competen').fadeIn()
         $('.complemen').fadeIn()

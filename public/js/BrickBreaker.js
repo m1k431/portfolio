@@ -1,5 +1,6 @@
 (() => {
     document.addEventListener('DOMContentLoaded', function () {
+        $('#m0ncentrage').fadeIn(1000)
         $('#competences').fadeIn(500)
         $('#experiences').fadeIn(375)
         $('#formation').fadeIn(250)
@@ -88,7 +89,7 @@
                 if (!youwin) {
                     divSprite.style.top = ballY + 'px'
                     //ball move left right limit
-                    if (ballX < competences.offsetWidth - 25 && !ballLeft) {
+                    if (ballX < competences.offsetWidth && !ballLeft) {
                         if (angle) {
                             ballX = ballX + 2
                             divSprite.style.left = ballX + 'px'
@@ -165,7 +166,7 @@
                     linkedIn.className = 'linkedin'
                     $('#competences').animate({
                         height: animH + 'px'
-                    }, 500)
+                    }, 450)
                     competences.className = 'competences'
                     informatique.style.verticalAlign = 'middle'
                     commerciales.style.verticalAlign = 'middle'
@@ -199,7 +200,7 @@
                 }
             }
             var movepaddle = function(mon0bjetEvent) {
-                if (mon0bjetEvent.clientX > competences.offsetLeft + linkedIn.offsetWidth && mon0bjetEvent.clientX < competences.scrollWidth - 5) {
+                if (mon0bjetEvent.clientX > competences.offsetLeft + linkedIn.offsetWidth && mon0bjetEvent.clientX < competences.offsetWidth + 15) {
                     window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth + 'px'
                 }
             }

@@ -20,9 +20,7 @@ $$$$$$  BALISES HTML   $$$$$
         text-align: left;
     }
     
-    a.mail {
-        margin: 0;
-        margin-left: 5px;
+    .mail {
         text-decoration: none;
         font-family: monospace;
     }
@@ -122,16 +120,17 @@ $$$$$$  POLICES &&& background:   $$$$$
     .pdf {
         position: absolute;
         width: 40%;
-        margin-left: 30%;
-        margin-right: 30%;
-        top: 5px;
+        left: 30%;
+        right: 30%;
+        top: 35px;
     }
-    
+
     .moi {
         margin: 0;
         border: 1px solid #08021f;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 10px;
+        margin-bottom: 5px;
         display: none;
     }
     
@@ -170,7 +169,7 @@ $$$$$$  POLICES &&& background:   $$$$$
         border-radius: 10px;
         height: 25px;
         margin: 5px;
-        top: 630px;
+        top: 690px;
         background-color: yellowgreen;
     }
     
@@ -211,14 +210,14 @@ $$$$$$  POLICES &&& background:   $$$$$
         top: 15px;
     }
     
-    .flags {
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 2px;
-        margin-bottom: 0px;
-        display: none;
+    p.flags {
+        width: 40%;
+        margin: 0;
+        margin-left: 30%;
+        margin-right: 30%;
+        top: 35px;
     }
-    
+
     #french,
     #english,
     #spanish {
@@ -229,7 +228,7 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .foto {
         position: relative;
-        margin: 10px;
+        margin: 3px;
         text-align: right;
         border-radius: 10px;
         float: right;
@@ -253,9 +252,9 @@ $$$$$$  POLICES &&& background:   $$$$$
         background-color: rgba(255, 255, 255, 0.4);
         border: 1px solid #08021f;
         border-radius: 10px;
+        margin-top: 5px;;
         margin-left: 15%;
         margin-right: 15%;
-        margin-top: .5%;
         overflow: hidden;
         display: none;
     }

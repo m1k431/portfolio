@@ -454,18 +454,14 @@ a.nav {
 
 #m0ncentrage {
   display: none;
-  margin: 0 auto;
   margin-top: 60px;
   margin-bottom: 70px;
 }
 
 #m0ncentrageCV {
-  display: block;
-  position: absolute;
-  left: 3%;
-  right: 3%;
-  top: 55px;
-  bottom: 55px;
+  display: none;
+  margin-top: 60px;
+  margin-bottom: 70px;
 }
 
 #m0ncentrageAdmin {
