@@ -138,7 +138,7 @@ app.get('/pagelisteArticle', (req, res) => {
 })
 //app.post________________________________________________________________
 app.post('/layoutAdmin', urlencodedParser, (req, res) => {
-    if (!req.body || req.body.user != 'mikael' || req.body.pass != 'iop') return res.render('ErrorF0rm.pug')
+    if (!req.body || req.body.user != 'mikael' || req.body.pass != 'iop') return res.render('404.pug')
     //const iDs3ssion
     var ma535510n = JSON.stringify(req.session, null, 2)
     var m0nID535510n = JSON.stringify(req.session.id, null, 2)

@@ -464,15 +464,15 @@ a.nav {
   position: absolute;
   left: 3%;
   right: 3%;
-  margin-top: 55px;
-  margin-bottom: 20px;
+  top: 55px;
+  bottom: 55px;
 }
 
 #m0ncentrageAdmin {
   display: block;
   position: relative;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 70px;
   margin-bottom: 100px;
 }

@@ -38,8 +38,9 @@
                 )
             }
         }
-        ReactDOM.render(<AccueilJoust />, document.querySelector('#m0ncentrageCV'))
+        ReactDOM.render(<AccueilJoust />, document.querySelector('#m0ncentrageAdmin'))
         //JAVASCRIPT
+        //$('#m0ncentrageAdmin').fadeIn(1000)
         var socket = io('http://mikael.ml/')
         var clickTitre = window.document.getElementById('clickable-element')
         clickTitre.addEventListener('click', () => {
