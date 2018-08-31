@@ -159,8 +159,6 @@ $$$$$$  POLICES &&& background:   $$$$$
 }
 
 .linkedinT {
-  /*  animation: anim2 4s;
-  animation-iteration-count: infinite;*/
   display: block;
   border: 2px solid #08021f;
   position: absolute;

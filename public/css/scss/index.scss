@@ -128,15 +128,6 @@ a.nav {
     margin-bottom: 70px;
 }
 
-#m0ncentrageCV {
-    display: none;
-    //position: absolute;
-    //left: 3%;
-    //right: 3%;
-    margin-top: 60px;
-    margin-bottom: 70px;
-}
-
 #m0ncentrageAdmin {
     display: block;
     position: relative;
@@ -219,11 +210,11 @@ a.nav {
     margin-right: 8px;
 }
 
-#myclock {
+.myclock {
     position: absolute;
-    font-size: 0.5em;
+    font-size: 2em;
     color: #ffffff;
     left: 40%;
     right: 40%;
-    top: 10px;
+    top: 0px;
 }
