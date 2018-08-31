@@ -119,10 +119,7 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .pdf {
         position: absolute;
-        width: 40%;
-        left: 30%;
-        right: 30%;
-        top: 35px;
+        float: left;
     }
 
     .moi {
@@ -161,13 +158,13 @@ $$$$$$  POLICES &&& background:   $$$$$
     }
     
     .linkedinT {
-    display: block;
+        display: block;
         border: 2px solid #08021f;
         position: absolute;
         border-radius: 10px;
         height: 25px;
         margin: 5px;
-        top: 690px;
+        float: left;
         background-color: yellowgreen;
     }
     

@@ -44,9 +44,9 @@
             imgSoccer.style.top = '-53px'
             imgSoccer.src = '/static/img/ball.png'
             divSprite.appendChild(imgSoccer)
-            $('#competences').animate({
+            /*$('#competences').animate({
                 height: '500px'
-            }, 500)
+            }, 500)*/
             linkedIn.className = 'linkedinT'
             complementaire.className = 'complementaireT'
             window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
@@ -63,7 +63,7 @@
             informatique.style.verticalAlign = 'top'
             commerciales.style.verticalAlign = 'top'
             let ballX = competences.offsetWidth / 2
-            let ballY = 450
+            let ballY = linkedIn.offsetTop
             let ballLeft = true
             let ballDown = false
             let youwin = false
@@ -154,7 +154,7 @@
                     alert('YOU MISSED THE BALL')
                     ballDown = false
                     ballX = competences.offsetWidth / 2
-                    ballY = competences.offsetHeight + competences.offsetTop / 2
+                    ballY = linkedIn.offsetTop
                 }
             }
             var brickBroken = function() {
