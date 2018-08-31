@@ -207,10 +207,10 @@ $$$$$$  POLICES &&& background:   $$$$$
 }
 
 p.flags {
-  width: 40%;
+  width: 50%;
   margin: 0;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 25%;
+  margin-right: 25%;
   top: 35px;
 }
 
@@ -218,8 +218,8 @@ p.flags {
 #english,
 #spanish {
   display: inline-block;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .foto {
