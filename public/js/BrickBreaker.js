@@ -29,8 +29,8 @@
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
             divSprite.style.position = 'absolute'
-            divSprite.style.height = '25px'
-            divSprite.style.width = '25px'
+            divSprite.style.height = '15px'
+            divSprite.style.width = '15px'
             divSprite.style.overflow = 'hidden'
             competences.appendChild(divSprite)
             var imgSoccer = window.document.createElement('img')
@@ -38,9 +38,10 @@
             imgSoccer.className = 'imgsoccer'
             imgSoccer.style.position = 'absolute'
             imgSoccer.style.height = '100px'
-            imgSoccer.style.left = '-13px'
-            imgSoccer.style.top = '-18px'
-            imgSoccer.src = '/static/img/soccerBall.png'
+            imgSoccer.style.left = '-1.7px'
+            //imgSoccer.style.top = '-36.2px'
+            imgSoccer.style.top = '-53px'
+            imgSoccer.src = '/static/img/ball.png'
             divSprite.appendChild(imgSoccer)
             $('#competences').animate({
                 height: '550px'
@@ -123,17 +124,14 @@
                 }
             }
             var animSprite = function() {
-                if (parseFloat(imgSoccer.style.left) > -72) {
-                    imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 39 + 'px'
-                } else if (parseFloat(imgSoccer.style.top) > -50) {
-                    imgSoccer.style.left = -13 + 'px'
-                    imgSoccer.style.top = parseFloat(imgSoccer.style.top) - 40 + 'px'
-                } else {
-                    imgSoccer.style.left = -13 + 'px'
-                    imgSoccer.style.top = -18 + 'px'
+                if (parseFloat(imgSoccer.style.left) > -152) {
+                    imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 17.5 + 'px'
+                }
+                else {
+                    imgSoccer.style.left = -1.7 + 'px'
                 }
             }
-            setInterval(animSprite, 50)
+            setInterval(animSprite, 40)
             var paddle = function() {
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false

@@ -45,7 +45,7 @@
         let m0nCanva = document.createElement('canvas')
         m0nCanva.width = 40
         m0nCanva.height = 40
-        m0nCanva.style.width = '5%'
+        m0nCanva.style.width = '40px'
         m0nCanva.id = 'c4nv4'
         m0nCanva.style.position = 'absolute'
         m0nsoleil.appendChild(m0nCanva)
@@ -56,8 +56,7 @@
         myStars.style.height = '100%'
         myStars.id = 'space'
         myStars.style.position = 'absolute'
-        myStars.style.display = 'none'
-        myStars.style.backgroundColor = '#000000'
+        //myStars.style.display = 'none'
         myStars.style.borderRadius = '28px'
         myStars.style.top = '0px'
         myStars.style.left = '0px'
@@ -65,12 +64,12 @@
         let maLune = document.createElement('canvas')
         maLune.width = 40
         maLune.height = 40
-        maLune.style.width = '7%'
+        maLune.style.width = '50px'
         maLune.id = 'moon'
-        maLune.style.display = 'none'
+        //maLune.style.display = 'none'
         maLune.style.position = 'absolute'
-        maLune.style.marginTop = '50px'
-        maLune.style.marginLeft = '130px'
+        maLune.style.top = '30px'
+        maLune.style.right = '10%'
         m0nsoleil.appendChild(maLune)
         let m4m3r = document.createElement('canvas')
         m4m3r.width = 600
@@ -334,61 +333,71 @@
         }
         //ENDDDDDDD TESTTTTTTTT ZOOOOOOOONE
         let ctxLune = maLune.getContext('2d')
+        let ctx = m0nCanva.getContext('2d')
+        //lune
         let gradientLune = ctxLune.createRadialGradient(16, 16, 16, 16, 16, 14)
         gradientLune.addColorStop(0, 'transparent')
         gradientLune.addColorStop(0.9, 'white')
         ctxLune.fillStyle = gradientLune
-        ctxLune.fillRect(0, 0, 40, 40)
+        //soleil
+        let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
+        gradient.addColorStop(0, 'transparent')
+        gradient.addColorStop(0.9, 'yellow')
+        ctx.fillStyle = gradient
+
         var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 110) {
                 c00rdY = Math.cos(c00rdX / 24) * 54
                 m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
                 m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
-                let ctx = m0nCanva.getContext('2d')
                 ctx.clearRect(0, 0, 40, 40)
+                ctxLune.clearRect(0,0,40,40)
                 switch(c00rdX) {
                 case 45:
+                    $('#space').animate({
+                        backgroundColor: '#0a15db'
+                    }, 1000 )
                     clearInterval(idMU)
                     clearInterval(idS)
                     $('#space').fadeOut(1000)
-                    $('#moon').fadeOut(2000)
                     break
                 case 52:
-                    idMD = setInterval(monkeyDown,120)
+                    $('#moon').fadeOut(1500)
+                    idMD = setInterval(monkeyDown,60)
                     clearInterval(idB)
                     idW = setInterval(sonicWalk,30)
                     idM = setInterval(moveSonicRight, 60)
                     break
-                case 67:
+                case 62:
                     clearInterval(idMD)
                     idMU = setInterval(monkeyUp,60)
                     break
                 case 78:
-                    break
-                case 83:
-                    clearInterval(idM)
-                    clearInterval(idW)
-                    idB = setInterval(sonicBored,60)
                     clearInterval(idMU)
                     idMD = setInterval(monkeyDown,60)
                     break
-                case 95:
+                case 90:
+                    $('#moon').fadeIn(5000)
                     clearInterval(idMD)
-                    clearInterval(idB)
                     idMU = setInterval(monkeyUp,60)
                     break
+                case 95:
+                    clearInterval(idM)
+                    clearInterval(idW)
+                    idB = setInterval(sonicBored,60)
+                    $('#space').animate({
+                        backgroundColor: '#000000'
+                    }, 1500 )
+                    $('#space').fadeIn(1500)
+                    break
                 case 100:
+                    clearInterval(idB)
                     clearInterval(idMU)
                     idS = setInterval(animate,1)
-                    $('#moon').fadeIn(1000)
-                    $('#space').fadeIn(1000)
                     break
                 }
-                let gradient = ctx.createRadialGradient(16, 16, 16, 16, 16, 14)
-                gradient.addColorStop(0, 'transparent')
-                gradient.addColorStop(0.9, 'yellow')
-                ctx.fillStyle = gradient
                 ctx.fillRect(0, 0, 40, 40)
+                ctxLune.fillRect(0, 0, 40, 40)
                 c00rdX = (c00rdX * 10 + 0.1 * 10) / 10
                 requestAnimationFrame(dessinerM0n)
             }

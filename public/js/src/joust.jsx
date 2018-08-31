@@ -24,7 +24,7 @@
         }
 
 
-        class AccueilPong extends React.Component {
+        class AccueilJoust extends React.Component {
             render() {
                 return (
                     <div className='competen'>
@@ -38,7 +38,7 @@
                 )
             }
         }
-        ReactDOM.render(<AccueilPong />, document.querySelector('#m0ncentrageCV'))
+        ReactDOM.render(<AccueilJoust />, document.querySelector('#m0ncentrageCV'))
         //JAVASCRIPT
         var socket = io('http://mikael.ml/')
         var clickTitre = window.document.getElementById('clickable-element')

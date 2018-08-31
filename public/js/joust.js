@@ -57,16 +57,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
             return PlayButton;
         }(React.Component);
 
-        var AccueilPong = function (_React$Component2) {
-            _inherits(AccueilPong, _React$Component2);
+        var AccueilJoust = function (_React$Component2) {
+            _inherits(AccueilJoust, _React$Component2);
 
-            function AccueilPong() {
-                _classCallCheck(this, AccueilPong);
+            function AccueilJoust() {
+                _classCallCheck(this, AccueilJoust);
 
-                return _possibleConstructorReturn(this, (AccueilPong.__proto__ || Object.getPrototypeOf(AccueilPong)).apply(this, arguments));
+                return _possibleConstructorReturn(this, (AccueilJoust.__proto__ || Object.getPrototypeOf(AccueilJoust)).apply(this, arguments));
             }
 
-            _createClass(AccueilPong, [{
+            _createClass(AccueilJoust, [{
                 key: 'render',
                 value: function render() {
                     return React.createElement(
@@ -92,10 +92,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                 }
             }]);
 
-            return AccueilPong;
+            return AccueilJoust;
         }(React.Component);
 
-        ReactDOM.render(React.createElement(AccueilPong, null), document.querySelector('#m0ncentrageCV'));
+        ReactDOM.render(React.createElement(AccueilJoust, null), document.querySelector('#m0ncentrageCV'));
         //JAVASCRIPT
         var socket = io('http://mikael.ml/');
         var clickTitre = window.document.getElementById('clickable-element');
