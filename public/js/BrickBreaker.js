@@ -81,7 +81,7 @@
             window.addEventListener('touchmove', function(e) {
                 touchobj = e.changedTouches[0] // reference first touch point for this event
                 var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
-                box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth - 10 : (boxleft + dist < 0) ? 0 : boxleft + dist) + 'px'
+                box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth/40 + 'px'
                 e.preventDefault()
             }, false)
             var moveBall = function() {
@@ -200,8 +200,8 @@
                 }
             }
             var movepaddle = function(mon0bjetEvent) {
-                if (mon0bjetEvent.clientX > competences.offsetLeft + linkedIn.offsetWidth && mon0bjetEvent.clientX < competences.offsetWidth + 15) {
-                    window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth + 'px'
+                if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2.5 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/8 < competences.offsetWidth) {
+                    window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth/2 + 'px'
                 }
             }
             requestAnimationFrame(moveBall)
