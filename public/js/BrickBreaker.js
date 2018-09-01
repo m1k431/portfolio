@@ -196,7 +196,7 @@
                             //left collision
                                 if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop && mesInfosT[i].offsetLeft - ballX > ballY - mesInfosT[i].offsetTop - divSprite.offsetHeight) ballLeft = true
                                 //right collision
-                                else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - divSprite.offsetHeight - mesInfosT[i].offsetTop && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop) ballLeft = false
+                                else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - divSprite.offsetHeight - mesInfosT[i].offsetHeight - mesInfosT[i].offsetTop && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - divSprite.offsetHeight - mesInfosT[i].offsetTop) ballLeft = false
                                 else if (ballDown === false) ballDown = true
                                 else ballDown = false
                                 $(mesInfosT[i]).animate({
