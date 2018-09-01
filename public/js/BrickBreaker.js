@@ -44,9 +44,9 @@
             imgSoccer.style.top = '-53px'
             imgSoccer.src = '/static/img/ball.png'
             divSprite.appendChild(imgSoccer)
-            /*$('#competences').animate({
+            $('#competences').animate({
                 height: '500px'
-            }, 500)*/
+            }, 500)
             linkedIn.className = 'linkedinT'
             complementaire.className = 'complementaireT'
             window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'

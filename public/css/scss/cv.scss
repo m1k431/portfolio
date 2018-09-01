@@ -6,6 +6,12 @@ $myfont: monospace;
     text-decoration: none;
     font-family: monospace;
 }
+
+@media print {
+    #navBar, #footer {
+        display: none;
+    }
+}
     /*****
 $$$$$$  BALISES HTML   $$$$$
 ****/
@@ -136,7 +142,6 @@ $$$$$$  POLICES &&& background:   $$$$$
         border: 1px solid #08021f;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 10px;
-        margin-bottom: 60px;
         display: none;
     }
     
@@ -154,7 +159,6 @@ $$$$$$  POLICES &&& background:   $$$$$
         border: 1px solid #08021f;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 10px;
-        margin-bottom: 60px;
     }
     
     .linkedinT {
