@@ -1,16 +1,16 @@
 (() => {
     document.addEventListener('DOMContentLoaded', function () {
         $('#m0ncentrage').fadeIn(1000)
-        $('#competences').fadeIn(500)
+        $('#competen').fadeIn(500)
         $('#experiences').fadeIn(375)
         $('#formation').fadeIn(250)
         $('#complementaire').fadeIn(125)
         $('.moi').fadeIn()
         $('.metier').fadeIn()
-        $('#metier > h1').fadeOut(375, function() {
+        $('#metier > h4').fadeOut(375, function() {
             $(this).text('Click or Touch here to START').fadeIn(375)
         })
-        $('#competences').fadeOut(500)
+        $('#competen').fadeOut(500)
         $('#experiences').fadeOut(325)
         $('#formation').fadeOut(250)
         $('#complementaire').fadeOut(125)
@@ -20,13 +20,14 @@
             $('#experiences').fadeOut()
             $('#formation').fadeOut()
             $('#complementaire').fadeIn()
-            $('#competences').fadeIn()
-            const competences = window.document.getElementById('competences')
+            $('#competen').fadeIn()
+            
+            const competences = window.document.getElementById('competen')
             const informatique = window.document.getElementById('informatique')
             const commerciales = window.document.getElementById('commerciales')
             const linkedIn = window.document.getElementById('linkedIn')
             const complementaire = window.document.getElementById('complementaire')
-            const animH = $('#competences').height()
+            const animH = $('#competen').height()
             const divSprite = window.document.createElement('div')
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
@@ -45,7 +46,7 @@
             imgSoccer.style.top = '-53px'
             imgSoccer.src = '/static/img/ball.png'
             divSprite.appendChild(imgSoccer)
-            $('#competences').animate({
+            $('#competen').animate({
                 height: '500px'
             }, 500)
             linkedIn.className = 'linkedinT'
@@ -167,20 +168,20 @@
                     linkedIn.style.left = 'auto'
                     ballY = complementaire.offsetTop - complementaire.offsetHeight/2
                     linkedIn.className = 'linkedin'
-                    $('#competences').animate({
+                    $('#competen').animate({
                         height: animH + 'px'
                     }, 450)
                     competences.className = 'competences'
                     informatique.style.verticalAlign = 'middle'
                     commerciales.style.verticalAlign = 'middle'
                     youwin = true
-                    $('#metier > h1').fadeOut(250, function() {
+                    $('#metier > h4').fadeOut(250, function() {
                         $(this).text('Junior FullStack Javascript Developer').fadeIn(250)
                     })
                     $('#experiences').fadeIn(750)
                     $('#formation').fadeIn(1000)
                     $('#complementaire').fadeIn(1250)
-                    $('#competences').css('height', 'auto')
+                    $('#competen').css('height', 'auto')
                 } else {
                     while (i >= 0) {
                     //inside brick

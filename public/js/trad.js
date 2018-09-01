@@ -11,6 +11,7 @@
             $('.english').fadeOut()
             $('.spanish').fadeOut()
             $('.french').fadeOut()
+            $('#competen').css('height', 'auto')
             $('.french').show(1000)
         }
         window.document.getElementById('english').onclick = () => {
@@ -23,6 +24,7 @@
             $('.french').fadeOut()
             $('.english').fadeOut()
             $('.spanish').fadeOut()
+            $('#competen').css('height', 'auto')
             $('.spanish').show(1000)
         }
     })
