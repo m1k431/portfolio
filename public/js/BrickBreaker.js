@@ -47,7 +47,7 @@
             imgSoccer.src = '/static/img/ball.png'
             divSprite.appendChild(imgSoccer)
             $('#competen').animate({
-                height: '500px'
+                height: animH + 50 + 'px'
             }, 500)
             linkedIn.className = 'linkedinT'
             complementaire.className = 'complementaireT'

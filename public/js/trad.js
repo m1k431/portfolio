@@ -12,20 +12,20 @@
             $('.spanish').fadeOut()
             $('.french').fadeOut()
             $('#competen').css('height', 'auto')
-            $('.french').show(1000)
+            $('.french').fadeIn(1000)
         }
         window.document.getElementById('english').onclick = () => {
             $('.french').fadeOut()
             $('.spanish').fadeOut()
             $('.english').fadeOut()
-            $('.english').show(1000)
+            $('.english').fadeIn(1000)
         }
         window.document.getElementById('spanish').onclick = () => {
             $('.french').fadeOut()
             $('.english').fadeOut()
             $('.spanish').fadeOut()
             $('#competen').css('height', 'auto')
-            $('.spanish').show(1000)
+            $('.spanish').fadeIn(1000)
         }
     })
 })()
