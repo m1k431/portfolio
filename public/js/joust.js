@@ -10,7 +10,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 (function () {
     window.addEventListener('DOMContentLoaded', function () {
+        var navBut = window.document.getElementsByClassName('nav');
+        navBut[2].className = 'css3buttonRed';
         //reactJS test zone
+
         var PlayButton = function (_React$Component) {
             _inherits(PlayButton, _React$Component);
 
@@ -97,7 +100,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
         ReactDOM.render(React.createElement(AccueilJoust, null), document.querySelector('#m0ncentrageAdmin'));
         //JAVASCRIPT
-        //$('#m0ncentrageAdmin').fadeIn(1000)
+
         var socket = io('http://mikael.ml/');
         var clickTitre = window.document.getElementById('clickable-element');
         clickTitre.addEventListener('click', function () {

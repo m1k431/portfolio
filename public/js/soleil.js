@@ -12,6 +12,8 @@
                 BtnJs0nPl4Y.innerHTML = 'PLAY'
             }
         })
+        let navBut = window.document.getElementsByClassName('nav')
+        navBut[0].className = 'css3buttonRed'
         $('#m0ncentrage').fadeIn(1000)
         $('#jugglejungle').fadeIn(1000)
         //ATARIIIIIIIIII

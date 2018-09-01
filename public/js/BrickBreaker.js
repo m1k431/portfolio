@@ -1,5 +1,7 @@
 (() => {
     document.addEventListener('DOMContentLoaded', function () {
+        let navBut = window.document.getElementsByClassName('nav')
+        navBut[1].className = 'css3buttonRed'
         $('#m0ncentrage').fadeIn(1000)
         $('#competen').fadeIn(500)
         $('#experiences').fadeIn(375)

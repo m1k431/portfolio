@@ -1,5 +1,7 @@
 (() => {
     window.addEventListener('DOMContentLoaded', () => {
+        let navBut = window.document.getElementsByClassName('nav')
+        navBut[2].className = 'css3buttonRed'
         //reactJS test zone
         class PlayButton extends React.Component {
             constructor(props) {
@@ -40,7 +42,7 @@
         }
         ReactDOM.render(<AccueilJoust />, document.querySelector('#m0ncentrageAdmin'))
         //JAVASCRIPT
-        //$('#m0ncentrageAdmin').fadeIn(1000)
+
         var socket = io('http://mikael.ml/')
         var clickTitre = window.document.getElementById('clickable-element')
         clickTitre.addEventListener('click', () => {
