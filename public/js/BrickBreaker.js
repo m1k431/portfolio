@@ -34,8 +34,11 @@
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
             divSprite.style.position = 'absolute'
-            divSprite.style.height = '15px'
-            divSprite.style.width = '15px'
+            divSprite.style.height = '12px'
+            divSprite.style.width = '12px'
+            divSprite.style.border = 'solid'
+            divSprite.style.borderWidth = '1px'
+            divSprite.style.borderRadius = '12px'
             divSprite.style.overflow = 'hidden'
             competences.appendChild(divSprite)
             var imgSoccer = window.document.createElement('img')
@@ -43,10 +46,10 @@
             imgSoccer.className = 'imgsoccer'
             imgSoccer.style.position = 'absolute'
             imgSoccer.style.height = '100px'
-            imgSoccer.style.left = '-1.7px'
-            //imgSoccer.style.top = '-36.2px'
-            imgSoccer.style.top = '-53px'
+            imgSoccer.style.left = '-1.8px'
+            imgSoccer.style.top = '-53.4px'
             imgSoccer.src = '/static/img/ball.png'
+            imgSoccer.style.backgroundColor = 'red'
             divSprite.appendChild(imgSoccer)
             $('#competen').animate({
                 height: animH + 50 + 'px'
@@ -134,7 +137,7 @@
                     imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 17.5 + 'px'
                 }
                 else {
-                    imgSoccer.style.left = -1.7 + 'px'
+                    imgSoccer.style.left = -1.8 + 'px'
                 }
             }
             setInterval(animSprite, 40)
@@ -177,6 +180,7 @@
                     informatique.style.verticalAlign = 'middle'
                     commerciales.style.verticalAlign = 'middle'
                     youwin = true
+                    $('#divSprite').hide()
                     $('#metier > h4').fadeOut(250, function() {
                         $(this).text('Junior FullStack Javascript Developer').fadeIn(250)
                     })
@@ -190,9 +194,9 @@
                         if (ballX + divSprite.offsetWidth >= mesInfosT[i].offsetLeft && ballX <= mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
                             if (ballY + divSprite.offsetHeight >= mesInfosT[i].offsetTop && ballY <= mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
                             //left collision
-                                if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
+                                if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop && mesInfosT[i].offsetLeft - ballX > ballY - mesInfosT[i].offsetTop - divSprite.offsetHeight) ballLeft = true
                                 //right collision
-                                else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
+                                else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - divSprite.offsetHeight - mesInfosT[i].offsetTop && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop) ballLeft = false
                                 else if (ballDown === false) ballDown = true
                                 else ballDown = false
                                 $(mesInfosT[i]).animate({
