@@ -14,19 +14,20 @@
         $('#experiences').fadeOut(325)
         $('#formation').fadeOut(250)
         $('#complementaire').fadeOut(125)
-        let bStart = window.document.getElementById('metier')
-        bStart.addEventListener('click', () => {
+        const bStart = window.document.getElementById('metier')
+        bStart.addEventListener('click', letsStart, true)
+        function letsStart() {
             $('#experiences').fadeOut()
             $('#formation').fadeOut()
             $('#complementaire').fadeIn()
             $('#competences').fadeIn()
-            let competences = window.document.getElementById('competences')
-            let informatique = window.document.getElementById('informatique')
-            let commerciales = window.document.getElementById('commerciales')
-            let linkedIn = window.document.getElementById('linkedIn')
-            let complementaire = window.document.getElementById('complementaire')
-            var animH = $('#competences').height()
-            var divSprite = window.document.createElement('div')
+            const competences = window.document.getElementById('competences')
+            const informatique = window.document.getElementById('informatique')
+            const commerciales = window.document.getElementById('commerciales')
+            const linkedIn = window.document.getElementById('linkedIn')
+            const complementaire = window.document.getElementById('complementaire')
+            const animH = $('#competences').height()
+            const divSprite = window.document.createElement('div')
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
             divSprite.style.position = 'absolute'
@@ -63,7 +64,7 @@
             informatique.style.verticalAlign = 'top'
             commerciales.style.verticalAlign = 'top'
             let ballX = competences.offsetWidth / 2
-            let ballY = linkedIn.offsetTop
+            let ballY = complementaire.offsetTop - complementaire.offsetHeight/2
             let ballLeft = true
             let ballDown = false
             let youwin = false
@@ -84,6 +85,7 @@
                 box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth/40 + 'px'
                 e.preventDefault()
             }, false)
+            bStart.removeEventListener('click', letsStart, true)
             var moveBall = function() {
                 window.addEventListener('mousemove', movepaddle, false)
                 if (!youwin) {
@@ -163,6 +165,7 @@
                 if (mesInfosT.length <= 0) {
                     divSprite.removeChild(imgSoccer)
                     linkedIn.style.left = 'auto'
+                    ballY = complementaire.offsetTop - complementaire.offsetHeight/2
                     linkedIn.className = 'linkedin'
                     $('#competences').animate({
                         height: animH + 'px'
@@ -205,6 +208,6 @@
                 }
             }
             requestAnimationFrame(moveBall)
-        })
-    })
+        }
+    }, true)
 })()
