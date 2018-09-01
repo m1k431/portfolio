@@ -8,24 +8,24 @@
         $('.metier').fadeIn()
         $('.english').fadeIn()
         window.document.getElementById('french').onclick = () => {
-            $('.english').fadeOut()
-            $('.spanish').fadeOut()
-            $('.french').fadeOut()
+            $('.english').hide()
+            $('.spanish').hide()
+            $('.french').hide()
             $('#competen').css('height', 'auto')
-            $('.french').fadeIn(1000)
+            $('.french').fadeIn()
         }
         window.document.getElementById('english').onclick = () => {
-            $('.french').fadeOut()
-            $('.spanish').fadeOut()
-            $('.english').fadeOut()
-            $('.english').fadeIn(1000)
+            $('.french').hide()
+            $('.spanish').hide()
+            $('.english').hide()
+            $('.english').fadeIn()
         }
         window.document.getElementById('spanish').onclick = () => {
-            $('.french').fadeOut()
-            $('.english').fadeOut()
-            $('.spanish').fadeOut()
+            $('.french').hide()
+            $('.english').hide()
+            $('.spanish').hide()
             $('#competen').css('height', 'auto')
-            $('.spanish').fadeIn(1000)
+            $('.spanish').fadeIn()
         }
     })
 })()
