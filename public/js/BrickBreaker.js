@@ -98,6 +98,8 @@
                     divSprite.style.top = ballY + 'px'
                     //ball move left right limit
                     if (ballX < competences.offsetWidth && !ballLeft) {
+                        clearInterval(idL)
+                        idR = setInterval(animSpriteR, 60)
                         if (angle) {
                             ballX = ballX + 2
                             divSprite.style.left = ballX + 'px'
@@ -107,6 +109,8 @@
                         }
                     } else if (ballX > competences.offsetLeft) {
                         ballLeft = true
+                        clearInterval(idR)
+                        idL = setInterval(animSprite, 60)
                         if (angle) {
                             ballX = ballX - 2
                             divSprite.style.left = ballX + 'px'
@@ -140,7 +144,16 @@
                     imgSoccer.style.left = -1.8 + 'px'
                 }
             }
-            setInterval(animSprite, 40)
+
+            var animSpriteR = function() {
+                if (parseFloat(imgSoccer.style.left) < -2) {
+                    imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
+                }
+                else {
+                    imgSoccer.style.left = -141.8 + 'px'
+                }
+            }
+            let idR, idL
             var paddle = function() {
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
@@ -193,10 +206,10 @@
                     //inside brick
                         if (ballX + divSprite.offsetWidth >= mesInfosT[i].offsetLeft && ballX <= mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
                             if (ballY + divSprite.offsetHeight >= mesInfosT[i].offsetTop && ballY <= mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
-                            //left collision
-                                if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop && mesInfosT[i].offsetLeft - ballX > ballY - mesInfosT[i].offsetTop - divSprite.offsetHeight) ballLeft = true
+                                //left collision
+                                if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
                                 //right collision
-                                else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - divSprite.offsetHeight - mesInfosT[i].offsetHeight - mesInfosT[i].offsetTop && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - divSprite.offsetHeight - mesInfosT[i].offsetTop) ballLeft = false
+                                else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
                                 else if (ballDown === false) ballDown = true
                                 else ballDown = false
                                 $(mesInfosT[i]).animate({
