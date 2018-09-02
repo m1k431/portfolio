@@ -24,8 +24,8 @@
             $('#complementaire').fadeIn()
             $('#competen').fadeIn()
             
-            var cptS = 1
             //sound
+            var cptS = 1
             function sound(src) {
                 this.sound = document.createElement('audio')
                 this.sound.src = src
@@ -42,11 +42,9 @@
                     this.sound.pause()
                 }
             }
-
             pongA = new sound('./static/sound/pongA.mp3')
             pongB = new sound('./static/sound/pongB.mp3')
             pongC = new sound('./static/sound/pongC.mp3')
-
             var audioCtx = new (window.AudioContext || window.webkitAudioContext)()
             var audioA = document.querySelector('#audio1')
             var sourceA = audioCtx.createMediaElementSource(audioA)
@@ -57,8 +55,6 @@
             var audioC = document.querySelector('#audio3')
             var sourceC = audioCtx.createMediaElementSource(audioC)
             sourceC.connect(audioCtx.destination)
-            
-
 
             //brickBreaker
             const competences = window.document.getElementById('competen')
