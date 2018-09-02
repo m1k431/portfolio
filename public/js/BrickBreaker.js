@@ -142,7 +142,7 @@
                         }
                     } else {
                         ballLeft = false
-                        pongA.play()
+                        setTimeout(pongA.play(),50)
                     }
                     //ball move up down limit
                     if (ballY >= competences.offsetTop && !ballDown) {
@@ -183,7 +183,7 @@
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
                     ballLeft = true
-                    pongB.play()
+                    setTimeout(pongB.play(),50)
                     if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                         angle = true
                     } else {
@@ -192,7 +192,7 @@
                 } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                     ballDown = false
                     ballLeft = false
-                    pongB.play()
+                    setTimeout(pongB.play(),50)
                     if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                         angle = true
                     } else {
@@ -234,6 +234,7 @@
                         if (ballX + divSprite.offsetWidth >= mesInfosT[i].offsetLeft && ballX <= mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
                             if (ballY + divSprite.offsetHeight >= mesInfosT[i].offsetTop && ballY <= mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
                                 //left collision
+                                setTimeout(pongC.play(),50)
                                 if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
                                 //right collision
                                 else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
@@ -243,7 +244,6 @@
                                     backgroundColor: 'rgba(255, 255, 255, 0.4)'
                                 }, 500)
                                 mesInfosT[i].className = 'infoJeu'
-                                pongC.play()
                             }
                         }
                         i--
