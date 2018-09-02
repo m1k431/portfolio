@@ -24,6 +24,7 @@
             $('#complementaire').fadeIn()
             $('#competen').fadeIn()
             
+            var cptS = 1
             //sound
             function sound(src) {
                 this.sound = document.createElement('audio')
@@ -31,7 +32,9 @@
                 this.sound.setAttribute('preload', 'auto')
                 this.sound.setAttribute('controls', 'none')
                 this.sound.style.display = 'none'
+                this.sound.id = 'audio' + cptS
                 document.body.appendChild(this.sound)
+                cptS++
                 this.play = function(){
                     this.sound.play()
                 }
@@ -39,10 +42,22 @@
                     this.sound.pause()
                 }
             }
-            let pongA, pongB, pongC
+
             pongA = new sound('./static/sound/pongA.mp3')
             pongB = new sound('./static/sound/pongB.mp3')
             pongC = new sound('./static/sound/pongC.mp3')
+
+            var audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+            var audioA = document.querySelector('#audio1')
+            var sourceA = audioCtx.createMediaElementSource(audioA)
+            sourceA.connect(audioCtx.destination)
+            var audioB = document.querySelector('#audio2')
+            var sourceB = audioCtx.createMediaElementSource(audioB)
+            sourceB.connect(audioCtx.destination)
+            var audioC = document.querySelector('#audio3')
+            var sourceC = audioCtx.createMediaElementSource(audioC)
+            sourceC.connect(audioCtx.destination)
+            
 
 
             //brickBreaker
@@ -142,7 +157,7 @@
                         }
                     } else {
                         ballLeft = false
-                        setTimeout(pongA.play(),50)
+                        audioA.play()
                     }
                     //ball move up down limit
                     if (ballY >= competences.offsetTop && !ballDown) {
@@ -155,8 +170,8 @@
                     } else {
                         paddle()
                     }
-                    if (ballX > competences.offsetWidth) pongA.play()
-                    if (ballY < competences.offsetTop) pongA.play()
+                    if (ballX > competences.offsetWidth) audioA.play()
+                    if (ballY < competences.offsetTop) audioA.play()
                     brickBroken()
                     requestAnimationFrame(moveBall)
                 }
@@ -183,7 +198,7 @@
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
                     ballLeft = true
-                    setTimeout(pongB.play(),50)
+                    audioB.play()
                     if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                         angle = true
                     } else {
@@ -192,7 +207,7 @@
                 } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                     ballDown = false
                     ballLeft = false
-                    setTimeout(pongB.play(),50)
+                    audioB.play()
                     if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                         angle = true
                     } else {
@@ -234,7 +249,7 @@
                         if (ballX + divSprite.offsetWidth >= mesInfosT[i].offsetLeft && ballX <= mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
                             if (ballY + divSprite.offsetHeight >= mesInfosT[i].offsetTop && ballY <= mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
                                 //left collision
-                                setTimeout(pongC.play(),50)
+                                audioC.play()
                                 if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
                                 //right collision
                                 else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
