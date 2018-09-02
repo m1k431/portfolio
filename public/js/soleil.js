@@ -346,6 +346,7 @@
         gradient.addColorStop(0, 'transparent')
         gradient.addColorStop(0.9, 'yellow')
         ctx.fillStyle = gradient
+        $('#moon').hide()
 
         var dessinerM0n = (/*m0ntimestamp*/) => {
             if (c00rdX < 110) {

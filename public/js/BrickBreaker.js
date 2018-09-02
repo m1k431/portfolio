@@ -24,6 +24,28 @@
             $('#complementaire').fadeIn()
             $('#competen').fadeIn()
             
+            //sound
+            function sound(src) {
+                this.sound = document.createElement('audio')
+                this.sound.src = src
+                this.sound.setAttribute('preload', 'auto')
+                this.sound.setAttribute('controls', 'none')
+                this.sound.style.display = 'none'
+                document.body.appendChild(this.sound)
+                this.play = function(){
+                    this.sound.play()
+                }
+                this.stop = function(){
+                    this.sound.pause()
+                }
+            }
+            let pongA, pongB, pongC
+            pongA = new sound('./static/sound/pongA.mp3')
+            pongB = new sound('./static/sound/pongB.mp3')
+            pongC = new sound('./static/sound/pongC.mp3')
+
+
+            //brickBreaker
             const competences = window.document.getElementById('competen')
             const informatique = window.document.getElementById('informatique')
             const commerciales = window.document.getElementById('commerciales')
@@ -120,18 +142,21 @@
                         }
                     } else {
                         ballLeft = false
+                        pongA.play()
                     }
                     //ball move up down limit
-                    if (ballY > competences.offsetTop && !ballDown) {
+                    if (ballY >= competences.offsetTop && !ballDown) {
                         ballY = ballY - 2
                         divSprite.style.top = ballY + 'px'
-                    } else if (ballY < linkedIn.offsetTop - 10) {
+                    } else if (ballY <= linkedIn.offsetTop - 10) {
                         ballDown = true
                         ballY = ballY + 2
                         divSprite.style.top = ballY + 'px'
                     } else {
                         paddle()
                     }
+                    if (ballX > competences.offsetWidth) pongA.play()
+                    if (ballY < competences.offsetTop) pongA.play()
                     brickBroken()
                     requestAnimationFrame(moveBall)
                 }
@@ -144,7 +169,7 @@
                     imgSoccer.style.left = -1.8 + 'px'
                 }
             }
-
+            
             var animSpriteR = function() {
                 if (parseFloat(imgSoccer.style.left) < -2) {
                     imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
@@ -158,6 +183,7 @@
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
                     ballLeft = true
+                    pongB.play()
                     if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                         angle = true
                     } else {
@@ -166,6 +192,7 @@
                 } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                     ballDown = false
                     ballLeft = false
+                    pongB.play()
                     if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                         angle = true
                     } else {
@@ -216,6 +243,7 @@
                                     backgroundColor: 'rgba(255, 255, 255, 0.4)'
                                 }, 500)
                                 mesInfosT[i].className = 'infoJeu'
+                                pongC.play()
                             }
                         }
                         i--
