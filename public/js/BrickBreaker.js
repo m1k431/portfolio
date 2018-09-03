@@ -2,6 +2,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         let navBut = window.document.getElementsByClassName('nav')
         navBut[1].className = 'css3buttonRed'
+        
         $('#m0ncentrage').fadeIn(1000)
         $('#competen').fadeIn(500)
         $('#experiences').fadeIn(375)
@@ -16,46 +17,86 @@
         $('#experiences').fadeOut(325)
         $('#formation').fadeOut(250)
         $('#complementaire').fadeOut(125)
+        //jeucv
+        $('.english').fadeIn()
+        //sound
+        var cptS = 1
+        function sound(src) {
+            this.sound = document.createElement('audio')
+            this.sound.src = src
+            this.sound.setAttribute('preload', 'auto')
+            this.sound.setAttribute('controls', 'none')
+            this.sound.style.display = 'none'
+            this.sound.id = 'audio' + cptS
+            document.body.appendChild(this.sound)
+            cptS++
+            this.play = function(){
+                this.sound.play()
+            }
+            this.stop = function(){
+                this.sound.pause()
+            }
+        }
+        new sound('./static/sound/pongA.mp3')
+        new sound('./static/sound/pongB.mp3')
+        new sound('./static/sound/pongC.mp3')
+        new sound('./static/sound/start.mp3')
+        new sound('/static/sound/flagS.mp3')
+        new sound('/static/sound/youWin.mp3')
+        new sound('/static/sound/miss.mp3')
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+        var audioA = document.querySelector('#audio1')
+        var sourceA = audioCtx.createMediaElementSource(audioA)
+        sourceA.connect(audioCtx.destination)
+        var audioB = document.querySelector('#audio2')
+        var sourceB = audioCtx.createMediaElementSource(audioB)
+        sourceB.connect(audioCtx.destination)
+        var audioC = document.querySelector('#audio3')
+        var sourceC = audioCtx.createMediaElementSource(audioC)
+        sourceC.connect(audioCtx.destination)
+        var audioStart = document.querySelector('#audio4')
+        var sourceStart = audioCtx.createMediaElementSource(audioStart)
+        sourceStart.connect(audioCtx.destination)
+        var flagS = document.querySelector('#audio5')
+        var sourceFlag = audioCtx.createMediaElementSource(flagS)
+        sourceFlag.connect(audioCtx.destination)
+        var winS = document.querySelector('#audio6')
+        var sourceWin = audioCtx.createMediaElementSource(winS)
+        sourceWin.connect(audioCtx.destination)
+        var miss = document.querySelector('#audio7')
+        var sourceMiss = audioCtx.createMediaElementSource(miss)
+        sourceMiss.connect(audioCtx.destination)
+        window.document.getElementById('french').onclick = () => {
+            flagS.play()
+            $('.english').hide()
+            $('.spanish').hide()
+            $('.french').hide()
+            $('#competen').css('height', 'auto')
+            $('.french').fadeIn()
+        }
+        window.document.getElementById('english').onclick = () => {
+            flagS.play()
+            $('.french').hide()
+            $('.spanish').hide()
+            $('.english').hide()
+            $('.english').fadeIn()
+        }
+        window.document.getElementById('spanish').onclick = () => {
+            flagS.play()
+            $('.french').hide()
+            $('.english').hide()
+            $('.spanish').hide()
+            $('#competen').css('height', 'auto')
+            $('.spanish').fadeIn()
+        }
         const bStart = window.document.getElementById('metier')
         bStart.addEventListener('click', letsStart, true)
+        //START click
         function letsStart() {
+            audioStart.play()
             $('#experiences').fadeOut()
             $('#formation').fadeOut()
-            $('#complementaire').fadeIn()
             $('#competen').fadeIn()
-            
-            //sound
-            var cptS = 1
-            function sound(src) {
-                this.sound = document.createElement('audio')
-                this.sound.src = src
-                this.sound.setAttribute('preload', 'auto')
-                this.sound.setAttribute('controls', 'none')
-                this.sound.style.display = 'none'
-                this.sound.id = 'audio' + cptS
-                document.body.appendChild(this.sound)
-                cptS++
-                this.play = function(){
-                    this.sound.play()
-                }
-                this.stop = function(){
-                    this.sound.pause()
-                }
-            }
-            pongA = new sound('./static/sound/pongA.mp3')
-            pongB = new sound('./static/sound/pongB.mp3')
-            pongC = new sound('./static/sound/pongC.mp3')
-            var audioCtx = new (window.AudioContext || window.webkitAudioContext)()
-            var audioA = document.querySelector('#audio1')
-            var sourceA = audioCtx.createMediaElementSource(audioA)
-            sourceA.connect(audioCtx.destination)
-            var audioB = document.querySelector('#audio2')
-            var sourceB = audioCtx.createMediaElementSource(audioB)
-            sourceB.connect(audioCtx.destination)
-            var audioC = document.querySelector('#audio3')
-            var sourceC = audioCtx.createMediaElementSource(audioC)
-            sourceC.connect(audioCtx.destination)
-
             //brickBreaker
             const competences = window.document.getElementById('competen')
             const informatique = window.document.getElementById('informatique')
@@ -102,8 +143,8 @@
             }, 500)
             informatique.style.verticalAlign = 'top'
             commerciales.style.verticalAlign = 'top'
-            let ballX = competences.offsetWidth / 2
-            let ballY = complementaire.offsetTop - complementaire.offsetHeight/2
+            let ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
+            let ballY = linkedIn.offsetTop
             let ballLeft = true
             let ballDown = false
             let youwin = false
@@ -157,11 +198,11 @@
                     }
                     //ball move up down limit
                     if (ballY >= competences.offsetTop && !ballDown) {
-                        ballY = ballY - 2
+                        ballY = ballY - 4
                         divSprite.style.top = ballY + 'px'
                     } else if (ballY <= linkedIn.offsetTop - 10) {
                         ballDown = true
-                        ballY = ballY + 2
+                        ballY = ballY + 4
                         divSprite.style.top = ballY + 'px'
                     } else {
                         paddle()
@@ -210,9 +251,10 @@
                         angle = false
                     }
                 } else {
+                    miss.play()
                     alert('YOU MISSED THE BALL')
                     ballDown = false
-                    ballX = competences.offsetWidth / 2
+                    ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
                     ballY = linkedIn.offsetTop
                 }
             }
@@ -220,6 +262,7 @@
                 let mesInfosT = window.document.getElementsByClassName('infoT')
                 let i = mesInfosT.length - 1
                 if (mesInfosT.length <= 0) {
+                    winS.play()
                     divSprite.removeChild(imgSoccer)
                     linkedIn.style.left = 'auto'
                     ballY = complementaire.offsetTop - complementaire.offsetHeight/2

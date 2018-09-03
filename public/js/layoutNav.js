@@ -66,4 +66,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         }
         ReactDOM.render(React.createElement(App, null), document.getElementById('myclock'));
     });
+    var selectSound = document.createElement('audio');
+    selectSound.src = '/static/sound/select.mp3';
+    selectSound.setAttribute('preload', 'auto');
+    selectSound.setAttribute('controls', 'none');
+    selectSound.style.display = 'none';
+    selectSound.id = 'select';
+    document.body.appendChild(selectSound);
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var audioSelect = document.querySelector('#select');
+    var sourceSelect = audioCtx.createMediaElementSource(audioSelect);
+    sourceSelect.connect(audioCtx.destination);
+
+    var lien = window.document.getElementsByClassName('css3button');
+    var i = lien.length;
+    i--;
+    while (i >= 0) {
+        lien[i].addEventListener('click', playSelect, true);
+        i--;
+    }
+    function playSelect() {
+        audioSelect.play();
+    }
 })();

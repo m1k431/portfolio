@@ -16,13 +16,13 @@ html(lang="en")
     nav#navBar
       ul
         li 
-          a.nav(href='./nomPage?r=index' class='css3button') Intro
+          a.nav(href="javascript:delay('./nomPage?r=index')" class='css3button') Intro
         li
-          a.nav(href='./nomPage?r=jeuCV' class='css3button') Resume
+          a.nav(href="javascript:delay('./nomPage?r=jeuCV')" class='css3button') Resume
         li
-          a.nav(href='./nomPage?r=joust' class='css3button') J0usT
+          a.nav(href="javascript:delay('./nomPage?r=joust')" class='css3button') J0usT
         li
-          a.nav(href='./nomPage?r=adm1n' class='css3button') Admin
+          a.nav(href="javascript:delay('./nomPage?r=adm1n')" class='css3button') Admin
     block content
     block foot
       #footer
@@ -46,3 +46,6 @@ html(lang="en")
         function gtag(){dataLayer.push(arguments)}
         gtag('js', new Date())
         gtag('config', 'UA-113167424-1')
+        function delay(URL) {
+        setTimeout( function() { window.location = URL }, 200 )
+        }

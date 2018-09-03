@@ -21,17 +21,6 @@ append content
             input#POST-prenom.InputAdmin(type='text' name='pass')
             input#subAdm1n(type='submit' class="css3but" value='log')
 append scripts
-  script(src='/static/js/angular.min.js')
   script.
-    (()=>{
-      angular.module('meteo', [])
-      .config(function($sceDelegateProvider) {
-        $sceDelegateProvider.resourceUrlWhitelist([
-          'self',
-          'http://api.openweathermap.org/**'
-        ])
-      })
-      angular.bootstrap(document,['meteo'], {strictDi:false})
-      let navBut = window.document.getElementsByClassName('nav')
-      navBut[3].className = 'css3buttonRed'
-    })()
+    let navBut = window.document.getElementsByClassName('nav')
+    navBut[3].className = 'css3buttonRed'

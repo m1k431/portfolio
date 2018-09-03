@@ -396,7 +396,7 @@
                 case 100:
                     clearInterval(idB)
                     clearInterval(idMU)
-                    idS = setInterval(animate,1)
+                    idS = setInterval(animate,60)
                     break
                 }
                 ctx.fillRect(0, 0, 40, 40)
