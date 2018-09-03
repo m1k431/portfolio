@@ -125,10 +125,14 @@
             imgSoccer.src = '/static/img/ball.png'
             imgSoccer.style.backgroundColor = 'red'
             divSprite.appendChild(imgSoccer)
-            $('#competen').animate({
-                height: animH + 50 + 'px'
-            }, 500)
             linkedIn.className = 'linkedinT'
+            $('#linkedIn').fadeIn()
+            $('#linkedIn').animate({
+                top: competences.offsetTop + competences.offsetHeight + 80 + 'px'
+            }, 1000)
+            $('#competen').animate({
+                height: animH + 250 + 'px'
+            }, 1500)
             complementaire.className = 'complementaireT'
             window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
             let mesDivInfos = window.document.getElementsByClassName('infoJeu')
@@ -267,9 +271,10 @@
                     linkedIn.style.left = 'auto'
                     ballY = complementaire.offsetTop - complementaire.offsetHeight/2
                     linkedIn.className = 'linkedin'
+                    $('#linkedIn').hide()
                     $('#competen').animate({
                         height: animH + 'px'
-                    }, 450)
+                    }, 1500)
                     competences.className = 'competences'
                     informatique.style.verticalAlign = 'middle'
                     commerciales.style.verticalAlign = 'middle'

@@ -162,13 +162,13 @@ $$$$$$  POLICES &&& background:   $$$$$
     }
     
     .linkedinT {
-        display: block;
+        display: none;
         border: 2px solid #08021f;
         position: absolute;
+        bottom: 0;
         border-radius: 10px;
         height: 25px;
         margin: 5px;
-        float: left;
         background-color: yellowgreen;
     }
     
@@ -238,6 +238,7 @@ $$$$$$  POLICES &&& background:   $$$$$
   animation-iteration-count: infinite;*/
         display: none;
         position: absolute;
+        bottom: 0;
         border-radius: 10px;
         float: right;
         height: 35px;
