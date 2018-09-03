@@ -97,6 +97,7 @@
             $('#experiences').fadeOut()
             $('#formation').fadeOut()
             $('#competen').fadeIn()
+            $('#linkedIn').fadeIn(2000)
             //brickBreaker
             const competences = window.document.getElementById('competen')
             const informatique = window.document.getElementById('informatique')
@@ -104,6 +105,8 @@
             const linkedIn = window.document.getElementById('linkedIn')
             const complementaire = window.document.getElementById('complementaire')
             const animH = $('#competen').height()
+            const linkOff = $('#linkedIn').offset()
+            console.log(linkOff.top)
             const divSprite = window.document.createElement('div')
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
@@ -126,13 +129,10 @@
             imgSoccer.style.backgroundColor = 'red'
             divSprite.appendChild(imgSoccer)
             linkedIn.className = 'linkedinT'
-            $('#linkedIn').fadeIn()
-            $('#linkedIn').animate({
-                top: competences.offsetTop + competences.offsetHeight + 80 + 'px'
-            }, 1000)
             $('#competen').animate({
-                height: animH + 250 + 'px'
-            }, 1500)
+                height: animH + 150 + 'px'
+            }, 1000)
+            linkedIn.style.marginTop = -50 + 'px'
             complementaire.className = 'complementaireT'
             window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
             let mesDivInfos = window.document.getElementsByClassName('infoJeu')
@@ -310,7 +310,7 @@
                 }
             }
             var movepaddle = function(mon0bjetEvent) {
-                if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2.5 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/8 < competences.offsetWidth) {
+                if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/2 < competences.offsetWidth + competences.offsetLeft) {
                     window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth/2 + 'px'
                 }
             }
