@@ -19,8 +19,8 @@
         $('#complementaire').fadeOut(125)
         //jeucv
         $('.english').fadeIn()
-        //sound
-        var cptS = 1
+        //sound method createMediaElement
+        /* var cptS = 1
         function sound(src) {
             this.sound = document.createElement('audio')
             this.sound.src = src
@@ -66,8 +66,142 @@
         var miss = document.querySelector('#audio7')
         var sourceMiss = audioCtx.createMediaElementSource(miss)
         sourceMiss.connect(audioCtx.destination)
+        */
+
+        // Buffeeeeer mode
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+        var sourceA
+        function getDataA() {
+            sourceA = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', pongA, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceA.buffer
+                    sourceA.buffer = buffer
+                    sourceA.connect(audioCtx.destination)
+                    sourceA.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+        function getDataB() {
+            sourceB = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', pongB, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceB.buffer
+                    sourceB.buffer = buffer
+                    sourceB.connect(audioCtx.destination)
+                    sourceB.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+        function getDataC() {
+            sourceC = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', pongC, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceC.buffer
+                    sourceC.buffer = buffer
+                    sourceC.connect(audioCtx.destination)
+                    sourceC.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+        function getDataM() {
+            sourceM = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', miss, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceM.buffer
+                    sourceM.buffer = buffer
+                    sourceM.connect(audioCtx.destination)
+                    sourceM.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+        function getDataF() {
+            sourceF = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', flagS, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceF.buffer
+                    sourceF.buffer = buffer
+                    sourceF.connect(audioCtx.destination)
+                    sourceF.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+        function getDataS() {
+            sourceS = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', start, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceS.buffer
+                    sourceS.buffer = buffer
+                    sourceS.connect(audioCtx.destination)
+                    sourceS.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+        function getDataY() {
+            sourceY = audioCtx.createBufferSource()
+            var request = new XMLHttpRequest()
+            request.open('GET', youWin, true)
+            request.responseType = 'arraybuffer'
+            request.onload = function() {
+                var audioData = request.response
+                audioCtx.decodeAudioData(audioData, function(buffer) {
+                    sourceY.buffer
+                    sourceY.buffer = buffer
+                    sourceY.connect(audioCtx.destination)
+                    sourceY.loop = false
+                },
+                function(e){ console.log('Error with decoding audio data' + e.err) })
+            }
+            request.send()
+        }
+
+        var pongA = './static/sound/pongA.mp3'
+        var pongB = './static/sound/pongB.mp3'
+        var pongC = './static/sound/pongC.mp3'
+        var start = './static/sound/start.mp3'
+        var flagS = './static/sound/flagS.mp3'
+        var youWin = './static/sound/youWin.mp3'
+        var miss = './static/sound/miss.mp3'
+
         window.document.getElementById('french').onclick = () => {
-            flagS.play()
+            getDataF()
+            sourceF.start(0)
             $('.english').hide()
             $('.spanish').hide()
             $('.french').hide()
@@ -75,14 +209,16 @@
             $('.french').fadeIn()
         }
         window.document.getElementById('english').onclick = () => {
-            flagS.play()
+            getDataF()
+            sourceF.start(0)
             $('.french').hide()
             $('.spanish').hide()
             $('.english').hide()
             $('.english').fadeIn()
         }
         window.document.getElementById('spanish').onclick = () => {
-            flagS.play()
+            getDataF()
+            sourceF.start(0)
             $('.french').hide()
             $('.english').hide()
             $('.spanish').hide()
@@ -93,7 +229,8 @@
         bStart.addEventListener('click', letsStart, true)
         //START click
         function letsStart() {
-            audioStart.play()
+            getDataS()
+            sourceS.start(0)
             $('#experiences').fadeOut()
             $('#formation').fadeOut()
             $('#competen').fadeIn()
@@ -106,7 +243,6 @@
             const complementaire = window.document.getElementById('complementaire')
             const animH = $('#competen').height()
             const linkOff = $('#linkedIn').offset()
-            console.log(linkOff.top)
             const divSprite = window.document.createElement('div')
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
@@ -198,7 +334,8 @@
                         }
                     } else {
                         ballLeft = false
-                        audioA.play()
+                        getDataA()
+                        sourceA.start(0)
                     }
                     //ball move up down limit
                     if (ballY >= competences.offsetTop && !ballDown) {
@@ -211,8 +348,14 @@
                     } else {
                         paddle()
                     }
-                    if (ballX > competences.offsetWidth) audioA.play()
-                    if (ballY < competences.offsetTop) audioA.play()
+                    if (ballX > competences.offsetWidth) {
+                        getDataA()
+                        sourceA.start(0)
+                    }
+                    if (ballY < competences.offsetTop) {
+                        getDataA()
+                        sourceA.start(0)
+                    }
                     brickBroken()
                     requestAnimationFrame(moveBall)
                 }
@@ -239,7 +382,8 @@
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                     ballDown = false
                     ballLeft = true
-                    audioB.play()
+                    getDataB()
+                    sourceB.start(0)
                     if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                         angle = true
                     } else {
@@ -248,25 +392,28 @@
                 } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                     ballDown = false
                     ballLeft = false
-                    audioB.play()
+                    getDataB()
+                    sourceB.start(0)
                     if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                         angle = true
                     } else {
                         angle = false
                     }
                 } else {
-                    miss.play()
-                    alert('YOU MISSED THE BALL')
+                    getDataM()
+                    sourceM.start(0)
                     ballDown = false
                     ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
                     ballY = linkedIn.offsetTop
+                    alert('YOU MISSED THE BALL')
                 }
             }
             var brickBroken = function() {
                 let mesInfosT = window.document.getElementsByClassName('infoT')
                 let i = mesInfosT.length - 1
                 if (mesInfosT.length <= 0) {
-                    winS.play()
+                    getDataY()
+                    sourceY.start(0)
                     divSprite.removeChild(imgSoccer)
                     linkedIn.style.left = 'auto'
                     ballY = complementaire.offsetTop - complementaire.offsetHeight/2
@@ -293,7 +440,8 @@
                         if (ballX + divSprite.offsetWidth >= mesInfosT[i].offsetLeft && ballX <= mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
                             if (ballY + divSprite.offsetHeight >= mesInfosT[i].offsetTop && ballY <= mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
                                 //left collision
-                                audioC.play()
+                                getDataC()
+                                sourceC.start(0)
                                 if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
                                 //right collision
                                 else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
