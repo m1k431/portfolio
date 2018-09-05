@@ -68,9 +68,8 @@
         sourceMiss.connect(audioCtx.destination)
         */
 
+        var audioCtx = new AudioContext()
         // Buffeeeeer mode
-        var audioCtx = new (window.AudioContext || window.webkitAudioContext)()
-        var sourceA
         function getDataA() {
             sourceA = audioCtx.createBufferSource()
             var request = new XMLHttpRequest()
@@ -242,7 +241,7 @@
             const linkedIn = window.document.getElementById('linkedIn')
             const complementaire = window.document.getElementById('complementaire')
             const animH = $('#competen').height()
-            const linkOff = $('#linkedIn').offset()
+            //const linkOff = $('#linkedIn').offset()
             const divSprite = window.document.createElement('div')
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
@@ -266,7 +265,7 @@
             divSprite.appendChild(imgSoccer)
             linkedIn.className = 'linkedinT'
             $('#competen').animate({
-                height: animH + 150 + 'px'
+                height: animH + 75 + 'px'
             }, 1000)
             linkedIn.style.marginTop = -50 + 'px'
             complementaire.className = 'complementaireT'

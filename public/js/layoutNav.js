@@ -66,6 +66,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         }
         ReactDOM.render(React.createElement(App, null), document.getElementById('myclock'));
     });
+    var audioCtx = new AudioContext();
     var selectSound = document.createElement('audio');
     selectSound.src = '/static/sound/select.mp3';
     selectSound.setAttribute('preload', 'auto');
@@ -73,7 +74,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
     selectSound.style.display = 'none';
     selectSound.id = 'select';
     document.body.appendChild(selectSound);
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var audioSelect = document.querySelector('#select');
     var sourceSelect = audioCtx.createMediaElementSource(audioSelect);
     sourceSelect.connect(audioCtx.destination);
