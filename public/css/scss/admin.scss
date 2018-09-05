@@ -39,6 +39,7 @@ $myFont: monospace;
 
 .LabelAdmin,
 .LabelArticle {
+    color: white;
     width: 60%;
     margin-left: 20%;
     margin-right: 20%;
@@ -70,4 +71,8 @@ $myFont: monospace;
     margin-left: 10%;
     margin-right: 10%;
     overflow: hidden;
+}
+
+.css3but {
+    color: white;
 }

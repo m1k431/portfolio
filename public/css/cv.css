@@ -126,11 +126,10 @@ $$$$$$  POLICES &&& background:   $$$$$
 }
 
 .moi {
-  margin: 0;
+  margin: 1%;
   border: 1px solid #08021f;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  margin-bottom: 5px;
   display: none;
 }
 
@@ -143,7 +142,7 @@ $$$$$$  POLICES &&& background:   $$$$$
 }
 
 .complemen {
-  margin: 0;
+  margin: 1%;
   border: 1px solid #08021f;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
@@ -152,7 +151,7 @@ $$$$$$  POLICES &&& background:   $$$$$
 }
 
 .complementaireT {
-  margin: 0;
+  margin: 1%;
   border: 1px solid #08021f;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
@@ -245,7 +244,8 @@ p.flags {
   background-color: rgba(255, 255, 255, 0.4);
   border: 1px solid #08021f;
   border-radius: 10px;
-  margin-top: 5px;
+  margin-top: 1%;
+  margin-bottom: 1%;
   margin-left: 15%;
   margin-right: 15%;
   overflow: hidden;
@@ -270,10 +270,7 @@ p.flags {
   color: rgba(0, 0, 0, 0.9);
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.5%;
-  margin-top: 0.5%;
+  margin: 1%;
   text-align: center;
   display: none;
 }
@@ -283,10 +280,7 @@ p.flags {
   color: rgba(0, 0, 0, 0.9);
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.5%;
-  margin-top: 0.5%;
+  margin: 1%;
   text-align: center;
   display: none;
 }

@@ -3,13 +3,18 @@ append content
   .content
     .table-cell
       #m0ncentrage
-        .paraFoot Welcome to my devlab
-          #s0leil
-        .paraFoot My name is Mikael, I'm a javascript developer.
-        .paraFoot This website hosts my skills, projects and experiences.
-          video#jugglejungle(loop='' poster='/static/img/kuansiFalls.jpg')
-            source(src='/static/video/theOneFinal2.webm' type='video/webm')
-            source(src='/static/video/theOneFinal2.mp4' type='video/mp4')
-        button#BtnJs0nPl4Y Play
+        .m0ncentrageParafoot
+          #INDEX
+            .paraFoot Welcome to my devlab
+              #s0leil
+            .paraFoot My name is Mikael, I'm a javascript developer.
+            .paraFoot This website hosts my skills, projects and experiences.
+              video#jugglejungle(loop='' poster='/static/img/kuansiFalls.jpg')
+                source(src='/static/video/theOneFinal2.webm' type='video/webm')
+                source(src='/static/video/theOneFinal2.mp4' type='video/mp4')
+            button#BtnJs0nPl4Y PLAY
+          include jeuCV.pug
+          include joust.pug
+          include adm1n.pug
 append scripts
   script(src='/static/js/soleil.js')

@@ -9,10 +9,15 @@ $myFont: monospace;
 
 .pseudo {
     width: 20%;
+    color: white;
     margin-left: 40%;
     margin-right: 40%;
     display: block;
     margin-bottom: 3%;
     text-align: center;
     font-family: $myFont;
+}
+
+.css3but {
+    color: white;
 }

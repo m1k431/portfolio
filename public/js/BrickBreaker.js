@@ -1,8 +1,5 @@
 (() => {
     document.addEventListener('DOMContentLoaded', function () {
-        let navBut = window.document.getElementsByClassName('nav')
-        navBut[1].className = 'css3buttonRed'
-        
         $('#m0ncentrage').fadeIn(1000)
         $('#competen').fadeIn(500)
         $('#experiences').fadeIn(375)
@@ -228,6 +225,7 @@
         bStart.addEventListener('click', letsStart, true)
         //START click
         function letsStart() {
+            bStart.removeEventListener('click', letsStart, true)
             getDataS()
             sourceS.start(0)
             $('#experiences').fadeOut()
@@ -414,6 +412,7 @@
                     getDataY()
                     sourceY.start(0)
                     divSprite.removeChild(imgSoccer)
+                    $('#divSprite').hide()
                     linkedIn.style.left = 'auto'
                     ballY = complementaire.offsetTop - complementaire.offsetHeight/2
                     linkedIn.className = 'linkedin'
@@ -425,7 +424,7 @@
                     informatique.style.verticalAlign = 'middle'
                     commerciales.style.verticalAlign = 'middle'
                     youwin = true
-                    $('#divSprite').hide()
+                    divSprite.style.display = 'none'
                     $('#metier > h4').fadeOut(250, function() {
                         $(this).text('Junior FullStack Javascript Developer').fadeIn(250)
                     })

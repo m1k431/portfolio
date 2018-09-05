@@ -1,7 +1,7 @@
 (() => {
     window.addEventListener('DOMContentLoaded', () => {
-        let navBut = window.document.getElementsByClassName('nav')
-        navBut[2].className = 'css3buttonRed'
+        /*let navBut = window.document.getElementsByClassName('nav')
+        navBut[2].className = 'css3buttonRed'*/
         //reactJS test zone
         class PlayButton extends React.Component {
             constructor(props) {
@@ -29,7 +29,7 @@
         class AccueilJoust extends React.Component {
             render() {
                 return (
-                    <div className='competen'>
+                    <div className=''>
                         <h1 id="clickable-element">Realtime Multiplayer Game</h1>
                         <form id="adm1n">
                             <label className="pseudo">Enter your Name</label>
@@ -40,7 +40,7 @@
                 )
             }
         }
-        ReactDOM.render(<AccueilJoust />, document.querySelector('#m0ncentrageAdmin'))
+        ReactDOM.render(<AccueilJoust />, document.querySelector('#JOUST'))
         //JAVASCRIPT
 
         var socket = io('http://mikael.ml/')
