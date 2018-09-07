@@ -1,138 +1,136 @@
 (() => {
+    var audioctxxx = new AudioContext()
+    var sourceA, sourceB, sourceC, sourceM, sourceF, sourceS, sourceY
+    var pongA = './static/sound/pongA.mp3'
+    var pongB = './static/sound/pongB.mp3'
+    var pongC = './static/sound/pongC.mp3'
+    var start = './static/sound/start.mp3'
+    var flagS = './static/sound/flagS.mp3'
+    var youWin = './static/sound/youWin.mp3'
+    var miss = './static/sound/miss.mp3'
+    // Buffeeeeer mode
+    function getDataA() {
+        sourceA = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', pongA, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceA.buffer
+                sourceA.buffer = buffer
+                sourceA.connect(audioctxxx.destination)
+                sourceA.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+    function getDataB() {
+        sourceB = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', pongB, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceB.buffer
+                sourceB.buffer = buffer
+                sourceB.connect(audioctxxx.destination)
+                sourceB.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+    function getDataC() {
+        sourceC = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', pongC, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceC.buffer
+                sourceC.buffer = buffer
+                sourceC.connect(audioctxxx.destination)
+                sourceC.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+    function getDataM() {
+        sourceM = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', miss, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceM.buffer
+                sourceM.buffer = buffer
+                sourceM.connect(audioctxxx.destination)
+                sourceM.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+    function getDataF() {
+        sourceF = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', flagS, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceF.buffer
+                sourceF.buffer = buffer
+                sourceF.connect(audioctxxx.destination)
+                sourceF.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+    function getDataS() {
+        sourceS = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', start, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceS.buffer
+                sourceS.buffer = buffer
+                sourceS.connect(audioctxxx.destination)
+                sourceS.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+    function getDataY() {
+        sourceY = audioctxxx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', youWin, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioctxxx.decodeAudioData(audioData, function(buffer) {
+                sourceY.buffer
+                sourceY.buffer = buffer
+                sourceY.connect(audioctxxx.destination)
+                sourceY.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
     document.addEventListener('DOMContentLoaded', function () {
 
-        var audioctxxx = new AudioContext()
-        var sourceA, sourceB, sourceC, sourceM, sourceF, sourceS, sourceY
-        // Buffeeeeer mode
-        function getDataA() {
-            sourceA = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', pongA, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceA.buffer
-                    sourceA.buffer = buffer
-                    sourceA.connect(audioctxxx.destination)
-                    sourceA.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
-        function getDataB() {
-            sourceB = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', pongB, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceB.buffer
-                    sourceB.buffer = buffer
-                    sourceB.connect(audioctxxx.destination)
-                    sourceB.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
-        function getDataC() {
-            sourceC = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', pongC, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceC.buffer
-                    sourceC.buffer = buffer
-                    sourceC.connect(audioctxxx.destination)
-                    sourceC.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
-        function getDataM() {
-            sourceM = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', miss, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceM.buffer
-                    sourceM.buffer = buffer
-                    sourceM.connect(audioctxxx.destination)
-                    sourceM.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
-        function getDataF() {
-            sourceF = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', flagS, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceF.buffer
-                    sourceF.buffer = buffer
-                    sourceF.connect(audioctxxx.destination)
-                    sourceF.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
-        function getDataS() {
-            sourceS = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', start, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceS.buffer
-                    sourceS.buffer = buffer
-                    sourceS.connect(audioctxxx.destination)
-                    sourceS.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
-        function getDataY() {
-            sourceY = audioctxxx.createBufferSource()
-            var request = new XMLHttpRequest()
-            request.open('GET', youWin, true)
-            request.responseType = 'arraybuffer'
-            request.onload = function() {
-                var audioData = request.response
-                audioctxxx.decodeAudioData(audioData, function(buffer) {
-                    sourceY.buffer
-                    sourceY.buffer = buffer
-                    sourceY.connect(audioctxxx.destination)
-                    sourceY.loop = false
-                },
-                function(e){ console.log('Error with decoding audio data' + e.err) })
-            }
-            request.send()
-        }
 
-        var pongA = './static/sound/pongA.mp3'
-        var pongB = './static/sound/pongB.mp3'
-        var pongC = './static/sound/pongC.mp3'
-        var start = './static/sound/start.mp3'
-        var flagS = './static/sound/flagS.mp3'
-        var youWin = './static/sound/youWin.mp3'
-        var miss = './static/sound/miss.mp3'
-
-    
         $('#m0ncentrage').fadeIn(1000)
         $('#competen').fadeIn(500)
         $('#experiences').fadeIn(375)
@@ -352,11 +350,11 @@
                         angle = false
                     }
                 } else {
-                    getDataM()
-                    sourceM.start(0)
                     ballDown = false
                     ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
                     ballY = linkedIn.offsetTop
+                    getDataM()
+                    sourceM.start(0)
                     //alert('YOU MISSED THE BALL')
                 }
             }
@@ -397,13 +395,13 @@
                         if (ballX + divSprite.offsetWidth >= mesInfosT[i].offsetLeft && ballX <= mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
                             if (ballY + divSprite.offsetHeight >= mesInfosT[i].offsetTop && ballY <= mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
                                 //left collision
-                                getDataC()
-                                sourceC.start(0)
                                 if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
                                 //right collision
                                 else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
                                 else if (ballDown === false) ballDown = true
                                 else ballDown = false
+                                getDataC()
+                                sourceC.start(0)
                                 $(mesInfosT[i]).animate({
                                     backgroundColor: 'rgba(255, 255, 255, 0.4)'
                                 }, 500)

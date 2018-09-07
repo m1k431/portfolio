@@ -92,11 +92,6 @@
         sourceSelect.start(0)
     }
         
-    
-
-
-
-
     window.addEventListener('DOMContentLoaded', () => {
         function FormattedDate(props) {
             return <h1 className="myclock">{props.date.toLocaleTimeString()}</h1>
