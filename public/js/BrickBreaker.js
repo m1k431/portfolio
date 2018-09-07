@@ -147,58 +147,10 @@
         $('#experiences').fadeOut(325)
         $('#formation').fadeOut(250)
         $('#complementaire').fadeOut(125)
-        //jeucv
+      
+        //jeuUUUUUUUUUUUUUUUUUUUcv
         $('.english').fadeIn()
-        //sound method createMediaElement
-        /* var cptS = 1
-        function sound(src) {
-            this.sound = document.createElement('audio')
-            this.sound.src = src
-            this.sound.setAttribute('preload', 'auto')
-            this.sound.setAttribute('controls', 'none')
-            this.sound.style.display = 'none'
-            this.sound.id = 'audio' + cptS
-            document.body.appendChild(this.sound)
-            cptS++
-            this.play = function(){
-                this.sound.play()
-            }
-            this.stop = function(){
-                this.sound.pause()
-            }
-        }
-        new sound('./static/sound/pongA.mp3')
-        new sound('./static/sound/pongB.mp3')
-        new sound('./static/sound/pongC.mp3')
-        new sound('./static/sound/start.mp3')
-        new sound('/static/sound/flagS.mp3')
-        new sound('/static/sound/youWin.mp3')
-        new sound('/static/sound/miss.mp3')
-        var audioctxxx = new (window.AudioContext || window.webkitAudioContext)()
-        var audioA = document.querySelector('#audio1')
-        var sourceA = audioctxxx.createMediaElementSource(audioA)
-        sourceA.connect(audioctxxx.destination)
-        var audioB = document.querySelector('#audio2')
-        var sourceB = audioctxxx.createMediaElementSource(audioB)
-        sourceB.connect(audioctxxx.destination)
-        var audioC = document.querySelector('#audio3')
-        var sourceC = audioctxxx.createMediaElementSource(audioC)
-        sourceC.connect(audioctxxx.destination)
-        var audioStart = document.querySelector('#audio4')
-        var sourceStart = audioctxxx.createMediaElementSource(audioStart)
-        sourceStart.connect(audioctxxx.destination)
-        var flagS = document.querySelector('#audio5')
-        var sourceFlag = audioctxxx.createMediaElementSource(flagS)
-        sourceFlag.connect(audioctxxx.destination)
-        var winS = document.querySelector('#audio6')
-        var sourceWin = audioctxxx.createMediaElementSource(winS)
-        sourceWin.connect(audioctxxx.destination)
-        var miss = document.querySelector('#audio7')
-        var sourceMiss = audioctxxx.createMediaElementSource(miss)
-        sourceMiss.connect(audioctxxx.destination)
-        */
-
-
+      
         window.document.getElementById('french').onclick = () => {
             getDataF()
             sourceF.start(0)

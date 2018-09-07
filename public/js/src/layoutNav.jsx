@@ -1,17 +1,5 @@
 (() => {
-
     var audioCtx = new AudioContext()
-/*    var selectSound = document.createElement('audio')
-    selectSound.src = '/static/sound/select.mp3'
-    selectSound.setAttribute('preload', 'auto')
-    selectSound.setAttribute('controls', 'none')
-    selectSound.style.display = 'none'
-    selectSound.id = 'select'
-    document.body.appendChild(selectSound)
-    var audioSelect = document.querySelector('#select')
-    var sourceSelect = audioCtx.createMediaElementSource(audioSelect)
-    sourceSelect.connect(audioCtx.destination)*/
-        
     var sourceSelect
 
     function getDataSelect() {
@@ -144,14 +132,5 @@
             )
         }
         ReactDOM.render(<App />, document.getElementById('myclock'))
-        
-        
-        
-     
     })
-    
-    
-    
-
-    
 })()
