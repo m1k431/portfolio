@@ -175,7 +175,7 @@
             $('#competen').css('height', 'auto')
             $('.spanish').fadeIn()
         }
-        const bStart = window.document.getElementById('metier')
+        var bStart = window.document.getElementById('metier')
         bStart.addEventListener('click', letsStart, true)
         //START click
         function letsStart() {
@@ -186,14 +186,14 @@
             getDataS()
             sourceS.start(0)
             //brickBreaker
-            const competences = window.document.getElementById('competen')
-            const informatique = window.document.getElementById('informatique')
-            const commerciales = window.document.getElementById('commerciales')
-            const linkedIn = window.document.getElementById('linkedIn')
-            const complementaire = window.document.getElementById('complementaire')
-            const animH = $('#competen').height()
-            //const linkOff = $('#linkedIn').offset()
-            const divSprite = window.document.createElement('div')
+            var competences = window.document.getElementById('competen')
+            var informatique = window.document.getElementById('informatique')
+            var commerciales = window.document.getElementById('commerciales')
+            var linkedIn = window.document.getElementById('linkedIn')
+            var complementaire = window.document.getElementById('complementaire')
+            var animH = $('#competen').height()
+            //var linkOff = $('#linkedIn').offset()
+            var divSprite = window.document.createElement('div')
             divSprite.id = 'divSprite'
             divSprite.className = 'divsprite'
             divSprite.style.position = 'absolute'
@@ -243,21 +243,24 @@
                 boxleft, // left position of moving box
                 startx, // starting x coordinate of touch point
                 touchobj = null // Touch object holder
-            window.addEventListener('touchstart', function(e) {
+            var eTouchStart = function(e) {
                 touchobj = e.changedTouches[0] // reference first touch point
                 boxleft = parseInt(box2.style.left) // get left position of box
                 startx = parseInt(touchobj.pageX) // get x coord of touch point
                 e.preventDefault() // prevent default click behavior
-            }, false)
-            window.addEventListener('touchmove', function(e) {
+            }
+            window.addEventListener('touchstart', eTouchStart, true)
+            var eTouchMove = function(e) {
                 touchobj = e.changedTouches[0] // reference first touch point for this event
                 var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
                 box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth/40 + 'px'
                 e.preventDefault()
-            }, false)
+            }
+            window.addEventListener('touchmove', eTouchMove, true)
+
             bStart.removeEventListener('click', letsStart, true)
             var moveBall = function() {
-                window.addEventListener('mousemove', movepaddle, false)
+                window.addEventListener('mousemove', movepaddle, true)
                 if (!youwin) {
                     divSprite.style.top = ballY + 'px'
                     //ball move left right limit
@@ -307,7 +310,7 @@
                         sourceA.start(0)
                     }
                     brickBroken()
-                    requestAnimationFrame(moveBall)
+                    idAni = requestAnimationFrame(moveBall)
                 }
             }
             var animSprite = function() {
@@ -366,6 +369,9 @@
                     cancelAnimationFrame(idAni)
                     clearInterval(idR)
                     clearInterval(idL)
+                    window.removeEventListener('mousemove', movepaddle, true)
+                    window.removeEventListener('click', eTouchStart, true)
+                    window.removeEventListener('click', eTouchMove, true)
                     getDataY()
                     sourceY.start(0)
                     divSprite.removeChild(imgSoccer)

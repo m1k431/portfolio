@@ -64,8 +64,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         $('#joust').addClass('css3button');
         $('#admin').removeClass('css3buttonRed');
         $('#admin').addClass('css3button');
-        $('#INDEX').slideUp();
         $('#CV').slideDown();
+        $('#INDEX').slideUp();
         $('#JOUST').slideUp();
         $('#ADM1N').slideUp();
     };
@@ -78,9 +78,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         $('#joust').addClass('css3buttonRed');
         $('#admin').removeClass('css3buttonRed');
         $('#admin').addClass('css3button');
+        $('#JOUST').slideDown();
         $('#INDEX').slideUp();
         $('#CV').slideUp();
-        $('#JOUST').slideDown();
         $('#ADM1N').slideUp();
     };
     lien[3].onclick = function () {
@@ -92,10 +92,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         $('#joust').addClass('css3button');
         $('#admin').removeClass('css3button');
         $('#admin').addClass('css3buttonRed');
+        $('#ADM1N').slideDown();
         $('#INDEX').slideUp();
         $('#CV').slideUp();
         $('#JOUST').slideUp();
-        $('#ADM1N').slideDown();
     };
 
     function playSelect() {
