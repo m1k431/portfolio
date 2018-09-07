@@ -6,13 +6,13 @@ append content
       //div(ng-init="ville = 'Paris, fr';")
       //select(name="ville" ng-model='ville')
         //option(value="Paris, fr") Paris, fr
-        //option(value='London, uk') London, uk--/
+        //option(value='London, uk') London, uk
         //option(value='Madrid, es') Madrid, sp
       //ng-include(src="'http://api.openweathermap.org/data/2.5/weather?q=' + ville + '&mode=html&appid=bb026e3b05ebaf33312aeea8b300ef73'")
     h1 LOG IN
     form#adm1n(action='/layoutAdmin' method='post')
       label.LabelAdmin(for='POST-user') user
-      input#POST-nom.InputAdmin(type='text' name='user')
+      input#POST-user.InputAdmin(type='text' name='user')
       label.LabelAdmin(for='POST-pass') pass
-      input#POST-prenom.InputAdmin(type='text' name='pass')
+      input#POST-pass.InputAdmin(type='text' name='pass')
       input#subAdm1n(type='submit' class="css3but" value='log')
