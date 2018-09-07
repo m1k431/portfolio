@@ -1,42 +1,7 @@
 (() => {
-    window.addEventListener('DOMContentLoaded', () => {
-        function FormattedDate(props) {
-            return <h1 className="myclock">{props.date.toLocaleTimeString()}</h1>
-        }
-        class Clock extends React.Component {
-            constructor(props) {
-                super(props)
-                this.state = {date: new Date()}
-            }
-            componentDidMount() {
-                this.timerID = setInterval(
-                    () => this.tick(),
-                    1000
-                )
-            }
-            componentWillUnmount() {
-                clearInterval(this.timerID)
-            }
-            tick() {
-                this.setState({
-                    date: new Date()
-                })
-            }
-            render() {
-                return (
-                    <FormattedDate date={this.state.date} />
-                )
-            }
-        }
-        function App() {
-            return (
-                <Clock />
-            )
-        }
-        ReactDOM.render(<App />, document.getElementById('myclock'))
-    })
+
     var audioCtx = new AudioContext()
-    var selectSound = document.createElement('audio')
+/*    var selectSound = document.createElement('audio')
     selectSound.src = '/static/sound/select.mp3'
     selectSound.setAttribute('preload', 'auto')
     selectSound.setAttribute('controls', 'none')
@@ -45,16 +10,38 @@
     document.body.appendChild(selectSound)
     var audioSelect = document.querySelector('#select')
     var sourceSelect = audioCtx.createMediaElementSource(audioSelect)
-    sourceSelect.connect(audioCtx.destination)
-    
-    const lien = window.document.getElementsByClassName('css3button')
+    sourceSelect.connect(audioCtx.destination)*/
+        
+    var sourceSelect
+
+    function getDataSelect() {
+        sourceSelect = audioCtx.createBufferSource()
+        var request = new XMLHttpRequest()
+        request.open('GET', soundSelect, true)
+        request.responseType = 'arraybuffer'
+        request.onload = function() {
+            var audioData = request.response
+            audioCtx.decodeAudioData(audioData, function(buffer) {
+                sourceSelect.buffer
+                sourceSelect.buffer = buffer
+                sourceSelect.connect(audioCtx.destination)
+                sourceSelect.loop = false
+            },
+            function(e){ console.log('Error with decoding audio data' + e.err) })
+        }
+        request.send()
+    }
+
+    var soundSelect = '/static/sound/select.mp3'
+        
+    var lien = window.document.getElementsByClassName('css3button')
     var i = lien.length
     i--
     while (i >= 0) {
         lien[i].addEventListener('click', playSelect, true)
-        console.log(i)
         i--
     }
+    
     lien[0].onclick = () => {
         $('#intro').removeClass('css3button')
         $('#intro').addClass('css3buttonRed')
@@ -111,7 +98,60 @@
         $('#JOUST').slideUp()
         $('#ADM1N').slideDown()
     }
+    
     function playSelect() {
-        audioSelect.play()
+        getDataSelect()
+        sourceSelect.start(0)
     }
+        
+    
+
+
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+        function FormattedDate(props) {
+            return <h1 className="myclock">{props.date.toLocaleTimeString()}</h1>
+        }
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {date: new Date()}
+            }
+            componentDidMount() {
+                this.timerID = setInterval(
+                    () => this.tick(),
+                    1000
+                )
+            }
+            componentWillUnmount() {
+                clearInterval(this.timerID)
+            }
+            tick() {
+                this.setState({
+                    date: new Date()
+                })
+            }
+            render() {
+                return (
+                    <FormattedDate date={this.state.date} />
+                )
+            }
+        }
+        function App() {
+            return (
+                <Clock />
+            )
+        }
+        ReactDOM.render(<App />, document.getElementById('myclock'))
+        
+        
+        
+     
+    })
+    
+    
+    
+
+    
 })()

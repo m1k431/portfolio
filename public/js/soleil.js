@@ -126,17 +126,17 @@
         ctxM4col.fill()
 
         //SONIC PALM TREEEEEEEE
-        var divSprite = window.document.createElement('div')
-        divSprite.id = 'divSprite'
-        divSprite.className = 'divsprite'
-        divSprite.style.position = 'absolute'
-        divSprite.style.height = '140px'
-        divSprite.style.width = '95px'
-        divSprite.style.top = '82px'
-        divSprite.style.left = '59.55px'
-        //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
-        divSprite.style.overflow = 'hidden'
-        m0nsoleil.appendChild(divSprite)
+        var divMonkey = window.document.createElement('div')
+        divMonkey.id = 'divMonkey'
+        divMonkey.className = 'divMonkey'
+        divMonkey.style.position = 'absolute'
+        divMonkey.style.height = '140px'
+        divMonkey.style.width = '95px'
+        divMonkey.style.top = '82px'
+        divMonkey.style.left = '59.55px'
+        //divMonkey.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
+        divMonkey.style.overflow = 'hidden'
+        m0nsoleil.appendChild(divMonkey)
         var imgMonkey = window.document.createElement('img')
         imgMonkey.id = 'monkey'
         imgMonkey.className = 'monkey'
@@ -144,7 +144,7 @@
         imgMonkey.style.height = '100%'
         imgMonkey.style.left = '-2215px'
         imgMonkey.src = '/static/img/monkey.png'
-        divSprite.appendChild(imgMonkey)
+        divMonkey.appendChild(imgMonkey)
         var imgSonicPalm = window.document.createElement('img')
         imgSonicPalm.id = 'palmTree'
         imgSonicPalm.className = 'palmTree'
@@ -164,7 +164,7 @@
         divSonic.style.width = '48px'
         divSonic.style.top = '250px'
         divSonic.style.left = '-10%'
-        //divSprite.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
+        //divMonkey.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
         divSonic.style.overflow = 'hidden'
         m0nsoleil.appendChild(divSonic)
         var imgSonic = window.document.createElement('img')
@@ -246,7 +246,7 @@
         var screenH
         var screenW
         var stars = []
-        var numStars = 1200
+        var numStars = 500
         // Calculate the screen size
         screenH = 400
         screenW = 600
@@ -397,7 +397,7 @@
                 case 100:
                     clearInterval(idB)
                     clearInterval(idMU)
-                    idS = setInterval(animate,60)
+                    idS = setInterval(animate,1000/50)
                     break
                 }
                 ctx.fillRect(0, 0, 40, 40)
