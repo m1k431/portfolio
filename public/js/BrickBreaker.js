@@ -177,6 +177,7 @@
         }
         var bStart = window.document.getElementById('metier')
         bStart.addEventListener('click', letsStart, true)
+        
         //START click
         function letsStart() {
             $('#experiences').fadeOut()
@@ -233,12 +234,13 @@
             }, 500)
             informatique.style.verticalAlign = 'top'
             commerciales.style.verticalAlign = 'top'
-            let ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
-            let ballY = linkedIn.offsetTop
+            let ballX = competences.offsetLeft + competences.offsetWidth/2
+            let ballY = competences.offsetTop + competences.offsetHeight
             let ballLeft = true
             let ballDown = false
             let youwin = false
             let angle = false
+            //TouchMove eventListener
             var box2 = document.getElementById('linkedIn'),
                 boxleft, // left position of moving box
                 startx, // starting x coordinate of touch point
@@ -257,8 +259,9 @@
                 e.preventDefault()
             }
             window.addEventListener('touchmove', eTouchMove, true)
-
             bStart.removeEventListener('click', letsStart, true)
+            
+            var clickMove = true
             var moveBall = function() {
                 window.addEventListener('mousemove', movepaddle, true)
                 if (!youwin) {
@@ -310,9 +313,23 @@
                         sourceA.start(0)
                     }
                     brickBroken()
-                    idAni = requestAnimationFrame(moveBall)
+                    if (clickMove == true) 
+                    {
+                        window.addEventListener('click', animMoveBall, true)
+                        clickMove = false
+                    }
+                    else {
+                        window.removeEventListener('click', animMoveBall, true)
+                        animMoveBall()
+                    }
                 }
             }
+            
+            
+            var animMoveBall = function() {
+                idAni = requestAnimationFrame(moveBall)
+            }
+
             var animSprite = function() {
                 if (parseFloat(imgSoccer.style.left) > -152) {
                     imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 17.5 + 'px'
@@ -330,6 +347,7 @@
                     imgSoccer.style.left = -141.8 + 'px'
                 }
             }
+
             let idR, idL
             var paddle = function() {
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
@@ -354,13 +372,15 @@
                     }
                 } else {
                     ballDown = false
-                    ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
-                    ballY = linkedIn.offsetTop
+                    ballX = competences.offsetLeft + competences.offsetWidth/2
+                    ballY = competences.offsetTop + competences.offsetHeight - 50
+                    clickMove = true
                     getDataM()
                     sourceM.start(0)
                     //alert('YOU MISSED THE BALL')
                 }
             }
+
             var idAni
             var brickBroken = function() {
                 let mesInfosT = window.document.getElementsByClassName('infoT')
@@ -418,11 +438,13 @@
                     }
                 }
             }
+
             var movepaddle = function(mon0bjetEvent) {
                 if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/2 < competences.offsetWidth + competences.offsetLeft) {
                     window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth/2 + 'px'
                 }
             }
+
             idAni = requestAnimationFrame(moveBall)
         }
     }, true)
