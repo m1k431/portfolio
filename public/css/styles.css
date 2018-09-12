@@ -357,23 +357,36 @@ html {
 }
 
 #INDEX {
-  display: none;
+  border: 1px solid white;
+  background-color: rgba(183, 210, 214, 0.1);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5%;
+  margin-top: 0.5%;
+  text-align: center;
 }
 
 #CV {
-  display: none;
-}
-
-#JOUST {
-  display: none;
-  height: 800px;
-  background-color: rgba(19, 42, 121, 0);
+  border: 1px solid white;
+  background-color: rgba(183, 210, 214, 0.1);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5%;
+  margin-top: 0.5%;
+  text-align: center;
 }
 
 #ADM1N {
-  display: none;
-  height: 800px;
-  background-color: rgba(19, 42, 121, 0);
+  border: 1px solid white;
+  background-color: rgba(183, 210, 214, 0.1);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5%;
+  margin-top: 0.5%;
+  text-align: center;
 }
 
 h1,

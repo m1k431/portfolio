@@ -17,13 +17,13 @@ html(lang="en")
     nav#navBar
       ul
         li 
-          a#intro.nav(href='/' class='css3button') Intro
+          a#intro.nav.js-scrollTo(href='#INDEX' class='css3button') Intro
         li
-          a#resume.nav(class='css3button') Resume
-        li
+          a#resume.nav.js-scrollTo(href='#CV' class='css3button') Resume
+        //li
           a#joust.nav(class='css3button') J0usT
         li
-          a#admin.nav(class='css3button') Admin
+          a#admin.nav.js-scrollTo(href='#ADM1N' class='css3button') Admin
     block content
     block foot
       #footer

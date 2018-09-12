@@ -41,63 +41,75 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         i--;
     }
 
+    $(document).ready(function () {
+        $('.js-scrollTo').on('click', function () {
+            // Au clic sur un élément
+            var page = $(this).attr('href'); // Page cible
+            var speed = 750; // Durée de l'animation (en ms)
+            $('html, body').animate({ scrollTop: $(page).offset().top }, speed); // Go
+            return false;
+        });
+    });
+
     lien[0].onclick = function () {
+        //window.scroll(0,0)
         $('#intro').removeClass('css3button');
         $('#intro').addClass('css3buttonRed');
         $('#resume').removeClass('css3buttonRed');
         $('#resume').addClass('css3button');
-        $('#joust').removeClass('css3buttonRed');
-        $('#joust').addClass('css3button');
         $('#admin').removeClass('css3buttonRed');
         $('#admin').addClass('css3button');
-        $('#INDEX').slideDown();
-        $('#CV').slideUp();
-        $('#JOUST').slideUp();
-        $('#ADM1N').slideUp();
+        /*$('#INDEX').slideDown()
+        $('#CV').slideUp()
+        $('#joust').removeClass('css3buttonRed')
+        $('#joust').addClass('css3button')
+        $('#JOUST').slideUp()
+        $('#ADM1N').slideUp()*/
     };
     lien[1].onclick = function () {
         $('#intro').removeClass('css3buttonRed');
         $('#intro').addClass('css3button');
         $('#resume').removeClass('css3button');
         $('#resume').addClass('css3buttonRed');
-        $('#joust').removeClass('css3buttonRed');
-        $('#joust').addClass('css3button');
         $('#admin').removeClass('css3buttonRed');
         $('#admin').addClass('css3button');
-        $('#CV').slideDown();
-        $('#INDEX').slideUp();
-        $('#JOUST').slideUp();
-        $('#ADM1N').slideUp();
+        /*$('#CV').slideDown()
+        $('#INDEX').slideUp()
+        $('#joust').removeClass('css3buttonRed')
+        $('#joust').addClass('css3button')
+        $('#JOUST').slideUp()
+        $('#ADM1N').slideUp()*/
     };
     lien[2].onclick = function () {
         $('#intro').removeClass('css3buttonRed');
         $('#intro').addClass('css3button');
         $('#resume').removeClass('css3buttonRed');
         $('#resume').addClass('css3button');
-        $('#joust').removeClass('css3button');
-        $('#joust').addClass('css3buttonRed');
         $('#admin').removeClass('css3buttonRed');
         $('#admin').addClass('css3button');
-        $('#JOUST').slideDown();
-        $('#INDEX').slideUp();
-        $('#CV').slideUp();
-        $('#ADM1N').slideUp();
+        /*$('#JOUST').slideDown()
+        $('#ADM1N').slideUp()
+        $('#joust').removeClass('css3button')
+        $('#joust').addClass('css3buttonRed')
+        $('#INDEX').slideUp()
+        $('#CV').slideUp()*/
     };
-    lien[3].onclick = function () {
-        $('#intro').removeClass('css3buttonRed');
-        $('#intro').addClass('css3button');
-        $('#resume').removeClass('css3buttonRed');
-        $('#resume').addClass('css3button');
-        $('#joust').removeClass('css3buttonRed');
-        $('#joust').addClass('css3button');
-        $('#admin').removeClass('css3button');
-        $('#admin').addClass('css3buttonRed');
-        $('#ADM1N').slideDown();
-        $('#INDEX').slideUp();
-        $('#CV').slideUp();
-        $('#JOUST').slideUp();
-    };
-
+    /*
+    lien[3].onclick = () => {
+        $('#intro').removeClass('css3buttonRed')
+        $('#intro').addClass('css3button')
+        $('#resume').removeClass('css3buttonRed')
+        $('#resume').addClass('css3button')
+        $('#joust').removeClass('css3buttonRed')
+        $('#joust').addClass('css3button')
+        $('#admin').removeClass('css3button')
+        $('#admin').addClass('css3buttonRed')
+        $('#ADM1N').slideDown()
+        $('#INDEX').slideUp()
+        $('#CV').slideUp()
+        $('#JOUST').slideUp()
+    }
+    */
     function playSelect() {
         getDataSelect();
         sourceSelect.start(0);

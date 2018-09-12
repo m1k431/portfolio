@@ -148,6 +148,7 @@
       
         //jeuUUUUUUUUUUUUUUUUUUUcv
         $('.english').fadeIn()
+        $('#competen').fadeIn()
       
         window.document.getElementById('french').onclick = () => {
             getDataF()
@@ -182,7 +183,7 @@
         function letsStart() {
             $('#experiences').fadeOut()
             $('#formation').fadeOut()
-            $('#competen').fadeIn()
+            
             $('#linkedIn').fadeIn(2000)
             getDataS()
             sourceS.start(0)
@@ -313,15 +314,16 @@
                         sourceA.start(0)
                     }
                     brickBroken()
-                    if (clickMove == true) 
+                    /* if (clickMove == true) 
                     {
                         window.addEventListener('click', animMoveBall, true)
                         clickMove = false
                     }
-                    else {
+                    else {/*
                         window.removeEventListener('click', animMoveBall, true)
-                        animMoveBall()
-                    }
+                        animMoveBall()*/
+                    //}
+                    animMoveBall()
                 }
             }
             
