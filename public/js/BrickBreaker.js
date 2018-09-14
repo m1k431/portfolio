@@ -140,10 +140,10 @@ const jeuBreaker = function() {
     $('#metier > h4').fadeOut(375, function() {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
-    $('#competen').fadeOut(500)
+    /*$('#competen').fadeOut(500)
     $('#experiences').fadeOut(325)
     $('#formation').fadeOut(250)
-    $('#complementaire').fadeOut(125)
+    $('#complementaire').fadeOut(125)*/
       
     //jeuUUUUUUUUUUUUUUUUUUUcv
     $('.english').fadeIn()
@@ -180,8 +180,8 @@ const jeuBreaker = function() {
         
     //START click
     function letsStart() {
-        $('#experiences').fadeOut()
-        $('#formation').fadeOut()
+        //$('#experiences').fadeOut()
+        //$('#formation').fadeOut()
             
         $('#linkedIn').fadeIn(2000)
         getDataS()
