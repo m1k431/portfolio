@@ -27,8 +27,7 @@
     "path": "^0.12.7",
     "pug": "^2.0.3",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^2.1.1",
-    "universal-analytics": "^0.4.17"
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

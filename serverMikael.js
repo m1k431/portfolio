@@ -16,8 +16,6 @@ const urldb = 'mongodb://127.0.0.1:27017/exo19'
 const urldb20 = 'mongodb://127.0.0.1:27017/exo20'
 const n0mBd = 'exo19'
 const n0mBd20 = 'exo20'
-var ua = require('universal-analytics')
-var visitor = ua('UA-113167424-1',  {http: true})
 var sess = {
     secret: 'azerty',
     cookie: {},
@@ -51,7 +49,6 @@ if (app.get('env') === 'production') {
 }
 
 app.get('/', (req, res) => {
-    visitor.pageview('/', 'http://mikael.ml', 'Fullstack JS dev').send()
     MongoClient.connect(urldb, { useNewUrlParser: true }, (err, client) => {
         if (err) {
             return

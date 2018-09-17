@@ -140,11 +140,7 @@ const jeuBreaker = function() {
     $('#metier > h4').fadeOut(375, function() {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
-    /*$('#competen').fadeOut(500)
-    $('#experiences').fadeOut(325)
-    $('#formation').fadeOut(250)
-    $('#complementaire').fadeOut(125)*/
-      
+    
     //jeuUUUUUUUUUUUUUUUUUUUcv
     $('.english').fadeIn()
     $('#competen').fadeIn()
@@ -182,7 +178,6 @@ const jeuBreaker = function() {
     function letsStart() {
         //$('#experiences').fadeOut()
         //$('#formation').fadeOut()
-            
         $('#linkedIn').fadeIn(2000)
         getDataS()
         sourceS.start(0)
@@ -251,24 +246,24 @@ const jeuBreaker = function() {
             startx = parseInt(touchobj.pageX) // get x coord of touch point
             e.preventDefault() // prevent default click behavior
         }
-        window.addEventListener('touchstart', eTouchStart, true)
+        window.document.addEventListener('touchstart', eTouchStart, true)
         let eTouchMove = function(e) {
             touchobj = e.changedTouches[0] // reference first touch point for this event
             let dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
             box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth/40 + 'px'
             e.preventDefault()
         }
-        window.addEventListener('touchmove', eTouchMove, true)
+        window.document.addEventListener('touchmove', eTouchMove, true)
         bStart.removeEventListener('click', letsStart, true)
             
         let moveBall = function() {
-            window.addEventListener('mousemove', movepaddle, true)
+            window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin) {
                 divSprite.style.top = ballY + 'px'
                 //ball move left right limit
                 if (ballX < competences.offsetWidth && !ballLeft) {
-                    clearInterval(idL)
-                    idR = setInterval(animSpriteR, 60)
+                    cancelAnimationFrame(idL)
+                    idR = requestAnimationFrame(animSpriteR)
                     if (angle) {
                         ballX = ballX + 2
                         divSprite.style.left = ballX + 'px'
@@ -278,8 +273,8 @@ const jeuBreaker = function() {
                     }
                 } else if (ballX > competences.offsetLeft) {
                     ballLeft = true
-                    clearInterval(idR)
-                    idL = setInterval(animSprite, 60)
+                    cancelAnimationFrame(idR)
+                    idL = requestAnimationFrame(animSprite)
                     if (angle) {
                         ballX = ballX - 2
                         divSprite.style.left = ballX + 'px'
@@ -325,7 +320,8 @@ const jeuBreaker = function() {
             }
         }
             
-            
+        let idAni
+        let idR, idL
         let animMoveBall = function() {
             idAni = requestAnimationFrame(moveBall)
         }
@@ -337,8 +333,9 @@ const jeuBreaker = function() {
             else {
                 imgSoccer.style.left = -1.8 + 'px'
             }
+            idL = requestAnimationFrame(animSprite)
         }
-            
+        
         let animSpriteR = function() {
             if (parseFloat(imgSoccer.style.left) < -2) {
                 imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
@@ -346,9 +343,9 @@ const jeuBreaker = function() {
             else {
                 imgSoccer.style.left = -141.8 + 'px'
             }
+            idR = requestAnimationFrame(animSpriteR)
         }
 
-        let idR, idL
         let paddle = function() {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
@@ -381,7 +378,7 @@ const jeuBreaker = function() {
             }
         }
 
-        let idAni
+        
         let brickBroken = function() {
             let mesInfosT = window.document.getElementsByClassName('infoT')
             let i = mesInfosT.length - 1
@@ -389,9 +386,9 @@ const jeuBreaker = function() {
                 cancelAnimationFrame(idAni)
                 clearInterval(idR)
                 clearInterval(idL)
-                window.removeEventListener('mousemove', movepaddle, true)
-                window.removeEventListener('click', eTouchStart, true)
-                window.removeEventListener('click', eTouchMove, true)
+                window.document.removeEventListener('mousemove', movepaddle, true)
+                window.document.removeEventListener('click', eTouchStart, true)
+                window.document.removeEventListener('click', eTouchMove, true)
                 getDataY()
                 sourceY.start(0)
                 divSprite.removeChild(imgSoccer)

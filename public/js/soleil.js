@@ -174,10 +174,10 @@ const monIntro = function() {
     imgSonic.style.top = '-21px'
     imgSonic.src = '/static/img/sonic2.png'
     divSonic.appendChild(imgSonic)
-        
+    window.document.getElementById('a7ari').parentNode.replaceChild(m0nimg, window.document.getElementById('a7ari'))
     let bool1 = false
     let bool2 = false
-    let idB, idW, idMU, idMD, idS
+    let idB, idW, idMU, idMD, idS, idM
     let sonicBored = function() {
         if (bool1 == false) {
             imgSonic.style.left = '-55px'
@@ -190,8 +190,9 @@ const monIntro = function() {
             }
             else bool1 = false
         }
+        idB = requestAnimationFrame(sonicBored)
     }
-        
+    
     let sonicWalk = function() {
         if (bool2 == false) {
             imgSonic.style.left = '-50px'    
@@ -204,16 +205,16 @@ const monIntro = function() {
             }
             else bool2 = false
         }
+        idW = requestAnimationFrame(sonicWalk)
     }
         
         
     let moveSonicRight = function() {
-        if (parseFloat(divSonic.style.left) < 100)  divSonic.style.left = parseFloat(divSonic.style.left) + 0.5 + '%'
+        if (parseFloat(divSonic.style.left) < 100)  divSonic.style.left = parseFloat(divSonic.style.left) + 0.2 + '%'
         else {
             divSonic.style.left = '-10%'
-            clearInterval(idM)
-            clearInterval(idW)
         }
+        idM = requestAnimationFrame(moveSonicRight)
     }
 
         
@@ -227,6 +228,7 @@ const monIntro = function() {
         else {
             back = true
         }
+        idMD = requestAnimationFrame(monkeyDown)
     }
     let monkeyUp = function() {
         if (cpt > 0) {
@@ -236,6 +238,7 @@ const monIntro = function() {
         else {
             back = false
         }
+        idMU = requestAnimationFrame(monkeyUp)
     }
     let c00rdX = 45
     let c00rdY = 2
@@ -245,7 +248,7 @@ const monIntro = function() {
     let screenH
     let screenW
     let stars = []
-    let numStars = 500
+    let numStars = 1000
     // Calculate the screen size
     screenH = 400
     screenW = 600
@@ -360,56 +363,55 @@ const monIntro = function() {
                 $('#space').animate({
                     backgroundColor: '#0a15db'
                 }, 1000 )
-                clearInterval(idMU)
+                cancelAnimationFrame(idW)
+                cancelAnimationFrame(idM)
                 clearInterval(idS)
                 $('#space').fadeOut(1000)
                 break
             case 52:
                 $('#moon').fadeOut(1500)
-                idMD = setInterval(monkeyDown,60)
-                clearInterval(idB)
-                idW = setInterval(sonicWalk,30)
-                idM = setInterval(moveSonicRight, 60)
+                idMD = requestAnimationFrame(monkeyDown)
+                cancelAnimationFrame(idB)
+                idW = requestAnimationFrame(sonicWalk)
+                idM = requestAnimationFrame(moveSonicRight)
                 break
             case 62:
-                clearInterval(idMD)
-                idMU = setInterval(monkeyUp,60)
+                cancelAnimationFrame(idMD)
+                idMU = requestAnimationFrame(monkeyUp)
                 break
             case 78:
-                clearInterval(idMU)
-                idMD = setInterval(monkeyDown,60)
+                cancelAnimationFrame(idMU)
+                idMD = requestAnimationFrame(monkeyDown)
                 break
             case 90:
                 $('#moon').fadeIn(5000)
-                clearInterval(idMD)
-                idMU = setInterval(monkeyUp,60)
+                cancelAnimationFrame(idMD)
+                idMU = requestAnimationFrame(monkeyUp)
                 break
             case 95:
-                clearInterval(idM)
-                clearInterval(idW)
-                idB = setInterval(sonicBored,60)
+                cancelAnimationFrame(idM)
+                cancelAnimationFrame(idW)
+                idB = requestAnimationFrame(sonicBored)
                 $('#space').animate({
                     backgroundColor: '#000000'
                 }, 1500 )
                 $('#space').fadeIn(1500)
                 break
             case 100:
-                clearInterval(idB)
-                clearInterval(idMU)
-                idS = setInterval(animate,120)
+                cancelAnimationFrame(idB)
+                cancelAnimationFrame(idMU)
+                idS = setInterval(animate,500)
                 break
             }
             ctx.fillRect(0, 0, 40, 40)
             ctxLune.fillRect(0, 0, 40, 40)
             c00rdX = (c00rdX * 10 + 0.1 * 10) / 10
-            requestAnimationFrame(dessinerM0n)
         }
         else {
             c00rdX = 45
-            requestAnimationFrame(dessinerM0n)
         }
+        requestAnimationFrame(dessinerM0n)
     }
     requestAnimationFrame(dessinerM0n)
-    window.document.getElementById('a7ari').parentNode.replaceChild(m0nimg, window.document.getElementById('a7ari'))
 }
 monIntro()
