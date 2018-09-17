@@ -1,22 +1,22 @@
 
 const jeuBreaker = function() {
-    let audioctxxx = new AudioContext()
-    let sourceA, sourceB, sourceC, sourceM, sourceF, sourceS, sourceY
-    let pongA = './static/sound/pongA.mp3'
-    let pongB = './static/sound/pongB.mp3'
-    let pongC = './static/sound/pongC.mp3'
-    let start = './static/sound/start.mp3'
-    let flagS = './static/sound/flagS.mp3'
-    let youWin = './static/sound/youWin.mp3'
-    let miss = './static/sound/miss.mp3'
+    var audioctxxx = new AudioContext()
+    var sourceA, sourceB, sourceC, sourceM, sourceF, sourceS, sourceY
+    var pongA = './static/sound/pongA.mp3'
+    var pongB = './static/sound/pongB.mp3'
+    var pongC = './static/sound/pongC.mp3'
+    var start = './static/sound/start.mp3'
+    var flagS = './static/sound/flagS.mp3'
+    var youWin = './static/sound/youWin.mp3'
+    var miss = './static/sound/miss.mp3'
     // Buffeeeeer mode
     function getDataA() {
         sourceA = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', pongA, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceA.buffer
                 sourceA.buffer = buffer
@@ -29,11 +29,11 @@ const jeuBreaker = function() {
     }
     function getDataB() {
         sourceB = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', pongB, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceB.buffer
                 sourceB.buffer = buffer
@@ -46,11 +46,11 @@ const jeuBreaker = function() {
     }
     function getDataC() {
         sourceC = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', pongC, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceC.buffer
                 sourceC.buffer = buffer
@@ -63,11 +63,11 @@ const jeuBreaker = function() {
     }
     function getDataM() {
         sourceM = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', miss, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceM.buffer
                 sourceM.buffer = buffer
@@ -80,11 +80,11 @@ const jeuBreaker = function() {
     }
     function getDataF() {
         sourceF = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', flagS, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceF.buffer
                 sourceF.buffer = buffer
@@ -97,11 +97,11 @@ const jeuBreaker = function() {
     }
     function getDataS() {
         sourceS = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', start, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceS.buffer
                 sourceS.buffer = buffer
@@ -114,11 +114,11 @@ const jeuBreaker = function() {
     }
     function getDataY() {
         sourceY = audioctxxx.createBufferSource()
-        let request = new XMLHttpRequest()
+        var request = new XMLHttpRequest()
         request.open('GET', youWin, true)
         request.responseType = 'arraybuffer'
         request.onload = function() {
-            let audioData = request.response
+            var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
                 sourceY.buffer
                 sourceY.buffer = buffer
@@ -171,25 +171,25 @@ const jeuBreaker = function() {
         $('#competen').css('height', 'auto')
         $('.spanish').fadeIn()
     }
-    let bStart = window.document.getElementById('metier')
-    bStart.addEventListener('click', letsStart, true)
+    var bStart = window.document.getElementById('metier')
+    bStart.addEventListener('click', varsStart, true)
         
     //START click
-    function letsStart() {
+    function varsStart() {
         //$('#experiences').fadeOut()
         //$('#formation').fadeOut()
         $('#linkedIn').fadeIn(2000)
         getDataS()
         sourceS.start(0)
         //brickBreaker
-        let competences = window.document.getElementById('competen')
-        let informatique = window.document.getElementById('informatique')
-        let commerciales = window.document.getElementById('commerciales')
-        let linkedIn = window.document.getElementById('linkedIn')
-        let complementaire = window.document.getElementById('complementaire')
-        let animH = $('#competen').height()
-        //let linkOff = $('#linkedIn').offset()
-        let divSprite = window.document.createElement('div')
+        var competences = window.document.getElementById('competen')
+        var informatique = window.document.getElementById('informatique')
+        var commerciales = window.document.getElementById('commerciales')
+        var linkedIn = window.document.getElementById('linkedIn')
+        var complementaire = window.document.getElementById('complementaire')
+        var animH = $('#competen').height()
+        //var linkOff = $('#linkedIn').offset()
+        var divSprite = window.document.createElement('div')
         divSprite.id = 'divSprite'
         divSprite.className = 'divsprite'
         divSprite.style.position = 'absolute'
@@ -200,7 +200,7 @@ const jeuBreaker = function() {
         divSprite.style.borderRadius = '12px'
         divSprite.style.overflow = 'hidden'
         competences.appendChild(divSprite)
-        let imgSoccer = window.document.createElement('img')
+        var imgSoccer = window.document.createElement('img')
         imgSoccer.id = 'imgSoccer'
         imgSoccer.className = 'imgsoccer'
         imgSoccer.style.position = 'absolute'
@@ -217,8 +217,8 @@ const jeuBreaker = function() {
         linkedIn.style.marginTop = -50 + 'px'
         complementaire.className = 'complementaireT'
         window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
-        let mesDivInfos = window.document.getElementsByClassName('infoJeu')
-        let i = mesDivInfos.length
+        var mesDivInfos = window.document.getElementsByClassName('infoJeu')
+        var i = mesDivInfos.length
         i--
         while (i >= 0) {
             mesDivInfos[i].setAttribute('class', 'infoT')
@@ -229,41 +229,66 @@ const jeuBreaker = function() {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-        let ballX = competences.offsetLeft + competences.offsetWidth/2
-        let ballY = competences.offsetTop + competences.offsetHeight
-        let ballLeft = true
-        let ballDown = false
-        let youwin = false
-        let angle = false
+        var ballX = competences.offsetLeft + competences.offsetWidth/2
+        var ballY = competences.offsetTop + competences.offsetHeight
+        var ballLeft = true
+        var ballDown = false
+        var youwin = false
+        var angle = false
         //TouchMove eventListener
-        let box2 = document.getElementById('linkedIn'),
+        var box2 = document.getElementById('linkedIn'),
             boxleft, // left position of moving box
             startx, // starting x coordinate of touch point
             touchobj = null // Touch object holder
-        let eTouchStart = function(e) {
+        var eTouchStart = function(e) {
             touchobj = e.changedTouches[0] // reference first touch point
             boxleft = parseInt(box2.style.left) // get left position of box
             startx = parseInt(touchobj.pageX) // get x coord of touch point
             e.preventDefault() // prevent default click behavior
         }
         window.document.addEventListener('touchstart', eTouchStart, true)
-        let eTouchMove = function(e) {
+        var eTouchMove = function(e) {
             touchobj = e.changedTouches[0] // reference first touch point for this event
-            let dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
+            var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
             box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth/40 + 'px'
             e.preventDefault()
         }
         window.document.addEventListener('touchmove', eTouchMove, true)
-        bStart.removeEventListener('click', letsStart, true)
+        bStart.removeEventListener('click', varsStart, true)
             
-        let moveBall = function() {
+        var idAni, idR, idL
+        var animMoveBall = function() {
+            idAni = requestAnimationFrame(moveBall)
+        }
+
+        var animSprite = function() {
+            if (parseFloat(imgSoccer.style.left) > -152) {
+                imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 17.5 + 'px'
+            }
+            else {
+                imgSoccer.style.left = -1.8 + 'px'
+            }
+            idL = requestAnimationFrame(animSprite)
+        }
+        /*
+        var animSpriteR = function() {
+            if (parseFloat(imgSoccer.style.left) < -2) {
+                imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
+            }
+            else {
+                imgSoccer.style.left = -141.8 + 'px'
+            }
+            cancelAnimationFrame(idL)
+            idR = requestAnimationFrame(animSpriteR)
+        }*/
+        idL = requestAnimationFrame(animSprite)
+        var moveBall = function() {
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin) {
                 divSprite.style.top = ballY + 'px'
                 //ball move left right limit
                 if (ballX < competences.offsetWidth && !ballLeft) {
-                    cancelAnimationFrame(idL)
-                    idR = requestAnimationFrame(animSpriteR)
+                    //idR = requestAnimationFrame(animSpriteR)
                     if (angle) {
                         ballX = ballX + 2
                         divSprite.style.left = ballX + 'px'
@@ -273,8 +298,7 @@ const jeuBreaker = function() {
                     }
                 } else if (ballX > competences.offsetLeft) {
                     ballLeft = true
-                    cancelAnimationFrame(idR)
-                    idL = requestAnimationFrame(animSprite)
+                    //idL = requestAnimationFrame(animSprite)
                     if (angle) {
                         ballX = ballX - 2
                         divSprite.style.left = ballX + 'px'
@@ -320,33 +344,7 @@ const jeuBreaker = function() {
             }
         }
             
-        let idAni
-        let idR, idL
-        let animMoveBall = function() {
-            idAni = requestAnimationFrame(moveBall)
-        }
-
-        let animSprite = function() {
-            if (parseFloat(imgSoccer.style.left) > -152) {
-                imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 17.5 + 'px'
-            }
-            else {
-                imgSoccer.style.left = -1.8 + 'px'
-            }
-            idL = requestAnimationFrame(animSprite)
-        }
-        
-        let animSpriteR = function() {
-            if (parseFloat(imgSoccer.style.left) < -2) {
-                imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
-            }
-            else {
-                imgSoccer.style.left = -141.8 + 'px'
-            }
-            idR = requestAnimationFrame(animSpriteR)
-        }
-
-        let paddle = function() {
+        var paddle = function() {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
                 ballLeft = true
@@ -378,14 +376,19 @@ const jeuBreaker = function() {
             }
         }
 
+        var movepaddle = function(mon0bjetEvent) {
+            if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/2 < competences.offsetWidth + competences.offsetLeft) {
+                window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth/2 + 'px'
+            }
+        }
         
-        let brickBroken = function() {
-            let mesInfosT = window.document.getElementsByClassName('infoT')
-            let i = mesInfosT.length - 1
+        var brickBroken = function() {
+            var mesInfosT = window.document.getElementsByClassName('infoT')
+            var i = mesInfosT.length - 1
             if (mesInfosT.length <= 0) {
                 cancelAnimationFrame(idAni)
-                clearInterval(idR)
-                clearInterval(idL)
+                cancelAnimationFrame(idR)
+                cancelAnimationFrame(idL)
                 window.document.removeEventListener('mousemove', movepaddle, true)
                 window.document.removeEventListener('click', eTouchStart, true)
                 window.document.removeEventListener('click', eTouchMove, true)
@@ -436,11 +439,7 @@ const jeuBreaker = function() {
             }
         }
 
-        let movepaddle = function(mon0bjetEvent) {
-            if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/2 < competences.offsetWidth + competences.offsetLeft) {
-                window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth/2 + 'px'
-            }
-        }
+        
 
         idAni = requestAnimationFrame(moveBall)
     }
