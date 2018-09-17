@@ -400,7 +400,7 @@ const monIntro = function() {
             case 100:
                 cancelAnimationFrame(idB)
                 cancelAnimationFrame(idMU)
-                idS = setInterval(animate,500)
+                idS = setInterval(animate,1000)
                 break
             }
             ctx.fillRect(0, 0, 40, 40)
