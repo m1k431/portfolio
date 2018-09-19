@@ -415,6 +415,7 @@ const jeuBreaker = function() {
                 $('#formation').fadeIn(1000)
                 $('#complementaire').fadeIn(1250)
                 $('#competen').css('height', 'auto')
+                bStart.addEventListener('click', varsStart, true)
             } else {
                 while (i >= 0) {
                     //inside brick

@@ -365,7 +365,7 @@ const monIntro = function() {
                 }, 1000 )
                 cancelAnimationFrame(idW)
                 cancelAnimationFrame(idM)
-                clearInterval(idS)
+                //clearInterval(idS)
                 $('#space').fadeOut(1000)
                 break
             case 52:
@@ -400,7 +400,7 @@ const monIntro = function() {
             case 100:
                 cancelAnimationFrame(idB)
                 cancelAnimationFrame(idMU)
-                idS = setInterval(animate, 500)
+                //idS = setInterval(animate, 500)
                 break
             }
             ctx.fillRect(0, 0, 40, 40)

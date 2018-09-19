@@ -39,3 +39,10 @@ html(lang="en")
       script(src='/static/js/react-dom.development.js' crossorigin="anonymous")
       script(src='/static/js/AudioContextMonkeyPatch.js' defer)
       script(src='/static/js/layoutNav.js' defer)
+      script(src='https://www.googletagmanager.com/gtag/js?id=UA-113167424-1')
+      // Global site tag (gtag.js) - Google Analytics
+      script.
+        window.dataLayer = window.dataLayer || []
+        function gtag(){dataLayer.push(arguments)}
+        gtag('js', new Date())
+        gtag('config', 'UA-113167424-1')
