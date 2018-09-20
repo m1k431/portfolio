@@ -15,6 +15,31 @@ p.moiPara, p.jeu {
 /*****
 $$$$$$  BALISES HTML   $$$$$
 ****/
+#metier {
+  -webkit-transition: background 1s ease-in-out;
+  -ms-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
+  border-radius: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 1px solid #08021f;
+}
+
+.backgroundRed {
+  text-align: center;
+  font-family: monospace;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #08021f;
+  border-radius: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 15%;
+  margin-right: 15%;
+  overflow: hidden;
+}
+
 p.jeu {
   text-align: center;
 }

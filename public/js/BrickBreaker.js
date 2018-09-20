@@ -130,6 +130,8 @@ const jeuBreaker = function() {
         request.send()
     }
 
+
+    
     $('#m0ncentrage').fadeIn(1000)
     $('#competen').fadeIn(500)
     $('#experiences').fadeIn(375)
@@ -144,6 +146,10 @@ const jeuBreaker = function() {
     //jeuUUUUUUUUUUUUUUUUUUUcv
     $('.english').fadeIn()
     $('#competen').fadeIn()
+    var $div2blink = $('#metier') // Save reference, only look this item up once, then save
+    var backgroundInterval = setInterval(function(){
+        $div2blink.toggleClass('backgroundRed')
+    },1500)
       
     window.document.getElementById('french').onclick = () => {
         getDataF()
