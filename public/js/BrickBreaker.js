@@ -147,7 +147,7 @@ const jeuBreaker = function() {
     $('.english').fadeIn()
     $('#competen').fadeIn()
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
-    var backgroundInterval = setInterval(function(){
+    setInterval(function(){
         $div2blink.toggleClass('backgroundRed')
     },1500)
       

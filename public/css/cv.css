@@ -65,7 +65,7 @@ h1.spanish {
   margin-bottom: 0;
 }
 
-h2 {
+h1 {
   text-transform: capitalize;
   margin: 0;
   font-size: 1.2em;
@@ -73,7 +73,7 @@ h2 {
   padding-bottom: 2px;
 }
 
-h3 {
+h2 {
   font-family: monospace;
   text-align: center;
   text-decoration: underline;
@@ -83,7 +83,7 @@ h3 {
   font-size: 1.3em;
 }
 
-h4 {
+h3 {
   margin: 0;
   color: black;
   font-family: monospace;
