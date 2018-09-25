@@ -71,10 +71,8 @@ $$$$$$  BALISES HTML   $$$$$
     
     h1 {
         text-transform: capitalize;
-        margin: 0;
+        margin: 2px;
         font-size: 1.2em;
-        margin-top: 0;
-        padding-bottom: 2px;
     }
     
     h2 {
@@ -151,7 +149,7 @@ $$$$$$  POLICES &&& background:   $$$$$
     
     .pdf {
         position: absolute;
-        float: left;
+        margin-top: -3px;
     }
 
     .moi {
@@ -258,27 +256,11 @@ $$$$$$  POLICES &&& background:   $$$$$
     }
     
     .linkedin {
-        /*  animation: anim2 4s;
-  animation-iteration-count: infinite;*/
         display: none;
         position: absolute;
         border-radius: 10px;
         height: 35px;
         margin: 5px;
-    }
-    
-    .metier {
-        text-align: center;
-        font-family: monospace;
-        background-color: rgba(255, 255, 255, 0.4);
-        border: 1px solid #08021f;
-        border-radius: 10px;
-        margin-top: 1%;
-        margin-bottom: 1%;
-        margin-left: 15%;
-        margin-right: 15%;
-        overflow: hidden;
-        display: none;
     }
     
     .competencesJeu {

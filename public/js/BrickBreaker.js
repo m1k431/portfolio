@@ -139,7 +139,7 @@ const jeuBreaker = function() {
     $('#complementaire').fadeIn(125)
     $('.moi').fadeIn()
     $('.metier').fadeIn()
-    $('#metier > h4').fadeOut(375, function() {
+    $('#metier > h1').fadeOut(375, function() {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
     
@@ -414,7 +414,7 @@ const jeuBreaker = function() {
                 commerciales.style.verticalAlign = 'middle'
                 youwin = true
                 divSprite.style.display = 'none'
-                $('#metier > h4').fadeOut(250, function() {
+                $('#metier > h1').fadeOut(250, function() {
                     $(this).text('Junior FullStack Javascript Developer').fadeIn(250)
                 })
                 $('#experiences').fadeIn(750)
