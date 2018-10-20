@@ -7,7 +7,27 @@ append content
           #INDEX
             .paraFoot Welcome to my devlab
               #s0leil
-            .paraFoot My name is Mikael, I'm a javascript developer.
+            .paraFoot My name is Mikael, I'm an IBM RPG &amp; Javascript Developer.
+            .paraFoot This website hosts my skills, projects and experiences.
+              video#jugglejungle(loop='' poster='/static/img/kuansiFalls.jpg')
+                source(src='/static/video/theOneFinal2.webm' type='video/webm')
+                source(src='/static/video/theOneFinal2.mp4' type='video/mp4')
+            button#BtnJs0nPl4Y PLAY
+          include jeuCV.pug
+          //include joust.pug
+          include adm1n.pug
+append scripts
+  script(src='/static/js/soleil.js' defer)
+extends layoutNav.pug
+append content
+  .content
+    .table-cell
+      #m0ncentrage
+        .m0ncentrageParafoot
+          #INDEX
+            .paraFoot Welcome to my devlab
+              #s0leil
+            .paraFoot My name is Mikael, I'm an IBM RPG &amp; Javascript Developer.
             .paraFoot This website hosts my skills, projects and experiences.
               video#jugglejungle(loop='' poster='/static/img/kuansiFalls.jpg')
                 source(src='/static/video/theOneFinal2.webm' type='video/webm')

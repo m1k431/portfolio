@@ -22,8 +22,11 @@
     "express": "^4.16.3",
     "express-minify": "^1.0.0",
     "express-session": "^1.15.6",
+    "g": "^2.0.1",
     "helmet": "^3.13.0",
     "mongodb": "^3.1.1",
+    "nodemon": "^1.18.10",
+    "npm": "^6.9.0",
     "path": "^0.12.7",
     "pug": "^2.0.3",
     "serve-favicon": "^2.5.0",
@@ -33,13 +36,13 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-react-pug": "^6.0.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.2.0",
+    "eslint": "^5.15.3",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react-pug": "^0.3.2",
     "eslint-plugin-standard": "^3.1.0",
-    "jest": "^23.4.2"
+    "jest": "^24.5.0"
   }
 }

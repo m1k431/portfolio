@@ -4,7 +4,6 @@ const favicon = require('serve-favicon')
 const path = require('path')
 const express = require('express')
 const helmet = require('helmet')
-require('pug')
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const session = require('express-session')
