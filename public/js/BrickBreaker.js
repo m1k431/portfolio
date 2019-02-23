@@ -18,7 +18,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceA.buffer
                 sourceA.buffer = buffer
                 sourceA.connect(audioctxxx.destination)
                 sourceA.loop = false
@@ -35,7 +34,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceB.buffer
                 sourceB.buffer = buffer
                 sourceB.connect(audioctxxx.destination)
                 sourceB.loop = false
@@ -52,7 +50,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceC.buffer
                 sourceC.buffer = buffer
                 sourceC.connect(audioctxxx.destination)
                 sourceC.loop = false
@@ -69,7 +66,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceM.buffer
                 sourceM.buffer = buffer
                 sourceM.connect(audioctxxx.destination)
                 sourceM.loop = false
@@ -86,7 +82,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceF.buffer
                 sourceF.buffer = buffer
                 sourceF.connect(audioctxxx.destination)
                 sourceF.loop = false
@@ -103,7 +98,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceS.buffer
                 sourceS.buffer = buffer
                 sourceS.connect(audioctxxx.destination)
                 sourceS.loop = false
@@ -120,7 +114,6 @@ const jeuBreaker = function() {
         request.onload = function() {
             var audioData = request.response
             audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceY.buffer
                 sourceY.buffer = buffer
                 sourceY.connect(audioctxxx.destination)
                 sourceY.loop = false
