@@ -192,22 +192,22 @@ const jeuBreaker = function() {
         divSprite.id = 'divSprite'
         divSprite.className = 'divsprite'
         divSprite.style.position = 'absolute'
-        divSprite.style.height = '12px'
-        divSprite.style.width = '12px'
+        divSprite.style.height = '20px'
+        divSprite.style.width = '20px'
         divSprite.style.border = 'solid'
         divSprite.style.borderWidth = '1px'
-        divSprite.style.borderRadius = '12px'
+        divSprite.style.borderRadius = '20px'
         divSprite.style.overflow = 'hidden'
         competences.appendChild(divSprite)
         var imgSoccer = window.document.createElement('img')
         imgSoccer.id = 'imgSoccer'
         imgSoccer.className = 'imgsoccer'
         imgSoccer.style.position = 'absolute'
-        imgSoccer.style.height = '100px'
-        imgSoccer.style.left = '-1.8px'
-        imgSoccer.style.top = '-53.4px'
+        imgSoccer.style.height = '500px'
+        imgSoccer.style.left = '-4px'
+        imgSoccer.style.top = '-142.5px'
         imgSoccer.src = '/static/img/ball.png'
-        imgSoccer.style.backgroundColor = 'red'
+        imgSoccer.style.backgroundColor = 'none'
         divSprite.appendChild(imgSoccer)
         linkedIn.className = 'linkedinT'
         $('#competen').animate({
@@ -261,11 +261,11 @@ const jeuBreaker = function() {
         }
 
         var animSprite = function() {
-            if (parseFloat(imgSoccer.style.left) > -152) {
-                imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 17.5 + 'px'
+            if (parseFloat(imgSoccer.style.left) > -920) {
+                imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 27.8 + 'px'
             }
             else {
-                imgSoccer.style.left = -1.8 + 'px'
+                imgSoccer.style.left = -4 + 'px'
             }
             idL = requestAnimationFrame(animSprite)
         }
