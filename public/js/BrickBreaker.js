@@ -52,13 +52,13 @@ const jeuBreaker = function () {
     var youWin = './static/sound/youWin.mp3'
     var miss = './static/sound/miss.mp3'
       
-    $('#m0ncentrage').fadeIn(1000)
+    /*$('#m0ncentrage').fadeIn(1000)
     $('#competen').fadeIn(500)
     $('#experiences').fadeIn(375)
     $('#formation').fadeIn(250)
     $('#complementaire').fadeIn(125)
     $('.moi').fadeIn()
-    $('.metier').fadeIn()
+    $('.metier').fadeIn()*/
     $('#metier > h1').fadeOut(375, function() {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
