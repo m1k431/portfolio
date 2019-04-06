@@ -1,7 +1,47 @@
 
-const jeuBreaker = function() {
-    var audioctxxx = new AudioContext()
-    var sourceA, sourceB, sourceC, sourceM, sourceF, sourceS, sourceY
+const jeuBreaker = function () {
+
+    function play(url) {
+        var context = new (window.AudioContext || window.webkitAudioContext)();
+        var audioStack = [];
+        var nextTime = 0;
+
+        fetch(url).then(function (response) {
+            var reader = response.body.getReader();
+            function read() {
+                return reader.read().then(({ value, done }) => {
+                    context.decodeAudioData(value.buffer, function (buffer) {
+                        audioStack.push(buffer);
+                        if (audioStack.length) {
+                            scheduleBuffers();
+                        }
+                    }, function (err) {
+                        console.log("err(decodeAudioData): " + err);
+                    });
+                    if (done) {
+                        console.log('done');
+                        return;
+                    }
+                    read()
+                });
+            }
+            read();
+        })
+
+        function scheduleBuffers() {
+            while (audioStack.length) {
+                var buffer = audioStack.shift();
+                var source = context.createBufferSource();
+                source.buffer = buffer;
+                source.connect(context.destination);
+                if (nextTime == 0)
+                    nextTime = context.currentTime + 0.01;  /// add 50ms latency to work well across systems - tune this if you like
+                source.start(nextTime);
+                nextTime += source.buffer.duration; // Make the next buffer wait the length of the last buffer before being played
+            };
+        }
+    }
+
     var pongA = './static/sound/pongA.mp3'
     var pongB = './static/sound/pongB.mp3'
     var pongC = './static/sound/pongC.mp3'
@@ -9,122 +49,7 @@ const jeuBreaker = function() {
     var flagS = './static/sound/flagS.mp3'
     var youWin = './static/sound/youWin.mp3'
     var miss = './static/sound/miss.mp3'
-    // Buffeeeeer mode
-    function getDataA() {
-        sourceA = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', pongA, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceA.buffer = buffer
-                sourceA.connect(audioctxxx.destination)
-                sourceA.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-    function getDataB() {
-        sourceB = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', pongB, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceB.buffer = buffer
-                sourceB.connect(audioctxxx.destination)
-                sourceB.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-    function getDataC() {
-        sourceC = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', pongC, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceC.buffer = buffer
-                sourceC.connect(audioctxxx.destination)
-                sourceC.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-    function getDataM() {
-        sourceM = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', miss, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceM.buffer = buffer
-                sourceM.connect(audioctxxx.destination)
-                sourceM.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-    function getDataF() {
-        sourceF = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', flagS, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceF.buffer = buffer
-                sourceF.connect(audioctxxx.destination)
-                sourceF.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-    function getDataS() {
-        sourceS = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', start, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceS.buffer = buffer
-                sourceS.connect(audioctxxx.destination)
-                sourceS.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-    function getDataY() {
-        sourceY = audioctxxx.createBufferSource()
-        var request = new XMLHttpRequest()
-        request.open('GET', youWin, true)
-        request.responseType = 'arraybuffer'
-        request.onload = function() {
-            var audioData = request.response
-            audioctxxx.decodeAudioData(audioData, function(buffer) {
-                sourceY.buffer = buffer
-                sourceY.connect(audioctxxx.destination)
-                sourceY.loop = false
-            },
-            function(e){ console.log('Error with decoding audio data' + e.err) })
-        }
-        request.send()
-    }
-
-
-    
+      
     $('#m0ncentrage').fadeIn(1000)
     $('#competen').fadeIn(500)
     $('#experiences').fadeIn(375)
@@ -145,8 +70,7 @@ const jeuBreaker = function() {
     },1500)
       
     window.document.getElementById('french').onclick = () => {
-        getDataF()
-        sourceF.start(0)
+        play(flagS)
         $('.english').hide()
         $('.spanish').hide()
         $('.french').hide()
@@ -154,16 +78,14 @@ const jeuBreaker = function() {
         $('.french').fadeIn()
     }
     window.document.getElementById('english').onclick = () => {
-        getDataF()
-        sourceF.start(0)
+        play(flagS)
         $('.french').hide()
         $('.spanish').hide()
         $('.english').hide()
         $('.english').fadeIn()
     }
     window.document.getElementById('spanish').onclick = () => {
-        getDataF()
-        sourceF.start(0)
+        play(flagS)
         $('.french').hide()
         $('.english').hide()
         $('.spanish').hide()
@@ -175,12 +97,8 @@ const jeuBreaker = function() {
         
     //START click
     function varsStart() {
-        //$('#experiences').fadeOut()
-        //$('#formation').fadeOut()
         $('#linkedIn').fadeIn(2000)
-        getDataS()
-        sourceS.start(0)
-        //brickBreaker
+        play(start)
         var competences = window.document.getElementById('competen')
         var informatique = window.document.getElementById('informatique')
         var commerciales = window.document.getElementById('commerciales')
@@ -307,8 +225,7 @@ const jeuBreaker = function() {
                     }
                 } else {
                     ballLeft = false
-                    getDataA()
-                    sourceA.start(0)
+                    play(pongA)
                 }
                 //ball move up down limit
                 if (ballY >= competences.offsetTop && !ballDown) {
@@ -322,12 +239,10 @@ const jeuBreaker = function() {
                     paddle()
                 }
                 if (ballX > competences.offsetWidth) {
-                    getDataA()
-                    sourceA.start(0)
+                    play(pongA)
                 }
                 if (ballY < competences.offsetTop) {
-                    getDataA()
-                    sourceA.start(0)
+                    play(pongA)
                 }
                 brickBroken()
                 /* if (clickMove == true) 
@@ -347,8 +262,7 @@ const jeuBreaker = function() {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
                 ballLeft = true
-                getDataB()
-                sourceB.start(0)
+                play(pongB)
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                     angle = true
                 } else {
@@ -357,8 +271,7 @@ const jeuBreaker = function() {
             } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                 ballDown = false
                 ballLeft = false
-                getDataB()
-                sourceB.start(0)
+                play(pongB)
                 if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                     angle = true
                 } else {
@@ -369,8 +282,7 @@ const jeuBreaker = function() {
                 ballX = competences.offsetLeft + competences.offsetWidth/2
                 ballY = competences.offsetTop + competences.offsetHeight - 50
                 clickMove = true
-                getDataM()
-                sourceM.start(0)
+                play(miss)
                 //alert('YOU MISSED THE BALL')
             }
         }
@@ -391,8 +303,7 @@ const jeuBreaker = function() {
                 window.document.removeEventListener('mousemove', movepaddle, true)
                 window.document.removeEventListener('click', eTouchStart, true)
                 window.document.removeEventListener('click', eTouchMove, true)
-                getDataY()
-                sourceY.start(0)
+                play(youWin)
                 divSprite.removeChild(imgSoccer)
                 $('#divSprite').hide()
                 linkedIn.style.left = 'auto'
@@ -426,8 +337,7 @@ const jeuBreaker = function() {
                             else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
                             else if (ballDown === false) ballDown = true
                             else ballDown = false
-                            getDataC()
-                            sourceC.start(0)
+                            play(pongC)
                             $(mesInfosT[i]).animate({
                                 backgroundColor: 'rgba(255, 255, 255, 0.4)'
                             }, 500)
@@ -438,9 +348,7 @@ const jeuBreaker = function() {
                 }
             }
         }
-
         
-
         idAni = requestAnimationFrame(moveBall)
     }
 }
