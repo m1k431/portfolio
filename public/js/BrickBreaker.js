@@ -2,7 +2,7 @@
 const jeuBreaker = function () {
 
     function play(url) {
-        var context = new (window.AudioContext || window.webkitAudioContext)();
+        var context = new AudioContext();
         var audioStack = [];
         var nextTime = 0;
 
