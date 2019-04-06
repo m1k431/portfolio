@@ -1,26 +1,28 @@
-
 const jeuBreaker = function () {
+    var context = new AudioContext();
+    var audioStack;
 
     function play(url) {
-        var context = new AudioContext();
-        var audioStack = [];
+        audioStack = [];
         var nextTime = 0;
 
         fetch(url).then(function (response) {
             var reader = response.body.getReader();
             function read() {
                 return reader.read().then(({ value, done }) => {
-                    context.decodeAudioData(value.buffer, function (buffer) {
-                        audioStack.push(buffer);
-                        if (audioStack.length) {
-                            scheduleBuffers();
-                        }
-                    }, function (err) {
-                        console.log("err(decodeAudioData): " + err);
-                    });
                     if (done) {
-                        console.log('done');
+                        //console.log('done');
                         return;
+                    } else {
+                        //console.log(value, done);
+                        context.decodeAudioData(value.buffer, function (buffer) {
+                            audioStack.push(buffer);
+                            if (audioStack.length) {
+                                scheduleBuffers();
+                            }
+                        }, function (err) {
+                            console.log("err(decodeAudioData): " + err);
+                        });
                     }
                     read()
                 });
