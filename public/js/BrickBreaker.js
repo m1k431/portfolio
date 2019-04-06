@@ -321,7 +321,7 @@ const jeuBreaker = function () {
                 youwin = true
                 divSprite.style.display = 'none'
                 $('#metier > h1').fadeOut(250, function() {
-                    $(this).text('Junior FullStack Javascript Developer').fadeIn(250)
+                    $(this).text('IBM RPG & Javascript Developer').fadeIn(250)
                 })
                 $('#experiences').fadeIn(750)
                 $('#formation').fadeIn(1000)
