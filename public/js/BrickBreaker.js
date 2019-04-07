@@ -1,7 +1,4 @@
 const jeuBreaker = function () {
-    var context = new AudioContext();
-    var audioStack;
-
     function play(url) {
         audioStack = [];
         var nextTime = 0;
@@ -43,7 +40,9 @@ const jeuBreaker = function () {
             };
         }
     }
-
+    AudioContext = window.AudioContext || window.webkitAudioContext;
+    var context = new AudioContext();
+    var audioStack;
     var pongA = './static/sound/pongA.mp3'
     var pongB = './static/sound/pongB.mp3'
     var pongC = './static/sound/pongC.mp3'
@@ -51,7 +50,7 @@ const jeuBreaker = function () {
     var flagS = './static/sound/flagS.mp3'
     var youWin = './static/sound/youWin.mp3'
     var miss = './static/sound/miss.mp3'
-      
+
     /*$('#m0ncentrage').fadeIn(1000)
     $('#competen').fadeIn(500)
     $('#experiences').fadeIn(375)
@@ -59,18 +58,18 @@ const jeuBreaker = function () {
     $('#complementaire').fadeIn(125)
     $('.moi').fadeIn()
     $('.metier').fadeIn()*/
-    $('#metier > h1').fadeOut(375, function() {
+    $('#metier > h1').fadeOut(375, function () {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
-    
+
     //jeuUUUUUUUUUUUUUUUUUUUcv
     $('.english').fadeIn()
     $('#competen').fadeIn()
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
-    setInterval(function(){
+    setInterval(function () {
         $div2blink.toggleClass('backgroundRed')
-    },1500)
-      
+    }, 1500)
+
     window.document.getElementById('french').onclick = () => {
         play(flagS)
         $('.english').hide()
@@ -96,7 +95,7 @@ const jeuBreaker = function () {
     }
     var bStart = window.document.getElementById('metier')
     bStart.addEventListener('click', varsStart, true)
-        
+
     //START click
     function varsStart() {
         $('#linkedIn').fadeIn(2000)
@@ -148,7 +147,7 @@ const jeuBreaker = function () {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-        var ballX = competences.offsetLeft + competences.offsetWidth/2
+        var ballX = competences.offsetLeft + competences.offsetWidth / 2
         var ballY = competences.offsetTop + competences.offsetHeight
         var ballLeft = true
         var ballDown = false
@@ -159,28 +158,28 @@ const jeuBreaker = function () {
             boxleft, // left position of moving box
             startx, // starting x coordinate of touch point
             touchobj = null // Touch object holder
-        var eTouchStart = function(e) {
+        var eTouchStart = function (e) {
             touchobj = e.changedTouches[0] // reference first touch point
             boxleft = parseInt(box2.style.left) // get left position of box
             startx = parseInt(touchobj.pageX) // get x coord of touch point
             e.preventDefault() // prevent default click behavior
         }
         window.document.addEventListener('touchstart', eTouchStart, true)
-        var eTouchMove = function(e) {
+        var eTouchMove = function (e) {
             touchobj = e.changedTouches[0] // reference first touch point for this event
             var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
-            box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth/40 + 'px'
+            box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth / 40 + 'px'
             e.preventDefault()
         }
         window.document.addEventListener('touchmove', eTouchMove, true)
         bStart.removeEventListener('click', varsStart, true)
-            
+
         var idAni, idR, idL
-        var animMoveBall = function() {
+        var animMoveBall = function () {
             idAni = requestAnimationFrame(moveBall)
         }
 
-        var animSprite = function() {
+        var animSprite = function () {
             if (parseFloat(imgSoccer.style.left) > -920) {
                 imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 27.8 + 'px'
             }
@@ -201,7 +200,7 @@ const jeuBreaker = function () {
             idR = requestAnimationFrame(animSpriteR)
         }*/
         idL = requestAnimationFrame(animSprite)
-        var moveBall = function() {
+        var moveBall = function () {
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin) {
                 divSprite.style.top = ballY + 'px'
@@ -259,8 +258,8 @@ const jeuBreaker = function () {
                 animMoveBall()
             }
         }
-            
-        var paddle = function() {
+
+        var paddle = function () {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
                 ballLeft = true
@@ -281,7 +280,7 @@ const jeuBreaker = function () {
                 }
             } else {
                 ballDown = false
-                ballX = competences.offsetLeft + competences.offsetWidth/2
+                ballX = competences.offsetLeft + competences.offsetWidth / 2
                 ballY = competences.offsetTop + competences.offsetHeight - 50
                 clickMove = true
                 play(miss)
@@ -289,13 +288,13 @@ const jeuBreaker = function () {
             }
         }
 
-        var movepaddle = function(mon0bjetEvent) {
-            if (mon0bjetEvent.clientX - linkedIn.offsetWidth/2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth/2 < competences.offsetWidth + competences.offsetLeft) {
-                window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth/2 + 'px'
+        var movepaddle = function (mon0bjetEvent) {
+            if (mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth / 2 < competences.offsetWidth + competences.offsetLeft) {
+                window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 + 'px'
             }
         }
-        
-        var brickBroken = function() {
+
+        var brickBroken = function () {
             var mesInfosT = window.document.getElementsByClassName('infoT')
             var i = mesInfosT.length - 1
             if (mesInfosT.length <= 0) {
@@ -309,7 +308,7 @@ const jeuBreaker = function () {
                 divSprite.removeChild(imgSoccer)
                 $('#divSprite').hide()
                 linkedIn.style.left = 'auto'
-                ballY = complementaire.offsetTop - complementaire.offsetHeight/2
+                ballY = complementaire.offsetTop - complementaire.offsetHeight / 2
                 linkedIn.className = 'linkedin'
                 $('#linkedIn').hide()
                 $('#competen').animate({
@@ -320,7 +319,7 @@ const jeuBreaker = function () {
                 commerciales.style.verticalAlign = 'middle'
                 youwin = true
                 divSprite.style.display = 'none'
-                $('#metier > h1').fadeOut(250, function() {
+                $('#metier > h1').fadeOut(250, function () {
                     $(this).text('IBM RPG & Javascript Developer').fadeIn(250)
                 })
                 $('#experiences').fadeIn(750)
@@ -350,7 +349,7 @@ const jeuBreaker = function () {
                 }
             }
         }
-        
+
         idAni = requestAnimationFrame(moveBall)
     }
 }

@@ -9,35 +9,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 (function () {
-    var audioCtx = new AudioContext();
-    var sourceSelect;
-
-    function getDataSelect() {
-        sourceSelect = audioCtx.createBufferSource();
-        var request = new XMLHttpRequest();
-        request.open('GET', soundSelect, true);
-        request.responseType = 'arraybuffer';
-        request.onload = function () {
-            var audioData = request.response;
-            audioCtx.decodeAudioData(audioData, function (buffer) {
-                sourceSelect.buffer;
-                sourceSelect.buffer = buffer;
-                sourceSelect.connect(audioCtx.destination);
-                sourceSelect.loop = false;
-            }, function (e) {
-                console.log('Error with decoding audio data' + e.err);
-            });
-        };
-        request.send();
-    }
-
     var soundSelect = '/static/sound/select.mp3';
 
     var lien = window.document.getElementsByClassName('css3button');
     var i = lien.length;
     i--;
     while (i >= 0) {
-        lien[i].addEventListener('click', playSelect, true);
+        lien[i].addEventListener('click', play(soundselect), true);
         i--;
     }
 
@@ -110,10 +88,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         $('#JOUST').slideUp()
     }
     */
-    function playSelect() {
-        getDataSelect();
-        sourceSelect.start(0);
-    }
 
     window.addEventListener('DOMContentLoaded', function () {
         function FormattedDate(props) {

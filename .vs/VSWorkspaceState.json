@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\public",
+    "\\public\\img",
     "\\public\\js"
   ],
-  "SelectedNode": "\\public\\js\\BrickBreaker.js",
+  "SelectedNode": "\\public\\jeuCV.pug",
   "PreviewInSolutionExplorer": false
 }
