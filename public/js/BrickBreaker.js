@@ -40,8 +40,8 @@ const jeuBreaker = function () {
             };
         }
     }
-    AudioContext = window.AudioContext || window.webkitAudioContext;
-    var context = new AudioContext();
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const context = new AudioContext();
     var audioStack;
     var pongA = './static/sound/pongA.mp3'
     var pongB = './static/sound/pongB.mp3'

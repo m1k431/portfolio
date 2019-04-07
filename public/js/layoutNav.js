@@ -9,15 +9,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 (function () {
-    var soundSelect = '/static/sound/select.mp3';
 
-    var lien = window.document.getElementsByClassName('css3button');
-    var i = lien.length;
-    i--;
-    while (i >= 0) {
-        lien[i].addEventListener('click', play(soundselect), true);
-        i--;
-    }
 
     $(document).ready(function () {
         $('.js-scrollTo').on('click', function () {
@@ -29,6 +21,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         });
     });
 
+    var soundSelect = '/static/sound/select.mp3';
+
+    var lien = window.document.getElementsByClassName('css3button');
+    var i = lien.length;
+    i--;
+    /*
+    while (i >= 0) {
+        lien[i].addEventListener('click', play(soundSelect), true);
+        i--;
+    }
+    */
     lien[0].onclick = function () {
         //window.scroll(0,0)
         $('#intro').removeClass('css3button');
@@ -88,6 +91,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
         $('#JOUST').slideUp()
     }
     */
+    function playSelect() {
+        getDataSelect();
+        sourceSelect.start(0);
+    }
 
     window.addEventListener('DOMContentLoaded', function () {
         function FormattedDate(props) {
