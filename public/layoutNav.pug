@@ -37,53 +37,6 @@ html(lang="en")
       script(src='/static/js/socket.io.js')
       script(src='/static/js/react.development.js' crossorigin="anonymous")
       script(src='/static/js/react-dom.development.js' crossorigin="anonymous")
-      //script(src='/static/js/AudioContextMonkeyPatch.js' defer)
-      script(src='/static/js/layoutNav.js' defer)
-      script(src='https://www.googletagmanager.com/gtag/js?id=UA-113167424-1')
-      // Global site tag (gtag.js) - Google Analytics
-      script.
-        window.dataLayer = window.dataLayer || []
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date())
-doctype html
-html(lang="en")
-  head
-    block head
-      title IBM RPG &amp; Javascript Developer
-      meta(charset="UTF-8")
-      meta(name="viewport", content="width=device-width, initial-scale=0.7")
-      meta(http-equiv="X-UA-Compatible", content="ie=edge")
-      meta(name='description' content='My Javascript Portfolio')
-      meta(property='og:title' content='IBM RPG & Javascript Developer')
-      meta(property='og:image' content='//mikael.ml/static/img/ogImage.png')
-      meta(property='og:description' content='My Javascript Portfolio')
-      meta(property='og:url' content='//mikael.ml')
-      link(rel='stylesheet' href='/static/css/styles.css')
-      link(rel='manifest' href='/static/mikael.manifest')
-  body
-    nav#navBar
-      ul
-        li 
-          a#intro.nav.js-scrollTo(href='#INDEX' class='css3button') Intro
-        li
-          a#resume.nav.js-scrollTo(href='#CV' class='css3button') Resume
-        li
-          a#admin.nav.js-scrollTo(href='#ADM1N' class='css3button') Admin
-    block content
-    block foot
-      #footer
-          a.minilogL(href='https://github.com/m1k431')
-            img(src='/static/img/gitHubMark.png' alt='git' height='35')
-            img(src='/static/img/gitHubW.png' alt='git' height='35')
-          #myclock
-          a.minilogR(href='https://www.linkedin.com/in/mika%C3%ABl-garcia/')
-            img(src='/static/img/LinkedIn_Logo.svg' alt='linkedin' height='35')
-    block scripts
-      script(src='/static/js/jquery-3.3.1.min.js' defer)
-      script(src='/static/js/jquery-ui.min.js' defer)
-      script(src='/static/js/socket.io.js')
-      script(src='/static/js/react.development.js' crossorigin="anonymous")
-      script(src='/static/js/react-dom.development.js' crossorigin="anonymous")
       script(src='/static/js/layoutNav.js' defer)
       script(src='https://www.googletagmanager.com/gtag/js?id=UA-113167424-1')
       // Global site tag (gtag.js) - Google Analytics
