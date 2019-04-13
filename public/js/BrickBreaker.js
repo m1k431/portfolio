@@ -129,7 +129,7 @@ const jeuBreaker = function () {
         divSprite.appendChild(imgSoccer)
         linkedIn.className = 'linkedinT'
         $('#competen').animate({
-            height: animH + 75 + 'px'
+            height: animH + 150 + 'px'
         }, 1000)
         linkedIn.style.marginTop = -50 + 'px'
         complementaire.className = 'complementaireT'

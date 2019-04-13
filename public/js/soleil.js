@@ -1,4 +1,4 @@
-const monIntro = function() {
+const monIntro = function () {
     var m4vide0 = window.document.getElementById('jugglejungle')
     var BtnJs0nPl4Y = window.document.getElementById('BtnJs0nPl4Y')
     BtnJs0nPl4Y.innerHTML = 'PLAY'
@@ -178,7 +178,7 @@ const monIntro = function() {
     var bool1 = false
     var bool2 = false
     var idB, idW, idMU, idMD, idS, idM
-    var sonicBored = function() {
+    var sonicBored = function () {
         if (bool1 == false) {
             imgSonic.style.left = '-55px'
             imgSonic.style.top = '-21px'
@@ -192,10 +192,10 @@ const monIntro = function() {
         }
         idB = requestAnimationFrame(sonicBored)
     }
-    
-    var sonicWalk = function() {
+
+    var sonicWalk = function () {
         if (bool2 == false) {
-            imgSonic.style.left = '-50px'    
+            imgSonic.style.left = '-50px'
             imgSonic.style.top = '-95px'
             bool2 = true
         }
@@ -207,20 +207,20 @@ const monIntro = function() {
         }
         idW = requestAnimationFrame(sonicWalk)
     }
-        
-        
-    var moveSonicRight = function() {
-        if (parseFloat(divSonic.style.left) < 100)  divSonic.style.left = parseFloat(divSonic.style.left) + 0.2 + '%'
+
+
+    var moveSonicRight = function () {
+        if (parseFloat(divSonic.style.left) < 100) divSonic.style.left = parseFloat(divSonic.style.left) + 0.2 + '%'
         else {
             divSonic.style.left = '-10%'
         }
         idM = requestAnimationFrame(moveSonicRight)
     }
 
-        
+
     var back = false
     var cpt = 0
-    var monkeyDown = function() {
+    var monkeyDown = function () {
         if (parseFloat(imgMonkey.style.left) <= 0 && !back) {
             imgMonkey.style.left = parseFloat(imgMonkey.style.left) + 105.52 + 'px'
             cpt++
@@ -230,7 +230,7 @@ const monIntro = function() {
         }
         idMD = requestAnimationFrame(monkeyDown)
     }
-    var monkeyUp = function() {
+    var monkeyUp = function () {
         if (cpt > 0) {
             imgMonkey.style.left = parseFloat(imgMonkey.style.left) - 105.52 + 'px'
             cpt--
@@ -242,7 +242,7 @@ const monIntro = function() {
     }
     var c00rdX = 45
     var c00rdY = 2
-        
+
     //TESSSSSSSST ZOOOOOOOONE code from https://codepen.io/WillemCrnlssn/pen/JgFGs
     var context
     var screenH
@@ -259,7 +259,7 @@ const monIntro = function() {
     myStars.attr('width', screenW)
     context = myStars[0].getContext('2d')
     // Create all the stars
-    for(var i = 0; i < numStars; i++) {
+    for (var i = 0; i < numStars; i++) {
         var x = Math.round(Math.random() * screenW)
         var y = Math.round(Math.random() * screenH)
         var length = 1 + Math.random() * 2
@@ -274,7 +274,7 @@ const monIntro = function() {
          */
     function animate() {
         context.clearRect(0, 0, screenW, screenH)
-        $.each(stars, function() {
+        $.each(stars, function () {
             this.draw(context)
         })
     }
@@ -302,19 +302,19 @@ const monIntro = function() {
          * 
          * @param context
          */
-    Star.prototype.draw = function() {
+    Star.prototype.draw = function () {
         context.rotate((Math.PI * 1 / 10))
         // Save the context
         context.save()
         // move into the middle of the canvas, just to make room
         context.translate(this.x, this.y)
         // Change the opacity
-        if(this.opacity > 1) {
+        if (this.opacity > 1) {
             this.factor = -1
         }
-        else if(this.opacity <= 0) {
+        else if (this.opacity <= 0) {
             this.factor = 1
-                
+
             this.x = Math.round(Math.random() * screenW)
             this.y = Math.round(Math.random() * screenH)
         }
@@ -357,51 +357,51 @@ const monIntro = function() {
             m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
             m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
             ctx.clearRect(0, 0, 40, 40)
-            ctxLune.clearRect(0,0,40,40)
-            switch(c00rdX) {
-            case 45:
-                $('#space').animate({
-                    backgroundColor: '#0a15db'
-                }, 1000 )
-                cancelAnimationFrame(idW)
-                cancelAnimationFrame(idM)
-                //clearInterval(idS)
-                $('#space').fadeOut(1000)
-                break
-            case 52:
-                $('#moon').fadeOut(1500)
-                idMD = requestAnimationFrame(monkeyDown)
-                cancelAnimationFrame(idB)
-                idW = requestAnimationFrame(sonicWalk)
-                idM = requestAnimationFrame(moveSonicRight)
-                break
-            case 62:
-                cancelAnimationFrame(idMD)
-                idMU = requestAnimationFrame(monkeyUp)
-                break
-            case 78:
-                cancelAnimationFrame(idMU)
-                idMD = requestAnimationFrame(monkeyDown)
-                break
-            case 90:
-                $('#moon').fadeIn(5000)
-                cancelAnimationFrame(idMD)
-                idMU = requestAnimationFrame(monkeyUp)
-                break
-            case 95:
-                cancelAnimationFrame(idM)
-                cancelAnimationFrame(idW)
-                idB = requestAnimationFrame(sonicBored)
-                $('#space').animate({
-                    backgroundColor: '#000000'
-                }, 1500 )
-                $('#space').fadeIn(1500)
-                break
-            case 100:
-                cancelAnimationFrame(idB)
-                cancelAnimationFrame(idMU)
-                //idS = setInterval(animate, 500)
-                break
+            ctxLune.clearRect(0, 0, 40, 40)
+            switch (c00rdX) {
+                case 45:
+                    $('#space').animate({
+                        backgroundColor: '#0a15db'
+                    }, 1000)
+                    cancelAnimationFrame(idW)
+                    cancelAnimationFrame(idM)
+                    //clearInterval(idS)
+                    $('#space').fadeOut(1000)
+                    break
+                case 52:
+                    $('#moon').fadeOut(1500)
+                    idMD = requestAnimationFrame(monkeyDown)
+                    cancelAnimationFrame(idB)
+                    idW = requestAnimationFrame(sonicWalk)
+                    idM = requestAnimationFrame(moveSonicRight)
+                    break
+                case 62:
+                    cancelAnimationFrame(idMD)
+                    idMU = requestAnimationFrame(monkeyUp)
+                    break
+                case 78:
+                    cancelAnimationFrame(idMU)
+                    idMD = requestAnimationFrame(monkeyDown)
+                    break
+                case 90:
+                    $('#moon').fadeIn(5000)
+                    cancelAnimationFrame(idMD)
+                    idMU = requestAnimationFrame(monkeyUp)
+                    break
+                case 95:
+                    cancelAnimationFrame(idM)
+                    cancelAnimationFrame(idW)
+                    idB = requestAnimationFrame(sonicBored)
+                    $('#space').animate({
+                        backgroundColor: '#000000'
+                    }, 1500)
+                    $('#space').fadeIn(1500)
+                    break
+                case 100:
+                    cancelAnimationFrame(idB)
+                    cancelAnimationFrame(idMU)
+                    //idS = setInterval(animate, 500)
+                    break
             }
             ctx.fillRect(0, 0, 40, 40)
             ctxLune.fillRect(0, 0, 40, 40)

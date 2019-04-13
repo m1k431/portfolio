@@ -25,11 +25,11 @@ const server = require('http').createServer(app)
 const io = require('socket.io')
 const socketIO = io(server)
 
-socketIO.on('connection', function(socket) {
+socketIO.on('connection', function (socket) {
     console.log('a user is connected')
-    socket.on('pingEvt', function(message) {
+    socket.on('pingEvt', function (message) {
         console.log(message)
-        socket.emit('pongEvt', {texte: 'Poooong !'})
+        socket.emit('pongEvt', { texte: 'Poooong !' })
     })
 })
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
         //console.log(m0nMongoClient)
         const collectionAdmin = m0nMongoClientFront.collection('admin')
         //console.log(collectionArticle)
-        collectionAdmin.find().toArray(function(err, dataAdmin) {
+        collectionAdmin.find().toArray(function (err, dataAdmin) {
             var cptAdmin = 0
             while (dataAdmin[cptAdmin]) {
                 console.log(dataAdmin[cptAdmin])
@@ -115,12 +115,12 @@ app.get('/pagelisteArticle', (req, res) => {
                 ma535510n,
                 m0nID535510n
             },
-            function(err, html) {
-                if (err) {
-                    return
-                }
-                res.send(html)
-            })
+                function (err, html) {
+                    if (err) {
+                        return
+                    }
+                    res.send(html)
+                })
         })
     })
     /*
@@ -173,12 +173,12 @@ app.post('/layoutAdmin', urlencodedParser, (req, res) => {
                 ma535510n,
                 m0nID535510n
             },
-            (err, html) => {
-                if (err) {
-                    return
-                }
-                res.send(html)
-            })
+                (err, html) => {
+                    if (err) {
+                        return
+                    }
+                    res.send(html)
+                })
         })
     })
     /*
