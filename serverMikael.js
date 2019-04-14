@@ -1,15 +1,18 @@
-const compression = require('compression')
-const minify = require('express-minify')
-const favicon = require('serve-favicon')
-const path = require('path')
-const express = require('express')
-const helmet = require('helmet')
-const bodyParser = require('body-parser')
-const MongoClient = require('mongodb').MongoClient
-const session = require('express-session')
+const
+    compression = require('compression'),
+    minify = require('express-minify'),
+    favicon = require('serve-favicon'),
+    path = require('path'),
+    express = require('express'),
+    helmet = require('helmet'),
+    bodyParser = require('body-parser'),
+    MongoClient = require('mongodb').MongoClient,
+    session = require('express-session')
 //const objectId = require('mongodb').ObjectID
 const app = express()
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
+const urlencodedParser = bodyParser.urlencoded({
+    extended: false
+})
 let p0rt = 80
 const urldb = 'mongodb://127.0.0.1:27017/exo19'
 const urldb20 = 'mongodb://127.0.0.1:27017/exo20'
@@ -29,14 +32,18 @@ socketIO.on('connection', function (socket) {
     console.log('a user is connected')
     socket.on('pingEvt', function (message) {
         console.log(message)
-        socket.emit('pongEvt', { texte: 'Poooong !' })
+        socket.emit('pongEvt', {
+            texte: 'Poooong !'
+        })
     })
 })
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
 app.use(compression())
 app.use(minify())
-app.use('/static', express.static(__dirname + '/public', { maxage: '0d' }))
+app.use('/static', express.static(__dirname + '/public', {
+    maxage: '0d'
+}))
 app.use(session(sess))
 app.set('view engine', 'pug')
 app.set('views', 'public')
@@ -48,7 +55,9 @@ if (app.get('env') === 'production') {
 }
 
 app.get('/', (req, res) => {
-    MongoClient.connect(urldb, { useNewUrlParser: true }, (err, client) => {
+    MongoClient.connect(urldb, {
+        useNewUrlParser: true
+    }, (err, client) => {
         if (err) {
             return
         }
@@ -66,7 +75,9 @@ app.get('/', (req, res) => {
         console.log('cookie: ', req.session.cookie)
         sess.session = req.session
         console.log('session: ', sess)
-        res.render('index.pug', { session: req.session })
+        res.render('index.pug', {
+            session: req.session
+        })
     })
 })
 app.get('/nomPage', (req, res) => {
@@ -87,34 +98,15 @@ app.get('/pagelisteArticle', (req, res) => {
         if (err) {
             return
         }
-        var cpt = 0
-        var tabloArticle = []
-        var tabloArticleId = []
-        var tabloArticleTitre = []
-        var tabloArticleContenu = []
-        var tabloArticleWriter = []
         const m0nMongoClient = client.db(n0mBd20)
         const m0nCollectionArticle = m0nMongoClient.collection('article')
         m0nCollectionArticle.find().toArray((err, data) => {
             console.log(data)
-            while (data[cpt]) {
-                tabloArticle[cpt] = data[cpt]
-                tabloArticleId[cpt] = data[cpt]._id
-                tabloArticleTitre[cpt] = data[cpt].titre
-                tabloArticleContenu[cpt] = data[cpt].article
-                tabloArticleWriter[cpt] = data[cpt].writer
-                console.log(tabloArticleId[cpt])
-                console.log(tabloArticleTitre[cpt])
-                cpt++
-            }
             res.render('pagelisteArticle.pug', {
-                data,
-                tabloArticleTitre,
-                tabloArticleContenu,
-                tabloArticleWriter,
-                ma535510n,
-                m0nID535510n
-            },
+                    data,
+                    ma535510n,
+                    m0nID535510n
+                },
                 function (err, html) {
                     if (err) {
                         return
@@ -169,10 +161,10 @@ app.post('/layoutAdmin', urlencodedParser, (req, res) => {
                 cpt++
             }
             res.render('layoutAdmin.pug', {
-                data,
-                ma535510n,
-                m0nID535510n
-            },
+                    data,
+                    ma535510n,
+                    m0nID535510n
+                },
                 (err, html) => {
                     if (err) {
                         return
@@ -211,7 +203,11 @@ app.post('/OkArticle', urlencodedParser, (req, res) => {
         }
         const m0nMongoClient20 = client.db(n0mBd20)
         const m0nCollectionArticle = m0nMongoClient20.collection('article')
-        m0nCollectionArticle.insert({ titre: m0nTitre, article: m0nArticle, writer: m0nWriter })
+        m0nCollectionArticle.insertOne({
+            titre: m0nTitre,
+            article: m0nArticle,
+            writer: m0nWriter
+        })
         res.render('OkArticle.pug', {
             m0nTitre,
             m0nArticle,

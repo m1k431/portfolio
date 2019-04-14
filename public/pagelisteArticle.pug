@@ -1,8 +1,22 @@
 include layoutAdmin.pug
+append head
+  link(rel='stylesheet' href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css")
 block content
   #m0ncentrageAdmin
     #maDivTest
       h1 Liste Article
-      #mesData=data
+      table#mesData
+        thead
+          tr
+            th ID
+            th Titre
+            th Article
+            th writer
+        tbody
+          tr
+            td=data[0]._id
+            td=data[0].titre
+            td=data[0].article
+            td=data[0].writer
 append scripts
   script(src='/static/js/monScriptArticle.js')
