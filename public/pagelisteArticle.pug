@@ -13,10 +13,11 @@ block content
             th Article
             th writer
         tbody
-          tr
-            td=data[0]._id
-            td=data[0].titre
-            td=data[0].article
-            td=data[0].writer
+          each article in data
+            tr
+              td=article._id
+              td=article.titre
+              td=article.article
+              td=article.writer
 append scripts
   script(src='/static/js/monScriptArticle.js')

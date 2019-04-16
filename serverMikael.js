@@ -7,26 +7,27 @@ const
     helmet = require('helmet'),
     bodyParser = require('body-parser'),
     MongoClient = require('mongodb').MongoClient,
-    session = require('express-session')
+    session = require('express-session'),
+    app = express(),
+    urlencodedParser = bodyParser.urlencoded({
+        extended: false
+    }),
+    urldb = 'mongodb://127.0.0.1:27017/exo19',
+    urldb20 = 'mongodb://127.0.0.1:27017/exo20',
+    n0mBd = 'exo19',
+    n0mBd20 = 'exo20',
+    server = require('http').createServer(app),
+    io = require('socket.io'),
+    socketIO = io(server)
 //const objectId = require('mongodb').ObjectID
-const app = express()
-const urlencodedParser = bodyParser.urlencoded({
-    extended: false
-})
+
 let p0rt = 80
-const urldb = 'mongodb://127.0.0.1:27017/exo19'
-const urldb20 = 'mongodb://127.0.0.1:27017/exo20'
-const n0mBd = 'exo19'
-const n0mBd20 = 'exo20'
 var sess = {
     secret: 'azerty',
     cookie: {},
     resave: false,
     saveUninitialized: true
 }
-const server = require('http').createServer(app)
-const io = require('socket.io')
-const socketIO = io(server)
 
 socketIO.on('connection', function (socket) {
     console.log('a user is connected')
@@ -115,19 +116,6 @@ app.get('/pagelisteArticle', (req, res) => {
                 })
         })
     })
-    /*
-        //console.log(m0nTabloArticle)
-        //idRequete = new objectId(idUrl)
-         res.render('layoutAdmin.pug', {
-            ma535510n,
-            m0nID535510n
-        }, function (err, html) {
-            if (err) {
-                return
-            }
-            res.send(html)
-        })
-    */
 })
 //app.post________________________________________________________________
 app.post('/layoutAdmin', urlencodedParser, (req, res) => {
@@ -141,25 +129,10 @@ app.post('/layoutAdmin', urlencodedParser, (req, res) => {
         if (err) {
             return
         }
-        var cpt = 0
-        var tabloArticle = []
-        var tabloArticleId = []
-        var tabloArticleTitre = []
-        var tabloArticleContenu = []
-        var tabloArticleWriter = []
         const m0nMongoClient = client.db(n0mBd20)
         const m0nCollectionArticle = m0nMongoClient.collection('article')
         m0nCollectionArticle.find().toArray((err, data) => {
-            while (data[cpt]) {
-                tabloArticle[cpt] = data[cpt]
-                tabloArticleId[cpt] = data[cpt]._id
-                tabloArticleTitre[cpt] = data[cpt].titre
-                tabloArticleContenu[cpt] = data[cpt].article
-                tabloArticleWriter[cpt] = data[cpt].writer
-                console.log(tabloArticleId[cpt])
-                console.log(tabloArticleTitre[cpt])
-                cpt++
-            }
+            console.log(data)
             res.render('layoutAdmin.pug', {
                     data,
                     ma535510n,
@@ -173,26 +146,10 @@ app.post('/layoutAdmin', urlencodedParser, (req, res) => {
                 })
         })
     })
-    /*
-        //console.log(m0nTabloArticle)
-        //idRequete = new objectId(idUrl)
-         res.render('layoutAdmin.pug', {
-            ma535510n,
-            m0nID535510n
-        }, function (err, html) {
-            if (err) {
-                return
-            }
-            res.send(html)
-        })
-    */
 })
 app.post('/OkArticle', urlencodedParser, (req, res) => {
     if (!req.body.titre || !req.body.article || !req.body.writer) return res.render('ErrorArticle.pug')
     ////////const iDs3ssion
-    var m0nTitre = req.body.titre
-    var m0nArticle = req.body.article
-    var m0nWriter = req.body.writer
     var ma535510n = JSON.stringify(req.session, null, 2)
     var m0nID535510n = JSON.stringify(req.session.id, null, 2)
     MongoClient.connect(urldb20, {
@@ -204,14 +161,11 @@ app.post('/OkArticle', urlencodedParser, (req, res) => {
         const m0nMongoClient20 = client.db(n0mBd20)
         const m0nCollectionArticle = m0nMongoClient20.collection('article')
         m0nCollectionArticle.insertOne({
-            titre: m0nTitre,
-            article: m0nArticle,
-            writer: m0nWriter
+            titre: req.body.titre,
+            article: req.body.article,
+            writer: req.body.writer
         })
         res.render('OkArticle.pug', {
-            m0nTitre,
-            m0nArticle,
-            m0nWriter,
             ma535510n,
             m0nID535510n
         }, (err, html) => {
