@@ -3,21 +3,22 @@ append head
   link(rel='stylesheet' href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css")
 block content
   #m0ncentrageAdmin
-    #maDivTest
-      h1 Liste Article
-      table#mesData
-        thead
-          tr
-            th ID
-            th Titre
-            th Article
-            th writer
-        tbody
-          each article in data
+    .m0ncentrageParafoot
+      #maDivTest
+        h1 Liste Article
+        table#mesData
+          thead
             tr
-              td=article._id
-              td=article.titre
-              td=article.article
-              td=article.writer
+              th ID
+              th Titre
+              th Article
+              th writer
+          tbody
+            each article in data
+              tr
+                td=article._id
+                td=article.titre
+                td=article.article
+                td=article.writer
 append scripts
   script(src='/static/js/monScriptArticle.js')

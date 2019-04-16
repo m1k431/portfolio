@@ -82,17 +82,9 @@ app.get('/', (req, res) => {
     })
 })
 app.get('/nomPage', (req, res) => {
-    console.log(req.query)
-    var ma535510n = JSON.stringify(req.session, null, 2)
-    var m0nID535510n = req.session.id
-    res.render(req.query.r + '.pug', {
-        ma535510n,
-        m0nID535510n
-    })
+    res.render(req.query.r + '.pug', {})
 })
 app.get('/pagelisteArticle', (req, res) => {
-    var ma535510n = JSON.stringify(req.session, null, 2)
-    var m0nID535510n = JSON.stringify(req.session.id, null, 2)
     MongoClient.connect(urldb20, {
         useNewUrlParser: true
     }, (err, client) => {
@@ -105,8 +97,6 @@ app.get('/pagelisteArticle', (req, res) => {
             console.log(data)
             res.render('pagelisteArticle.pug', {
                     data,
-                    ma535510n,
-                    m0nID535510n
                 },
                 function (err, html) {
                     if (err) {
@@ -150,8 +140,6 @@ app.post('/layoutAdmin', urlencodedParser, (req, res) => {
 app.post('/OkArticle', urlencodedParser, (req, res) => {
     if (!req.body.titre || !req.body.article || !req.body.writer) return res.render('ErrorArticle.pug')
     ////////const iDs3ssion
-    var ma535510n = JSON.stringify(req.session, null, 2)
-    var m0nID535510n = JSON.stringify(req.session.id, null, 2)
     MongoClient.connect(urldb20, {
         useNewUrlParser: true
     }, (err, client) => {
@@ -165,10 +153,7 @@ app.post('/OkArticle', urlencodedParser, (req, res) => {
             article: req.body.article,
             writer: req.body.writer
         })
-        res.render('OkArticle.pug', {
-            ma535510n,
-            m0nID535510n
-        }, (err, html) => {
+        res.render('OkArticle.pug', {}, (err, html) => {
             if (err) {
                 return
             }
