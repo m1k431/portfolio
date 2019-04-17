@@ -2,13 +2,6 @@ extends layoutNav.pug
 append head
   link(rel='stylesheet' href='/static/DataTables-1.10.18/css/jquery.dataTables.min.css')
   link(rel='stylesheet' href='/static/css/layoutAdmin.css')
-  img#menuAdmin(src='/static/img/sideNav.svg' onclick='openSideNav();')
-  #m0nSideNav.sidenav
-    a.closebtn(href='javascript:void(0)' onclick='closeSideNav();') &times;
-    a(href='./nomPage?r=layoutAdmin') Adm1n
-    a(href='./nomPage?r=m0nFormArticle') Ecrire
-    a(href='./pagelisteArticle') Modifier
-
 block content
   #m0ncentrageAdmin
     .m0ncentrageParafoot
@@ -18,10 +11,4 @@ block content
         h2=ma535510n
 append scripts
   script(src='/static/DataTables-1.10.18/js/jquery.dataTables.min.js')
-  script.
-    function openSideNav() {
-      document.getElementById("m0nSideNav").style.width = "20%";
-    }
-    function closeSideNav() {
-        document.getElementById("m0nSideNav").style.width = "0";
-    }
+  script(src='/static/js/layoutAdmin.js')

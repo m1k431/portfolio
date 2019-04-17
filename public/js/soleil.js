@@ -292,7 +292,7 @@ const monIntro = function () {
         this.length = parseInt(length)
         this.opacity = opacity
         this.factor = 1
-        this.increment = Math.random() * .03
+        this.increment = Math.random() * 0.03
     }
     /**
          * Draw a star

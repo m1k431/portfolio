@@ -1,12 +1,10 @@
 include layoutAdmin.pug
-append head
-  link(rel='stylesheet' href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css")
 block content
   #m0ncentrageAdmin
     .m0ncentrageParafoot
       #maDivTest
         h1 Liste Article
-        table#mesData
+        table#mesData.display.cell-border
           thead
             tr
               th ID
