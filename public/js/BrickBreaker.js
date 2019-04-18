@@ -1,7 +1,4 @@
 const jeuBreaker = function () {
-
-
-
     /*$('#m0ncentrage').fadeIn(1000)
     $('#competen').fadeIn(500)
     $('#experiences').fadeIn(375)
@@ -22,7 +19,7 @@ const jeuBreaker = function () {
     }, 1500)
 
     window.document.getElementById('french').onclick = () => {
-        play(flagS)
+        //play(flagS)
         $('.english').hide()
         $('.spanish').hide()
         $('.french').hide()
@@ -30,14 +27,14 @@ const jeuBreaker = function () {
         $('.french').fadeIn()
     }
     window.document.getElementById('english').onclick = () => {
-        play(flagS)
+        //play(flagS)
         $('.french').hide()
         $('.spanish').hide()
         $('.english').hide()
         $('.english').fadeIn()
     }
     window.document.getElementById('spanish').onclick = () => {
-        play(flagS)
+        //play(flagS)
         $('.french').hide()
         $('.english').hide()
         $('.spanish').hide()
@@ -109,7 +106,6 @@ const jeuBreaker = function () {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-
         
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
@@ -120,20 +116,20 @@ const jeuBreaker = function () {
                 if (ballX < competences.offsetWidth && !ballLeft) {
                     //idR = requestAnimationFrame(animSpriteR)
                     if (angle) {
-                        ballX = ballX + 2
+                        ballX = ballX + 3
                         divSprite.style.left = ballX + 'px'
                     } else {
-                        ballX = ballX + 4
+                        ballX = ballX + 6
                         divSprite.style.left = ballX + 'px'
                     }
                 } else if (ballX > competences.offsetLeft) {
                     ballLeft = true
                     //idL = requestAnimationFrame(animSprite)
                     if (angle) {
-                        ballX = ballX - 2
+                        ballX = ballX - 3
                         divSprite.style.left = ballX + 'px'
                     } else {
-                        ballX = ballX - 4
+                        ballX = ballX - 6
                         divSprite.style.left = ballX + 'px'
                     }
                 } else {
@@ -142,11 +138,11 @@ const jeuBreaker = function () {
                 }
                 //ball move up down limit
                 if (ballY >= competences.offsetTop && !ballDown) {
-                    ballY = ballY - 4
+                    ballY = ballY - 6
                     divSprite.style.top = ballY + 'px'
                 } else if (ballY <= linkedIn.offsetTop - 10) {
                     ballDown = true
-                    ballY = ballY + 4
+                    ballY = ballY + 6
                     divSprite.style.top = ballY + 'px'
                 } else {
                     paddle()
@@ -172,7 +168,6 @@ const jeuBreaker = function () {
             }
         }
 
-
         //______________________________________________________INITIALISATIOION_JEU______________________________________
         var ballX = competences.offsetLeft + competences.offsetWidth / 2
         var ballY = competences.offsetTop + competences.offsetHeight
@@ -180,6 +175,7 @@ const jeuBreaker = function () {
         var ballDown = false
         var youwin = false
         var angle = false
+
         //______________________________________________________TouchMove_eventListener___________________________________
         var box2 = document.getElementById('linkedIn'),
             boxleft, // left position of moving box
@@ -289,7 +285,6 @@ const jeuBreaker = function () {
                 i--
             }
         }
-
 
         //________________________________________________Verif/Gestion_YouWIN______________________________________________________________________________
         var jeuTermine = function () {

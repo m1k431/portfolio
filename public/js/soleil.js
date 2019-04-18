@@ -13,9 +13,9 @@ const monIntro = function () {
     })
     $('#intro').removeClass('css3button')
     $('#intro').addClass('css3buttonRed')
-    $('#INDEX').fadeIn(1000)
-    $('#m0ncentrage').fadeIn(1000)
-    $('#jugglejungle').fadeIn(1000)
+    $('#INDEX').fadeIn(100)
+    $('#m0ncentrage').fadeIn(100)
+    $('#jugglejungle').fadeIn(100)
     //ATARIIIIIIIIII
     var m0nimg = window.document.createElement('img')
     m0nimg.style.position = 'absolute'
