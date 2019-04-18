@@ -1,55 +1,7 @@
 const jeuBreaker = function () {
-    function play(url) {
-        audioStack = []
-        var nextTime = 0
 
-        fetch(url).then(function (response) {
-            var reader = response.body.getReader()
-            function read() {
-                return reader.read().then(({ value, done }) => {
-                    if (done) {
-                        //console.log('done');
-                        return
-                    } else {
-                        //console.log(value, done);
-                        context.decodeAudioData(value.buffer, function (buffer) {
-                            audioStack.push(buffer)
-                            if (audioStack.length) {
-                                scheduleBuffers()
-                            }
-                        }, function (err) {
-                            console.log('err(decodeAudioData): ' + err)
-                        })
-                    }
-                    read()
-                })
-            }
-            read()
-        })
 
-        function scheduleBuffers() {
-            while (audioStack.length) {
-                var buffer = audioStack.shift()
-                var source = context.createBufferSource()
-                source.buffer = buffer
-                source.connect(context.destination)
-                if (nextTime == 0)
-                    nextTime = context.currentTime + 0.01  /// add 50ms latency to work well across systems - tune this if you like
-                source.start(nextTime)
-                nextTime += source.buffer.duration // Make the next buffer wait the length of the last buffer before being played
-            }
-        }
-    }
-    const AudioContext = window.AudioContext || window.webkitAudioContext
-    const context = new AudioContext()
-    var audioStack
-    var pongA = './static/sound/pongA.mp3'
-    var pongB = './static/sound/pongB.mp3'
-    var pongC = './static/sound/pongC.mp3'
-    var start = './static/sound/start.mp3'
-    var flagS = './static/sound/flagS.mp3'
-    var youWin = './static/sound/youWin.mp3'
-    var miss = './static/sound/miss.mp3'
+
     /*$('#m0ncentrage').fadeIn(1000)
     $('#competen').fadeIn(500)
     $('#experiences').fadeIn(375)
@@ -61,7 +13,7 @@ const jeuBreaker = function () {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
 
-    //jeuUUUUUUUUUUUUUUUUUUUcv
+    //_______________________________Choix_langue____________________________________________________________________________
     $('.english').fadeIn()
     $('#competen').fadeIn()
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
@@ -92,13 +44,24 @@ const jeuBreaker = function () {
         $('#competen').css('height', 'auto')
         $('.spanish').fadeIn()
     }
+
+    //_____________________________Click_on_START__________________________________________________________________________
     var bStart = window.document.getElementById('metier')
     bStart.addEventListener('click', varsStart, true)
-
-    //START click
     function varsStart() {
+        const AudioContext = window.AudioContext || window.webkitAudioContext
+        const context = new AudioContext()
+        var audioStack
+        var pongA = './static/sound/pongA.mp3'
+        var pongB = './static/sound/pongB.mp3'
+        var pongC = './static/sound/pongC.mp3'
+        var start = './static/sound/start.mp3'
+        var flagS = './static/sound/flagS.mp3'
+        var youWin = './static/sound/youWin.mp3'
+        var miss = './static/sound/miss.mp3'
         $('#linkedIn').fadeIn(2000)
         play(start)
+        //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
         var competences = window.document.getElementById('competen')
         var informatique = window.document.getElementById('informatique')
         var commerciales = window.document.getElementById('commerciales')
@@ -146,59 +109,9 @@ const jeuBreaker = function () {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-        var ballX = competences.offsetLeft + competences.offsetWidth / 2
-        var ballY = competences.offsetTop + competences.offsetHeight
-        var ballLeft = true
-        var ballDown = false
-        var youwin = false
-        var angle = false
-        //TouchMove eventListener
-        var box2 = document.getElementById('linkedIn'),
-            boxleft, // left position of moving box
-            startx, // starting x coordinate of touch point
-            touchobj = null // Touch object holder
-        var eTouchStart = function (e) {
-            touchobj = e.changedTouches[0] // reference first touch point
-            boxleft = parseInt(box2.style.left) // get left position of box
-            startx = parseInt(touchobj.pageX) // get x coord of touch point
-            e.preventDefault() // prevent default click behavior
-        }
-        window.document.addEventListener('touchstart', eTouchStart, true)
-        var eTouchMove = function (e) {
-            touchobj = e.changedTouches[0] // reference first touch point for this event
-            var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
-            box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth / 40 + 'px'
-            e.preventDefault()
-        }
-        window.document.addEventListener('touchmove', eTouchMove, true)
-        bStart.removeEventListener('click', varsStart, true)
 
-        var idAni, idR, idL
-        var animMoveBall = function () {
-            idAni = requestAnimationFrame(moveBall)
-        }
-
-        var animSprite = function () {
-            if (parseFloat(imgSoccer.style.left) > -920) {
-                imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 27.8 + 'px'
-            }
-            else {
-                imgSoccer.style.left = -4 + 'px'
-            }
-            idL = requestAnimationFrame(animSprite)
-        }
-        /*
-        var animSpriteR = function() {
-            if (parseFloat(imgSoccer.style.left) < -2) {
-                imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
-            }
-            else {
-                imgSoccer.style.left = -141.8 + 'px'
-            }
-            cancelAnimationFrame(idL)
-            idR = requestAnimationFrame(animSpriteR)
-        }*/
-        idL = requestAnimationFrame(animSprite)
+        
+        //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin) {
@@ -245,6 +158,7 @@ const jeuBreaker = function () {
                     play(pongA)
                 }
                 brickBroken()
+                jeuTermine()
                 /* if (clickMove == true) 
                     {
                         window.addEventListener('click', animMoveBall, true)
@@ -258,6 +172,63 @@ const jeuBreaker = function () {
             }
         }
 
+
+        //______________________________________________________INITIALISATIOION_JEU______________________________________
+        var ballX = competences.offsetLeft + competences.offsetWidth / 2
+        var ballY = competences.offsetTop + competences.offsetHeight
+        var ballLeft = true
+        var ballDown = false
+        var youwin = false
+        var angle = false
+        //______________________________________________________TouchMove_eventListener___________________________________
+        var box2 = document.getElementById('linkedIn'),
+            boxleft, // left position of moving box
+            startx, // starting x coordinate of touch point
+            touchobj = null // Touch object holder
+        var eTouchStart = function (e) {
+            touchobj = e.changedTouches[0] // reference first touch point
+            boxleft = parseInt(box2.style.left) // get left position of box
+            startx = parseInt(touchobj.pageX) // get x coord of touch point
+            e.preventDefault() // prevent default click behavior
+        }
+        window.document.addEventListener('touchstart', eTouchStart, true)
+        var eTouchMove = function (e) {
+            touchobj = e.changedTouches[0] // reference first touch point for this event
+            var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
+            box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth / 40 + 'px'
+            e.preventDefault()
+        }
+        window.document.addEventListener('touchmove', eTouchMove, true)
+        bStart.removeEventListener('click', varsStart, true)
+
+        //____________________________________________________ANIMATION_Ball_Sprite______________________________________
+        var idAni, idR, idL
+        var animMoveBall = function () {
+            idAni = requestAnimationFrame(moveBall)
+        }
+
+        var animSprite = function () {
+            if (parseFloat(imgSoccer.style.left) > -920) {
+                imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 27.8 + 'px'
+            } else {
+                imgSoccer.style.left = -4 + 'px'
+            }
+            idL = requestAnimationFrame(animSprite)
+        }
+        /*
+        var animSpriteR = function() {
+            if (parseFloat(imgSoccer.style.left) < -2) {
+                imgSoccer.style.left = parseFloat(imgSoccer.style.left) + 17.5 + 'px'
+            }
+            else {
+                imgSoccer.style.left = -141.8 + 'px'
+            }
+            cancelAnimationFrame(idL)
+            idR = requestAnimationFrame(animSpriteR)
+        }*/
+        idL = requestAnimationFrame(animSprite)
+
+        //______________________________________Intéraction_balle/paddle_AngleBalle_______________________________________________________
         var paddle = function () {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
@@ -287,16 +258,43 @@ const jeuBreaker = function () {
             }
         }
 
+        //__________________________________Déplacement paddle dans environnement de jeu________________________________________________________________________
         var movepaddle = function (mon0bjetEvent) {
             if (mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth / 2 < competences.offsetWidth + competences.offsetLeft) {
                 window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 + 'px'
             }
         }
 
+        //___________________________________Verif/gestion_collision_brick_______________________________________________________________________________________
         var brickBroken = function () {
             var mesInfosT = window.document.getElementsByClassName('infoT')
             var i = mesInfosT.length - 1
-            if (mesInfosT.length <= 0) {
+            while (i >= 0) {
+                //inside brick
+                if (ballX + divSprite.offsetWidth > mesInfosT[i].offsetLeft && ballX < mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
+                    if (ballY + divSprite.offsetHeight > mesInfosT[i].offsetTop && ballY < mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
+                        //left collision
+                        if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
+                        //right collision
+                        else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
+                        else if (ballDown === false) ballDown = true
+                        else ballDown = false
+                        play(pongC)
+                        $(mesInfosT[i]).animate({
+                            backgroundColor: 'rgba(255, 255, 255, 0.4)'
+                        }, 500)
+                        mesInfosT[i].className = 'infoJeu'
+                    }
+                }
+                i--
+            }
+        }
+
+
+        //________________________________________________Verif/Gestion_YouWIN______________________________________________________________________________
+        var jeuTermine = function () {
+            var mesInfosT = window.document.getElementsByClassName('infoT')
+            if (mesInfosT.length < 1) {
                 cancelAnimationFrame(idAni)
                 cancelAnimationFrame(idR)
                 cancelAnimationFrame(idL)
@@ -326,30 +324,58 @@ const jeuBreaker = function () {
                 $('#complementaire').fadeIn(1250)
                 $('#competen').css('height', 'auto')
                 bStart.addEventListener('click', varsStart, true)
-            } else {
-                while (i >= 0) {
-                    //inside brick
-                    if (ballX + divSprite.offsetWidth > mesInfosT[i].offsetLeft && ballX < mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
-                        if (ballY + divSprite.offsetHeight > mesInfosT[i].offsetTop && ballY < mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
-                            //left collision
-                            if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
-                            //right collision
-                            else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
-                            else if (ballDown === false) ballDown = true
-                            else ballDown = false
-                            play(pongC)
-                            $(mesInfosT[i]).animate({
-                                backgroundColor: 'rgba(255, 255, 255, 0.4)'
-                            }, 500)
-                            mesInfosT[i].className = 'infoJeu'
+            }
+        }
+   
+        //__________________________________________WEB_Audio_API___________________________________________________________
+        function play(url) {
+            audioStack = []
+            var nextTime = 0
+    
+            fetch(url).then(function (response) {
+                var reader = response.body.getReader()
+                
+                function read() {
+                    return reader.read().then(({
+                        value,
+                        done
+                    }) => {
+                        if (done) {
+                            //console.log('done');
+                            return
+                        } else {
+                            //console.log(value, done);
+                            context.decodeAudioData(value.buffer, function (buffer) {
+                                audioStack.push(buffer)
+                                if (audioStack.length) {
+                                    scheduleBuffers()
+                                }
+                            }, function (err) {
+                                console.log('err(decodeAudioData): ' + err)
+                            })
                         }
-                    }
-                    i--
+                        read()
+                    })
+                }
+                read()
+            })
+            
+            function scheduleBuffers() {
+                while (audioStack.length) {
+                    var buffer = audioStack.shift()
+                    var source = context.createBufferSource()
+                    source.buffer = buffer
+                    source.connect(context.destination)
+                    if (nextTime == 0)
+                    nextTime = context.currentTime + 0.01 /// add 50ms latency to work well across systems - tune this if you like
+                    source.start(nextTime)
+                    nextTime += source.buffer.duration // Make the next buffer wait the length of the last buffer before being played
                 }
             }
         }
-
+        //____________________________________________Animation_Déplacement_Balle__________________________________________________________
         idAni = requestAnimationFrame(moveBall)
     }
 }
+//_______________________________________Exec_jeuBreaker___________________________________________________________________________________
 jeuBreaker()
