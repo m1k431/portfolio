@@ -14,7 +14,7 @@ const jeuBreaker = function () {
     $('.english').fadeIn()
     $('#competen').fadeIn()
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
-    setInterval(function () {
+    var idInterBlink = setInterval(function () {
         $div2blink.toggleClass('backgroundRed')
     }, 1500)
 
@@ -45,6 +45,7 @@ const jeuBreaker = function () {
     //_____________________________Click_on_START__________________________________________________________________________
     var bStart = window.document.getElementById('metier')
     bStart.addEventListener('click', varsStart, true)
+
     function varsStart() {
         const AudioContext = window.AudioContext || window.webkitAudioContext
         const context = new AudioContext()
@@ -56,6 +57,10 @@ const jeuBreaker = function () {
         var flagS = './static/sound/flagS.mp3'
         var youWin = './static/sound/youWin.mp3'
         var miss = './static/sound/miss.mp3'
+        var score = 0
+        var combo = 1
+        var clickMove = false;
+        var moveWithPad = true
         $('#linkedIn').fadeIn(2000)
         play(start)
         //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
@@ -65,7 +70,12 @@ const jeuBreaker = function () {
         var linkedIn = window.document.getElementById('linkedIn')
         var complementaire = window.document.getElementById('complementaire')
         var animH = $('#competen').height()
+        clearInterval(idInterBlink)
+        $div2blink.removeClass('backgroundRed')
+        $div2blink.css('background-color', 'rgba(255, 255, 255, 0.4)')
+        $('#metier > h1').text('SCORE: ' + score).fadeIn(375)
         //var linkOff = $('#linkedIn').offset()
+        ///----------------------DIV BALL SPRITE---------------------------
         var divSprite = window.document.createElement('div')
         divSprite.id = 'divSprite'
         divSprite.className = 'divsprite'
@@ -77,6 +87,7 @@ const jeuBreaker = function () {
         divSprite.style.borderRadius = '20px'
         divSprite.style.overflow = 'hidden'
         competences.appendChild(divSprite)
+        //---------------------Ball Sprite---------------------------------
         var imgSoccer = window.document.createElement('img')
         imgSoccer.id = 'imgSoccer'
         imgSoccer.className = 'imgsoccer'
@@ -87,13 +98,15 @@ const jeuBreaker = function () {
         imgSoccer.src = '/static/img/ball.png'
         imgSoccer.style.backgroundColor = 'none'
         divSprite.appendChild(imgSoccer)
+        //------------------------Paddle + hauteur breaker-----------------
         linkedIn.className = 'linkedinT'
+        window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
+        linkedIn.style.marginTop = -50 + 'px'
         $('#competen').animate({
             height: animH + 150 + 'px'
         }, 1000)
-        linkedIn.style.marginTop = -50 + 'px'
         complementaire.className = 'complementaireT'
-        window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
+        //--------------------INITIALISTATION BRICKS-----------------------
         var mesDivInfos = window.document.getElementsByClassName('infoJeu')
         var i = mesDivInfos.length
         i--
@@ -106,9 +119,19 @@ const jeuBreaker = function () {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-        
+
+
+        //______________________________________________________INITIALISATIION_JEU______________________________________
+        var ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2
+        var ballY = linkedIn.offsetTop
+        var ballLeft = true
+        var ballDown = false
+        var youwin = false
+        var angle = false
+
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
+            var ballSpeed = 2.5;
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin) {
                 divSprite.style.top = ballY + 'px'
@@ -116,20 +139,20 @@ const jeuBreaker = function () {
                 if (ballX < competences.offsetWidth && !ballLeft) {
                     //idR = requestAnimationFrame(animSpriteR)
                     if (angle) {
-                        ballX = ballX + 3
+                        ballX = ballX + 1 * ballSpeed
                         divSprite.style.left = ballX + 'px'
                     } else {
-                        ballX = ballX + 6
+                        ballX = ballX + 2 * ballSpeed
                         divSprite.style.left = ballX + 'px'
                     }
                 } else if (ballX > competences.offsetLeft) {
                     ballLeft = true
                     //idL = requestAnimationFrame(animSprite)
                     if (angle) {
-                        ballX = ballX - 3
+                        ballX = ballX - 1 * ballSpeed
                         divSprite.style.left = ballX + 'px'
                     } else {
-                        ballX = ballX - 6
+                        ballX = ballX - 2 * ballSpeed
                         divSprite.style.left = ballX + 'px'
                     }
                 } else {
@@ -138,11 +161,11 @@ const jeuBreaker = function () {
                 }
                 //ball move up down limit
                 if (ballY >= competences.offsetTop && !ballDown) {
-                    ballY = ballY - 6
+                    ballY = ballY - 2 * ballSpeed
                     divSprite.style.top = ballY + 'px'
                 } else if (ballY <= linkedIn.offsetTop - 10) {
                     ballDown = true
-                    ballY = ballY + 6
+                    ballY = ballY + 2 * ballSpeed
                     divSprite.style.top = ballY + 'px'
                 } else {
                     paddle()
@@ -155,26 +178,18 @@ const jeuBreaker = function () {
                 }
                 brickBroken()
                 jeuTermine()
-                /* if (clickMove == true) 
-                    {
-                        window.addEventListener('click', animMoveBall, true)
-                        clickMove = false
-                    }
-                    else {/*
-                        window.removeEventListener('click', animMoveBall, true)
-                        animMoveBall()*/
-                //}
-                animMoveBall()
+                if (clickMove == true) {
+                    window.document.addEventListener('click', animMoveBall, true)
+                    clickMove = false
+                } else {
+                    window.document.removeEventListener('click', animMoveBall, true)
+                    moveWithPad = false;
+                    animMoveBall()
+                }
+                //animMoveBall()
             }
         }
 
-        //______________________________________________________INITIALISATIOION_JEU______________________________________
-        var ballX = competences.offsetLeft + competences.offsetWidth / 2
-        var ballY = competences.offsetTop + competences.offsetHeight
-        var ballLeft = true
-        var ballDown = false
-        var youwin = false
-        var angle = false
 
         //______________________________________________________TouchMove_eventListener___________________________________
         var box2 = document.getElementById('linkedIn'),
@@ -229,6 +244,7 @@ const jeuBreaker = function () {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
                 ballLeft = true
+                combo = 1
                 play(pongB)
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                     angle = true
@@ -238,6 +254,7 @@ const jeuBreaker = function () {
             } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                 ballDown = false
                 ballLeft = false
+                combo = 1
                 play(pongB)
                 if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                     angle = true
@@ -246,11 +263,25 @@ const jeuBreaker = function () {
                 }
             } else {
                 ballDown = false
-                ballX = competences.offsetLeft + competences.offsetWidth / 2
-                ballY = competences.offsetTop + competences.offsetHeight - 50
+
                 clickMove = true
+                moveWithPad = true;
+                cancelAnimationFrame(idL)
+                combo = 1
+                //------------Short hand style if---------------
+                score >= 100 ? score -= 100 : score = 0
+                //----------------------------------------------
+                $('#metier > h1').text('SCORE: ' + score).css({
+                    'color': 'red',
+                    'font-size': '125%'
+                }).fadeIn(375)
+                setTimeout(function () {
+                    $('#metier > h1').text('SCORE: ' + score).css({
+                        'color': 'black',
+                        'font-size': '125%'
+                    }).fadeIn(375)
+                }, 375)
                 play(miss)
-                //alert('YOU MISSED THE BALL')
             }
         }
 
@@ -258,6 +289,10 @@ const jeuBreaker = function () {
         var movepaddle = function (mon0bjetEvent) {
             if (mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth / 2 < competences.offsetWidth + competences.offsetLeft) {
                 window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 + 'px'
+            }
+            if (moveWithPad == true) {
+                ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
+                ballY = linkedIn.offsetTop - divSprite.offsetHeight
             }
         }
 
@@ -267,20 +302,25 @@ const jeuBreaker = function () {
             var i = mesInfosT.length - 1
             while (i >= 0) {
                 //inside brick
-                if (ballX + divSprite.offsetWidth > mesInfosT[i].offsetLeft && ballX < mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth) {
-                    if (ballY + divSprite.offsetHeight > mesInfosT[i].offsetTop && ballY < mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
-                        //left collision
-                        if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = true
-                        //right collision
-                        else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight) ballLeft = false
-                        else if (ballDown === false) ballDown = true
-                        else ballDown = false
-                        play(pongC)
-                        $(mesInfosT[i]).animate({
-                            backgroundColor: 'rgba(255, 255, 255, 0.4)'
-                        }, 500)
-                        mesInfosT[i].className = 'infoJeu'
-                    }
+                if (ballX + divSprite.offsetWidth > mesInfosT[i].offsetLeft && ballX < mesInfosT[i].offsetLeft + mesInfosT[i].offsetWidth && ballY + divSprite.offsetHeight > mesInfosT[i].offsetTop && ballY < mesInfosT[i].offsetTop + mesInfosT[i].offsetHeight) {
+                    //left collision
+                    if (mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && mesInfosT[i].offsetLeft - ballX - divSprite.offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight)
+                        ballLeft = true
+                    //right collision
+                    else if (ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > ballY - mesInfosT[i].offsetTop - mesInfosT[i].offsetHeight && ballX - mesInfosT[i].offsetLeft - mesInfosT[i].offsetWidth > mesInfosT[i].offsetTop - ballY - divSprite.offsetHeight)
+                        ballLeft = false
+                    else if (ballDown == false)
+                        ballDown = true
+                    else
+                        ballDown = false
+                    play(pongC)
+                    $(mesInfosT[i]).animate({
+                        backgroundColor: 'rgba(255, 255, 255, 0.4)'
+                    }, 500)
+                    mesInfosT[i].className = 'infoJeu'
+                    score += 50 * combo
+                    combo = combo * 2
+                    $('#metier > h1').text('SCORE: ' + score).fadeIn(375)
                 }
                 i--
             }
@@ -297,10 +337,11 @@ const jeuBreaker = function () {
                 window.document.removeEventListener('click', eTouchStart, true)
                 window.document.removeEventListener('click', eTouchMove, true)
                 play(youWin)
+                show_prompt()
                 divSprite.removeChild(imgSoccer)
                 $('#divSprite').hide()
                 linkedIn.style.left = 'auto'
-                ballY = complementaire.offsetTop - complementaire.offsetHeight / 2
+                ballY = linkedIn.offsetTop
                 linkedIn.className = 'linkedin'
                 $('#linkedIn').hide()
                 $('#competen').animate({
@@ -321,15 +362,22 @@ const jeuBreaker = function () {
                 bStart.addEventListener('click', varsStart, true)
             }
         }
-   
+
+
+        function show_prompt() {
+            var name = prompt('Score: ' + score + ' Plz enter your name','Poppy');
+            if (name != null && name != "") {
+                alert(name + ' score is ' + score);
+            }
+        }
         //__________________________________________WEB_Audio_API___________________________________________________________
         function play(url) {
             audioStack = []
             var nextTime = 0
-    
+
             fetch(url).then(function (response) {
                 var reader = response.body.getReader()
-                
+
                 function read() {
                     return reader.read().then(({
                         value,
@@ -354,7 +402,7 @@ const jeuBreaker = function () {
                 }
                 read()
             })
-            
+
             function scheduleBuffers() {
                 while (audioStack.length) {
                     var buffer = audioStack.shift()
@@ -362,7 +410,7 @@ const jeuBreaker = function () {
                     source.buffer = buffer
                     source.connect(context.destination)
                     if (nextTime == 0)
-                    nextTime = context.currentTime + 0.01 /// add 50ms latency to work well across systems - tune this if you like
+                        nextTime = context.currentTime + 0.01 /// add 50ms latency to work well across systems - tune this if you like
                     source.start(nextTime)
                     nextTime += source.buffer.duration // Make the next buffer wait the length of the last buffer before being played
                 }
