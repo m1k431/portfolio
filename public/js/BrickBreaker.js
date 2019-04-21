@@ -119,7 +119,7 @@ const jeuBreaker = function () {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-
+        
 
         //______________________________________________________INITIALISATIION_JEU______________________________________
         var ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2
@@ -128,12 +128,13 @@ const jeuBreaker = function () {
         var ballDown = false
         var youwin = false
         var angle = false
+        var idAni, idR, idL
 
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
             var ballSpeed = 2.5;
             window.document.addEventListener('mousemove', movepaddle, true)
-            if (!youwin) {
+            if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'
                 //ball move left right limit
                 if (ballX < competences.offsetWidth && !ballLeft) {
@@ -178,15 +179,29 @@ const jeuBreaker = function () {
                 }
                 brickBroken()
                 jeuTermine()
-                if (clickMove == true) {
-                    window.document.addEventListener('click', animMoveBall, true)
+                /*-if (clickMove == true) {
+                    //window.document.addEventListener('click', animMoveBall, true)
                     clickMove = false
                 } else {
-                    window.document.removeEventListener('click', animMoveBall, true)
-                    moveWithPad = false;
+                    //window.document.removeEventListener('click', animMoveBall, true)
+                    //ballX = linkedIn.offsetLeft
+                    setTimeout(function () {
+                        $('#metier > h1').text('SCORE: ' + score).css({
+                            'color': 'black',
+                            'font-size': '125%'
+                        }).fadeIn(375)
+                    }, 375)
+                    //moveWithPad = false;
                     animMoveBall()
+            }*/
+                if (clickMove == false) {
+                    animMoveBall()
+                    window.document.removeEventListener('click', animMoveBall, true)
                 }
-                //animMoveBall()
+                else {
+                    cancelAnimationFrame(idAni)
+                    window.document.addEventListener('click', animMoveBall, true)
+                }
             }
         }
 
@@ -213,11 +228,6 @@ const jeuBreaker = function () {
         bStart.removeEventListener('click', varsStart, true)
 
         //____________________________________________________ANIMATION_Ball_Sprite______________________________________
-        var idAni, idR, idL
-        var animMoveBall = function () {
-            idAni = requestAnimationFrame(moveBall)
-        }
-
         var animSprite = function () {
             if (parseFloat(imgSoccer.style.left) > -920) {
                 imgSoccer.style.left = parseFloat(imgSoccer.style.left) - 27.8 + 'px'
@@ -225,6 +235,10 @@ const jeuBreaker = function () {
                 imgSoccer.style.left = -4 + 'px'
             }
             idL = requestAnimationFrame(animSprite)
+        }
+        var animMoveBall = function () {
+            requestAnimationFrame(moveBall)
+            clickMove = false
         }
         /*
         var animSpriteR = function() {
@@ -263,10 +277,7 @@ const jeuBreaker = function () {
                 }
             } else {
                 ballDown = false
-
                 clickMove = true
-                moveWithPad = true;
-                cancelAnimationFrame(idL)
                 combo = 1
                 //------------Short hand style if---------------
                 score >= 100 ? score -= 100 : score = 0
@@ -275,12 +286,7 @@ const jeuBreaker = function () {
                     'color': 'red',
                     'font-size': '125%'
                 }).fadeIn(375)
-                setTimeout(function () {
-                    $('#metier > h1').text('SCORE: ' + score).css({
-                        'color': 'black',
-                        'font-size': '125%'
-                    }).fadeIn(375)
-                }, 375)
+
                 play(miss)
             }
         }
@@ -289,10 +295,6 @@ const jeuBreaker = function () {
         var movepaddle = function (mon0bjetEvent) {
             if (mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 > competences.offsetLeft && mon0bjetEvent.clientX + linkedIn.offsetWidth / 2 < competences.offsetWidth + competences.offsetLeft) {
                 window.document.getElementById('linkedIn').style.left = mon0bjetEvent.clientX - linkedIn.offsetWidth / 2 + 'px'
-            }
-            if (moveWithPad == true) {
-                ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2 - divSprite.offsetWidth / 2
-                ballY = linkedIn.offsetTop - divSprite.offsetHeight
             }
         }
 
@@ -337,7 +339,6 @@ const jeuBreaker = function () {
                 window.document.removeEventListener('click', eTouchStart, true)
                 window.document.removeEventListener('click', eTouchMove, true)
                 play(youWin)
-                show_prompt()
                 divSprite.removeChild(imgSoccer)
                 $('#divSprite').hide()
                 linkedIn.style.left = 'auto'
@@ -359,13 +360,16 @@ const jeuBreaker = function () {
                 $('#formation').fadeIn(1000)
                 $('#complementaire').fadeIn(1250)
                 $('#competen').css('height', 'auto')
+                setTimeout(function () {
+                    show_prompt()
+                }, 1000)
                 bStart.addEventListener('click', varsStart, true)
             }
         }
 
 
         function show_prompt() {
-            var name = prompt('Score: ' + score + ' Plz enter your name','Poppy');
+            var name = prompt('Score: ' + score + ' Plz enter your name','');
             if (name != null && name != "") {
                 alert(name + ' score is ' + score);
             }
