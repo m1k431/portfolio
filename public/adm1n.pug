@@ -1,11 +1,29 @@
+extends layoutNav.pug
 append head
- link(rel='stylesheet' href='/static/css/admin.css') 
+  link(rel='stylesheet' href='/static/css/admin.css') 
 append content
-  #ADM1N
-    h1.log LOG IN
-    form#adm1n(action='/layoutAdmin' method='post')
-      label.LabelAdmin(for='POST-user') user
-      input#POST-user.InputAdmin(type='text' name='user')
-      label.LabelAdmin(for='POST-pass') pass
-      input#POST-pass.InputAdmin(type='text' name='pass')
-      input#subAdm1n(type='submit' class="css3but" value='log')
+  .content
+    .table-cell
+      #m0ncentrage  
+        #ADM1N
+          h1.log LOG IN
+          form#adm1n(action='/layoutAdmin' method='post')
+            label.LabelAdmin(for='POST-user') user
+            br
+            input#POST-user.InputAdmin(type='text' name='user')
+            br
+            label.LabelAdmin(for='POST-pass') pass
+            br
+            input#POST-pass.InputAdmin(type='text' name='pass')
+            br
+            br
+            input#subAdm1n(type='submit' class="css3but" value='log')
+append scripts
+  script.
+    $('#intro').removeClass('css3buttonRed')
+    $('#intro').addClass('css3button')
+    $('#resume').removeClass('css3buttonRed')
+    $('#resume').addClass('css3button')
+    $('#admin').removeClass('css3button')
+    $('#admin').addClass('css3buttonRed')
+    $('#m0ncentrage').fadeIn(250)

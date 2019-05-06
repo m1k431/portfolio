@@ -1,3 +1,4 @@
+/*
 $(document).ready(function () {
     $('.js-scrollTo').on('click', function () {
         var page = $(this).attr('href').substring(17, 25) //ancre cible
@@ -9,15 +10,13 @@ $(document).ready(function () {
 
 var soundSelect = '/static/sound/select.mp3'
 
-var lien = window.document.getElementsByClassName('css3button')
 var i = lien.length
 i--
-/*
 while (i >= 0) {
     lien[i].addEventListener('click', play(soundSelect), true);
     i--;
 }
-*/
+var lien = window.document.getElementsByClassName('css3button')
 lien[0].onclick = function () {
     //window.scroll(0,0)
     $('#intro').removeClass('css3button')
@@ -43,6 +42,8 @@ lien[2].onclick = function () {
     $('#admin').removeClass('css3button')
     $('#admin').addClass('css3buttonRed')
 }
+$('#m0ncentrage').fadeIn(250)
+  */
 /*
 lien[3].onclick = () => {
     $('#intro').removeClass('css3buttonRed')
@@ -54,8 +55,8 @@ lien[3].onclick = () => {
     $('#admin').removeClass('css3button')
     $('#admin').addClass('css3buttonRed')
 }
-*/
 function playSelect() {
     getDataSelect()
     sourceSelect.start(0)
 }
+ */

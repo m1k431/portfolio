@@ -9,14 +9,14 @@ const jeuBreaker = function () {
     $('#metier > h1').fadeOut(375, function () {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
-
-    //_______________________________Choix_langue____________________________________________________________________________
-    $('.english').fadeIn()
-    $('#competen').fadeIn()
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
     var idInterBlink = setInterval(function () {
         $div2blink.toggleClass('backgroundRed')
     }, 1500)
+
+    //_______________________________Choix_langue____________________________________________________________________________
+    $('.english').fadeIn()
+    $('#competen').fadeIn()
 
     window.document.getElementById('french').onclick = () => {
         //play(flagS)
@@ -65,11 +65,14 @@ const jeuBreaker = function () {
         play(start)
         //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
         var competences = window.document.getElementById('competen')
+        var animH = $('#competen').height()
+        $('#competen').animate({
+            height: animH + 300 + 'px'
+        }, 500)
         var informatique = window.document.getElementById('informatique')
         var commerciales = window.document.getElementById('commerciales')
         var linkedIn = window.document.getElementById('linkedIn')
         var complementaire = window.document.getElementById('complementaire')
-        var animH = $('#competen').height()
         clearInterval(idInterBlink)
         $div2blink.removeClass('backgroundRed')
         $div2blink.css('background-color', 'rgba(255, 255, 255, 0.4)')
@@ -101,10 +104,7 @@ const jeuBreaker = function () {
         //------------------------Paddle + hauteur breaker-----------------
         linkedIn.className = 'linkedinT'
         window.document.getElementById('linkedIn').style.left = competences.offsetWidth / 2 - 40 + 'px'
-        linkedIn.style.marginTop = -50 + 'px'
-        $('#competen').animate({
-            height: animH + 150 + 'px'
-        }, 1000)
+        linkedIn.style.marginTop = -100 + 'px'
         complementaire.className = 'complementaireT'
         //--------------------INITIALISTATION BRICKS-----------------------
         var mesDivInfos = window.document.getElementsByClassName('infoJeu')
@@ -119,11 +119,19 @@ const jeuBreaker = function () {
         }, 500)
         informatique.style.verticalAlign = 'top'
         commerciales.style.verticalAlign = 'top'
-        
+        $('html, body').animate({
+            scrollTop: $('#competen').offset().top - 80
+        }, 750)
+        $('#btp').fadeOut()
+        $('#commerciales').fadeOut()
+        $('#informatique').animate({
+            width: '98%'
+        }, 2000)
+
 
         //______________________________________________________INITIALISATIION_JEU______________________________________
         var ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2
-        var ballY = linkedIn.offsetTop
+        var ballY = competences.offsetTop + competences.offsetHeight
         var ballLeft = true
         var ballDown = false
         var youwin = false
@@ -132,12 +140,12 @@ const jeuBreaker = function () {
 
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
-            var ballSpeed = 2.5;
+            var ballSpeed = 2;
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'
                 //ball move left right limit
-                if (ballX < competences.offsetWidth && !ballLeft) {
+                if (ballX < competences.offsetLeft + competences.offsetWidth - divSprite.offsetWidth && !ballLeft) {
                     //idR = requestAnimationFrame(animSpriteR)
                     if (angle) {
                         ballX = ballX + 1 * ballSpeed
@@ -164,14 +172,27 @@ const jeuBreaker = function () {
                 if (ballY >= competences.offsetTop && !ballDown) {
                     ballY = ballY - 2 * ballSpeed
                     divSprite.style.top = ballY + 'px'
-                } else if (ballY <= linkedIn.offsetTop - 10) {
+                } else if (ballY < competences.offsetTop + competences.offsetHeight - 30) {
                     ballDown = true
                     ballY = ballY + 2 * ballSpeed
                     divSprite.style.top = ballY + 'px'
+                    if (ballY + divSprite.offsetHeight > linkedIn.offsetTop && ballY < linkedIn.offsetTop + 5)
+                        paddle()
                 } else {
-                    paddle()
+                    ballDown = false
+                    clickMove = true
+                    combo = 1
+                    //------------Short hand style if---------------
+                    score >= 100 ? score -= 100 : score = 0
+                    //----------------------------------------------
+                    $('#metier > h1').text('SCORE: ' + score).css({
+                        'color': 'red',
+                        'font-size': '125%'
+                    }).fadeIn(375)
+                    combo = 1
+                    play(miss)
                 }
-                if (ballX > competences.offsetWidth) {
+                if (ballX + divSprite.offsetWidth > competences.offsetLeft + competences.offsetWidth) {
                     play(pongA)
                 }
                 if (ballY < competences.offsetTop) {
@@ -197,8 +218,11 @@ const jeuBreaker = function () {
                 if (clickMove == false) {
                     animMoveBall()
                     window.document.removeEventListener('click', animMoveBall, true)
-                }
-                else {
+                    $('#metier > h1').text('SCORE: ' + score).css({
+                        'color': 'black',
+                        'font-size': '125%'
+                    }).fadeIn(375)
+                } else {
                     cancelAnimationFrame(idAni)
                     window.document.addEventListener('click', animMoveBall, true)
                 }
@@ -258,7 +282,7 @@ const jeuBreaker = function () {
             if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth / 2) {
                 ballDown = false
                 ballLeft = true
-                combo = 1
+                combo += 1
                 play(pongB)
                 if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft + linkedIn.offsetWidth / 4) {
                     angle = true
@@ -268,27 +292,17 @@ const jeuBreaker = function () {
             } else if (ballX + divSprite.offsetWidth / 2 > linkedIn.offsetLeft && ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth + 5) {
                 ballDown = false
                 ballLeft = false
-                combo = 1
+                combo += 1
                 play(pongB)
                 if (ballX + divSprite.offsetWidth / 2 < linkedIn.offsetLeft + linkedIn.offsetWidth * 3 / 4) {
                     angle = true
                 } else {
                     angle = false
                 }
-            } else {
-                ballDown = false
-                clickMove = true
-                combo = 1
-                //------------Short hand style if---------------
-                score >= 100 ? score -= 100 : score = 0
-                //----------------------------------------------
-                $('#metier > h1').text('SCORE: ' + score).css({
-                    'color': 'red',
-                    'font-size': '125%'
-                }).fadeIn(375)
-
-                play(miss)
             }
+            /*else {
+                           
+                       }*/
         }
 
         //__________________________________Déplacement paddle dans environnement de jeu________________________________________________________________________
@@ -321,7 +335,6 @@ const jeuBreaker = function () {
                     }, 500)
                     mesInfosT[i].className = 'infoJeu'
                     score += 50 * combo
-                    combo = combo * 2
                     $('#metier > h1').text('SCORE: ' + score).fadeIn(375)
                 }
                 i--
@@ -339,8 +352,8 @@ const jeuBreaker = function () {
                 window.document.removeEventListener('click', eTouchStart, true)
                 window.document.removeEventListener('click', eTouchMove, true)
                 play(youWin)
-                divSprite.removeChild(imgSoccer)
-                $('#divSprite').hide()
+                competences.removeChild(divSprite)
+                //$('#divSprite').hide()
                 linkedIn.style.left = 'auto'
                 ballY = linkedIn.offsetTop
                 linkedIn.className = 'linkedin'
@@ -349,27 +362,24 @@ const jeuBreaker = function () {
                     height: animH + 'px'
                 }, 1500)
                 competences.className = 'competences'
+                $('#btp').fadeIn()
+                $('#commerciales').fadeIn()
+                $('#informatique').animate({
+                    width: '33%'
+                }, 2000)
                 informatique.style.verticalAlign = 'middle'
                 commerciales.style.verticalAlign = 'middle'
                 youwin = true
-                divSprite.style.display = 'none'
-                $('#metier > h1').fadeOut(250, function () {
-                    $(this).text('IBM RPG & Javascript Developer').fadeIn(250)
-                })
-                $('#experiences').fadeIn(750)
-                $('#formation').fadeIn(1000)
-                $('#complementaire').fadeIn(1250)
-                $('#competen').css('height', 'auto')
                 setTimeout(function () {
                     show_prompt()
-                }, 1000)
+                }, 2000)
                 bStart.addEventListener('click', varsStart, true)
             }
         }
 
 
         function show_prompt() {
-            var name = prompt('Score: ' + score + ' Plz enter your name','');
+            var name = prompt('Score: ' + score + ' Plz enter your name', '');
             if (name != null && name != "") {
                 alert(name + ' score is ' + score);
             }

@@ -12,7 +12,6 @@ const
     urlencodedParser = bodyParser.urlencoded({
         extended: false
     }),
-    urldb = 'mongodb://127.0.0.1:27017/exo19',
     urldb20 = 'mongodb://127.0.0.1:27017/exo20',
     n0mBd = 'exo19',
     n0mBd20 = 'exo20',
@@ -56,7 +55,7 @@ if (app.get('env') === 'production') {
 }
 
 app.get('/', (req, res) => {
-    MongoClient.connect(urldb, {
+    MongoClient.connect(urldb20, {
         useNewUrlParser: true
     }, (err, client) => {
         if (err) {

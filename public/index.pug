@@ -7,15 +7,22 @@ append content
           #INDEX
             .paraFoot Welcome to my devlab
               #s0leil
+            include jeuCV.pug
             .paraFoot My name is Mikael, I'm an IBM RPG &amp; Javascript Developer.
-            .paraFoot This website hosts my skills, projects and experiences.
-              video#jugglejungle(loop='' poster='/static/img/kuansiFalls.jpg')
-                source(src='/static/video/theOneFinal2.webm' type='video/webm')
+              video#jugglejungle(playsinline autoplay muted loop poster='/static/img/kuansiFalls.jpg')
+                source(src='/static/video/theOneFinal2.webm'  type='video/webm')
                 source(src='/static/video/theOneFinal2.mp4' type='video/mp4')
             button#BtnJs0nPl4Y PLAY
-          include jeuCV.pug
+            .paraFoot This website hosts my skills, projects and experiences.
           //include joust.pug
-          include adm1n.pug
+          //include adm1n.pug
 append scripts
   script(src='/static/js/soleil.js' defer)
   script(src='/static/js/BrickBreaker.js' defer)
+  script.
+    $('#intro').removeClass('css3button')
+    $('#intro').addClass('css3buttonRed')
+    $('#resume').removeClass('css3buttonRed')
+    $('#resume').addClass('css3button')
+    $('#admin').removeClass('css3buttonRed')
+    $('#admin').addClass('css3button')

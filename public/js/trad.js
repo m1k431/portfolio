@@ -3,7 +3,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         $('.competen').fadeIn()
         $('.complemen').fadeIn()
-        $('.moi').fadeIn()
+        //$('.moi').fadeIn()
         $('.flags').fadeIn()
         $('.metier').fadeIn()
         $('.english').fadeIn()

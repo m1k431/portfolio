@@ -4,6 +4,7 @@ $myFont: monospace;
 $colorBody: rgba(19, 42, 121, 0.773);
 %videoSoleil {
     display: none;
+    border: 0.7px solid black;
     width: 100%;
     border-radius: 28px;
     margin-top: 5px;
@@ -38,9 +39,9 @@ html {
 }
 #CV {
     //display: none;
-    border: 1px solid white;
-    background-color: rgba(183, 210, 214, 0.1);
-    border-radius: 10px;
+    //border: 1px solid white;
+    //background-color: rgba(183, 210, 214, 0.1);
+    //border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2.5%;
@@ -175,6 +176,8 @@ a.nav {
 
 #m0ncentrage {
     display: none;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 60px;
     margin-bottom: 60px;
 }
@@ -220,11 +223,14 @@ a.nav {
 }
 
 #jugglejungle,
-#s0leil,
+#s0leil {
+@extend %videoSoleil;
+}
+
 #ci3l,
 #m0nC4nvaM3r,
 #m0nC4nvaC0lline {
-    @extend %videoSoleil;
+
 }
 
 #BtnJs0nPl4Y {

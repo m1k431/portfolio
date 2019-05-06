@@ -1,7 +1,8 @@
 #menuAdmin {
   position: absolute;
-  height: 90%;
-  top: 2px;
+  height: 70%;
+  top: 15%;
+  bottom: 15%;
   left: 10px;
   z-index: 2;
 }

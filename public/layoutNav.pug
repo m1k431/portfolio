@@ -17,11 +17,11 @@ html(lang="en")
     nav#navBar
       ul
         li 
-          a#intro.nav.js-scrollTo(href='http://mikael.ml/#INDEX' class='css3button') Intro
+          a#intro.nav(href='/nomPage?r=index' class='css3button') Intro
         li
-          a#resume.nav.js-scrollTo(href='http://mikael.ml/#CV' class='css3button') Resume
+          a#resume.nav(href='/nomPage?r=cv' class='css3button') Resume
         li
-          a#admin.nav.js-scrollTo(href='http://mikael.ml/#ADM1N' class='css3button') Admin
+          a#admin.nav(href='/nomPage?r=adm1n' class='css3button') Admin
     block content
     block foot
       #footer
@@ -35,7 +35,7 @@ html(lang="en")
       script(src='/static/js/jquery-3.3.1.min.js')
       script(src='/static/js/jquery-ui.min.js')
       script(src='/static/js/socket.io.js')
-      script(src='/static/js/layoutNav.js')
+      //script(src='/static/js/layoutNav.js')
       script(src='https://www.googletagmanager.com/gtag/js?id=UA-113167424-1')
       // Global site tag (gtag.js) - Google Analytics
       script.
