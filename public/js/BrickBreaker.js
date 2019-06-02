@@ -140,7 +140,7 @@ const jeuBreaker = function () {
 
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
-            var ballSpeed = 2;
+            var ballSpeed = 3;
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'
@@ -365,7 +365,7 @@ const jeuBreaker = function () {
                 $('#btp').fadeIn()
                 $('#commerciales').fadeIn()
                 $('#informatique').animate({
-                    width: '33%'
+                    width: '31.5%'
                 }, 2000)
                 informatique.style.verticalAlign = 'middle'
                 commerciales.style.verticalAlign = 'middle'
@@ -379,8 +379,10 @@ const jeuBreaker = function () {
 
 
         function show_prompt() {
+
             var name = prompt('Score: ' + score + ' Plz enter your name', '');
             if (name != null && name != "") {
+
                 alert(name + ' score is ' + score);
             }
         }

@@ -12,7 +12,7 @@ const
     urlencodedParser = bodyParser.urlencoded({
         extended: false
     }),
-    urldb20 = 'mongodb://127.0.0.1:27017/exo20',
+    urldb20 = 'mongodb://snowmike:iop@www.mikael.ml/exo20',
     n0mBd = 'exo19',
     n0mBd20 = 'exo20',
     server = require('http').createServer(app),
@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
         if (err) {
             return
         }
-        const m0nMongoClientFront = client.db(n0mBd)
+        const m0nMongoClientFront = client.db(n0mBd20)
         //console.log(m0nMongoClient)
         const collectionAdmin = m0nMongoClientFront.collection('admin')
         //console.log(collectionArticle)
@@ -169,15 +169,15 @@ app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
 
-MongoClient.connect(urldb, {
+MongoClient.connect(urldb20, {
     useNewUrlParser: true
 }, (err, client) => {
     if (err) {
         return
     }
-    const m0nMongoClient = client.db(n0mBd)
+    const m0nMongoClient = client.db(n0mBd20)
     //console.log(m0nMongoClient)
-    const collection = m0nMongoClient.collection('admin')
+    const collection = m0nMongoClient.collection('highScore')
     collection.find().toArray((err, data) => {
         var cpt = 0
         while (data[cpt]) {

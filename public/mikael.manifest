@@ -1,15 +1,17 @@
 {
-    "background_color": "blue"
-    "description": "My JavaScript Portfolio"
-    "display": "fullscreen"
-    "icons": {
-        "src": "img/favicon.ico"
-        "sizes": "16x16"
+    "background_color": "blue",
+    "description": "My JavaScript Portfolio",
+    "display": "fullscreen",
+    "icons": [
+        {
+        "src": "img/favicon.ico",
+        "sizes": "16x16",
         "type": "image/png"
     }
-    "lang": "en"
-    "name": "Portfolio Javascript Mikael"
-    "orientation": "portrait-primary"
-    "scope": "/public"
+    ],
+    "lang": "en",
+    "name": "Portfolio Javascript Mikael",
+    "orientation": "portrait-primary",
+    "scope": "/",
     "short_name": "Mikael JS dev"
 }
