@@ -126,18 +126,18 @@ const jeuBreaker = function () {
         $('#commerciales').fadeOut()
         $('#informatique').animate({
             width: '98%'
-        }, 2000)
+        }, 1000)
 
 
         //______________________________________________________INITIALISATIION_JEU______________________________________
         var ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2
-        var ballY = competences.offsetTop + competences.offsetHeight
+        var ballY = 1000
         var ballLeft = true
         var ballDown = false
         var youwin = false
         var angle = false
         var idAni, idR, idL
-
+        
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
             var ballSpeed = 3;
