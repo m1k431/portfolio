@@ -75,10 +75,11 @@ app.get('/', (req, res) => {
         console.log('cookie: ', req.session.cookie)
         sess.session = req.session
         console.log('session: ', sess)
-        res.render('index.pug', {
-            session: req.session
-        })
+        //res.render here si connect mongo ok
     })
+            res.render('index.pug', {
+                session: req.session
+            })
 })
 app.get('/nomPage', (req, res) => {
     res.render(req.query.r + '.pug', {})
