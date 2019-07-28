@@ -13,7 +13,7 @@ const
         extended: false
     }),
     urldb20 = 'mongodb://snowmike:iop@www.mikael.ml/exo20',
-    n0mBd = 'exo19',
+    //n0mBd = 'exo19',
     n0mBd20 = 'exo20',
     server = require('http').createServer(app),
     io = require('socket.io'),
@@ -75,11 +75,10 @@ app.get('/', (req, res) => {
         console.log('cookie: ', req.session.cookie)
         sess.session = req.session
         console.log('session: ', sess)
-        //res.render here si connect mongo ok
+        res.render('index.pug', {
+            session: req.session
+        })
     })
-            res.render('index.pug', {
-                session: req.session
-            })
 })
 app.get('/nomPage', (req, res) => {
     res.render(req.query.r + '.pug', {})
@@ -96,14 +95,14 @@ app.get('/pagelisteArticle', (req, res) => {
         m0nCollectionArticle.find().toArray((err, data) => {
             console.log(data)
             res.render('pagelisteArticle.pug', {
-                    data,
-                },
-                function (err, html) {
-                    if (err) {
-                        return
-                    }
-                    res.send(html)
-                })
+                data,
+            },
+            function (err, html) {
+                if (err) {
+                    return
+                }
+                res.send(html)
+            })
         })
     })
 })
@@ -124,16 +123,16 @@ app.post('/layoutAdmin', urlencodedParser, (req, res) => {
         m0nCollectionArticle.find().toArray((err, data) => {
             console.log(data)
             res.render('layoutAdmin.pug', {
-                    data,
-                    ma535510n,
-                    m0nID535510n
-                },
-                (err, html) => {
-                    if (err) {
-                        return
-                    }
-                    res.send(html)
-                })
+                data,
+                ma535510n,
+                m0nID535510n
+            },
+            (err, html) => {
+                if (err) {
+                    return
+                }
+                res.send(html)
+            })
         })
     })
 })
