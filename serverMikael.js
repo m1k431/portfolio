@@ -62,6 +62,11 @@ if (app.get('env') === 'production') {
     sess.cookie.secure = false // serve secure cookies
 }
 
+conMysql.connect(function(err) {
+if (err) throw err
+console.log('connected')
+})
+
 app.get('/', (req, res) => {
   /*  MongoClient.connect(urldb20, {
         useNewUrlParser: true
@@ -85,13 +90,9 @@ app.get('/', (req, res) => {
         console.log('session: ', sess)
         //res.render here si connect mongo ok
     })*/
-        conMysql.connect(function(err) {
-            if (err) throw err
-            console.log('connected')
-        })
-            res.render('index.pug', {
-                session: req.session
-            })
+                res.render('index.pug', {
+                    session: req.session
+                })
 })
 app.get('/nomPage', (req, res) => {
     res.render(req.query.r + '.pug', {})
