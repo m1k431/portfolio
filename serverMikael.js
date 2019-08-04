@@ -17,7 +17,8 @@ const
     n0mBd20 = 'exo20',
     server = require('http').createServer(app),
     io = require('socket.io'),
-    socketIO = io(server)
+    socketIO = io(server),
+    mysql = require('mysql')
 //const objectId = require('mongodb').ObjectID
 
 let p0rt = 80
@@ -48,6 +49,13 @@ app.use(session(sess))
 app.set('view engine', 'pug')
 app.set('views', 'public')
 
+//mysql
+var conMysql = mysql.createConnection({
+    host: "localhost",
+    user: "webuser",
+    password: "iop"
+})
+
 //app.get_________________________________________________________________
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
@@ -55,7 +63,7 @@ if (app.get('env') === 'production') {
 }
 
 app.get('/', (req, res) => {
-    MongoClient.connect(urldb20, {
+  /*  MongoClient.connect(urldb20, {
         useNewUrlParser: true
     }, (err, client) => {
         if (err) {
@@ -76,7 +84,11 @@ app.get('/', (req, res) => {
         sess.session = req.session
         console.log('session: ', sess)
         //res.render here si connect mongo ok
-    })
+    })*/
+        conMysql.connect(function(err) {
+            if (err) throw err
+            console.log('connected')
+        })
             res.render('index.pug', {
                 session: req.session
             })
@@ -169,7 +181,7 @@ app.use((req, res) => {
 app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
-
+/*
 MongoClient.connect(urldb20, {
     useNewUrlParser: true
 }, (err, client) => {
@@ -187,6 +199,7 @@ MongoClient.connect(urldb20, {
         }
     })
 })
+*/
 server.listen(p0rt, () => {
     console.log(`Listening on ${server.address().address} ${server.address().port}`)
 })
