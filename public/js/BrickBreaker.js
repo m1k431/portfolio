@@ -67,7 +67,7 @@ const jeuBreaker = function () {
         var competences = window.document.getElementById('competen')
         var animH = $('#competen').height()
         $('#competen').animate({
-            height: animH + 300 + 'px'
+            height: animH + 150 + 'px'
         }, 500)
         var informatique = window.document.getElementById('informatique')
         var commerciales = window.document.getElementById('commerciales')
