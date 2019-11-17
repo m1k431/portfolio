@@ -8,7 +8,8 @@ p.moiPara, p.jeu {
 }
 
 @media print {
-  #navBar, #footer {
+  #navBar,
+#footer {
     display: none;
   }
 }
@@ -107,7 +108,7 @@ h3 {
 }
 
 /*****
-$$$$$$  POLICES &&& background:   $$$$$
+    $$$$$$  POLICES &&& background:   $$$$$
 ****/
 .bold {
   font-weight: bold;
@@ -543,6 +544,20 @@ p.flags {
   height: 80%;
   margin-top: 40px;
   margin-bottom: 60px;
+}
+
+#scoreForm {
+  width: 80%;
+  display: none;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#highScore {
+  text-align: center;
+  display: none;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 /*# sourceMappingURL=cv.css.map */

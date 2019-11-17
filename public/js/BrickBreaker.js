@@ -9,10 +9,12 @@ const jeuBreaker = function () {
     $('#metier > h1').fadeOut(375, function () {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
+    //$('#scoreForm').fadeOut()
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
     var idInterBlink = setInterval(function () {
         $div2blink.toggleClass('backgroundRed')
     }, 1500)
+    document.getElementById('postScore').value = 0
 
     //_______________________________Choix_langue____________________________________________________________________________
     $('.english').fadeIn()
@@ -61,6 +63,8 @@ const jeuBreaker = function () {
         var combo = 1
         var clickMove = false;
         var moveWithPad = true
+        $('#scoreForm').hide()
+        $('#highScore').hide()
         $('#linkedIn').fadeIn(2000)
         play(start)
         //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
@@ -137,7 +141,7 @@ const jeuBreaker = function () {
         var youwin = false
         var angle = false
         var idAni, idR, idL
-        
+
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
             var ballSpeed = 3;
@@ -362,28 +366,49 @@ const jeuBreaker = function () {
                     height: animH + 'px'
                 }, 1500)
                 competences.className = 'competences'
-                $('#btp').fadeIn()
-                $('#commerciales').fadeIn()
-                $('#informatique').animate({
-                    width: '31.5%'
-                }, 2000)
+                //$('#btp').fadeIn()
+                //$('#commerciales').fadeIn()
+                //$('#informatique').animate({
+                //    width: '31.5%'
+                //}, 2000)
+                $('#informatique').fadeOut()
                 informatique.style.verticalAlign = 'middle'
                 commerciales.style.verticalAlign = 'middle'
                 youwin = true
-                setTimeout(function () {
-                    show_prompt()
-                }, 2000)
+                $('#skills').hide()
+                $('#scoreForm').fadeIn()
+                document.getElementById('postScore').value = score
                 bStart.addEventListener('click', varsStart, true)
             }
         }
 
+        $('#scoreForm').on('submit', function (event) {
+            event.preventDefault()
+            var createName = $('#postName')
+            var createScore = score
+            console.log(createName.val() + '/' + createScore)
+            $('#scoreForm').hide()
+            $('#highScore').fadeIn()
+            $.ajax({
+                type: 'POST',
+                url: '/highscore',
+                dataType: 'json',
+                data: {
+                    name: createName.val(),
+                    score: createScore
+                },
+                complete: function (response) {
+                    console.log(response)
+                }
+            })
+        })
 
         function show_prompt() {
 
             var name = prompt('Score: ' + score + ' Plz enter your name', '');
             if (name != null && name != "") {
-
-                alert(name + ' score is ' + score);
+                window.location.replace('http://www.mikael.ml/highscore')
+                //alert(name + ' score is ' + score);
             }
         }
         //__________________________________________WEB_Audio_API___________________________________________________________
