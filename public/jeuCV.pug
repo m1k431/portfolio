@@ -25,53 +25,52 @@ append content
     #metier
       h1 IBM RPG &amp; Javascript Developer
     .competen#competen
-      form#scoreForm(action='/highscore' method='post')
-        label.nom(for='POST-name') name
-        br
-        input#postName(type='text' name='name')
-        br
-        //label.score(for='POST-score') score
-        //br
-        input#postScore(type='hidden' name='score' readonly='yes')
-        //br
-        br
-        input#subScore(type='submit' class="css3but" value='ok')
-      #highScore
-        h1.highscore High Score
-        table#mesData
-          thead
-            tr
-              th Nom
-              th Score
-          tbody
-            each player in results
+      h1#score.highscore High Score
+        form#scoreForm(action='/highscore' method='post')
+          label.nom(for='POST-name') name
+          br
+          input#postName(type='text' name='name')
+          br
+          //label.score(for='POST-score') score
+          //br
+          //input#postScore(type='hidden' name='score' readonly='yes')
+          //br
+          br
+          input#subScore(type='submit' class="css3but" value='ok')
+        #highScore
+          br
+          table#mesData
+            thead
               tr
-                td=player.name
-                td=player.score
+                th Nom
+                th Score
+            tbody
+              each player in results
+                tr
+                  td=player.name
+                  td=player.score
       //h2.french Comp&eacute;tences
       //h2.spanish  Competencias
       h2#skills Skills
       .informatiquesCont.french.english.spanish#informatique
         h3 Front-End Development
-        .informatiques
+        .informatiques#informatique
           .infoJeu JavaScript
-          .infoJeu AngularJS
-          .infoJeu JQUERY
-          .infoJeu BootStrap
-          .infoJeu PUGjs
+          .infoJeu jade/PUG
           .infoJeu HTML5
+          .infoJeu JQUERY
           .infoJeu SCSS
-          .infoJeu WebAudio API
+          .infoJeu BootStrap
+          .infoJeu AngularJS
         h3 Back-End Development
-        .informatiques
-          .infoJeu IBM CL
-          .infoJeu IBM RPG
-          .infoJeu SQL
+        .informatiques#informatique
           .infoJeu NodeJS
           .infoJeu ExpressJS
-          .infoJeu MongoDb
+          .infoJeu Ajax
+          .infoJeu DB2
+          .infoJeu mysql
+          .infoJeu mongoDB
           .infoJeu WebSocket
-          .infoJeu Apache
         h3 Tools
         .informatiquesLast
           .infoJeu IBM i
@@ -104,7 +103,7 @@ append content
         .infolast.french Accueil, service et conseil commercial
         .infolast.english Incoming, service and commercial advice
         .infolast.spanish Recepción, servicio y asesoramiento comercial
-    img.linkedin#linkedIn(src='/static/img/LinkedIn_Logo.svg' alt='logolinkedin')
+    .linkedin#linkedIn &nbsp;
     .competen#experiences
       h2.french Exp&eacute;riences
       h2.english Experiences

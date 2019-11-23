@@ -196,8 +196,9 @@ h3 {
     position: absolute;
     border-radius: 10px;
     height: 25px;
+    width: 105px;
     margin: 5px;
-    background-color: yellowgreen;
+    background-color: black;
 }
 
 .experiencesT {
@@ -265,6 +266,7 @@ p.flags {
     display: none;
     position: absolute;
     border-radius: 10px;
+    width: 105px;
     height: 35px;
     margin: 5px;
 }
@@ -290,6 +292,7 @@ p.flags {
     margin: 1%;
     text-align: center;
     display: none;
+    height: 400px;
 }
 
 .competen {
@@ -558,12 +561,16 @@ p.flags {
 #scoreForm {
     width: 80%;
     display: none;
+    vertical-align: middle;
     margin-left: 10%;
     margin-right: 10%;
 }
-#highScore {
-    text-align: center;
+
+#score {
     display: none;
-    margin-left: 30%;
-    margin-right: 30%;
+}
+
+#mesData {
+    margin: auto;
+    text-align: left;
 }

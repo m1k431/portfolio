@@ -157,6 +157,14 @@ app.get('/pagelisteArticle', (req, res) => {
     })
 })
 
+
+app.get('/highscore', urlencodedParser, (req, res) => {
+    conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
+        if (error) throw error
+        console.log(results)
+        res.send(results)
+    })
+})
 app.post('/highscore', urlencodedParser, (req, res) => {
     var name = req.body.name
     var score = req.body.score

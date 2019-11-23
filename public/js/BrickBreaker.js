@@ -14,8 +14,7 @@ const jeuBreaker = function () {
     var idInterBlink = setInterval(function () {
         $div2blink.toggleClass('backgroundRed')
     }, 1500)
-    document.getElementById('postScore').value = 0
-
+    
     //_______________________________Choix_langue____________________________________________________________________________
     $('.english').fadeIn()
     $('#competen').fadeIn()
@@ -70,9 +69,10 @@ const jeuBreaker = function () {
         //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
         var competences = window.document.getElementById('competen')
         var animH = $('#competen').height()
-        $('#competen').animate({
+        /*$('#competen').animate({
             height: animH + 150 + 'px'
-        }, 500)
+        }, 500)*/
+        $('#competen').toggleClass('competences')
         var informatique = window.document.getElementById('informatique')
         var commerciales = window.document.getElementById('commerciales')
         var linkedIn = window.document.getElementById('linkedIn')
@@ -362,10 +362,11 @@ const jeuBreaker = function () {
                 ballY = linkedIn.offsetTop
                 linkedIn.className = 'linkedin'
                 $('#linkedIn').hide()
-                $('#competen').animate({
+                /*$('#competen').animate({
                     height: animH + 'px'
-                }, 1500)
-                competences.className = 'competences'
+                }, 1500)*/
+
+                $('#competen').toggleClass('competences')
                 //$('#btp').fadeIn()
                 //$('#commerciales').fadeIn()
                 //$('#informatique').animate({
@@ -376,17 +377,15 @@ const jeuBreaker = function () {
                 commerciales.style.verticalAlign = 'middle'
                 youwin = true
                 $('#skills').hide()
+                $('#score').fadeIn()
                 $('#scoreForm').fadeIn()
-                document.getElementById('postScore').value = score
-                bStart.addEventListener('click', varsStart, true)
+                //bStart.addEventListener('click', varsStart, true)
             }
         }
 
         $('#scoreForm').on('submit', function (event) {
             event.preventDefault()
-            var createName = $('#postName')
-            var createScore = score
-            console.log(createName.val() + '/' + createScore)
+            console.log($('#postName').val() + '/' + score)
             $('#scoreForm').hide()
             $('#highScore').fadeIn()
             $.ajax({
@@ -394,11 +393,29 @@ const jeuBreaker = function () {
                 url: '/highscore',
                 dataType: 'json',
                 data: {
-                    name: createName.val(),
-                    score: createScore
+                    name: $('#postName').val(),
+                    score: score
                 },
                 complete: function (response) {
-                    console.log(response)
+                    console.log('POST success: ' + response)
+                    $.ajax({
+                        type: 'GET',
+                        url: '/highscore',
+                        dataType: 'json',
+                        success: function (reponse) {
+                            console.log('GET success: ' + reponse)
+                            var tbodyEl = $('tbody')
+                            tbodyEl.html('')
+                            reponse.forEach(function (score) {
+                                tbodyEl.append('\
+                                <tr>\
+                                <td>' + score.name + '</td>\
+                                <td>' + score.score + '</td>\
+                                </tr>\
+                                ')
+                            })
+                        }
+                    })
                 }
             })
         })
