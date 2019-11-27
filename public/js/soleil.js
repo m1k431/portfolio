@@ -1,5 +1,6 @@
 const monIntro = function () {
     var m4vide0 = window.document.getElementById('jugglejungle')
+    m4vide0.playbackRate = 0.75
     var BtnJs0nPl4Y = window.document.getElementById('BtnJs0nPl4Y')
     BtnJs0nPl4Y.innerHTML = 'PAUSE'
     BtnJs0nPl4Y.addEventListener('click', () => {

@@ -64,6 +64,7 @@ const jeuBreaker = function () {
         var moveWithPad = true
         $('#scoreForm').hide()
         $('#highScore').hide()
+        $('#complementaire').hide()
         $('#linkedIn').fadeIn(2000)
         play(start)
         //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
