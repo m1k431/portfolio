@@ -17,26 +17,26 @@ html(lang="en")
     nav#navBar
       ul
         li 
-          a#intro.nav(href='/nomPage?r=index' class='css3button') Intro
+          a#intro.nav(rel='preconnect' href='/nomPage?r=index' class='css3button') Intro
         li
-          a#resume.nav(href='/nomPage?r=cv' class='css3button') Resume
+          a#resume.nav(rel='preconnect' href='/nomPage?r=cv' class='css3button') Resume
         li
-          a#admin.nav(href='/nomPage?r=adm1n' class='css3button') Admin
+          a#admin.nav(rel='preconnect' href='/nomPage?r=adm1n' class='css3button') Admin
     block content
     block foot
       #footer
-          a.minilogL(href='https://github.com/m1k431')
+          a.minilogL(rel='preconnect' href='https://github.com/m1k431')
             img(src='/static/img/gitHubMark.png' alt='git' height='35')
             img(src='/static/img/gitHubW.png' alt='git' height='35')
           #myclock
-          a.minilogR(href='https://www.linkedin.com/in/mika%C3%ABl-garcia/')
+          a.minilogR(rel='preconnect' href='https://www.linkedin.com/in/mika%C3%ABl-garcia/')
             img(src='/static/img/LinkedIn_Logo.svg' alt='linkedin' height='35')
     block scripts
       script(src='/static/js/jquery-3.3.1.min.js')
       script(src='/static/js/jquery-ui.min.js')
       script(src='/static/js/socket.io.js')
       //script(src='/static/js/layoutNav.js')
-      script(src='https://www.googletagmanager.com/gtag/js?id=UA-113167424-1')
+      script(rel='preconnect' src='https://www.googletagmanager.com/gtag/js?id=UA-113167424-1')
       // Global site tag (gtag.js) - Google Analytics
       script.
         window.dataLayer = window.dataLayer || []

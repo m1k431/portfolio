@@ -61,7 +61,7 @@ app.set('views', 'public')
 var conMysql = mysql.createConnection({
     host: "localhost",
     user: "webuser",
-    password: "iop"
+    password: "iop" //local=azerty
 })
 
 //app.get_________________________________________________________________

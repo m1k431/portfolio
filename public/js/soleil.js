@@ -39,7 +39,7 @@ const monIntro = function () {
     //ATARIIIIIIIIII
     var m0nimg = document.createElement('img')
     m0nimg.style.position = 'relative'
-    m0nimg.src = '/static/img/Atari.png'
+    m0nimg.src = '/static/img/Atari.webp'
     //m0nimg.style.top = '36%'
     //m0nimg.style.right = '6%'
     m0nimg.id = 'atari'
