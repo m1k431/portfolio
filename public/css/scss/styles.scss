@@ -253,14 +253,24 @@ a.nav {
     text-decoration: none;
 }
 
+#atari {
+    display: block;
+    //background-image: url(/static/img/360backnoreverse.gif);
+    //background-repeat: no-repeat;
+    //background-size: 38%;
+    //background-position: 45% 14%;
+    //height: 50%;
+    overflow: hidden;
+}
+
 #snowB {
     display: block;
-    background-image: url(/static/img/360backnoreverse.gif);
-    background-repeat: no-repeat;
-    background-size: 38%;
-    background-position: 45% 14%;
-    height: 50%;
-    overflow: hidden;
+    //background-image: url(/static/img/360backnoreverse.gif);
+    //background-repeat: no-repeat;
+    //background-size: 38%;
+    //background-position: 45% 14%;
+    //height: 50%;
+    overflow: visible;
 }
 
 #footer {

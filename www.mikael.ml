@@ -55,13 +55,13 @@ const jeuBreaker = function () {
         var pongB = './static/sound/pongB.mp3'
         var pongC = './static/sound/pongC.mp3'
         var start = './static/sound/start.mp3'
-        //var flagS = './static/sound/flagS.mp3'
+        var flagS = './static/sound/flagS.mp3'
         var youWin = './static/sound/youWin.mp3'
         var miss = './static/sound/miss.mp3'
         var score = 0
         var combo = 1
-        var clickMove = false
-        //var moveWithPad = true
+        var clickMove = false;
+        var moveWithPad = true
         $('#scoreForm').hide()
         $('#highScore').hide()
         $('#complementaire').hide()
@@ -69,7 +69,7 @@ const jeuBreaker = function () {
         play(start)
         //____________________INITIALISATION ENVIRONNEMENT________________________________________________________________
         var competences = window.document.getElementById('competen')
-        //var animH = $('#competen').height()
+        var animH = $('#competen').height()
         /*$('#competen').animate({
             height: animH + 150 + 'px'
         }, 500)*/
@@ -145,7 +145,7 @@ const jeuBreaker = function () {
 
         //_________________________________________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
-            var ballSpeed = 3
+            var ballSpeed = 3;
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'
@@ -254,8 +254,10 @@ const jeuBreaker = function () {
             e.preventDefault()
         }
         window.document.addEventListener('touchmove', eTouchMove, true)
-        bStart.removeEventListener('click', varsStart, true)
+        //bStart.removeEventListener('click', varsStart, true)
         
+        //event listener start
+        window.document.removeEventListener('touchstart', eTouchStart, true)
         //____________________________________________________ANIMATION_Ball_Sprite______________________________________
         var animSprite = function () {
             if (parseFloat(imgSoccer.style.left) > -920) {
@@ -421,6 +423,14 @@ const jeuBreaker = function () {
             })
         })
 
+        function show_prompt() {
+
+            var name = prompt('Score: ' + score + ' Plz enter your name', '');
+            if (name != null && name != "") {
+                window.location.replace('http://www.mikael.ml/highscore')
+                //alert(name + ' score is ' + score);
+            }
+        }
         //__________________________________________WEB_Audio_API___________________________________________________________
         function play(url) {
             audioStack = []

@@ -104,14 +104,14 @@ app.get('/', (req, res) => {
         if (error) throw error
         console.log(results)
         res.render('index.pug', {
-                results
-            },
-            function (error, html) {
-                if (error) {
-                    return
-                }
-                res.send(html)
-            })
+            results
+        },
+        function (error, html) {
+            if (error) {
+                return
+            }
+            res.send(html)
+        })
     })
     //res.render('index.pug', {
     //    session: req.session
@@ -122,14 +122,14 @@ app.get('/nomPage', (req, res) => {
         if (error) throw error
         console.log(results)
         res.render(req.query.r + '.pug', {
-                results
-            },
-            function (error, html) {
-                if (error) {
-                    return
-                }
-                res.send(html)
-            })
+            results
+        },
+        function (error, html) {
+            if (error) {
+                return
+            }
+            res.send(html)
+        })
     })
     //res.render(req.query.r + '.pug', {})
 })
@@ -145,14 +145,14 @@ app.get('/pagelisteArticle', (req, res) => {
         m0nCollectionArticle.find().toArray((err, data) => {
             console.log(data)
             res.render('pagelisteArticle.pug', {
-                    data,
-                },
-                function (err, html) {
-                    if (err) {
-                        return
-                    }
-                    res.send(html)
-                })
+                data,
+            },
+            function (err, html) {
+                if (err) {
+                    return
+                }
+                res.send(html)
+            })
         })
     })
 })
