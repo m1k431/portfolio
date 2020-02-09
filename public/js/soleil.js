@@ -286,6 +286,9 @@ const monIntro = function () {
     ctx.fillStyle = gradient
     $('#moon').hide()
 
+    //snowback control
+    let snowBack = document.getElementById('snowB')
+
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 110) {
             c00rdY = Math.cos(c00rdX / 24) * 54
@@ -309,6 +312,7 @@ const monIntro = function () {
                 cancelAnimationFrame(idB)
                 idW = requestAnimationFrame(sonicWalk)
                 idM = requestAnimationFrame(moveSonicRight)
+                snowBack.play()
                 break
             case 62:
                 cancelAnimationFrame(idMD)
@@ -335,6 +339,7 @@ const monIntro = function () {
             case 100:
                 cancelAnimationFrame(idB)
                 cancelAnimationFrame(idMU)
+                snowBack.pause()
                 //idS = setInterval(animate, 500)
                 break
             }

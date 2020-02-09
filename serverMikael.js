@@ -12,9 +12,9 @@ const
     //urlencodedParser = bodyParser.urlencoded({
     //    extended: false
     //}),
-    urldb20 = 'mongodb://snowmike:iop@www.mikael.ml/exo20',
+    //urldb20 = 'mongodb://snowmike:iop@www.mikael.ml/exo20',
     //n0mBd = 'exo19',
-    n0mBd20 = 'exo20',
+    //n0mBd20 = 'exo20',
     server = require('http').createServer(app),
     io = require('socket.io'),
     socketIO = io(server),
@@ -45,7 +45,12 @@ socketIO.on('connection', function (socket) {
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
 app.use(compression())
-app.use(minify())
+app.use(minify({
+    cache: false,
+    jsMatch: /js/,
+    cssMatch: /css/,
+    sassMatch: /scss/
+}))
 app.use('/static', express.static(__dirname + '/public', {
     maxage: '0d'
 }))
@@ -61,7 +66,7 @@ app.set('views', 'public')
 var conMysql = mysql.createConnection({
     host: "localhost",
     user: "webuser",
-    password: "iop" //local=azerty
+    password: "azerty" //local=azerty online=iop
 })
 
 //app.get_________________________________________________________________
