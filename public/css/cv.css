@@ -13,6 +13,10 @@ p.moiPara, p.jeu {
     display: none;
   }
 }
+li {
+  list-style: none;
+}
+
 /*****
 $$$$$$  BALISES HTML   $$$$$
 ****/
