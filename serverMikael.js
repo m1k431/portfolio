@@ -6,7 +6,7 @@ const
     express = require('express'),
     helmet = require('helmet'),
     bodyParser = require('body-parser'),
-    MongoClient = require('mongodb').MongoClient,
+    //MongoClient = require('mongodb').MongoClient,
     session = require('express-session'),
     app = express(),
     //urlencodedParser = bodyParser.urlencoded({
@@ -64,9 +64,9 @@ app.set('views', 'public')
 
 //mysql
 var conMysql = mysql.createConnection({
-    host: "localhost",
-    user: "webuser",
-    password: "azerty" //local=azerty online=iop
+    host: 'localhost',
+    user: 'webuser',
+    password: 'azerty' //local=azerty online=iop
 })
 
 //app.get_________________________________________________________________
@@ -211,16 +211,16 @@ app.post('/layoutAdmin', (req, res) => {
         m0nCollectionArticle.find().toArray((err, data) => {
             console.log(data)
             res.render('layoutAdmin.pug', {
-                    data,
-                    ma535510n,
-                    m0nID535510n
-                },
-                (err, html) => {
-                    if (err) {
-                        return
-                    }
-                    res.send(html)
-                })
+                data,
+                ma535510n,
+                m0nID535510n
+            },
+            (err, html) => {
+                if (err) {
+                    return
+                }
+                res.send(html)
+            })
         })
     })
 })
