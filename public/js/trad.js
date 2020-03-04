@@ -6,7 +6,7 @@
         //$('.moi').fadeIn()
         $('.flags').fadeIn()
         $('.metier').fadeIn()
-        $('.english').fadeIn()
+        $('.french').fadeIn()
         window.document.getElementById('french').onclick = () => {
             $('.english').hide()
             $('.spanish').hide()
