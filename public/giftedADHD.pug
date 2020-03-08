@@ -1,21 +1,22 @@
 extends layoutNav.pug
 append head
+	link(rel='stylesheet' href='/static/css/styles.css')
 	link(rel='stylesheet' href='/static/css/cv.css')
 append content
 	.content
 		.table-cell
 			#m0ncentrage
-				p.flags
-					img#english(src='/static/img/uk.svg' alt='English' height='30')
-					img#french(src='/static/img/france.svg' alt='Français' height='30')
 				#INDEX
 					h1
 						span.english ADHD and High IQ: What&apos;s the Connection ?
-						span.french TDAH and QI Élevé : Quels liens ?
+						span.french TDAH et QI Élevé : Quels liens ?
 					h3
 						span.english written by: Lynn-nore Chittom &bull; edited by: Daniel P. McGoldrick &bull; updated: 5/25/2011
 						span.french Écrit par: Lynn-nore Chittom &bull; édité par: Daniel P. McGoldrick &bull; mis à jour: 5/25/2011
 							|  &bull; traduit par: Mikaël Garcia
+					p.flags
+						img#english(src='/static/img/uk.svg' alt='English' height='30')
+						img#french(src='/static/img/france.svg' alt='Français' height='30')
 					p
 						span.english
 							| Parents sometimes wonder if their children can have both ADHD and High IQ levels.
@@ -46,7 +47,7 @@ append content
 							| tremendous ease with learning, combined with extremely poor social skills.
 						span.french
 							| Souvent, les enfants à hauts potentiels souffrent d'une combinaison compliquée de symptômes dont la
-							| source est leurs hauts potentiels ainsi que les TDAH.
+							| source est leur haut potentiel ainsi que le TDAH.
 							| Celle-ci peut inclure des capacités de perception ou de raisonnement au-delà de leur âge, avec une
 							| tendance naturelle vers l'hyperactivité. Ou alors, elle se remarque par l'apprentissage précoce de la 
 							| lecture, de surprenantes facilités d'apprentissages, combinées à de très pauvres capacités sociales.

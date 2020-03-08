@@ -34,15 +34,7 @@ const jeuBreaker = function () {
         $('.english').hide()
         $('.english').fadeIn()
     }
-    window.document.getElementById('spanish').onclick = () => {
-        //play(flagS)
-        $('.french').hide()
-        $('.english').hide()
-        $('.spanish').hide()
-        $('#competen').css('height', 'auto')
-        $('.spanish').fadeIn()
-    }
-
+    
     //_____________________________Click_on_START__________________________________________________________________________
     var bStart = window.document.getElementById('metier')
     bStart.addEventListener('click', varsStart, true)

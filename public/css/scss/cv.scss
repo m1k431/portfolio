@@ -1,28 +1,27 @@
 $myfont: monospace;
 
 %parag {
-    margin: 0;
-    margin-left: 5px;
-    color: black;
-    text-decoration: none;
-    font-family: monospace;
+  margin: 0;
+  margin-left: 5px;
+  color: black;
+  text-decoration: none;
+  font-family: monospace;
 }
 
 @media print {
-
-    #navBar,
-    #footer {
-        display: none;
-    }
+  #navBar,
+  #footer {
+    display: none;
+  }
 }
 
 ul {
-    padding-inline-start: 40px;
-    padding-inline-end: 40px;
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
 }
 
 li {
-    list-style: none;  
+  list-style: none;
 }
 
 /*****
@@ -30,97 +29,64 @@ $$$$$$  BALISES HTML   $$$$$
 ****/
 
 #metier {
-    -webkit-transition: background 1.0s ease-in-out;
-    -ms-transition: background 1.0s ease-in-out;
-    transition: background 1.0s ease-in-out;
-    border-radius: 10px;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: 15%;
-    margin-right: 15%;
-    border: 1px solid #08021f;
+  -webkit-transition: background 1s ease-in-out;
+  -ms-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
+  border-radius: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 1px solid #08021f;
 }
 
 .backgroundRed {
-    //background-color: rgba(255, 0, 0, 0.5);
-    text-align: center;
-    font-family: monospace;
-    background-color: rgba(255, 255, 255, 0.4);
-    border: 1px solid #08021f;
-    border-radius: 10px;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: 15%;
-    margin-right: 15%;
-    overflow: hidden;
+  //background-color: rgba(255, 0, 0, 0.5);
+  text-align: center;
+  font-family: monospace;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #08021f;
+  border-radius: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 15%;
+  margin-right: 15%;
+  overflow: hidden;
 }
 
 p.jeu {
-    @extend %parag;
-    text-align: center;
+  @extend %parag;
+  text-align: center;
 }
 
 p.moiPara {
-    @extend %parag;
-    text-align: left;
+  @extend %parag;
+  text-align: left;
 }
 
 .mail {
-    text-decoration: none;
-    font-family: monospace;
+  text-decoration: none;
+  font-family: monospace;
 }
 
 html {
-    margin: 0.1%;
+  margin: 0.1%;
 }
 
-h1.french,
-h1.english,
-h1.spanish {
-    margin-top: 1px;
-    font-size: 1.3em;
-    margin-bottom: 0;
+.titreH2 {
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 0em;
+  margin-top: 0.3em;
+  font-size: 2em;
 }
 
-h1 {
-    text-transform: capitalize;
-    margin: 2px;
-    font-size: 1.2em;
-}
-
-h2 {
-    font-family: monospace;
-    text-align: center;
-    text-decoration: underline;
-    margin-top: 0;
-    margin-bottom: 0.2em;
-    border-radius: 10px;
-    font-size: 1.3em;
-}
-
-h3 {
-    margin: 0;
-    color: black;
-    font-family: monospace;
-    font-size: 1.2em;
-}
-
-h5 {
-    margin-top: auto;
-    margin: 0;
-    font-family: monospace;
-    font-size: 1em;
-}
-
-hr {
-    margin-top: 0.1em;
-    margin-bottom: 0.2em;
-}
-
-h1,
-h2,
-h3 {
-    color: black;
+.titreH3 {
+  color: white;
+  text-transform: uppercase;
+  margin-top: 0.3em;
+  margin-bottom: 0em;
+  font-size: 1.5em;
 }
 
 /*****
@@ -128,7 +94,7 @@ h3 {
 ****/
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /*a, p {
@@ -142,444 +108,450 @@ h3 {
 /********** CLAAAAAAAÃAaaaaaaaaaaaāaaaaasssssssssssSSSSSSSSSS*****************/
 
 .french {
-    display: none;
+  display: none;
 }
 
 .spanish {
-    display: none;
+  display: none;
 }
 
 .english {
-    display: none;
+  display: none;
 }
 
 .web {
-    font-family: monospace;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 10px;
-    font-size: 1.2em;
+  font-family: monospace;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 10px;
+  font-size: 1.2em;
 }
 
 .pdf {
-    position: absolute;
-    margin-top: -3px;
+  position: absolute;
+  margin-top: -3px;
 }
 
 .moi {
-    margin: 1%;
-    border: 1px solid #08021f;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    display: none;
+  margin: 1%;
+  border: 1px solid #08021f;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: none;
 }
 
 .complementaire {
-    margin: 0;
-    border: 1px solid #08021f;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    display: none;
+  margin: 0;
+  border: 1px solid #08021f;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: none;
 }
 
 .complemen {
-    margin: 1%;
-    border: 1px solid #08021f;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin-bottom: 1%;
-    display: none;
+  margin: 1%;
+  border: 1px solid #08021f;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-bottom: 1%;
+  display: none;
 }
 
 .complementaireT {
-    margin: 1%;
-    border: 1px solid #08021f;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+  margin: 1%;
+  border: 1px solid #08021f;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
 }
 
 .linkedinT {
-    display: none;
-    border: 2px solid #08021f;
-    position: absolute;
-    border-radius: 10px;
-    height: 25px;
-    width: 105px;
-    margin: 5px;
-    background-color: black;
+  display: none;
+  border: 2px solid #08021f;
+  position: absolute;
+  border-radius: 10px;
+  height: 25px;
+  width: 105px;
+  margin: 5px;
+  background-color: black;
 }
 
 .experiencesT {
-    display: none;
-    border: 1px solid #08021f;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5%;
-    margin-top: 0.5%;
-    text-align: center;
-    transform: scale(0, 0) translate(0%, 400%);
+  display: none;
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  text-align: center;
+  transform: scale(0, 0) translate(0%, 400%);
 }
 
 .formationT {
-    display: none;
-    border: 1px solid #08021f;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5%;
-    margin-top: 0.5%;
-    text-align: center;
-    transform: scale(0, 0) translate(0%, 400%);
+  display: none;
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  text-align: center;
+  transform: scale(0, 0) translate(0%, 400%);
 }
 
 .start {
-    position: absolute;
-    height: 60px;
-    width: 10%;
-    left: 45%;
-    right: 45%;
-    top: 15px;
+  position: absolute;
+  height: 60px;
+  width: 10%;
+  left: 45%;
+  right: 45%;
+  top: 15px;
 }
 
 p.flags {
-    width: 50%;
-    margin: 0;
-    margin-left: 25%;
-    margin-right: 25%;
-    top: 35px;
+  width: 50%;
+  margin: 0;
+  margin-left: 25%;
+  margin-right: 25%;
+  top: 35px;
 }
 
 #french,
 #english,
 #spanish {
-    display: inline-block;
-    margin-left: 8%;
-    margin-right: 8%;
+  display: inline-block;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .foto {
-    position: relative;
-    margin: 3px;
-    text-align: right;
-    border-radius: 10px;
-    float: right;
+  position: relative;
+  margin: 3px;
+  text-align: right;
+  border-radius: 10px;
+  float: right;
 }
 
 .linkedin {
-    display: none;
-    position: absolute;
-    border-radius: 10px;
-    width: 105px;
-    height: 35px;
-    margin: 5px;
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  width: 105px;
+  height: 35px;
+  margin: 5px;
 }
 
 .competencesJeu {
-    border: 1px solid #08021f;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5%;
-    margin-top: 0.5%;
-    padding-bottom: 175px;
-    text-align: center;
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  padding-bottom: 175px;
+  text-align: center;
 }
 
 .competences {
-    border: 1px solid #08021f;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin: 1%;
-    text-align: center;
-    display: none;
-    height: 500px;
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin: 1%;
+  text-align: center;
+  display: none;
+  height: 500px;
 }
 
 .competen {
-    border: 1px solid #08021f;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin: 1%;
-    text-align: center;
-    display: none;
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin: 1%;
+  text-align: center;
+  display: none;
 }
 
 .competencelast {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 0;
-    border: 1px solid #08021f;
-    border-radius: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 0;
+  border: 1px solid #08021f;
+  border-radius: 10px;
 }
 
 .competencesT {
-    border: 1px solid #08021f;
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5%;
-    margin-top: 0.5%;
-    text-align: center;
-    background-image: url(/static/img/picPr0.jpg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 450px;
+  border: 1px solid #08021f;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  text-align: center;
+  background-image: url(/static/img/picPr0.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 450px;
 }
 
 .BrickBall {
-    position: absolute;
-    overflow: visible;
-    top: 155px;
-    right: 0;
+  position: absolute;
+  overflow: visible;
+  top: 155px;
+  right: 0;
 }
 
 .informatiquesCont {
-    width: 31.5%;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.2);
-    border-radius: 10px;
-    margin-top: 0.1%;
-    margin-bottom: 0.5%;
-    margin-right: 0.5%;
-    vertical-align: middle;
-    display: inline-block;
-    overflow: visible;
+  width: 31.5%;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.2);
+  border-radius: 10px;
+  margin-top: 0.1%;
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: visible;
 }
 
 .informatiques {
-    background-color: rgba(245, 247, 246, 0.2);
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 0.5%;
-    margin-bottom: 0.1%;
-    margin-left: 5px;
-    margin-right: 5px;
-    vertical-align: middle;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: visible;
+  background-color: rgba(245, 247, 246, 0.2);
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 0.5%;
+  margin-bottom: 0.1%;
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: visible;
 }
 
 .informatiquesLast {
-    background-color: rgba(245, 247, 246, 0.2);
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 0.5%;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    vertical-align: middle;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: visible;
+  background-color: rgba(245, 247, 246, 0.2);
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 0.5%;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: visible;
 }
 
 .jobs {
-    width: 99%;
-    text-align: center;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 0.1%;
-    margin-bottom: 0.1%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    vertical-align: middle;
-    overflow: visible;
+  width: 99%;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.1%;
+  margin-bottom: 0.1%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  vertical-align: middle;
+  overflow: visible;
 }
 
 .informatiquesIUT {
-    width: 96%;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.6);
-    border-radius: 10px;
-    margin: 1%;
-    vertical-align: bottom;
-    display: inline-block;
-    overflow: visible;
+  width: 96%;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.6);
+  border-radius: 10px;
+  margin: 1%;
+  vertical-align: bottom;
+  display: inline-block;
+  overflow: visible;
 }
 
 .informatiquesT {
-    width: 31.5%;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.6);
-    border-radius: 10px;
-    margin-top: 0.1%;
-    margin-bottom: 0.5%;
-    margin-right: 0.5%;
-    vertical-align: top;
-    display: inline-block;
-    overflow: visible;
+  width: 31.5%;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.6);
+  border-radius: 10px;
+  margin-top: 0.1%;
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  vertical-align: top;
+  display: inline-block;
+  overflow: visible;
 }
 
 .info {
-    font-family: monospace;
-    font-size: 1.2em;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 5px;
-    overflow: visible;
-    margin-left: 5px;
-    margin-right: 5px;
+  font-family: monospace;
+  font-size: 1.2em;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  overflow: visible;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
+//expériences
 .infojob {
-    font-family: monospace;
-    font-size: 1.1em;
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+.titreJob {
+  margin-bottom: 0.3em;
+  background-color: #000;
 }
 
 .infoJeu {
-    font-family: monospace;
-    font-size: 1.2em;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 5px;
-    overflow: visible;
-    margin-left: 5px;
-    margin-right: 5px;
+  font-family: monospace;
+  font-size: 1.2em;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  overflow: visible;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .infoT {
-    font-family: monospace;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 5px;
-    overflow: visible;
-    margin-left: 5px;
-    margin-right: 5px;
+  font-family: monospace;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  overflow: visible;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .info:hover,
 .info:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+  transform: scale(1.05);
+  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #beae8c inset, 0 0 15px #b6a684;
 }
 
 .infolast {
-    font-family: monospace;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 5px;
-    margin-bottom: 5px;
-    vertical-align: middle;
-    overflow: visible;
-    margin-left: 5px;
-    margin-right: 5px;
+  font-family: monospace;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  overflow: visible;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .infolast:hover,
 .infolast:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+  transform: scale(1.05);
+  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #beae8c inset, 0 0 15px #b6a684;
 }
 
 .infoJeu:hover,
 .infoJeu:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+  transform: scale(1.05);
+  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #beae8c inset, 0 0 15px #b6a684;
 }
 
 .btp {
-    width: 31.5%;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.2);
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 0.1%;
-    margin-bottom: 5px;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    vertical-align: middle;
-    overflow: visible;
+  width: 31.5%;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.2);
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.1%;
+  margin-bottom: 5px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  vertical-align: middle;
+  overflow: visible;
 }
 
 .btpT {
-    width: 31.5%;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.6);
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 0.1%;
-    margin-bottom: 0.1%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    vertical-align: top;
-    overflow: visible;
+  width: 31.5%;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.6);
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.1%;
+  margin-bottom: 0.1%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  vertical-align: top;
+  overflow: visible;
 }
 
 .commerciales {
-    width: 31.5%;
-    color: black;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.2);
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 0.1%;
-    margin-bottom: 0.1%;
-    vertical-align: middle;
-    margin-left: 0.5%;
-    overflow: visible;
+  width: 31.5%;
+  color: black;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.2);
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.1%;
+  margin-bottom: 0.1%;
+  vertical-align: middle;
+  margin-left: 0.5%;
+  overflow: visible;
 }
 
 .commercialesT {
-    width: 31.5%;
-    color: black;
-    text-align: center;
-    background-color: rgba(245, 247, 246, 0.6);
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 0.1%;
-    margin-bottom: 0.1%;
-    vertical-align: top;
-    margin-left: 0.5%;
-    overflow: visible;
+  width: 31.5%;
+  color: black;
+  text-align: center;
+  background-color: rgba(245, 247, 246, 0.6);
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.1%;
+  margin-bottom: 0.1%;
+  vertical-align: top;
+  margin-left: 0.5%;
+  overflow: visible;
 }
 
 #m0ncentrageJeu {
-    display: block;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 80%;
-    margin-top: 40px;
-    margin-bottom: 60px;
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 80%;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 #scoreForm {
-    width: 80%;
-    display: none;
-    vertical-align: middle;
-    margin-left: 10%;
-    margin-right: 10%;
+  width: 80%;
+  display: none;
+  vertical-align: middle;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #score {
-    display: none;
+  display: none;
 }
 
 #mesData {
-    margin: auto;
-    text-align: left;
+  margin: auto;
+  text-align: left;
 }

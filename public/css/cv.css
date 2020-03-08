@@ -67,53 +67,20 @@ html {
   margin: 0.1%;
 }
 
-h1.french,
-h1.english,
-h1.spanish {
-  margin-top: 1px;
-  font-size: 1.3em;
-  margin-bottom: 0;
+.titreH2 {
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 0em;
+  margin-top: 0.3em;
+  font-size: 2em;
 }
 
-h1 {
-  text-transform: capitalize;
-  margin: 2px;
-  font-size: 1.2em;
-}
-
-h2 {
-  font-family: monospace;
-  text-align: center;
-  text-decoration: underline;
-  margin-top: 0;
-  margin-bottom: 0.2em;
-  border-radius: 10px;
-  font-size: 1.3em;
-}
-
-h3 {
-  margin: 0;
-  color: black;
-  font-family: monospace;
-  font-size: 1.2em;
-}
-
-h5 {
-  margin-top: auto;
-  margin: 0;
-  font-family: monospace;
-  font-size: 1em;
-}
-
-hr {
-  margin-top: 0.1em;
-  margin-bottom: 0.2em;
-}
-
-h1,
-h2,
-h3 {
-  color: black;
+.titreH3 {
+  color: white;
+  text-transform: uppercase;
+  margin-top: 0.3em;
+  margin-bottom: 0em;
+  font-size: 1.5em;
 }
 
 /*****
@@ -435,6 +402,11 @@ p.flags {
   font-size: 1.1em;
 }
 
+.titreJob {
+  margin-bottom: 0.3em;
+  background-color: #000;
+}
+
 .infoJeu {
   font-family: monospace;
   font-size: 1.2em;
@@ -464,7 +436,7 @@ p.flags {
 .info:hover,
 .info:focus {
   transform: scale(1.05);
-  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #beae8c inset, 0 0 15px #b6a684;
 }
 
 .infolast {
@@ -483,13 +455,13 @@ p.flags {
 .infolast:hover,
 .infolast:focus {
   transform: scale(1.05);
-  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #beae8c inset, 0 0 15px #b6a684;
 }
 
 .infoJeu:hover,
 .infoJeu:focus {
   transform: scale(1.05);
-  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+  box-shadow: 0 0 65px #f7f9f2 inset, 0 0 20px #beae8c inset, 0 0 15px #b6a684;
 }
 
 .btp {
