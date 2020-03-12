@@ -84,7 +84,7 @@ const monIntro = function () {
     myStars.id = 'space'
     myStars.style.position = 'absolute'
     //myStars.style.display = 'none'
-    myStars.style.borderRadius = '28px'
+    myStars.style.borderRadius = '10px'
     myStars.style.top = '0px'
     myStars.style.left = '0px'
     m0nsoleil.appendChild(myStars)

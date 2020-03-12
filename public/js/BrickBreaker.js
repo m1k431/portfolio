@@ -6,7 +6,7 @@ const jeuBreaker = function () {
     $('#complementaire').fadeIn(125)
     $('.moi').fadeIn()
     $('.metier').fadeIn()*/
-    $('#metier > h1').fadeOut(375, function () {
+    $('#metier > h2').fadeOut(375, function () {
         $(this).text('Click or Touch here to START').fadeIn(375)
     })
     //$('#scoreForm').fadeOut()
