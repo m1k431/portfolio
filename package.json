@@ -14,7 +14,6 @@
   "author": "https://github.com/m1k431",
   "license": "ISC",
   "dependencies": {
-    "acorn": "^6.1.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "datatables.net-dt": "^1.10.19",
