@@ -63,6 +63,22 @@ html {
     //display: none;
 }
 
+h1.liens {
+    margin-bottom: 0;
+}
+
+h3.auteurs {
+    margin-top: 0;
+}
+
+p.first {
+    margin-top: 0.3em;
+}
+
+h2.how {
+    margin-bottom: 0;
+}
+
 h1,
 h2,
 h3,
@@ -107,7 +123,7 @@ nav {
     text-align: center;
   }
 
-a.nav {
+a {
     margin: 10px;
     display: inline-block;
     margin-left: 5px;
