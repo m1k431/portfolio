@@ -63,11 +63,11 @@ app.set('view engine', 'pug')
 app.set('views', 'public')
 
 //mysql
-var conMysql = mysql.createConnection({
+/*var conMysql = mysql.createConnection({
     host: 'localhost',
     user: 'webuser',
     password: 'azerty' //local=azerty online=iop
-})
+})*/
 
 //app.get_________________________________________________________________
 if (app.get('env') === 'production') {
@@ -75,10 +75,10 @@ if (app.get('env') === 'production') {
     sess.cookie.secure = false // serve secure cookies
 }
 
-conMysql.connect(function (err) {
+/*conMysql.connect(function (err) {
     if (err) throw err
     console.log('connected')
-})
+})*/
 
 app.get('/', (req, res) => {
     /*  MongoClient.connect(urldb20, {
@@ -105,7 +105,7 @@ app.get('/', (req, res) => {
       })*/
     console.log(req.session)
     console.log(req.body)
-    conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
+    /*conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
         if (error) throw error
         console.log(results)
         res.render('index.pug', {
@@ -117,13 +117,13 @@ app.get('/', (req, res) => {
             }
             res.send(html)
         })
+    })*/
+    res.render('index.pug', {
+        session: req.session
     })
-    //res.render('index.pug', {
-    //    session: req.session
-    //})
 })
 app.get('/nomPage', (req, res) => {
-    conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
+    /*conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
         if (error) throw error
         console.log(results)
         res.render(req.query.r + '.pug', {
@@ -135,10 +135,10 @@ app.get('/nomPage', (req, res) => {
             }
             res.send(html)
         })
-    })
-    //res.render(req.query.r + '.pug', {})
+    })*/
+    res.render(req.query.r + '.pug', {})
 })
-app.get('/pagelisteArticle', (req, res) => {
+/*app.get('/pagelisteArticle', (req, res) => {
     MongoClient.connect(urldb20, {
         useNewUrlParser: true
     }, (err, client) => {
@@ -160,28 +160,28 @@ app.get('/pagelisteArticle', (req, res) => {
             })
         })
     })
-})
+})*/
 
 
 app.get('/highscore', urlencodedParser, (req, res) => {
-    conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
+    /*conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
         if (error) throw error
         console.log(results)
         res.send(results)
-    })
+    })*/
 })
 app.post('/highscore', urlencodedParser, (req, res) => {
     var name = req.body.name
     var score = req.body.score
     console.log(req.body.name + 'score: ' + req.body.score)
     console.log(req.body)
-    conMysql.query('insert into portfolio.highscore values (?,?);', [name, score], function (error, ok) {
+    /*conMysql.query('insert into portfolio.highscore values (?,?);', [name, score], function (error, ok) {
         if (error) throw error
         console.log(ok)
         conMysql.query('select name, score from portfolio.highscore order by score desc limit 10', function (error, results, fields) {
             if (error) throw error
             console.log(results)
-            /*res.render('index.pug', {
+            res.render('index.pug', {
                     results
                 },
                 function (error, html) {
@@ -189,13 +189,13 @@ app.post('/highscore', urlencodedParser, (req, res) => {
                         return
                     }
                     res.send(html)
-                })*/
+                })
             res.send(results)
         })
-    })
+    })*/
 })
 //app.post________________________________________________________________
-app.post('/layoutAdmin', (req, res) => {
+/*app.post('/layoutAdmin', (req, res) => {
     if (!req.body || req.body.user != 'mikael' || req.body.pass != 'iop') return res.render('404.pug')
     //const iDs3ssion
     var ma535510n = JSON.stringify(req.session, null, 2)
@@ -223,8 +223,8 @@ app.post('/layoutAdmin', (req, res) => {
             })
         })
     })
-})
-app.post('/OkArticle', (req, res) => {
+})*/
+/*app.post('/OkArticle', (req, res) => {
     if (!req.body.titre || !req.body.article || !req.body.writer) return res.render('ErrorArticle.pug')
     ////////const iDs3ssion
     MongoClient.connect(urldb20, {
@@ -247,7 +247,7 @@ app.post('/OkArticle', (req, res) => {
             res.send(html)
         })
     })
-})
+})*/
 
 //app.listen______________________________________________________________
 app.use((req, res) => {
