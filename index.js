@@ -8,9 +8,7 @@ const
     bodyParser = require('body-parser'),
     session = require('express-session'),
     app = express(),
-    server = require('http').createServer(app),
-    io = require('socket.io'),
-    socketIO = io(server)
+    server = require('http').createServer(app)
     
 jsonParser = bodyParser.json()
 urlencodedParser = bodyParser.urlencoded({
@@ -71,6 +69,6 @@ app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
 
-server.listen(p0rt, '0.0.0.0', () => {
+server.listen(p0rt, '127.0.0.1', () => {
     console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
