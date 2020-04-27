@@ -25,15 +25,6 @@ var sess = {
     saveUninitialized: true
 }
 
-socketIO.on('connection', function (socket) {
-    console.log('a user is connected')
-    socket.on('pingEvt', function (message) {
-        console.log(message)
-        socket.emit('pongEvt', {
-            texte: 'Poooong !'
-        })
-    })
-})
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
 app.use(compression())
