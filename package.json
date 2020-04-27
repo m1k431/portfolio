@@ -4,6 +4,7 @@
   "description": "brickBreakerGame",
   "main": ".eslintrc.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest",
     "scss": "sass --watch ./public/css/scss:./public/css"
   },
