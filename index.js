@@ -49,9 +49,11 @@ if (app.get('env') === 'production') {
     sess.cookie.secure = false // serve secure cookies
 }
 
+let nbUser = 0
 app.get('/', (req, res) => {
-    console.log(req.session)
-    console.log(req.body)
+    nbUser++
+    console.log(nbUser)
+    //console.log(req.body)
     res.render('index.pug', {
         session: req.session
     })
