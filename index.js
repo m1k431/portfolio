@@ -15,7 +15,7 @@ urlencodedParser = bodyParser.urlencoded({
     extended: false
 })
 
-let p0rt = 1025
+let p0rt = 80
 var sess = {
     secret: 'azerty',
     cookie: {},
@@ -69,6 +69,6 @@ app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
 
-server.listen(p0rt, '127.0.0.1', () => {
+server.listen(p0rt, '0.0.0.0', () => {
     console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
