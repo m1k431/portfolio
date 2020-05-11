@@ -330,13 +330,12 @@ template {
   display: none;
 }
 
-#jugglejungle,
-#s0leil {
+  #jugglejungle {
   display: none;
   border: 0.7px solid black;
-  width: 98%;
+  width: 99%;
   border-radius: 10px;
-  margin: 1%;
+  margin: 0.5%;
 }
 
 .css3buttonRed, .css3button {
