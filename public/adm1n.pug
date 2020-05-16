@@ -5,17 +5,20 @@ append content
       #m0ncentrage  
         #ADM1N
           h1.log LOG IN
-          form#adm1n(action='/layoutAdmin' method='post')
-            label.LabelAdmin(for='POST-user') user
-            br
-            input#POST-user.InputAdmin(type='text' name='user')
-            br
-            label.LabelAdmin(for='POST-pass') pass
-            br
-            input#POST-pass.InputAdmin(type='text' name='pass')
-            br
-            br
-            input#subAdm1n(type='submit' class="css3but" value='log')
+            #adm1n
+            #container.col
+              iframe(src='https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fmikael.sosmooth%2Fvideos%2F2964214673696311%2F&width=1280' width='1280' height='720' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true')
+          //- form#adm1n(action='/layoutAdmin' method='post')
+          //-   label.LabelAdmin(for='POST-user') user
+          //-   br
+          //-   input#POST-user.InputAdmin(type='text' name='user')
+          //-   br
+          //-   label.LabelAdmin(for='POST-pass') pass
+          //-   br
+          //-   input#POST-pass.InputAdmin(type='text' name='pass')
+          //-   br
+          //-   br
+          //-   input#subAdm1n(type='submit' class="css3but" value='log')
 append scripts
   script.
     $('#intro').removeClass('css3buttonRed')
