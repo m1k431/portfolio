@@ -358,6 +358,10 @@ iframe {
   margin-top: 0.5em;
 }
 
+.hack {
+  width: 640px;
+}
+
 #INDEX {
   border: 1px solid white;
   background-color: rgba(183, 210, 214, 0.1);
