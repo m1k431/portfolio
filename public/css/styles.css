@@ -385,8 +385,8 @@ iframe {
   border: 1px solid white;
   background-color: rgba(183, 210, 214, 0.1);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 2.5%;
   margin-top: 0.5%;
   text-align: center;
