@@ -46,7 +46,9 @@ const jeuBreaker = function () {
         var pongA = './static/sound/pongA.mp3'
         var pongB = './static/sound/pongB.mp3'
         var pongC = './static/sound/pongC.mp3'
-        var start = './static/sound/start.mp3'
+        //var start = './static/sound/start.mp3'
+        //ghibertoStyle
+        var start = './static/sound/ghibertoRJ45.mp3'
         //var flagS = './static/sound/flagS.mp3'
         var youWin = './static/sound/youWin.mp3'
         var miss = './static/sound/miss.mp3'
