@@ -617,8 +617,10 @@ a {
   position: absolute;
   font-size: 1em;
   color: #ffffff;
-  left: 40%;
-  right: 40%;
+  top: 5px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 /*# sourceMappingURL=styles.css.map */
