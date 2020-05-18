@@ -27,7 +27,9 @@ var sess = {
 
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
-app.use(frameguard({ action: 'sameorigin' }))
+app.use(frameguard({
+    action: 'sameorigin'
+  }))
 app.use(compression())
 app.use(minify({
     cache: false,
