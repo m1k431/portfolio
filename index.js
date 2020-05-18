@@ -8,8 +8,10 @@ const
     bodyParser = require('body-parser'),
     session = require('express-session'),
     app = express(),
-    server = require('http').createServer(app)
-    
+    server = require('http').createServer(app),
+    frameguard = require('frameguard')
+
+
 jsonParser = bodyParser.json()
 urlencodedParser = bodyParser.urlencoded({
     extended: false
@@ -25,6 +27,7 @@ var sess = {
 
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
+app.use(frameguard({ action: 'sameorigin' }))
 app.use(compression())
 app.use(minify({
     cache: false,
