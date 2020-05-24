@@ -1,6 +1,7 @@
 const monIntro = function () {
     //Bouton de Controle play/pause video jonglage 
-    /*var m4vide0 = document.getElementById('jugglejungle')
+    
+    var m4vide0 = document.getElementById('jugglejungle')
     m4vide0.playbackRate = 0.75
     var BtnJs0nPl4Y = document.getElementById('BtnJs0nPl4Y')
     BtnJs0nPl4Y.innerHTML = 'PAUSE'
@@ -13,14 +14,16 @@ const monIntro = function () {
             BtnJs0nPl4Y.innerHTML = 'PLAY'
         }
     })
-    BtnJs0nPl4Y.click()*/
+    BtnJs0nPl4Y.click()
+    $('#jugglejungle').fadeIn(100)
+    
+    
     //Blue/red menu button
     $('#intro').removeClass('css3button')
     $('#intro').addClass('css3buttonRed')
     //FadeIN page acceuil
     $('#INDEX').fadeIn(100)
     $('#m0ncentrage').fadeIn(100)
-    $('#jugglejungle').fadeIn(100)
 
     
     //DIV SOLEILLLLLLLLL
