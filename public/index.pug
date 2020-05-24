@@ -13,11 +13,13 @@ append content
             .paraFoot My name is Mikael
             #s0leil
             .paraFoot I'm an IBM RPG &amp; Javascript Developer
+            a.twitter-timeline(data-width='480', data-height='640', data-theme='dark', href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by K431M1
             include jeuCV.pug
             .paraFoot This website hosts my skills, projects and experiences.
           //include joust.pug
           //include adm1n.pug
 append scripts
+  script(async='', src='https://platform.twitter.com/widgets.js', charset='utf-8')
   script(src='/static/js/soleil.js' async)
   script(src='/static/js/BrickBreaker.js' async)
   script.
