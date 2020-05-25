@@ -376,9 +376,10 @@ iframe {
 }
 
 #CV {
+  width: 480px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2.5%;
+  margin-bottom: 0.5%;
   margin-top: 0.5%;
   text-align: center;
 }
