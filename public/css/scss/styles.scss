@@ -6,7 +6,7 @@ $colorBody: rgba(19, 42, 121, 0.773);
 %videoSoleil {
     display: none;
     border: 0.7px solid black;
-    width: 94%;
+    width: 400px;
     border-radius: 10px;
     margin: auto;
 }
@@ -50,7 +50,7 @@ iframe {
     //border: 1px solid white;
     //background-color: rgba(183, 210, 214, 0.1);
     //border-radius: 10px;
-    width: 96%;
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5%;
@@ -264,7 +264,7 @@ a {
     width: 16%;
     left: 42%;
     right: 42%;
-    margin-top: 230px;
+    margin-top: 190px;
     font-family: $myFont;
     border-radius: 28px;
     font-size: 1em;
