@@ -204,7 +204,7 @@ const jeuBreaker = function () {
         var eTouchMove = function (e) {
             touchobj = e.changedTouches[0] // reference first touch point for this event
             var dist = parseInt(touchobj.pageX) - startx // calculate dist traveled by touch point
-            box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth : (boxleft + dist < 0) ? 0 : boxleft + dist) + competences.offsetWidth / 40 + 'px'
+            box2.style.left = ((boxleft + dist > competences.scrollWidth - linkedIn.scrollWidth) ? competences.scrollWidth - linkedIn.scrollWidth/2 : (boxleft + dist - linkedIn.scrollWidth/2 < 0 ) ? linkedIn.scrollWidth/2 : boxleft + dist + linkedIn.scrollWidth/2) + competences.offsetWidth / 40 + 'px'
             e.preventDefault()
         }
         window.document.addEventListener('touchmove', eTouchMove, true)
