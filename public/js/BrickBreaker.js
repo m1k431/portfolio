@@ -134,7 +134,7 @@ const jeuBreaker = function () {
 
         //_________________________________________INITIALISATIION_JEU______________________________________
         var ballX = linkedIn.offsetLeft + linkedIn.offsetWidth / 2
-        var ballY = 1000
+        var ballY = linkedIn.offsetTop
         var ballLeft = true
         var ballDown = false
         var youwin = false

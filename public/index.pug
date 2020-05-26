@@ -6,7 +6,7 @@ append content
         .m0ncentrageParafoot
           #INDEX
             h1 Welcome to my devlab
-            video#jugglejungle(width='480', height='270', playsinline autoplay muted loop poster='/static/img/kuansiFalls.webp')
+            video#jugglejungle(playsinline autoplay muted loop poster='/static/img/kuansiFalls.webp')
               source( src='/static/video/theOneFinal.webm'  type='video/webm')
             button#BtnJs0nPl4Y PLAY
             //iframe(width='480', height='270', src='/static/video/theOneFinal.webm?autoplay=1&loop=1&autopause=1&autopause=0&muted=1&background=1', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
@@ -15,7 +15,8 @@ append content
             .paraFoot I'm an IBM RPG &amp; Javascript Developer
             include jeuCV.pug
             .paraFoot This website hosts my skills, projects and experiences.
-            a.twitter-timeline(data-width='480', data-height='640', data-chrome="transparent noscrollbar", data-theme='', href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by M1K431
+            #divTwitter
+              a.twitter-timeline(data-width='480', data-height='640', data-chrome="transparent noscrollbar border", data-theme='', href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by M1K431
           //noborders noheader nofooter
           //include joust.pug
           //include adm1n.pug

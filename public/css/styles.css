@@ -330,13 +330,13 @@ template {
   display: none;
 }
 
-#s0leil {
+#s0leil,
+#jugglejungle {
   display: none;
   border: 0.7px solid black;
-  width: 480px;
+  width: 94%;
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 .css3buttonRed, .css3button {
@@ -368,15 +368,11 @@ iframe {
   border: 1px solid white;
   background-color: rgba(183, 210, 214, 0.1);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.5%;
-  margin-top: 0.5%;
   text-align: center;
 }
 
 #CV {
-  width: 480px;
+  width: 96%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.5%;
@@ -557,6 +553,7 @@ a {
   margin-right: 7px;
   margin-bottom: 10px;
   margin-top: 5px;
+  margin-bottom: 2.5%;
 }
 
 #BtnJs0nPl4Y {
@@ -618,10 +615,6 @@ a {
   font-size: 1em;
   color: #ffffff;
   top: 5px;
-}
-
-.twitter-timeline {
-  width: 480px;
 }
 
 /*# sourceMappingURL=styles.css.map */
