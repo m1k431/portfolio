@@ -35,11 +35,11 @@ const monIntro = function () {
     m0nsoleil.height = 400
     m0nsoleil.style.height = '400px'
     m0nsoleil.id = 's0leil'
+    //ATARIIIIIIIIII
     var divAtari = document.createElement('div')
     divAtari.style.position = 'absolute'
-    divAtari.style.top = '36%'
-    divAtari.style.right = '6%'
-    //ATARIIIIIIIIII
+    divAtari.style.top = '100px'
+    divAtari.style.right = '5px'
     var m0nimg = document.createElement('img')
     m0nimg.style.position = 'relative'
     m0nimg.src = '/static/img/Atari.webp'
@@ -202,6 +202,7 @@ const monIntro = function () {
     imgSonic.src = '/static/img/sonic2.png'
     divSonic.appendChild(imgSonic)
     //document.getElementById('a7ari').parentNode.replaceChild(m0nimg, document.getElementById('a7ari'))
+    divAtari.id = 'atari'
     m0nsoleil.appendChild(divAtari)
     divAtari.appendChild(m0nimg)
     divAtari.appendChild(mon360)
