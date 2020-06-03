@@ -7,20 +7,22 @@ append content
           #INDEX
             h1 Welcome to my devlab
             video#jugglejungle(playsinline autoplay muted loop poster='/static/img/kuansiFalls.webp')
-              source( src='/static/video/theOneFinal.webm'  type='video/webm')
+              source( src='/static/video/theOneFinal.webm' type='video/webm')
             button#BtnJs0nPl4Y PLAY
-            //iframe(width='480', height='270', src='/static/video/theOneFinal.webm?autoplay=1&loop=1&autopause=1&autopause=0&muted=1&background=1', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+            //iframe(width='480' height='270' src='/static/video/theOneFinal.webm?autoplay=1&loop=1&autopause=1&autopause=0&muted=1&background=1' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
             .paraFoot My name is Mikael
             #s0leil
             .paraFoot I'm an IBM RPG &amp; Javascript Developer
             include jeuCV.pug
             .paraFoot This website hosts my skills, projects and experiences.
             #divTwitter
-              a.twitter-timeline(data-width='480', data-height='640', data-chrome="transparent noscrollbar border", data-theme='', href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by M1K431
-          //noborders noheader nofooter
-          //include joust.pug
-          //include adm1n.pug
+              a.twitter-timeline(data-width='480' data-height='640' data-chrome="transparent noscrollbar border" data-theme='' href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by M1K431
+            iframe(width='600' height='300' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox' layout='responsive' resizable='' frameborder='0' src='https://embed.redditmedia.com/widgets/card.html?amp=1&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fhackintosh%2Fcomments%2Fgumcqr%2Fits_here%2F')
+      //noborders noheader nofooter
+      //include joust.pug
+      //include adm1n.pug
 append scripts
+  script(async='' src='//embed.redditmedia.com/widgets/platform.js' charset='UTF-8')
   script(src='https://platform.twitter.com/widgets.js' defer)
   script(src='/static/js/soleil.js' async)
   script(src='/static/js/BrickBreaker.js' async)
