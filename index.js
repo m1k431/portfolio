@@ -57,7 +57,7 @@ if (app.get('env') === 'production') {
 let nbUser = 0
 app.get('/', (req, res) => {
     nbUser++
-    console.log(nbUser)
+    console.log('Visitor #' + nbUser)
     //console.log(req.body)
     res.render('index.pug', {
         session: req.session
