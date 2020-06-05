@@ -32,13 +32,13 @@ const monIntro = function () {
     m0nsoleil.style.display = 'block'
     m0nsoleil.style.overflow = 'hidden'
     m0nsoleil.width = 600
-    m0nsoleil.height = 400
-    m0nsoleil.style.height = '400px'
+    m0nsoleil.height = 300
+    m0nsoleil.style.height = '300px'
     m0nsoleil.id = 's0leil'
     //ATARIIIIIIIIII
     var divAtari = document.createElement('div')
     divAtari.style.position = 'absolute'
-    divAtari.style.top = '100px'
+    divAtari.style.top = '80px'
     divAtari.style.right = '5px'
     var m0nimg = document.createElement('img')
     m0nimg.style.position = 'relative'
@@ -152,6 +152,7 @@ const monIntro = function () {
     ctxM4col.stroke()
     ctxM4col.fill()
     
+    m0nsoleil.appendChild(divAtari)
     //SONIC PALM TREEEEEEEE
     var divMonkey = document.createElement('div')
     divMonkey.id = 'divMonkey'
@@ -159,7 +160,7 @@ const monIntro = function () {
     divMonkey.style.position = 'absolute'
     divMonkey.style.height = '140px'
     divMonkey.style.width = '95px'
-    divMonkey.style.top = '82px'
+    divMonkey.style.top = '20px'
     divMonkey.style.left = '59.55px'
     //divMonkey.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
     divMonkey.style.overflow = 'hidden'
@@ -176,8 +177,8 @@ const monIntro = function () {
     imgSonicPalm.id = 'palmTree'
     imgSonicPalm.className = 'palmTree'
     imgSonicPalm.style.position = 'absolute'
-    imgSonicPalm.style.height = '50%'
-    imgSonicPalm.style.top = '60px'
+    imgSonicPalm.style.height = '65%'
+    imgSonicPalm.style.top = '0px'
     imgSonicPalm.style.left = '5px'
     imgSonicPalm.src = '/static/img/palmTree.png'
     m0nsoleil.appendChild(imgSonicPalm)
@@ -203,7 +204,6 @@ const monIntro = function () {
     divSonic.appendChild(imgSonic)
     //document.getElementById('a7ari').parentNode.replaceChild(m0nimg, document.getElementById('a7ari'))
     divAtari.id = 'atari'
-    m0nsoleil.appendChild(divAtari)
     divAtari.appendChild(m0nimg)
     divAtari.appendChild(mon360)
     mon360.appendChild(src360)
@@ -296,7 +296,7 @@ const monIntro = function () {
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 110) {
             c00rdY = Math.cos(c00rdX / 24) * 54
-            m0nCanva.style.top = c00rdY * 1.1 + 75 + '%'
+            m0nCanva.style.top = c00rdY * 1.1 + 60 + '%'
             m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
             ctx.clearRect(0, 0, 40, 40)
             ctxLune.clearRect(0, 0, 40, 40)
