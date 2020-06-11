@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/nomPage', (req, r) => {
+app.get('/nomPage', (req, res) => {
     res.render(req.query.r + '.pug', {})
 })
 
