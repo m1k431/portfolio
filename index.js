@@ -55,16 +55,18 @@ if (app.get('env') === 'production') {
 }
 
 let nbUser = 0
+
 app.get('/', (req, res) => {
+    let datetime = new Date()
     nbUser++
-    console.log('Visitor #' + nbUser)
+    console.log(datetime + ': Visitor #' + nbUser + ' => IP ' + req.connection.remoteAddress)
     //console.log(req.body)
     res.render('index.pug', {
         session: req.session
     })
 })
 
-app.get('/nomPage', (req, res) => {
+app.get('/nomPage', (req, r) => {
     res.render(req.query.r + '.pug', {})
 })
 
