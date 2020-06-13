@@ -79,6 +79,7 @@ app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
     logger.trace(datetime + ': Visitor #' + nbUser + ' => IP ' + req.connection.remoteAddress)
+    console.log(datetime + ': Visitor #' + nbUser + ' => IP ' + req.connection.remoteAddress)
     //logger.trace(req.body)
     res.render('index.pug', {
         session: req.session
