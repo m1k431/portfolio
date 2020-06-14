@@ -14,7 +14,7 @@ const
     path = require('path'),
     express = require('express'),
     helmet = require('helmet'),
-    bodyParser = require('body-parser'),
+    //bodyParser = require('body-parser'),
     session = require('express-session'),
     app = express(),
     server = require('http').createServer(app),
@@ -22,21 +22,16 @@ const
     log4js = require('log4js'),
     fs = require('fs')
 
-let datetime = new Date()
-var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds())
+let datetime = new Date(),
+    p0rt = 80
 
-jsonParser = bodyParser.json()
-urlencodedParser = bodyParser.urlencoded({
-    extended: false
-})
-
-let p0rt = 80
-var sess = {
-    secret: 'azerty',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true
-}
+var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds()),
+    sess = {
+        secret: 'azerty',
+        cookie: {},
+        resave: false,
+        saveUninitialized: true
+    }
 
 //APP.LOGGER_________________________________________________________________
 log4js.configure({
@@ -70,11 +65,6 @@ app.use('/static', express.static(__dirname + '/public', {
     maxage: '0d'
 }))
 app.use(session(sess))
-app.use(bodyParser.urlencoded({
-
-    useended: false
-}))
-app.use(bodyParser.json())
 
 app.set('view engine', 'pug')
 app.set('views', 'public')
@@ -103,11 +93,11 @@ app.get('/nomPage', (req, res) => {
 })
 
 //APP.LISTEN______________________________________________________________
-app.use((res) => {
+app.use((req, res) => {
     res.status(404).render('404.pug')
 })
 
-app.use((res) => {
+app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
 server.listen(p0rt, '0.0.0.0', () => {
