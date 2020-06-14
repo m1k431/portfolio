@@ -16,7 +16,6 @@ const
 let datetime = new Date()
 var nbLog = datetime.getFullYear() + String(datetime.getMonth()+1) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes())
 
-
 log4js.configure({
     appenders: {
         trace: { type: 'file', filename: `logs/ip${nbLog}.log` }
@@ -24,11 +23,10 @@ log4js.configure({
     categories: { default: { appenders: ['trace'], level: 'trace' } }
 })
 
-//let filePath = './logs/ipA.log'
 let filePath = `./logs/ip${nbLog}.log`
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
-    logger.info('The file ipA.log was succesfully created')
+    console.log(`The file ${nbLog}.log was succesfully created`)
 })
 
 jsonParser = bodyParser.json()
