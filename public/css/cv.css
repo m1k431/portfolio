@@ -25,6 +25,11 @@ li {
 /*****
 $$$$$$  BALISES HTML   $$$$$
 ****/
+#CV {
+  border: 1px solid #08021f;
+  border-radius: 10px;
+}
+
 #metier {
   -webkit-transition: background 1s ease-in-out;
   -ms-transition: background 1s ease-in-out;
@@ -260,7 +265,6 @@ p.flags {
 .competen {
   border: 1px solid #08021f;
   color: rgba(0, 0, 0, 0.9);
-  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   margin: 1%;
   text-align: center;
