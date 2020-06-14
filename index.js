@@ -14,15 +14,18 @@ const
     fs = require('fs')
 
 let datetime = new Date()
+var nbLog = datetime.getFullYear() + String(datetime.getMonth()+1) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes())
+
 
 log4js.configure({
     appenders: {
-        trace: { type: 'file', filename: 'logs/ipA.log' }
+        trace: { type: 'file', filename: `logs/ip${nbLog}.log` }
     },
     categories: { default: { appenders: ['trace'], level: 'trace' } }
 })
 
-let filePath = './logs/ipA.log'
+//let filePath = './logs/ipA.log'
+let filePath = `./logs/ip${nbLog}.log`
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
     logger.info('The file ipA.log was succesfully created')
@@ -78,8 +81,8 @@ let nbUser = 0,
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
-    logger.trace(datetime + ': Visitor #' + nbUser + ' => IP ' + req.connection.remoteAddress)
-    console.log(datetime + ': Visitor #' + nbUser + ' => IP ' + req.connection.remoteAddress)
+    logger.trace(`Visitor ${nbUser} => IP ${req.connection.remoteAddress}`)
+    console.log(`${datetime}: Visitor #${nbUser} => IP ${req.connection.remoteAddress}`)
     //logger.trace(req.body)
     res.render('index.pug', {
         session: req.session
@@ -99,5 +102,5 @@ app.use((error, req, res) => {
 })
 
 server.listen(p0rt, '0.0.0.0', () => {
-    logger.trace(`Listening on ${server.address().address}:${server.address().port}`)
+    console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
