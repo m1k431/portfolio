@@ -1,1 +1,4 @@
-Sun Jun 14 2020 21:58:12 GMT+0200 (GMT+02:00)
+Sun Jun 14 2020 21:58:12 GMT+0200 (GMT+02:00)[2020-06-14T21:58:17.382] [TRACE] trace - Visitor 1 => IP 127.0.0.1
+[2020-06-14T21:58:32.129] [TRACE] trace - Visitor 2 => IP 127.0.0.1
+[2020-06-14T22:01:17.616] [TRACE] trace - Visitor 3 => IP 127.0.0.1
+[2020-06-14T22:01:45.690] [TRACE] trace - Visitor 4 => IP 127.0.0.1
