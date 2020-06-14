@@ -1,3 +1,12 @@
+Date.prototype.getMonthFormatted = function () {
+    var month = this.getMonth() + 1
+    return month < 10 ? '0' + month : month
+}
+Date.prototype.getDateFormatted = function () {
+    var date = this.getDate()
+    return date < 10 ? '0' + date : date
+}
+
 const
     compression = require('compression'),
     minify = require('express-minify'),
@@ -14,14 +23,7 @@ const
     fs = require('fs')
 
 let datetime = new Date()
-var nbLog = datetime.getFullYear() + String(datetime.getMonth() + 1) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes())
-
-log4js.configure({
-    appenders: {
-        trace: { type: 'file', filename: `logs/ip${nbLog}.log` }
-    },
-    categories: { default: { appenders: ['trace'], level: 'trace' } }
-})
+var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds())
 
 jsonParser = bodyParser.json()
 urlencodedParser = bodyParser.urlencoded({
@@ -36,14 +38,22 @@ var sess = {
     saveUninitialized: true
 }
 
-//app.FS_________________________________________________________________
+//APP.LOGGER_________________________________________________________________
+log4js.configure({
+    appenders: {
+        trace: { type: 'file', filename: `logs/ip${nbLog}.log` }
+    },
+    categories: { default: { appenders: ['trace'], level: 'trace' } }
+})
+
+//APP.FS_________________________________________________________________
 let filePath = `./logs/ip${nbLog}.log`
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
     console.log(`The file ${nbLog}.log was succesfully created`)
 })
 
-//app.use_________________________________________________________________
+//APP.USE_________________________________________________________________
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
 app.use(frameguard({
@@ -61,7 +71,7 @@ app.use('/static', express.static(__dirname + '/public', {
 }))
 app.use(session(sess))
 app.use(bodyParser.urlencoded({
-    
+
     useended: false
 }))
 app.use(bodyParser.json())
@@ -69,7 +79,7 @@ app.use(bodyParser.json())
 app.set('view engine', 'pug')
 app.set('views', 'public')
 
-//app.get_________________________________________________________________
+//APP.GET_________________________________________________________________
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
     sess.cookie.secure = false // serve secure cookies
@@ -92,7 +102,7 @@ app.get('/nomPage', (req, res) => {
     res.render(req.query.r + '.pug', {})
 })
 
-//app.listen______________________________________________________________
+//APP.LISTEN______________________________________________________________
 app.use((res) => {
     res.status(404).render('404.pug')
 })
