@@ -366,7 +366,6 @@ iframe {
 
 #INDEX {
   border: 1px solid white;
-  background-color: rgba(183, 210, 214, 0.1);
   border-radius: 10px;
   text-align: center;
 }
@@ -436,14 +435,6 @@ nav a {
   margin: 0;
   height: 50px;
   z-index: 1;
-}
-
-.competen {
-  border: 1px solid white;
-  color: rgba(0, 0, 0, 0.9);
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  text-align: center;
 }
 
 a {

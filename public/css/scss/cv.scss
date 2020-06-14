@@ -78,7 +78,7 @@ html {
 }
 
 .titreH2 {
-  color: #000;
+  color: white;
   text-transform: uppercase;
   margin-bottom: 0.3em;
   margin-top: 0.3em;
@@ -154,9 +154,9 @@ html {
 }
 
 .complemen {
-  //margin: 1%;
-  border: 1px solid #08021f;
-  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+
+  margin: 1%;
   border-radius: 10px;
   display: none;
 }
@@ -274,8 +274,6 @@ p.flags {
 }
 
 .competen {
-  border: 1px solid #08021f;
-  color: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   margin: 1%;
   text-align: center;
