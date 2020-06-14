@@ -14,19 +14,13 @@ const
     fs = require('fs')
 
 let datetime = new Date()
-var nbLog = datetime.getFullYear() + String(datetime.getMonth()+1) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes())
+var nbLog = datetime.getFullYear() + String(datetime.getMonth() + 1) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes())
 
 log4js.configure({
     appenders: {
         trace: { type: 'file', filename: `logs/ip${nbLog}.log` }
     },
     categories: { default: { appenders: ['trace'], level: 'trace' } }
-})
-
-let filePath = `./logs/ip${nbLog}.log`
-fs.writeFile(filePath, datetime, (err) => {
-    if (err) throw err
-    console.log(`The file ${nbLog}.log was succesfully created`)
 })
 
 jsonParser = bodyParser.json()
@@ -42,6 +36,14 @@ var sess = {
     saveUninitialized: true
 }
 
+//app.FS_________________________________________________________________
+let filePath = `./logs/ip${nbLog}.log`
+fs.writeFile(filePath, datetime, (err) => {
+    if (err) throw err
+    console.log(`The file ${nbLog}.log was succesfully created`)
+})
+
+//app.use_________________________________________________________________
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(helmet())
 app.use(frameguard({
@@ -59,13 +61,13 @@ app.use('/static', express.static(__dirname + '/public', {
 }))
 app.use(session(sess))
 app.use(bodyParser.urlencoded({
-    extended: false
+    
+    useended: false
 }))
 app.use(bodyParser.json())
+
 app.set('view engine', 'pug')
 app.set('views', 'public')
-
-
 
 //app.get_________________________________________________________________
 if (app.get('env') === 'production') {
@@ -81,7 +83,6 @@ app.get('/', (req, res) => {
     datetime = new Date()
     logger.trace(`Visitor ${nbUser} => IP ${req.connection.remoteAddress}`)
     console.log(`${datetime}: Visitor #${nbUser} => IP ${req.connection.remoteAddress}`)
-    //logger.trace(req.body)
     res.render('index.pug', {
         session: req.session
     })
@@ -92,13 +93,13 @@ app.get('/nomPage', (req, res) => {
 })
 
 //app.listen______________________________________________________________
-app.use((req, res) => {
+app.use((res) => {
     res.status(404).render('404.pug')
 })
-app.use((error, req, res) => {
+
+app.use((res) => {
     res.status(500).render('404.pug')
 })
-
 server.listen(p0rt, '0.0.0.0', () => {
     console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
