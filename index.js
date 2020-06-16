@@ -13,8 +13,6 @@ const
     favicon = require('serve-favicon'),
     path = require('path'),
     express = require('express'),
-    helmet = require('helmet'),
-    //bodyParser = require('body-parser'),
     session = require('express-session'),
     app = express(),
     server = require('http').createServer(app),
@@ -52,7 +50,6 @@ fs.writeFile(filePath, datetime, (err) => {
 
 //APP.USE_________________________________________________________________
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
-app.use(helmet())
 app.use(frameguard({
     action: 'sameorigin'
 }))
