@@ -1,5 +1,5 @@
 {
-  "name": "monPortFolio",
+  "name": "m1k431",
   "version": "1.0.0",
   "description": "brickBreakerGame",
   "main": ".eslintrc.js",
@@ -10,31 +10,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/username/repository.git"
+    "url": "git+https://github.com/m1k431/portfolio.git"
   },
   "author": "https://github.com/m1k431",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "compression": "^1.7.4",
-    "datatables.net-dt": "^1.10.19",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.4",
     "express-minify": "^1.0.0",
     "express-session": "^1.16.1",
     "frameguard": "^3.1.0",
     "fs": "0.0.1-security",
-    "g": "^2.0.1",
     "geoip-lite": "^1.4.2",
-    "helmet": "^3.21.2",
     "jquery": "^3.5.1",
-    "jsdom": "^14.0.0",
     "log4js": "^6.3.0",
-    "mongodb": "^3.2.3",
-    "mysql": "^2.18.1",
     "nodemon": "^1.19.4",
     "npm": "^6.13.7",
-    "path": "^0.12.7",
     "pug": "^2.0.3",
     "sass": "^1.26.2",
     "serve-favicon": "^2.5.0",
@@ -42,12 +34,11 @@
   },
   "devDependencies": {
     "eslint": "^5.15.3",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-react-pug": "^0.3.2",
-    "eslint-plugin-standard": "^3.1.0",
     "jest": "^24.5.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/m1k431/portfolio/issues"
+  },
+  "homepage": "https://github.com/m1k431/portfolio#readme",
+  "keywords": []
 }
