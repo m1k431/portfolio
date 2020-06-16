@@ -20,12 +20,14 @@ const
     server = require('http').createServer(app),
     frameguard = require('frameguard'),
     log4js = require('log4js'),
-    fs = require('fs')
+    fs = require('fs'),
+    geoip = require('geoip-lite')
 
 let datetime = new Date(),
     p0rt = 80
 
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds()),
+    ip, geo,
     sess = {
         secret: 'azerty',
         cookie: {},
@@ -81,8 +83,10 @@ let nbUser = 0,
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
-    logger.trace(`Visitor ${nbUser} => IP ${req.connection.remoteAddress}`)
-    console.log(`${datetime}: Visitor #${nbUser} => IP ${req.connection.remoteAddress}`)
+    ip = req.connection.remoteAddress
+    geo = geoip.lookup(ip)
+    logger.trace(`Visitor ${nbUser} => IP ${ip} | CITY: ${geo.city} COUNTRY: ${geo.country}`)
+    console.log(`${datetime}: Visitor #${nbUser} => IP ${ip} | CITY: ${geo.city} COUNTRY: ${geo.country}`)
     res.render('index.pug', {
         session: req.session
     })
