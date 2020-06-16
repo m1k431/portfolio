@@ -2,10 +2,10 @@
   "name": "m1k431",
   "version": "1.0.0",
   "description": "brickBreakerGame",
-  "main": ".eslintrc.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest",
+    "test": "",
     "scss": "sass --watch ./public/css/scss:./public/css"
   },
   "repository": {
@@ -31,10 +31,7 @@
     "serve-favicon": "^2.5.0",
     "socket.io": "^2.2.0"
   },
-  "devDependencies": {
-    "eslint": "^5.15.3",
-    "jest": "^24.5.0"
-  },
+  "devDependencies": {},
   "bugs": {
     "url": "https://github.com/m1k431/portfolio/issues"
   },
