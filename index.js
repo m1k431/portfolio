@@ -85,8 +85,8 @@ app.get('/', (req, res) => {
     datetime = new Date()
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
-    logger.trace(`Visitor ${nbUser} => IP ${ip} | CITY: ${geo.city} COUNTRY: ${geo.country}`)
-    console.log(`${datetime}: Visitor #${nbUser} => IP ${ip} | CITY: ${geo.city} COUNTRY: ${geo.country}`)
+    logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
+    console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     res.render('index.pug', {
         session: req.session
     })
