@@ -22,7 +22,7 @@ const
     geoip = require('geoip-lite')
 
 let datetime = new Date(),
-    p0rt = 3000
+    p0rt = 80
 
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds()),
     ip, geo,
@@ -101,6 +101,6 @@ app.use((req, res) => {
 app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
-server.listen(process.env.port || p0rt, '0.0.0.0', () => {
+server.listen(process.env.port, () => {
     console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
