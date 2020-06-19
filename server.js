@@ -6,6 +6,18 @@ Date.prototype.getDateFormatted = function () {
     var date = this.getDate()
     return date < 10 ? '0' + date : date
 }
+Date.prototype.getHoursFormatted = function () {
+    var hours = this.getHours()
+    return hours < 10 ? '0' + hours : hours
+}
+Date.prototype.getMinutesFormatted = function () {
+    var minutes = this.getMinutes()
+    return minutes < 10 ? '0' + minutes : minutes
+}
+Date.prototype.getSecondsFormatted = function () {
+    var seconds = this.getSeconds()
+    return seconds < 10 ? '0' + seconds : seconds
+}
 
 const
     compression = require('compression'),
@@ -27,7 +39,7 @@ let datetime = new Date(),
     nbUser = 0,
     logger = log4js.getLogger('trace')
 
-var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds()),
+var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     sess = {
         secret: 'azerty',
@@ -90,6 +102,9 @@ app.get('/', (req, res) => {
 
 app.get('/nomPage', (req, res) => {
     res.render(req.query.r + '.pug', {})
+    if (req.query.r == 'highScore') {
+        //AJax
+    }
 })
 
 //APP.LISTEN______________________________________________________________
