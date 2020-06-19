@@ -1,0 +1,3 @@
+[2020-06-19T17:15:29.574] [TRACE] trace - Visitor 1 => 90.92.102.225 {"range":[1516003328,1516005375],"country":"FR","region":"IDF","eu":"1","timezone":"Europe/Paris","city":"Paris","ll":[48.8543,2.3527],"metro":0,"area":5}
+[2020-06-19T17:29:15.326] [TRACE] trace - Visitor 2 => 90.92.102.225 {"range":[1516003328,1516005375],"country":"FR","region":"IDF","eu":"1","timezone":"Europe/Paris","city":"Paris","ll":[48.8543,2.3527],"metro":0,"area":5}
+[2020-06-19T17:59:59.734] [TRACE] trace - Visitor 3 => 99.232.32.215 {"range":[1676156928,1676158975],"country":"CA","region":"ON","eu":"0","timezone":"America/Toronto","city":"Whitby","ll":[43.8719,-78.9378],"metro":0,"area":5}
