@@ -22,7 +22,10 @@ const
     geoip = require('geoip-lite')
 
 let datetime = new Date(),
-    p0rt = 80
+    p0rt = 80,
+    filePath = `./logs/ip${nbLog}.log`,
+    nbUser = 0,
+    logger = log4js.getLogger('trace')
 
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHours()) + String(datetime.getMinutes()) + String(datetime.getSeconds()),
     ip, geo,
@@ -42,7 +45,6 @@ log4js.configure({
 })
 
 //APP.FS_________________________________________________________________
-let filePath = `./logs/ip${nbLog}.log`
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
     console.log(`The file ${nbLog}.log was succesfully created`)
@@ -74,9 +76,6 @@ if (app.get('env') === 'production') {
     sess.cookie.secure = false // serve secure cookies
 }
 
-let nbUser = 0,
-    logger = log4js.getLogger('trace')
-
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
@@ -101,6 +100,7 @@ app.use((req, res) => {
 app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
-server.listen(process.env.port || p0rt, '0.0.0.0', () => {
+
+server.listen(p0rt, '0.0.0.0', () => {
     console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
