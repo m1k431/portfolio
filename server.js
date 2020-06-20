@@ -48,6 +48,22 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         saveUninitialized: true
     }
 
+//mongoDB
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority"
+const client = new MongoClient(uri, { useNewUrlParser: true })
+client.connect(err => {
+    const collection = client.db("m1k431").collection("brickBreaker")
+    // perform actions on the collection object
+    console.log(collection)
+    /*collection.insertOne({
+        visitorName: 'mika',
+        score: '123'
+    })*/
+    client.close()
+})
+
+
 //APP.LOGGER_________________________________________________________________
 log4js.configure({
     appenders: {
@@ -61,6 +77,7 @@ fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
     console.log(`The file ${nbLog}.log was succesfully created`)
 })
+
 
 //APP.USE_________________________________________________________________
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
