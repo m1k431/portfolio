@@ -75,6 +75,7 @@ log4js.configure({
     categories: { default: { appenders: ['trace'], level: 'trace' } }
 })
 
+
 //APP.FS_________________________________________________________________
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
@@ -115,10 +116,11 @@ app.get('/', (req, res) => {
     geo = geoip.lookup(ip)
     logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    console.log(session)
+    sess.cookie = req.session.cookie
     res.render('index.pug', {
-        session: req.session
+        sess: req.session
     })
+    console.log(sess)
 })
 
 app.get('/nomPage', (req, res) => {
