@@ -42,7 +42,10 @@ let datetime = new Date(),
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     sess = {
-        secret: 'azerty',
+        secret: 'qwerty',
+        horodate: '',
+        ip: '',
+        geoloc: {},
         cookie: {},
         resave: false,
         saveUninitialized: true
@@ -58,7 +61,7 @@ const client = new MongoClient(uri, {
 client.connect(err => {
     const collection = client.db("m1k431").collection("brickBreaker")
     // perform actions on the collection object
-    console.log(collection)
+    //console.log(collection)
     /*collection.insertOne({
         visitorName: 'mika',
         score: '123'
@@ -114,9 +117,15 @@ app.get('/', (req, res) => {
     datetime = new Date()
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
-    logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    sess.cookie = req.session.cookie
+    //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
+    //console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
+    sess = {
+        horodate: datetime,
+        ip: ip,
+        geoloc: geo,
+        cookie: req.session.cookie
+    }
+    logger.trace(sess)
     res.render('index.pug', {
         sess: req.session
     })
