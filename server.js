@@ -51,7 +51,10 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
 //mongoDB
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority"
-const client = new MongoClient(uri, { useNewUrlParser: true })
+const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 client.connect(err => {
     const collection = client.db("m1k431").collection("brickBreaker")
     // perform actions on the collection object
@@ -112,6 +115,7 @@ app.get('/', (req, res) => {
     geo = geoip.lookup(ip)
     logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
+    console.log(session)
     res.render('index.pug', {
         session: req.session
     })
