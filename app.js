@@ -31,8 +31,9 @@ const
     frameguard = require('frameguard'),
     log4js = require('log4js'),
     fs = require('fs'),
-    geoip = require('geoip-lite');
-uid = require('uid-safe')
+    geoip = require('geoip-lite'),
+    uid = require('uid-safe'),
+    parseurl = require('parseurl')
 
 let datetime = new Date(),
     p0rt = 80,
@@ -50,10 +51,12 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         resave: false,
         saveUninitialized: true,
         cookie: { maxAge: 60000 },
+        sessionID: 0,
         horodate: '',
         ip: '',
         geoloc: {},
-        nbViews: 0
+        pathname: '',
+        nbViews: []
     }
 
 //mongoDB
@@ -124,17 +127,23 @@ app.get('/', (req, res) => {
     //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     //console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     //VIEWS
-    if (req.session.views) {
-        req.session.views++
+    if (!req.session.views) {
+        req.session.views = {}
+      }
+    var pathname = parseurl(req).pathname
+    if (req.session.views[pathname]) {
+        req.session.views[pathname]++
     }
     else {
-        req.session.views = 1
+        req.session.views[pathname] = 1
     }
+    sess.sessionID = req.sessionID
     sess.horodate = datetime
     sess.ip = ip
     sess.geoloc = geo
     sess.cookie = req.session.cookie
-    sess.nbViews = req.session.views
+    sess.pathname = parseurl(req).pathname
+    sess.nbViews[pathname] = req.session.views[pathname]
     //LOGGER
     logger.trace(sess)
     res.render('index.pug', {
@@ -144,10 +153,26 @@ app.get('/', (req, res) => {
 })
 
 app.get('/nomPage', (req, res) => {
+    //VIEWS
+    if (!req.session.views) {
+        req.session.views = {}
+    }
+    var pathname = parseurl(req).pathname
+    if (req.session.views[req.query.r]) {
+        req.session.views[req.query.r]++
+    }
+    else {
+        req.session.views[req.query.r] = 1
+    }
+    sess.pathname = req.query.r
+    sess.nbViews[req.query.r] = req.session.views[req.query.r]
+    //LOGGER
+    logger.trace(sess)
     res.render(req.query.r + '.pug', {})
     if (req.query.r == 'highScore') {
         //AJax
     }
+    console.log(sess)
 })
 
 //APP.LISTEN______________________________________________________________

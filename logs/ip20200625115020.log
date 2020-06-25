@@ -1,0 +1,168 @@
+[2020-06-25T11:50:26.356] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:51:26.354Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  sessionID: 'L2JnPH3CzCpzTiljmcGxWvo3',
+  horodate: 2020-06-25T09:50:26.355Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  pathname: '/',
+  nbViews: [ '/': 1 ]
+}
+[2020-06-25T11:50:35.725] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:51:26.871Z,
+    originalMaxAge: 59999,
+    httpOnly: true
+  },
+  sessionID: 'L2JnPH3CzCpzTiljmcGxWvo3',
+  horodate: 2020-06-25T09:50:26.355Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  pathname: '/nomPage',
+  nbViews: [ '/': 1, '/nomPage': 1 ]
+}
+[2020-06-25T11:50:44.773] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:51:26.871Z,
+    originalMaxAge: 59999,
+    httpOnly: true
+  },
+  sessionID: 'L2JnPH3CzCpzTiljmcGxWvo3',
+  horodate: 2020-06-25T09:50:26.355Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  pathname: '/nomPage',
+  nbViews: [ '/': 1, '/nomPage': 2 ]
+}
+[2020-06-25T11:50:48.007] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:51:26.871Z,
+    originalMaxAge: 59999,
+    httpOnly: true
+  },
+  sessionID: 'L2JnPH3CzCpzTiljmcGxWvo3',
+  horodate: 2020-06-25T09:50:26.355Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  pathname: '/nomPage',
+  nbViews: [ '/': 1, '/nomPage': 3 ]
+}
+[2020-06-25T11:50:51.343] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:51:26.871Z,
+    originalMaxAge: 59999,
+    httpOnly: true
+  },
+  sessionID: 'L2JnPH3CzCpzTiljmcGxWvo3',
+  horodate: 2020-06-25T09:50:26.355Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  pathname: '/nomPage',
+  nbViews: [ '/': 1, '/nomPage': 4 ]
+}
+[2020-06-25T11:50:57.958] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:51:26.871Z,
+    originalMaxAge: 59999,
+    httpOnly: true
+  },
+  sessionID: 'L2JnPH3CzCpzTiljmcGxWvo3',
+  horodate: 2020-06-25T09:50:26.355Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  pathname: '/nomPage',
+  nbViews: [ '/': 1, '/nomPage': 5 ]
+}

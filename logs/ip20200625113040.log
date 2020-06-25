@@ -1,0 +1,286 @@
+[2020-06-25T11:30:44.615] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:31:44.613Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:30:44.614Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 1
+}
+[2020-06-25T11:30:48.156] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:31:45.150Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:30:48.155Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 2
+}
+[2020-06-25T11:30:49.459] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:31:48.270Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:30:49.459Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 3
+}
+[2020-06-25T11:31:01.870] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:32:01.870Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:31:01.870Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 1
+}
+[2020-06-25T11:31:20.411] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:32:02.026Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:31:20.411Z,
+  ip: '92.184.104.89',
+  geoloc: {
+    range: [ 1555589120, 1555590143 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 200
+  },
+  nbViews: 2
+}
+[2020-06-25T11:32:10.628] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:33:10.628Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:32:10.628Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 1
+}
+[2020-06-25T11:32:53.556] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:33:40.198Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:32:53.556Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 2
+}
+[2020-06-25T11:32:59.427] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:33:53.635Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:32:59.427Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 3
+}
+[2020-06-25T11:33:09.012] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:34:09.012Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:33:09.012Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 1
+}
+[2020-06-25T11:33:18.590] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:34:18.590Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:33:18.590Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 1
+}
+[2020-06-25T11:33:36.199] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T09:34:18.656Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  horodate: 2020-06-25T09:33:36.199Z,
+  ip: '90.92.102.225',
+  geoloc: {
+    range: [ 1516003328, 1516005375 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 5
+  },
+  nbViews: 2
+}
