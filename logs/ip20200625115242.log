@@ -1,0 +1,169 @@
+[2020-06-25T11:52:46.341] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'cv',
+  nbViews: [ cv: 1 ]
+}
+[2020-06-25T11:52:50.358] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'adm1n',
+  nbViews: [ cv: 1, adm1n: 1 ]
+}
+[2020-06-25T11:52:52.378] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'cv',
+  nbViews: [ cv: 2, adm1n: 1 ]
+}
+[2020-06-25T11:52:53.890] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'adm1n',
+  nbViews: [ cv: 2, adm1n: 2 ]
+}
+[2020-06-25T11:52:55.451] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'giftedADHD',
+  nbViews: [ cv: 2, adm1n: 2, giftedADHD: 1 ]
+}
+[2020-06-25T11:52:56.602] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'giftedADHD',
+  nbViews: [ cv: 2, adm1n: 2, giftedADHD: 2 ]
+}
+[2020-06-25T11:52:58.168] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'index',
+  nbViews: [ cv: 2, adm1n: 2, giftedADHD: 2, index: 1 ]
+}
+[2020-06-25T11:52:59.456] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'index',
+  nbViews: [ cv: 2, adm1n: 2, giftedADHD: 2, index: 2 ]
+}
+[2020-06-25T11:53:00.436] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'index',
+  nbViews: [ cv: 2, adm1n: 2, giftedADHD: 2, index: 3 ]
+}
+[2020-06-25T11:53:01.235] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'index',
+  nbViews: [ cv: 2, adm1n: 2, giftedADHD: 2, index: 4 ]
+}
+[2020-06-25T11:53:02.353] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'cv',
+  nbViews: [ cv: 3, adm1n: 2, giftedADHD: 2, index: 4 ]
+}
+[2020-06-25T11:53:03.523] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'adm1n',
+  nbViews: [ cv: 3, adm1n: 3, giftedADHD: 2, index: 4 ]
+}
+[2020-06-25T11:53:08.212] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 },
+  sessionID: 0,
+  horodate: '',
+  ip: '',
+  geoloc: {},
+  pathname: 'giftedADHD',
+  nbViews: [ cv: 3, adm1n: 3, giftedADHD: 3, index: 4 ]
+}
