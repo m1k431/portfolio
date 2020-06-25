@@ -167,12 +167,12 @@ app.get('/nomPage', (req, res) => {
     sess.pathname = req.query.r
     sess.nbViews[req.query.r] = req.session.views[req.query.r]
     //LOGGER
-    logger.trace(sess)
+    logger.trace(sess.pathname + ':' + sess.nbViews[req.query.r])
     res.render(req.query.r + '.pug', {})
     if (req.query.r == 'highScore') {
         //AJax
     }
-    console.log(sess)
+    console.log(sess.pathname + ':' + sess.nbViews[req.query.r])
 })
 
 //APP.LISTEN______________________________________________________________
