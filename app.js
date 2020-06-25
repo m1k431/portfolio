@@ -31,7 +31,8 @@ const
     frameguard = require('frameguard'),
     log4js = require('log4js'),
     fs = require('fs'),
-    geoip = require('geoip-lite')
+    geoip = require('geoip-lite');
+uid = require('uid-safe')
 
 let datetime = new Date(),
     p0rt = 80,
@@ -42,13 +43,17 @@ let datetime = new Date(),
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     sess = {
+        genid: function (req) {
+            return uid.sync(18)
+        },
         secret: 'qwerty',
+        resave: false,
+        saveUninitialized: true,
+        cookie: { maxAge: 60000 },
         horodate: '',
         ip: '',
         geoloc: {},
-        cookie: {},
-        resave: false,
-        saveUninitialized: true
+        nbViews: 0
     }
 
 //mongoDB
@@ -101,17 +106,16 @@ app.use(minify({
 app.use('/static', express.static(__dirname + '/public', {
     maxage: '0d'
 }))
-app.use(session(sess))
 
+if (app.get('env') === 'production') {
+    app.set('trust proxy', 1) // trust first proxy
+    sess.cookie.secure = true // serve secure cookies
+}
+app.use(session(sess))
 app.set('view engine', 'pug')
 app.set('views', 'public')
 
 //APP.GET_________________________________________________________________
-if (app.get('env') === 'production') {
-    app.set('trust proxy', 1) // trust first proxy
-    sess.cookie.secure = false // serve secure cookies
-}
-
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
@@ -119,12 +123,19 @@ app.get('/', (req, res) => {
     geo = geoip.lookup(ip)
     //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     //console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    sess = {
-        horodate: datetime,
-        ip: ip,
-        geoloc: geo,
-        cookie: req.session.cookie
+    //VIEWS
+    if (req.session.views) {
+        req.session.views++
     }
+    else {
+        req.session.views = 1
+    }
+    sess.horodate = datetime
+    sess.ip = ip
+    sess.geoloc = geo
+    sess.cookie = req.session.cookie
+    sess.nbViews = req.session.views
+    //LOGGER
     logger.trace(sess)
     res.render('index.pug', {
         sess: req.session
