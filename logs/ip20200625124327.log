@@ -1,0 +1,18 @@
+[2020-06-25T12:44:31.698] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-25T10:45:31.697Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  sessionID: 'qKLKCvNebVBqv6pGVZch5jLF',
+  horodate: 2020-06-25T10:44:31.698Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  pathname: '/',
+  nbViews: [ '/': 1 ]
+}
