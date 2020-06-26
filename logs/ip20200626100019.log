@@ -1,0 +1,58 @@
+[2020-06-26T10:00:21.874] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T08:01:21.873Z,
+    originalMaxAge: 60000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  sessionID: 'RSCSETlapC5rd1Zc_fFpf2bh',
+  horodate: 2020-06-26T08:00:21.873Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ '/': 1 ]
+}
+[2020-06-26T10:01:12.415] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T08:01:22.509Z,
+    originalMaxAge: 60000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  sessionID: 'RSCSETlapC5rd1Zc_fFpf2bh',
+  horodate: 2020-06-26T08:01:12.414Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ '/': 2 ]
+}

@@ -1,0 +1,88 @@
+[2020-06-26T08:52:46.105] [TRACE] trace - giftedADHD:1
+[2020-06-26T08:53:23.710] [TRACE] trace - giftedADHD:1
+[2020-06-26T08:53:29.466] [TRACE] trace - cv:1
+[2020-06-26T08:53:33.750] [TRACE] trace - index:1
+[2020-06-26T09:10:41.928] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T07:11:41.927Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  sessionID: '0QOieohUPZ1ZAkRkK-8Qhd7-',
+  horodate: 2020-06-26T07:10:41.927Z,
+  ip: '185.107.80.34',
+  geoloc: {
+    range: [ 3110817792, 3110818303 ],
+    country: 'NL',
+    region: 'ZH',
+    eu: '1',
+    timezone: 'Europe/Amsterdam',
+    city: 'Leiden',
+    ll: [ 52.1693, 4.4732 ],
+    metro: 0,
+    area: 200
+  },
+  pathname: '/',
+  nbViews: [ giftedADHD: 1, cv: 1, index: 1, '/': 1 ]
+}
+[2020-06-26T09:28:01.327] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T07:29:01.327Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  sessionID: 'TCo6CFPNh_wfu7emtmK0J-oQ',
+  horodate: 2020-06-26T07:28:01.327Z,
+  ip: '128.14.133.58',
+  geoloc: {
+    range: [ 2148433920, 2148435967 ],
+    country: 'US',
+    region: 'CA',
+    eu: '0',
+    timezone: 'America/Los_Angeles',
+    city: 'Arcadia',
+    ll: [ 34.1397, -118.0353 ],
+    metro: 803,
+    area: 500
+  },
+  pathname: '/',
+  nbViews: [ giftedADHD: 1, cv: 1, index: 1, '/': 1 ]
+}
+[2020-06-26T09:31:29.539] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T07:32:29.538Z,
+    originalMaxAge: 60000,
+    httpOnly: true
+  },
+  sessionID: 'fs0HqztHm-jeqs6743rqPzpd',
+  horodate: 2020-06-26T07:31:29.539Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ giftedADHD: 1, cv: 1, index: 1, '/': 1 ]
+}

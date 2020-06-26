@@ -50,7 +50,7 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         secret: 'qwerty',
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 60000 },
+        cookie: { maxAge: 60000, sameSite: 'lax' },
         sessionID: 0,
         horodate: '',
         ip: '',
@@ -129,7 +129,7 @@ app.get('/', (req, res) => {
     //VIEWS
     if (!req.session.views) {
         req.session.views = {}
-      }
+    }
     var pathname = parseurl(req).pathname
     if (req.session.views[pathname]) {
         req.session.views[pathname]++
