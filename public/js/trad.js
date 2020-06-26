@@ -18,6 +18,7 @@
             $('.english').hide()
             $('.english').fadeIn()
         }
+        $('li').eq(3).css({'background-color':'violet', 'color':'black', 'font-weight':'900'})
         $('li').eq(4).css({'background-color':'red', 'color':'black', 'font-weight':'900'})
         $('li').eq(5).css({'background-color':'orange', 'color':'black', 'font-weight':'900'})  
         $('li').eq(6).css({'background-color':'yellow', 'color':'black', 'font-weight':'900'})
