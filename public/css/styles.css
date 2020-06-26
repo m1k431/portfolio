@@ -411,12 +411,14 @@ h2.how {
 
 h1,
 h2,
-h3,
-h4,
 nav {
   color: white;
   text-align: center;
   font-family: monospace;
+}
+
+span {
+  font-size: 1.2em;
 }
 
 nav ul {
