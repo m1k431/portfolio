@@ -1,0 +1,118 @@
+[2020-06-26T10:14:37.206] [TRACE] trace - index:1
+[2020-06-26T10:23:27.130] [TRACE] trace - index:1
+[2020-06-26T10:23:29.541] [TRACE] trace - cv:1
+[2020-06-26T10:23:30.747] [TRACE] trace - giftedADHD:1
+[2020-06-26T10:23:47.206] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T08:24:30.783Z,
+    originalMaxAge: 60000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  sessionID: 'pUhKoMOYr7JNU-2bVyvrZfs3',
+  horodate: 2020-06-26T08:23:47.205Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ index: 1, cv: 1, giftedADHD: 1, '/': 1 ]
+}
+[2020-06-26T10:23:57.992] [TRACE] trace - cv:2
+[2020-06-26T10:24:02.881] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T08:24:58.082Z,
+    originalMaxAge: 60000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  sessionID: 'pUhKoMOYr7JNU-2bVyvrZfs3',
+  horodate: 2020-06-26T08:24:02.881Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ index: 1, cv: 2, giftedADHD: 1, '/': 2 ]
+}
+[2020-06-26T11:52:11.147] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T09:53:11.147Z,
+    originalMaxAge: 60000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  sessionID: 'tR1E5tj-Ki7E3cJS-3ei_G5D',
+  horodate: 2020-06-26T09:52:11.147Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ index: 1, cv: 2, giftedADHD: 1, '/': 1 ]
+}
+[2020-06-26T11:55:28.609] [TRACE] trace - cv:1
+[2020-06-26T11:55:33.068] [TRACE] trace - giftedADHD:1
+[2020-06-26T11:56:51.143] [TRACE] trace - giftedADHD:1
+[2020-06-26T11:56:55.181] [TRACE] trace - cv:1
+[2020-06-26T11:56:58.678] [TRACE] trace - index:1
+[2020-06-26T11:57:14.375] [TRACE] trace - index:2
+[2020-06-26T11:57:22.974] [TRACE] trace - index:3
+[2020-06-26T11:57:36.560] [TRACE] trace - index:4
+[2020-06-26T11:57:42.956] [TRACE] trace - cv:2
+[2020-06-26T11:57:47.597] [TRACE] trace - giftedADHD:2
+[2020-06-26T11:57:51.665] [TRACE] trace - cv:3
+[2020-06-26T11:57:53.339] [TRACE] trace - giftedADHD:3
+[2020-06-26T11:57:55.988] [TRACE] trace - index:5
+[2020-06-26T11:58:04.882] [TRACE] trace - cv:4
+[2020-06-26T11:58:06.701] [TRACE] trace - index:6
+[2020-06-26T11:59:59.397] [TRACE] trace - index:1
+[2020-06-26T12:00:32.231] [TRACE] trace - index:2
+[2020-06-26T12:01:34.035] [TRACE] trace - index:1
+[2020-06-26T12:01:48.066] [TRACE] trace - index:2
+[2020-06-26T12:02:01.920] [TRACE] trace - index:3
+[2020-06-26T12:02:16.361] [TRACE] trace - index:4
+[2020-06-26T12:02:44.587] [TRACE] trace - index:5
+[2020-06-26T12:02:56.310] [TRACE] trace - index:6
+[2020-06-26T12:03:11.986] [TRACE] trace - index:7
+[2020-06-26T12:04:04.122] [TRACE] trace - index:8
+[2020-06-26T12:04:15.073] [TRACE] trace - index:9

@@ -1,3 +1,0 @@
-Thu Jun 18 2020 16:23:04 GMT+0200 (GMT+02:00)[2020-06-18T17:00:49.065] [TRACE] trace - Visitor 1 => 193.118.53.210 {"range":[3245748224,3245752319],"country":"DE","region":"","eu":"1","timezone":"Europe/Berlin","city":"","ll":[51.2993,9.491],"metro":0,"area":200}
-[2020-06-18T17:06:46.217] [TRACE] trace - Visitor 2 => 90.92.102.225 {"range":[1516003328,1516005375],"country":"FR","region":"IDF","eu":"1","timezone":"Europe/Paris","city":"Paris","ll":[48.8543,2.3527],"metro":0,"area":5}
-[2020-06-18T17:06:46.328] [TRACE] trace - Visitor 3 => 90.92.102.225 {"range":[1516003328,1516005375],"country":"FR","region":"IDF","eu":"1","timezone":"Europe/Paris","city":"Paris","ll":[48.8543,2.3527],"metro":0,"area":5}

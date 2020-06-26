@@ -1,0 +1,62 @@
+[2020-06-26T12:08:20.516] [TRACE] trace - index:1
+[2020-06-26T12:09:43.311] [TRACE] trace - index:1
+[2020-06-26T12:10:03.318] [TRACE] trace - index:2
+[2020-06-26T12:10:11.860] [TRACE] trace - index:3
+[2020-06-26T12:11:55.789] [TRACE] trace - index:1
+[2020-06-26T12:12:11.303] [TRACE] trace - index:2
+[2020-06-26T12:12:12.690] [TRACE] trace - index:3
+[2020-06-26T12:12:23.979] [TRACE] trace - index:4
+[2020-06-26T12:12:25.339] [TRACE] trace - index:5
+[2020-06-26T12:12:50.221] [TRACE] trace - index:6
+[2020-06-26T12:12:56.871] [TRACE] trace - index:7
+[2020-06-26T12:13:09.980] [TRACE] trace - index:8
+[2020-06-26T12:13:26.713] [TRACE] trace - index:9
+[2020-06-26T12:13:40.082] [TRACE] trace - index:10
+[2020-06-26T12:14:00.510] [TRACE] trace - index:11
+[2020-06-26T12:14:13.924] [TRACE] trace - index:12
+[2020-06-26T12:14:41.336] [TRACE] trace - index:13
+[2020-06-26T12:15:05.696] [TRACE] trace - index:14
+[2020-06-26T12:15:34.525] [TRACE] trace - index:15
+[2020-06-26T12:16:02.220] [TRACE] trace - index:16
+[2020-06-26T12:16:24.193] [TRACE] trace - index:17
+[2020-06-26T12:16:34.954] [TRACE] trace - index:18
+[2020-06-26T12:17:01.502] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    path: '/',
+    _expires: 2020-06-26T10:18:01.501Z,
+    originalMaxAge: 60000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  sessionID: 'ZvmKV7BSyEz28eiJpefFQcni',
+  horodate: 2020-06-26T10:17:01.501Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ index: 18, '/': 1 ]
+}
+[2020-06-26T12:17:35.683] [TRACE] trace - cv:1
+[2020-06-26T12:17:37.206] [TRACE] trace - giftedADHD:1
+[2020-06-26T12:17:55.378] [TRACE] trace - index:1
+[2020-06-26T12:17:57.882] [TRACE] trace - giftedADHD:2
+[2020-06-26T12:18:00.760] [TRACE] trace - index:1
+[2020-06-26T12:18:44.934] [TRACE] trace - index:2
+[2020-06-26T12:19:24.660] [TRACE] trace - index:3
+[2020-06-26T12:19:39.074] [TRACE] trace - index:4
+[2020-06-26T12:19:40.012] [TRACE] trace - index:1
+[2020-06-26T12:19:48.117] [TRACE] trace - index:5
+[2020-06-26T12:19:56.762] [TRACE] trace - index:2

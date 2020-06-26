@@ -35,6 +35,20 @@ const monIntro = function () {
     m0nsoleil.height = 300
     m0nsoleil.style.height = '300px'
     m0nsoleil.id = 's0leil'
+    //360backnoreverse
+    var mon360 = document.createElement('video')
+    mon360.style.position = 'absolute'
+    mon360.style.top = '5.5%'
+    mon360.style.right = '34%'
+    mon360.style.width = '38%'
+    mon360.id = 'snowB'
+    mon360.playsinline = true
+    mon360.autoplay = true
+    mon360.muted = true
+    mon360.loop = true
+    var src360 = document.createElement('source')
+    src360.src = '/static/img/360backnoreverse.webm'
+    src360.type = 'video/webm'
     //ATARIIIIIIIIII
     var divAtari = document.createElement('div')
     divAtari.style.position = 'absolute'
@@ -46,20 +60,6 @@ const monIntro = function () {
     //m0nimg.style.top = '36%'
     //m0nimg.style.right = '6%'
     m0nimg.id = 'atari'
-    //360backnoreverse
-    var mon360 = document.createElement('video')
-    mon360.style.position = 'absolute'
-    mon360.style.top = '8%'
-    mon360.style.right = '34%'
-    mon360.height = '88'
-    mon360.id = 'snowB'
-    mon360.playsinline = true
-    mon360.autoplay = true
-    mon360.muted = true
-    mon360.loop = true
-    var src360 = document.createElement('source')
-    src360.src = '/static/img/360backnoreverse.webm'
-    src360.type = 'video/webm'
     //Cielllllllllllll
     var m0nCiel = document.createElement('canvas')
     m0nCiel.style.position = 'absolute'
@@ -152,7 +152,6 @@ const monIntro = function () {
     ctxM4col.stroke()
     ctxM4col.fill()
     
-    m0nsoleil.appendChild(divAtari)
     //SONIC PALM TREEEEEEEE
     var divMonkey = document.createElement('div')
     divMonkey.id = 'divMonkey'
@@ -164,7 +163,6 @@ const monIntro = function () {
     divMonkey.style.left = '59.55px'
     //divMonkey.style.backgroundColor = 'rgba(105, 180, 72, 0.449)'
     divMonkey.style.overflow = 'hidden'
-    m0nsoleil.appendChild(divMonkey)
     var imgMonkey = document.createElement('img')
     imgMonkey.id = 'monkey'
     imgMonkey.className = 'monkey'
@@ -172,7 +170,6 @@ const monIntro = function () {
     imgMonkey.style.height = '100%'
     imgMonkey.style.left = '-2215px'
     imgMonkey.src = '/static/img/monkey.png'
-    divMonkey.appendChild(imgMonkey)
     var imgSonicPalm = document.createElement('img')
     imgSonicPalm.id = 'palmTree'
     imgSonicPalm.className = 'palmTree'
@@ -181,7 +178,6 @@ const monIntro = function () {
     imgSonicPalm.style.top = '0px'
     imgSonicPalm.style.left = '5px'
     imgSonicPalm.src = '/static/img/palmTree.png'
-    m0nsoleil.appendChild(imgSonicPalm)
     //SONICCCCCCCCC
     var divSonic = document.createElement('div')
     divSonic.id = 'divSonic'
@@ -201,12 +197,15 @@ const monIntro = function () {
     imgSonic.style.left = '-55px'
     imgSonic.style.top = '-21px'
     imgSonic.src = '/static/img/sonic2.png'
+    m0nsoleil.appendChild(divMonkey)
+    divMonkey.appendChild(imgMonkey)
+    m0nsoleil.appendChild(imgSonicPalm)
+    m0nsoleil.appendChild(divAtari)
     divSonic.appendChild(imgSonic)
-    //document.getElementById('a7ari').parentNode.replaceChild(m0nimg, document.getElementById('a7ari'))
     divAtari.id = 'atari'
-    divAtari.appendChild(m0nimg)
-    divAtari.appendChild(mon360)
     mon360.appendChild(src360)
+    divAtari.appendChild(mon360)
+    divAtari.appendChild(m0nimg)
     m0nsoleil.appendChild(divSonic)
     var bool1 = false    
     var bool2 = false

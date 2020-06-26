@@ -6,7 +6,7 @@ $colorBody: rgba(19, 42, 121, 0.773);
 %videoSoleil {
     display: none;
     border: 0.7px solid black;
-    width: 400px;
+    width: 80%;
     border-radius: 10px;
     margin: auto;
 }
@@ -42,6 +42,11 @@ iframe {
     border: 1px solid white;
     border-radius: 10px;
     text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
 }
 
 #CV {
@@ -49,7 +54,8 @@ iframe {
     //border: 1px solid white;
     //background-color: rgba(183, 210, 214, 0.1);
     //border-radius: 10px;
-    width: 400px;
+    //width: 400px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5%;
@@ -245,13 +251,13 @@ a {
 }
 
 #BtnJs0nPl4Y {
-    position: absolute;
+    position: relative;
     background-color: transparent;
     color: white;
-    width: 16%;
-    left: 42%;
-    right: 42%;
-    margin-top: 190px;
+    width: 18%;
+    bottom: 40px;
+    margin-left: 39%;
+    margin-right: 39%;
     font-family: $myFont;
     border-radius: 28px;
     font-size: 1em;
@@ -272,6 +278,7 @@ a {
     //background-position: 45% 14%;
     //height: 50%;
     overflow: hidden;
+    height: 70%;
 }
 
 #snowB {
