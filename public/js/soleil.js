@@ -199,9 +199,9 @@ const monIntro = function () {
     imgSonic.src = '/static/img/sonic2.png'
     m0nsoleil.appendChild(divMonkey)
     divMonkey.appendChild(imgMonkey)
+    divSonic.appendChild(imgSonic)
     m0nsoleil.appendChild(imgSonicPalm)
     m0nsoleil.appendChild(divAtari)
-    divSonic.appendChild(imgSonic)
     divAtari.id = 'atari'
     mon360.appendChild(src360)
     divAtari.appendChild(mon360)
