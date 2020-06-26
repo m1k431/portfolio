@@ -50,7 +50,7 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         secret: 'qwerty',
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 60000, sameSite: 'lax' },
+        cookie: {},
         sessionID: 0,
         horodate: '',
         ip: '',
