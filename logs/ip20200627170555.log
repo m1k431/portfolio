@@ -1,0 +1,23 @@
+[2020-06-27T17:06:03.414] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { path: '/', _expires: NaN, originalMaxAge: NaN, httpOnly: true },
+  sessionID: '2AlRQxIOFdV2go1uz3WyDmz3',
+  horodate: 2020-06-27T17:06:03.413Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ '/': 1 ]
+}

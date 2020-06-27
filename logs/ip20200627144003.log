@@ -21,3 +21,98 @@
   pathname: '/',
   nbViews: [ '/': 1 ]
 }
+[2020-06-27T14:41:12.340] [TRACE] trace - cv:1
+[2020-06-27T14:41:17.183] [TRACE] trace - giftedADHD:1
+[2020-06-27T14:41:33.025] [TRACE] trace - index:1
+[2020-06-27T14:41:41.838] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { path: '/', _expires: null, originalMaxAge: null, httpOnly: true },
+  sessionID: 'VoBxltYxp2FT_TzT2mj2qSqQ',
+  horodate: 2020-06-27T14:41:41.837Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ '/': 2, cv: 1, giftedADHD: 1, index: 1 ]
+}
+[2020-06-27T14:41:44.557] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { path: '/', _expires: null, originalMaxAge: null, httpOnly: true },
+  sessionID: 'Y4fZImTI3erwQdXKd9Mvud3v',
+  horodate: 2020-06-27T14:41:44.557Z,
+  ip: '83.97.20.29',
+  geoloc: {
+    range: [ 1398871040, 1398871295 ],
+    country: 'RO',
+    region: 'B',
+    eu: '1',
+    timezone: 'Europe/Bucharest',
+    city: 'Bucharest',
+    ll: [ 44.418, 26.1691 ],
+    metro: 0,
+    area: 200
+  },
+  pathname: '/',
+  nbViews: [ '/': 1, cv: 1, giftedADHD: 1, index: 1 ]
+}
+[2020-06-27T15:42:15.806] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { path: '/', _expires: null, originalMaxAge: null, httpOnly: true },
+  sessionID: 'XM39C180YbmtyvsdGR-bD5DI',
+  horodate: 2020-06-27T15:42:15.806Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  pathname: '/',
+  nbViews: [ '/': 1, cv: 1, giftedADHD: 1, index: 1 ]
+}
+[2020-06-27T15:51:28.315] [TRACE] trace - {
+  genid: [Function: genid],
+  secret: 'qwerty',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { path: '/', _expires: null, originalMaxAge: null, httpOnly: true },
+  sessionID: '02DG5ep0oyANf0PnvQGCYb98',
+  horodate: 2020-06-27T15:51:28.315Z,
+  ip: '185.55.213.238',
+  geoloc: {
+    range: [ 3107443968, 3107444223 ],
+    country: 'IT',
+    region: '77',
+    eu: '1',
+    timezone: 'Europe/Rome',
+    city: 'Tursi',
+    ll: [ 40.2465, 16.4714 ],
+    metro: 0,
+    area: 20
+  },
+  pathname: '/',
+  nbViews: [ '/': 1, cv: 1, giftedADHD: 1, index: 1 ]
+}
