@@ -138,18 +138,18 @@ app.get('/', (req, res) => {
     geo = geoip.lookup(ip)
     //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     //console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    sess.sessionID = req.sessionID
-    sess.horodate = datetime
-    sess.ip = ip
-    sess.geoloc = geo
-    sess.cookie = req.session.cookie
-    sess.pathname = parseurl(req).pathname
-    sess.nbViews[pathname] = req.session.views[pathname]
-    //LOGGER
-    logger.trace(req.session)
+    req.session.sessionID = req.sessionID
+    req.session.horodate = datetime
+    req.session.ip = ip
+    req.session.geoloc = geo
+    //sess.cookie = req.session.cookie
+    //sess.pathname = parseurl(req).pathname
+    //sess.nbViews[pathname] = req.session.views[pathname]
     res.render('index.pug', {
         sess: req.session
     })
+    //LOGGER
+    logger.trace(req.session)
     console.log(req.session)
 })
 
@@ -159,14 +159,14 @@ app.get('/nomPage', (req, res) => {
     var pathname = req.query.r
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     //sess.pathname = parseurl(req).pathname
-    sess.pathname = req.query.r
-    sess.nbViews[pathname] = req.session.views[pathname]
-    //LOGGER
-    logger.trace(pathname + ':' + req.session.views[pathname])
+    //sess.pathname = req.query.r
+    //sess.nbViews[pathname] = req.session.views[pathname]
     if (req.query.r == 'highScore') {
         //AJax
     }
     res.render(req.query.r + '.pug', {})
+    //LOGGER
+    logger.trace(pathname + ':' + req.session.views[pathname])
     console.log(req.session)
 })
 
