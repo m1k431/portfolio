@@ -41,7 +41,6 @@ let datetime = new Date(),
     nbUser = 0,
     logger = log4js.getLogger('trace')
 
-
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     sess = {
@@ -64,9 +63,9 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
     }
 
 //mongoDB
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority"
-const client = new MongoClient(uri, {
+const MongoClient = require('mongodb').MongoClient,
+uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority",
+client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -81,7 +80,6 @@ client.connect(err => {
     client.close()
 })
 
-
 //APP.LOGGER_________________________________________________________________
 log4js.configure({
     appenders: {
@@ -90,13 +88,11 @@ log4js.configure({
     categories: { default: { appenders: ['trace'], level: 'trace' } }
 })
 
-
 //APP.FS_________________________________________________________________
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
     console.log(`The file ${nbLog}.log was succesfully created`)
 })
-
 
 //APP.USE_________________________________________________________________
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
@@ -136,15 +132,10 @@ app.get('/', (req, res) => {
     datetime.setUTCHours(datetime.getHours())
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
-    //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    //console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     req.session.sessionID = req.sessionID
     req.session.horodate = datetime
     req.session.ip = ip
     req.session.geoloc = geo
-    //sess.cookie = req.session.cookie
-    //sess.pathname = parseurl(req).pathname
-    //sess.nbViews[pathname] = req.session.views[pathname]
     res.render('index.pug', {
         sess: req.session
     })
@@ -155,19 +146,15 @@ app.get('/', (req, res) => {
 
 app.get('/nomPage', (req, res) => {
     //VIEWS
-    //var pathname = parseurl(req).pathname
     var pathname = req.query.r
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
-    //sess.pathname = parseurl(req).pathname
-    //sess.pathname = req.query.r
-    //sess.nbViews[pathname] = req.session.views[pathname]
     if (req.query.r == 'highScore') {
         //AJax
     }
     res.render(req.query.r + '.pug', {})
     //LOGGER
-    logger.trace(pathname + ':' + req.session.views[pathname])
-    console.log(req.session)
+    logger.trace(pathname + ': ' + req.session.views[pathname])
+    console.log(pathname + ': ' + req.session.views[pathname])
 })
 
 //APP.LISTEN______________________________________________________________
