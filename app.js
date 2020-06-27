@@ -41,6 +41,7 @@ let datetime = new Date(),
     nbUser = 0,
     logger = log4js.getLogger('trace')
 
+
 var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     sess = {
@@ -122,6 +123,8 @@ app.set('views', 'public')
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
+    //fix UTC+2 hours
+    datetime.setUTCHours(datetime.getHours())
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
     //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
