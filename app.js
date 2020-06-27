@@ -51,7 +51,10 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         secret: 'qwerty',
         resave: false,
         saveUninitialized: true,
-        cookie: { expires: datetime.setUTCFullYear(datetime.getFullYear() + 1)},
+        cookie: {
+            expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
+            maxage: datetime.setUTCFullYear(datetime.getFullYear() + 1)
+        },
         sessionID: 0,
         horodate: '',
         ip: '',
