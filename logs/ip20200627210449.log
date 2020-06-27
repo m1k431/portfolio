@@ -1,0 +1,57 @@
+[2020-06-27T21:04:55.713] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 1624820689372,
+    originalMaxAge: 1624820689372,
+    httpOnly: true,
+    maxage: 1656356689372
+  },
+  views: { '/': 1 }
+}
+[2020-06-27T21:04:58.363] [TRACE] trace - index:1
+[2020-06-27T21:05:00.421] [TRACE] trace - cv:1
+[2020-06-27T21:05:02.386] [TRACE] trace - giftedADHD:1
+[2020-06-27T21:05:11.151] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-23T14:09:51.799Z,
+    originalMaxAge: 1624820689372,
+    httpOnly: true
+  },
+  views: { '/': 2, index: 1, cv: 1, giftedADHD: 1 }
+}
+[2020-06-27T21:05:20.518] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 1624820689372,
+    originalMaxAge: 1624820689372,
+    httpOnly: true,
+    maxage: 1656356689372
+  },
+  views: { '/': 1 }
+}
+[2020-06-27T21:05:22.692] [TRACE] trace - cv:1
+[2020-06-27T21:05:24.290] [TRACE] trace - index:1
+[2020-06-27T21:05:25.944] [TRACE] trace - giftedADHD:1
+[2020-06-27T21:05:27.788] [TRACE] trace - giftedADHD:2
+[2020-06-27T21:05:29.620] [TRACE] trace - giftedADHD:3
+[2020-06-27T21:05:32.790] [TRACE] trace - giftedADHD:4
+[2020-06-27T21:05:34.268] [TRACE] trace - giftedADHD:5
+[2020-06-27T21:05:41.497] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-23T14:10:23.674Z,
+    originalMaxAge: 1624820689372,
+    httpOnly: true
+  },
+  views: { '/': 2, cv: 1, index: 1, giftedADHD: 5 }
+}
+[2020-06-27T21:05:46.897] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-23T14:10:00.698Z,
+    originalMaxAge: 1624820689372,
+    httpOnly: true
+  },
+  views: { '/': 3, index: 1, cv: 1, giftedADHD: 1 }
+}

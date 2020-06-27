@@ -1,0 +1,12 @@
+[2020-06-27T21:04:06.200] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 1624820643744,
+    originalMaxAge: 1624820643744,
+    httpOnly: true,
+    maxage: 1656356643744
+  },
+  views: { '/': 1 }
+}
+[2020-06-27T21:04:09.388] [TRACE] trace - /nomPage:1
+[2020-06-27T21:04:11.637] [TRACE] trace - /nomPage:2

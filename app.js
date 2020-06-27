@@ -119,6 +119,7 @@ if (app.get('env') === 'production') {
     sess.cookie.secure = true // serve secure cookies
 }
 app.use(session(sess))
+
 app.set('view engine', 'pug')
 app.set('views', 'public')
 
@@ -126,23 +127,17 @@ app.set('views', 'public')
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
+    if (!req.session.views) {
+        req.session.views = {}
+    }
+    var pathname = parseurl(req).pathname
+    req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     //fix UTC+2 hours
     datetime.setUTCHours(datetime.getHours())
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
     //logger.trace(`Visitor ${nbUser} => ${ip} ${JSON.stringify(geo)}`)
     //console.log(`${datetime}: Visitor #${nbUser} => ${ip} ${JSON.stringify(geo)}`)
-    //VIEWS
-    if (!req.session.views) {
-        req.session.views = {}
-    }
-    var pathname = parseurl(req).pathname
-    if (req.session.views[pathname]) {
-        req.session.views[pathname]++
-    }
-    else {
-        req.session.views[pathname] = 1
-    }
     sess.sessionID = req.sessionID
     sess.horodate = datetime
     sess.ip = ip
@@ -151,34 +146,28 @@ app.get('/', (req, res) => {
     sess.pathname = parseurl(req).pathname
     sess.nbViews[pathname] = req.session.views[pathname]
     //LOGGER
-    logger.trace(sess)
+    logger.trace(req.session)
     res.render('index.pug', {
         sess: req.session
     })
-    console.log(sess)
+    console.log(req.session)
 })
 
 app.get('/nomPage', (req, res) => {
     //VIEWS
-    if (!req.session.views) {
-        req.session.views = {}
-    }
-    var pathname = parseurl(req).pathname
-    if (req.session.views[req.query.r]) {
-        req.session.views[req.query.r]++
-    }
-    else {
-        req.session.views[req.query.r] = 1
-    }
+    //var pathname = parseurl(req).pathname
+    var pathname = req.query.r
+    req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
+    //sess.pathname = parseurl(req).pathname
     sess.pathname = req.query.r
-    sess.nbViews[req.query.r] = req.session.views[req.query.r]
+    sess.nbViews[pathname] = req.session.views[pathname]
     //LOGGER
-    logger.trace(sess.pathname + ':' + sess.nbViews[req.query.r])
-    res.render(req.query.r + '.pug', {})
+    logger.trace(pathname + ':' + req.session.views[pathname])
     if (req.query.r == 'highScore') {
         //AJax
     }
-    console.log(sess.pathname + ':' + sess.nbViews[req.query.r])
+    res.render(req.query.r + '.pug', {})
+    console.log(req.session)
 })
 
 //APP.LISTEN______________________________________________________________
