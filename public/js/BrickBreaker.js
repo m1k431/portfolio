@@ -13,7 +13,7 @@ const jeuBreaker = function () {
     var $div2blink = $('#metier') // Save reference, only look this item up once, then save
     var idInterBlink = setInterval(function () {
         $div2blink.toggleClass('backgroundRed')
-    }, 1500)
+    }, 700)
 
     //_______________________________Choix_langue____________________________________________________________________________
     $('.english').fadeIn()

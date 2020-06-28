@@ -1,0 +1,95 @@
+[2020-06-28T11:25:32.760] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:51:02.655Z,
+    originalMaxAge: 1624872329900,
+    httpOnly: true,
+    maxage: 1656408329900
+  },
+  views: { '/': 1 },
+  sessionID: 'v8EfztvAqAi9LUcOief9nKyS',
+  horodate: 2020-06-28T11:25:32.144Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}
+[2020-06-28T11:25:38.726] [TRACE] trace - /cv: 1
+[2020-06-28T11:25:41.181] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:51:11.080Z,
+    originalMaxAge: 1624872329900,
+    httpOnly: true
+  },
+  views: { '/': 2, '/cv': 1 },
+  sessionID: 'v8EfztvAqAi9LUcOief9nKyS',
+  horodate: 2020-06-28T11:25:41.044Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}
+[2020-06-28T11:26:27.151] [TRACE] trace - /giftedADHD: 1
+[2020-06-28T11:26:29.517] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:51:59.416Z,
+    originalMaxAge: 1624872329900,
+    httpOnly: true
+  },
+  views: { '/': 3, '/cv': 1, '/giftedADHD': 1 },
+  sessionID: 'v8EfztvAqAi9LUcOief9nKyS',
+  horodate: 2020-06-28T11:26:29.414Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}
+[2020-06-28T11:26:37.439] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:52:07.338Z,
+    originalMaxAge: 1624872329900,
+    httpOnly: true
+  },
+  views: { '/': 4, '/cv': 1, '/giftedADHD': 1 },
+  sessionID: 'v8EfztvAqAi9LUcOief9nKyS',
+  horodate: 2020-06-28T11:26:37.342Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}

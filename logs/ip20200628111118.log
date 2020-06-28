@@ -1,0 +1,93 @@
+[2020-06-28T11:11:26.267] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:22:44.303Z,
+    originalMaxAge: 1624871478041,
+    httpOnly: true,
+    maxage: 1656407478041
+  },
+  views: { '/': 1 },
+  sessionID: 'yVGlvYRLFhI_wj7pIK5gBu4A',
+  horodate: 2020-06-28T11:11:25.693Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}
+[2020-06-28T11:12:12.477] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:23:30.515Z,
+    originalMaxAge: 1624871478041,
+    httpOnly: true
+  },
+  views: { '/': 2 },
+  sessionID: 'yVGlvYRLFhI_wj7pIK5gBu4A',
+  horodate: 2020-06-28T11:12:12.298Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}
+[2020-06-28T11:12:19.683] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:23:37.722Z,
+    originalMaxAge: 1624871478041,
+    httpOnly: true
+  },
+  views: { '/': 3 },
+  sessionID: 'yVGlvYRLFhI_wj7pIK5gBu4A',
+  horodate: 2020-06-28T11:12:19.563Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}
+[2020-06-28T11:12:29.908] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-24T18:23:47.947Z,
+    originalMaxAge: 1624871478041,
+    httpOnly: true
+  },
+  views: { '/': 4 },
+  sessionID: 'yVGlvYRLFhI_wj7pIK5gBu4A',
+  horodate: 2020-06-28T11:12:29.788Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  }
+}

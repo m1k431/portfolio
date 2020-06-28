@@ -144,14 +144,27 @@ app.get('/', (req, res) => {
     console.log(req.session)
 })
 
-app.get('/nomPage', (req, res) => {
+app.get('/cv', (req, res) => {
     //VIEWS
-    var pathname = req.query.r
+    pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
         //AJax
     }
-    res.render(req.query.r + '.pug', {})
+    res.render('cv.pug', {})
+    //LOGGER
+    logger.trace(pathname + ': ' + req.session.views[pathname])
+    console.log(pathname + ': ' + req.session.views[pathname])
+})
+
+app.get('/giftedADHD', (req, res) => {
+    //VIEWS
+    pathname = parseurl(req).pathname
+    req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
+    if (req.query.r == 'highScore') {
+        //AJax
+    }
+    res.render('giftedADHD.pug', {})
     //LOGGER
     logger.trace(pathname + ': ' + req.session.views[pathname])
     console.log(pathname + ': ' + req.session.views[pathname])
