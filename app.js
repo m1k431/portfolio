@@ -20,36 +20,38 @@ Date.prototype.getSecondsFormatted = function () {
 }
 
 const
-    compression = require('compression'),
-    minify = require('express-minify'),
-    favicon = require('serve-favicon'),
+express = require('express'),
+session = require('express-session'),
+app = express(),
+server = require('http').createServer(app),
+uid = require('uid-safe'),
+parseurl = require('parseurl'),
+fs = require('fs'),
+favicon = require('serve-favicon'),
     path = require('path'),
-    express = require('express'),
-    session = require('express-session'),
-    app = express(),
-    server = require('http').createServer(app),
-    frameguard = require('frameguard'),
     log4js = require('log4js'),
-    fs = require('fs'),
     geoip = require('geoip-lite'),
-    uid = require('uid-safe'),
-    parseurl = require('parseurl')
+    minify = require('express-minify'),
+    compression = require('compression'),
+    frameguard = require('frameguard'),
+    sessionFileStore = require('session-file-store')
 
-let datetime = new Date(),
+    let datetime = new Date(),
     p0rt = 80,
     filePath = `./logs/ip${nbLog}.log`,
     nbUser = 0,
     logger = log4js.getLogger('trace')
-
-var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
+    
+    var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     sess = {
         genid: function (req) {
             return uid.sync(18)
         },
-        secret: 'qwerty',
-        resave: false,
+        store: fileStore,
+        resave: true,
         saveUninitialized: true,
+        secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
             maxage: datetime.setUTCFullYear(datetime.getFullYear() + 1)
@@ -60,15 +62,20 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         geoloc: {},
         pathname: '',
         nbViews: []
-    }
+    },
+    expressSessionFileStore = sessionFileStore(session),
+    fileStore = new expressSessionFileStore({
+        ttl: 31104000,
+        path: './sessions'
+    })
 
 //mongoDB
 const MongoClient = require('mongodb').MongoClient,
-uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority",
-client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+    uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    client = new MongoClient(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
 client.connect(err => {
     const collection = client.db("m1k431").collection("brickBreaker")
     // perform actions on the collection object

@@ -32,6 +32,7 @@
     "pug": "^2.0.3",
     "sass": "^1.26.9",
     "serve-favicon": "^2.5.0",
+    "session-file-store": "^1.4.0",
     "socket.io": "^2.2.0",
     "uid-safe": "^2.1.5",
     "yargs-parser": "^18.1.3"
