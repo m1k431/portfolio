@@ -4,7 +4,7 @@
     "display": "fullscreen",
     "icons": [
         {
-        "src": "img/favicon.ico",
+        "src": "favicon.ico",
         "sizes": "16x16",
         "type": "image/png"
     }
