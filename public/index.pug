@@ -8,20 +8,21 @@ append content
             h1 Welcome to my devlab
             video#jugglejungle(playsinline autoplay muted loop poster='/static/img/kuansiFalls.webp')
               source( src='/static/video/theOneFinal.webm' type='video/webm')
-            button#BtnJs0nPl4Y PLAY
-            .paraFoot My name is Mikael
+            //button#BtnJs0nPl4Y PLAY
+            .paraFoot My name is 
+              a.twitter-follow-button(href='https://twitter.com/K431M1?ref_src=twsrc%5Etfw' data-size='large' data-show-count='false') Follow @K431M1
             #s0leil
             .paraFoot I'm an IBM RPG &amp; Javascript Developer
             include jeuCV.pug
             .paraFoot This website hosts my skills, projects and experiences.
             #divTwitter
-              a.twitter-timeline(data-width='480' data-height='960' data-chrome="transparent border" data-theme='' href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by M1K431
+              a.twitter-timeline(data-width='90%' data-height='500px' data-chrome="transparent border" data-theme='' href='https://twitter.com/K431M1?ref_src=K431M1') Tweets by M1K431
       //noborders noheader nofooter
       //include joust.pug
       //include adm1n.pug
 append scripts
   script(async='' src='//embed.redditmedia.com/widgets/platform.js' charset='UTF-8')
-  script(src='https://platform.twitter.com/widgets.js' defer)
+  script(async='' src='https://platform.twitter.com/widgets.js' charset='utf-8')
   script(src='/static/js/soleil.js' async)
   script(src='/static/js/BrickBreaker.js' async)
   script.

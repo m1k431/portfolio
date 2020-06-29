@@ -146,7 +146,7 @@ app.get('/', (req, res) => {
 
 app.get('/cv', (req, res) => {
     //VIEWS
-    pathname = parseurl(req).pathname
+    var pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
         //AJax
@@ -157,9 +157,22 @@ app.get('/cv', (req, res) => {
     console.log(pathname + ': ' + req.session.views[pathname])
 })
 
+app.get('/adm1n', (req, res) => {
+    //VIEWS
+    var pathname = parseurl(req).pathname
+    req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
+    if (req.query.r == 'highScore') {
+        //AJax
+    }
+    res.render('adm1n.pug', {})
+    //LOGGER
+    logger.trace(pathname + ': ' + req.session.views[pathname])
+    console.log(pathname + ': ' + req.session.views[pathname])
+})
+
 app.get('/giftedADHD', (req, res) => {
     //VIEWS
-    pathname = parseurl(req).pathname
+    var pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
         //AJax

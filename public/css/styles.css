@@ -334,7 +334,7 @@ template {
 #jugglejungle {
   display: none;
   border: 0.7px solid black;
-  width: 400px;
+  width: 90%;
   border-radius: 10px;
   margin: auto;
 }
@@ -376,7 +376,7 @@ iframe {
 }
 
 #CV {
-  width: 400px;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.5%;
