@@ -149,7 +149,7 @@ app.get('/', (req, res) => {
 
 app.get('/cv', (req, res) => {
     //VIEWS
-    var pathname = parseurl(req).pathname
+    pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
         //AJax
@@ -162,7 +162,7 @@ app.get('/cv', (req, res) => {
 
 app.get('/adm1n', (req, res) => {
     //VIEWS
-    var pathname = parseurl(req).pathname
+    pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
         //AJax
@@ -175,7 +175,7 @@ app.get('/adm1n', (req, res) => {
 
 app.get('/giftedADHD', (req, res) => {
     //VIEWS
-    var pathname = parseurl(req).pathname
+    pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
         //AJax

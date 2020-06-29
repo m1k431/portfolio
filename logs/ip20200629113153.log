@@ -1,0 +1,98 @@
+[2020-06-29T11:32:13.943] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-26T19:04:07.901Z,
+    originalMaxAge: 1624959113962,
+    httpOnly: true,
+    maxage: 1656495113962
+  },
+  views: { '/': 1 },
+  sessionID: 'y6t0cSIXMCPpFPIMfwHbJUug',
+  horodate: 2020-06-29T11:32:13.438Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  __lastAccess: 1593423133939
+}
+[2020-06-29T11:33:38.258] [TRACE] trace - /giftedADHD: 1
+[2020-06-29T11:33:49.852] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-26T19:05:43.813Z,
+    originalMaxAge: 1624959113962,
+    httpOnly: true
+  },
+  views: { '/': 2, '/giftedADHD': 1 },
+  sessionID: 'y6t0cSIXMCPpFPIMfwHbJUug',
+  horodate: 2020-06-29T11:33:49.731Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  __lastAccess: 1593423229851
+}
+[2020-06-29T11:33:53.328] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-26T19:05:47.289Z,
+    originalMaxAge: 1624959113962,
+    httpOnly: true
+  },
+  views: { '/': 3, '/giftedADHD': 1 },
+  sessionID: 'y6t0cSIXMCPpFPIMfwHbJUug',
+  horodate: 2020-06-29T11:33:53.257Z,
+  ip: '86.247.253.198',
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  __lastAccess: 1593423233327
+}
+[2020-06-29T11:35:41.262] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-26T18:56:20.527Z,
+    originalMaxAge: 1624958439266,
+    httpOnly: true
+  },
+  views: { '/': 2, '/giftedADHD': 1 },
+  sessionID: 'wV5NYI4c-Dmt0RWr5HbH8hWJ',
+  horodate: 2020-06-29T11:35:41.198Z,
+  ip: '92.184.107.80',
+  geoloc: {
+    range: [ 1555589120, 1555590143 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 200
+  },
+  __lastAccess: 1593423341262
+}
