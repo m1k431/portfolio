@@ -20,35 +20,36 @@ Date.prototype.getSecondsFormatted = function () {
 }
 
 const
-express = require('express'),
-session = require('express-session'),
-app = express(),
-server = require('http').createServer(app),
-uid = require('uid-safe'),
-parseurl = require('parseurl'),
-fs = require('fs'),
-favicon = require('serve-favicon'),
+    express = require('express'),
+    app = express(),
+    session = require('express-session'),
+    server = require('http').createServer(app),
+    uid = require('uid-safe'),
+    parseurl = require('parseurl'),
+    fs = require('fs'),
+    favicon = require('serve-favicon'),
     path = require('path'),
     log4js = require('log4js'),
     geoip = require('geoip-lite'),
     minify = require('express-minify'),
     compression = require('compression'),
     frameguard = require('frameguard'),
-    sessionFileStore = require('session-file-store')
+    FileStore = require('session-file-store')(session)
 
-    let datetime = new Date(),
+let datetime = new Date(),
     p0rt = 80,
     filePath = `./logs/ip${nbLog}.log`,
     nbUser = 0,
     logger = log4js.getLogger('trace')
-    
-    var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
+
+var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
+    expressSessionFileStore = FileStore(session),
     sess = {
         genid: function (req) {
             return uid.sync(18)
         },
-        store: fileStore,
+        store: new FileStore,
         resave: true,
         saveUninitialized: true,
         secret: 'qwerty',
@@ -62,12 +63,7 @@ favicon = require('serve-favicon'),
         geoloc: {},
         pathname: '',
         nbViews: []
-    },
-    expressSessionFileStore = sessionFileStore(session),
-    fileStore = new expressSessionFileStore({
-        ttl: 31104000,
-        path: './sessions'
-    })
+    }
 
 //mongoDB
 const MongoClient = require('mongodb').MongoClient,
