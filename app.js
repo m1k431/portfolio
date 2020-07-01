@@ -34,7 +34,8 @@ const
     minify = require('express-minify'),
     compression = require('compression'),
     frameguard = require('frameguard'),
-    FileStore = require('session-file-store')(session)
+    FileStore = require('session-file-store')(session),
+    ms = require('ms')
 
 let datetime = new Date(),
     p0rt = 80,
@@ -55,7 +56,7 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
-            maxage: datetime.setUTCFullYear(datetime.getFullYear() + 1)
+            maxage: ms('3600 days')
         },
         sessionID: 0,
         horodate: '',
