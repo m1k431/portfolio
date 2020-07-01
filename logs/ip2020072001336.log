@@ -1,0 +1,39 @@
+[2020-07-02T00:15:13.154] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-29T15:10:27.753Z,
+    originalMaxAge: 1624985714601,
+    httpOnly: true
+  },
+  views: { '/': 10, '/cv': 1 },
+  sessionID: 'wisnIZ9gimMe2OmTSP1MdDkl',
+  horodate: 2020-07-01T00:15:12.568Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  __lastAccess: 1593641713153
+}
+[2020-07-02T00:17:07.654] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-29T07:29:25.619Z,
+    originalMaxAge: 1624957937968,
+    httpOnly: true
+  },
+  views: { '/': 78, '/cv': 33, '/adm1n': 14, '/giftedADHD': 18 },
+  sessionID: 'R5fFgf2MY5GywsnD_EjXqJmF',
+  horodate: 2020-07-01T00:17:07.469Z,
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  __lastAccess: 1593641827651,
+  ip: '86.247.253.198'
+}
+[2020-07-02T00:17:14.318] [TRACE] trace - /giftedADHD: 19

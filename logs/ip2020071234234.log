@@ -1,0 +1,25 @@
+[2020-07-01T23:51:33.774] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-31T19:34:08.003Z,
+    originalMaxAge: 1625175754232,
+    httpOnly: true,
+    maxage: 311040000000
+  },
+  views: { '/': 1 },
+  sessionID: 'kkz5_7evxiNJBfy31krNJgAh',
+  horodate: 2020-07-01T23:51:33.065Z,
+  ip: '220.135.168.146',
+  geoloc: {
+    range: [ 3699877888, 3699879935 ],
+    country: 'TW',
+    region: 'TPE',
+    eu: '0',
+    timezone: 'Asia/Taipei',
+    city: 'Taipei',
+    ll: [ 25.0478, 121.5318 ],
+    metro: 0,
+    area: 1
+  },
+  __lastAccess: 1593640293771
+}

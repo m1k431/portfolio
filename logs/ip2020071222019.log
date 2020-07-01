@@ -1,0 +1,24 @@
+[2020-07-01T22:20:24.826] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-29T05:32:42.789Z,
+    originalMaxAge: 1624957937968,
+    httpOnly: true
+  },
+  views: { '/': 77, '/cv': 33, '/adm1n': 14, '/giftedADHD': 18 },
+  sessionID: 'R5fFgf2MY5GywsnD_EjXqJmF',
+  horodate: 2020-07-01T22:20:24.066Z,
+  geoloc: {
+    range: [ 1459091456, 1459093503 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 1
+  },
+  __lastAccess: 1593634824821,
+  ip: '86.247.253.198'
+}

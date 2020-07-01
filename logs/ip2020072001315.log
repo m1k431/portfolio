@@ -1,0 +1,14 @@
+[2020-07-02T00:13:22.253] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-29T15:08:36.853Z,
+    originalMaxAge: 1624985714601,
+    httpOnly: true
+  },
+  views: { '/': 9, '/cv': 1 },
+  sessionID: 'wisnIZ9gimMe2OmTSP1MdDkl',
+  horodate: 2020-07-01T00:13:21.688Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  __lastAccess: 1593641602252
+}

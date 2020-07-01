@@ -116,7 +116,7 @@ app.use('/static', express.static(__dirname + '/public', {
 
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
-    sess.cookie.secure = true // serve secure cookies
+    sess.cookie.secure = false // serve secure cookies
 }
 app.use(session(sess))
 
@@ -136,7 +136,6 @@ app.get('/', (req, res) => {
     datetime.setUTCHours(datetime.getHours())
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
-    req.session.sessionID = req.sessionID
     req.session.horodate = datetime
     req.session.ip = ip
     req.session.geoloc = geo
