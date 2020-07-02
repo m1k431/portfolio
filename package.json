@@ -38,7 +38,9 @@
     "uid-safe": "^2.1.5",
     "yargs-parser": "^18.1.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.3.1"
+  },
   "bugs": {
     "url": "https://github.com/m1k431/portfolio/issues"
   },

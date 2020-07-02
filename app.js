@@ -29,7 +29,6 @@ const
     fs = require('fs'),
     favicon = require('serve-favicon'),
     path = require('path'),
-    log4js = require('log4js'),
     geoip = require('geoip-lite'),
     minify = require('express-minify'),
     compression = require('compression'),
@@ -50,7 +49,7 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         genid: function (req) {
             return uid.sync(18)
         },
-        store: new FileStore,
+        store: new FileStore(),
         resave: true,
         saveUninitialized: true,
         secret: 'qwerty',
@@ -107,11 +106,10 @@ app.use(compression())
 app.use(minify({
     cache: false,
     jsMatch: /js/,
-    cssMatch: /css/,
-    sassMatch: /scss/
+    cssMatch: /css/
 }))
 app.use('/static', express.static(__dirname + '/public', {
-    maxage: '0d'
+    maxage: '1d'
 }))
 
 if (app.get('env') === 'production') {
