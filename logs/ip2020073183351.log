@@ -1,0 +1,145 @@
+[2020-07-03T18:33:53.897] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-31T01:46:11.863Z,
+    originalMaxAge: 1624957937967,
+    httpOnly: true
+  },
+  views: { '/': 134, '/cv': 45, '/adm1n': 40, '/giftedADHD': 31 },
+  sessionID: 'R5fFgf2MY5GywsnD_EjXqJmF',
+  horodate: '2020-07-03T17:18:25.834Z',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794027876,
+  ip: '83.202.34.239'
+}
+[2020-07-03T18:33:55.683] [TRACE] trace - /cv: 1
+[2020-07-03T18:33:59.846] [TRACE] trace - /cv: 2
+[2020-07-03T18:34:02.079] [TRACE] trace - /adm1n: 1
+[2020-07-03T18:34:05.214] [TRACE] trace - /giftedADHD: 1
+[2020-07-03T18:34:07.750] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-31T01:46:25.717Z,
+    originalMaxAge: 1624957937967,
+    httpOnly: true
+  },
+  views: { '/': 134, '/cv': 45, '/adm1n': 40, '/giftedADHD': 31 },
+  sessionID: 'R5fFgf2MY5GywsnD_EjXqJmF',
+  horodate: '2020-07-03T17:18:25.834Z',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794045215,
+  ip: '83.202.34.239'
+}
+[2020-07-03T18:34:20.575] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:41:27.299Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 2 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593670096154
+}
+[2020-07-03T18:34:24.618] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:41:31.343Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 2 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794060581
+}
+[2020-07-03T18:34:30.926] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:41:37.651Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 2 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794064624
+}
+[2020-07-03T18:34:43.117] [TRACE] trace - /cv: 3
+[2020-07-03T18:35:02.752] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-04T06:36:41.982Z,
+    originalMaxAge: 1625320899230,
+    httpOnly: true
+  },
+  views: { '/': 2, '/cv': 1 },
+  horodate: '2020-07-03T16:20:28.131Z',
+  ip: '92.184.117.65',
+  geoloc: {
+    range: [ 1555592192, 1555592703 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Saint-Cloud',
+    ll: [ 48.846, 2.2029 ],
+    metro: 0,
+    area: 200
+  },
+  __lastAccess: 1593786028179
+}

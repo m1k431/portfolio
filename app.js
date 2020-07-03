@@ -61,9 +61,7 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         sessionID: 0,
         horodate: '',
         ip: '',
-        geoloc: {},
-        pathname: '',
-        nbViews: []
+        geoloc: {}
     }
 
 //mongoDB
@@ -124,7 +122,6 @@ app.set('views', 'public')
 
 //APP.GET_________________________________________________________________
 app.get('/', (req, res) => {
-    nbUser++
     datetime = new Date()
     //VIEWS
     if (!req.session.views) {
@@ -136,14 +133,14 @@ app.get('/', (req, res) => {
     datetime.setUTCHours(datetime.getHours())
     ip = req.connection.remoteAddress
     geo = geoip.lookup(ip)
-    req.session.horodate = datetime
-    req.session.ip = ip
-    req.session.geoloc = geo
-    sess: req.session
+    sess.horodate = datetime
+    sess.ip = ip
+    sess.geoloc = geo
+    sess.views = req.session.views
     res.render('index.pug', {})
     //LOGGER
-    logger.trace(req.session)
-    console.log(req.session)
+    logger.trace(sess)
+    console.log(sess)
 })
 
 app.get('/cv', (req, res) => {
@@ -156,12 +153,11 @@ app.get('/cv', (req, res) => {
     if (req.query.r == 'highScore') {
         //AJax
     }
+    sess.views = req.session.views
     res.render('cv.pug', {})
     //LOGGER
-    logger.trace(pathname + ': ' + req.session.views[pathname])
-    logger.trace(req.session)
-    console.log(pathname + ': ' + req.session.views[pathname])
-    console.log(req.session)
+    logger.trace(sess)
+    console.log(sess)
 })
 
 app.get('/adm1n', (req, res) => {
@@ -174,12 +170,11 @@ app.get('/adm1n', (req, res) => {
     if (req.query.r == 'highScore') {
         //AJax
     }
+    sess.views = req.session.views
     res.render('adm1n.pug', {})
     //LOGGER
-    logger.trace(pathname + ': ' + req.session.views[pathname])
-    logger.trace(req.session)
-    console.log(pathname + ': ' + req.session.views[pathname])
-    console.log(req.session)
+    logger.trace(sess)
+    console.log(sess)
 })
 
 app.get('/giftedADHD', (req, res) => {
@@ -192,13 +187,12 @@ app.get('/giftedADHD', (req, res) => {
     if (req.query.r == 'highScore') {
         //AJax
     }
+    sess.views = req.session.views
     res.render('giftedADHD.pug', {})
     //LOGGER
     //LOGGER
-    logger.trace(pathname + ': ' + req.session.views[pathname])
-    logger.trace(req.session)
-    console.log(pathname + ': ' + req.session.views[pathname])
-    console.log(req.session)
+    logger.trace(sess)
+    console.log(sess)
 })
 
 //APP.LISTEN______________________________________________________________

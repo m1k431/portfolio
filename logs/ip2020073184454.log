@@ -1,0 +1,92 @@
+[2020-07-03T18:44:57.415] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:52:04.134Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 1 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794697409
+}
+[2020-07-03T18:44:59.937] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:52:06.661Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 1 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794697409
+}
+[2020-07-03T18:45:03.634] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:52:10.359Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 1 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794699941
+}
+[2020-07-03T18:45:04.757] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-02T22:52:11.481Z,
+    originalMaxAge: 1625206026725,
+    httpOnly: true
+  },
+  views: { '/': 1 },
+  horodate: '2020-07-02T08:08:16.031Z',
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593794703638
+}

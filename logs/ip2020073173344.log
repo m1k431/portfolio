@@ -1,0 +1,48 @@
+[2020-07-03T17:40:38.135] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-04T07:14:22.651Z,
+    originalMaxAge: 1625326424520,
+    httpOnly: true,
+    maxage: 311040000000
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-03T17:40:37.614Z,
+  ip: '185.39.11.105',
+  geoloc: {
+    range: [ 3106342912, 3106343935 ],
+    country: 'CH',
+    region: '',
+    eu: '0',
+    timezone: 'Europe/Zurich',
+    city: '',
+    ll: [ 47.1449, 8.1551 ],
+    metro: 0,
+    area: 100
+  },
+  __lastAccess: 1593790838131
+}
+[2020-07-03T18:11:57.513] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-04T07:45:42.032Z,
+    originalMaxAge: 1625326424520,
+    httpOnly: true,
+    maxage: 311040000000
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-03T18:11:57.405Z,
+  ip: '66.249.79.82',
+  geoloc: {
+    range: [ 1123635024, 1123635039 ],
+    country: 'US',
+    region: '',
+    eu: '0',
+    timezone: 'America/Chicago',
+    city: '',
+    ll: [ 37.751, -97.822 ],
+    metro: 0,
+    area: 1000
+  },
+  __lastAccess: 1593792717512
+}
