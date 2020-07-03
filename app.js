@@ -58,7 +58,6 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
             maxage: ms('3600 days')
         },
-        sessionID: 0,
         horodate: '',
         ip: '',
         geoloc: {}
