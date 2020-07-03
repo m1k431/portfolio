@@ -1,0 +1,96 @@
+[2020-07-03T14:11:28.297] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2071-12-30T21:23:46.263Z,
+    originalMaxAge: 1624957937968,
+    httpOnly: true
+  },
+  views: { '/': 107, '/cv': 36, '/adm1n': 17, '/giftedADHD': 20 },
+  sessionID: 'R5fFgf2MY5GywsnD_EjXqJmF',
+  horodate: 2020-07-03T14:11:27.716Z,
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1593778288296,
+  ip: '83.202.34.239'
+}
+[2020-07-03T14:21:33.214] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-04T00:32:46.310Z,
+    originalMaxAge: 1625314273098,
+    httpOnly: true,
+    maxage: 311040000000
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-03T14:21:33.102Z,
+  ip: '92.118.52.50',
+  geoloc: {
+    range: [ 1551249408, 1551251455 ],
+    country: 'DE',
+    region: '',
+    eu: '1',
+    timezone: 'Europe/Berlin',
+    city: '',
+    ll: [ 51.2993, 9.491 ],
+    metro: 0,
+    area: 200
+  },
+  __lastAccess: 1593778893212
+}
+[2020-07-03T14:35:49.213] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-04T00:47:02.310Z,
+    originalMaxAge: 1625314273098,
+    httpOnly: true,
+    maxage: 311040000000
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-03T14:35:49.139Z,
+  ip: '198.20.103.178',
+  geoloc: {
+    range: [ 3323224064, 3323228159 ],
+    country: 'NL',
+    region: 'NH',
+    eu: '1',
+    timezone: 'Europe/Amsterdam',
+    city: '',
+    ll: [ 52.35, 4.9167 ],
+    metro: 0,
+    area: 100
+  },
+  __lastAccess: 1593779749212
+}
+[2020-07-03T14:37:53.330] [TRACE] trace - Session {
+  cookie: {
+    path: '/',
+    _expires: 2072-01-04T00:49:06.428Z,
+    originalMaxAge: 1625314273098,
+    httpOnly: true,
+    maxage: 311040000000
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-03T14:37:53.263Z,
+  ip: '205.185.124.12',
+  geoloc: {
+    range: [ 3451485184, 3451486207 ],
+    country: 'US',
+    region: 'CA',
+    eu: '0',
+    timezone: 'America/Los_Angeles',
+    city: 'San Jose',
+    ll: [ 37.3387, -121.8914 ],
+    metro: 807,
+    area: 1000
+  },
+  __lastAccess: 1593779873330
+}

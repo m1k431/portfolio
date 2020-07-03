@@ -19,7 +19,7 @@ Date.prototype.getSecondsFormatted = function () {
     return seconds < 10 ? '0' + seconds : seconds
 }
 
-const
+var
     express = require('express'),
     app = express(),
     session = require('express-session'),
@@ -29,6 +29,7 @@ const
     fs = require('fs'),
     favicon = require('serve-favicon'),
     path = require('path'),
+    log4js = require('log4js'),
     geoip = require('geoip-lite'),
     minify = require('express-minify'),
     compression = require('compression'),
@@ -50,8 +51,8 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
             return uid.sync(18)
         },
         store: new FileStore(),
-        resave: true,
-        saveUninitialized: true,
+        resave: false,
+        saveUninitialized: false,
         secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
@@ -125,6 +126,7 @@ app.set('views', 'public')
 app.get('/', (req, res) => {
     nbUser++
     datetime = new Date()
+    //VIEWS
     if (!req.session.views) {
         req.session.views = {}
     }
@@ -137,9 +139,8 @@ app.get('/', (req, res) => {
     req.session.horodate = datetime
     req.session.ip = ip
     req.session.geoloc = geo
-    res.render('index.pug', {
-        sess: req.session
-    })
+    sess: req.session
+    res.render('index.pug', {})
     //LOGGER
     logger.trace(req.session)
     console.log(req.session)
@@ -147,6 +148,9 @@ app.get('/', (req, res) => {
 
 app.get('/cv', (req, res) => {
     //VIEWS
+    if (!req.session.views) {
+        req.session.views = {}
+    }
     pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
@@ -155,11 +159,16 @@ app.get('/cv', (req, res) => {
     res.render('cv.pug', {})
     //LOGGER
     logger.trace(pathname + ': ' + req.session.views[pathname])
+    logger.trace(req.session)
     console.log(pathname + ': ' + req.session.views[pathname])
+    console.log(req.session)
 })
 
 app.get('/adm1n', (req, res) => {
     //VIEWS
+    if (!req.session.views) {
+        req.session.views = {}
+    }
     pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
@@ -168,11 +177,16 @@ app.get('/adm1n', (req, res) => {
     res.render('adm1n.pug', {})
     //LOGGER
     logger.trace(pathname + ': ' + req.session.views[pathname])
+    logger.trace(req.session)
     console.log(pathname + ': ' + req.session.views[pathname])
+    console.log(req.session)
 })
 
 app.get('/giftedADHD', (req, res) => {
     //VIEWS
+    if (!req.session.views) {
+        req.session.views = {}
+    }
     pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     if (req.query.r == 'highScore') {
@@ -180,8 +194,11 @@ app.get('/giftedADHD', (req, res) => {
     }
     res.render('giftedADHD.pug', {})
     //LOGGER
+    //LOGGER
     logger.trace(pathname + ': ' + req.session.views[pathname])
+    logger.trace(req.session)
     console.log(pathname + ': ' + req.session.views[pathname])
+    console.log(req.session)
 })
 
 //APP.LISTEN______________________________________________________________
@@ -194,5 +211,6 @@ app.use((error, req, res) => {
 })
 
 server.listen(p0rt, '0.0.0.0', () => {
+    //LOGGER
     console.log(`Listening on ${server.address().address}:${server.address().port}`)
 })
