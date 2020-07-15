@@ -3,5 +3,21 @@ append content
   .content
     .table-cell
       .m0ncentrageParafoot
-        iframe(width='480' height='270' src='https://www.youtube.com/embed/KOJaHC3eEbc' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
-        //img#img404(src='/static/img/pugsvg.svg')
+        #player
+          //iframe(width='480' height='270' src='https://www.youtube.com/embed/KOJaHC3eEbc' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+          //img#img404(src='/static/img/pugsvg.svg')
+append scripts
+  script(src='/static/js/youtubeAPI.js')
+  script.
+    var player
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '270',
+        width: '480',
+        videoId: 'KOJaHC3eEbc',
+        playerVars: { 'autoplay': 1 , 'controls': 0 },
+        events: {
+          'onReady': onPlayerReady
+        }
+      })
+    }
