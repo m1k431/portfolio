@@ -20,6 +20,7 @@ Date.prototype.getSecondsFormatted = function () {
 }
 
 var express = require('express'),
+    helmet = require('helmet'),
     session = require('express-session'),
     FileStore = require('session-file-store')(session),
     uid = require('uid-safe'),
@@ -47,8 +48,8 @@ let p0rt = 80,
             return uid.sync(18)
         },
         store: new FileStore(),
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
         secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
@@ -96,6 +97,7 @@ fs.writeFile(filePath, datetime, (err) => {
 })
 
 //APP.USE_________________________________________________________________
+app.use(helmet())
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -113,7 +115,7 @@ app.use(minify({
     cssMatch: /css/
 }))
 app.use('/static', express.static(__dirname + '/public', {
-    maxage: '1d'
+    maxAge: '1d'
 }))
 
 if (app.get('env') === 'production') {
@@ -195,7 +197,6 @@ app.get('/giftedADHD', (req, res) => {
     }
     sess.views = req.session.views
     res.render('giftedADHD.pug', {})
-    //LOGGER
     //LOGGER
     logger.trace(sess)
     console.log(sess)
