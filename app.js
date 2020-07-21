@@ -37,13 +37,8 @@ var
     FileStore = require('session-file-store')(session),
     ms = require('ms')
 
-let datetime = new Date(),
-    p0rt = 80,
-    filePath = `./logs/ip${nbLog}.log`,
-    nbUser = 0,
-    logger = log4js.getLogger('trace')
-
-var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
+var datetime = new Date(),
+    nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
     expressSessionFileStore = FileStore(session),
     sess = {
@@ -62,6 +57,11 @@ var nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + Stri
         ip: '',
         geoloc: {}
     }
+
+let p0rt = 80,
+    filePath = `./logs/ip${nbLog}.log`,
+    nbUser = 0,
+    logger = log4js.getLogger('trace')
 
 //mongoDB
 const MongoClient = require('mongodb').MongoClient,
