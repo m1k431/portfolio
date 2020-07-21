@@ -19,11 +19,9 @@ Date.prototype.getSecondsFormatted = function () {
     return seconds < 10 ? '0' + seconds : seconds
 }
 
-var
-    express = require('express'),
+var express = require('express'),
     app = express(),
     session = require('express-session'),
-    server = require('http').createServer(app),
     uid = require('uid-safe'),
     parseurl = require('parseurl'),
     fs = require('fs'),
@@ -38,9 +36,9 @@ var
     ms = require('ms')
 
 var datetime = new Date(),
+    logger = log4js.getLogger('file'),
     nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
-    expressSessionFileStore = FileStore(session),
     sess = {
         genid: function (req) {
             return uid.sync(18)
@@ -59,9 +57,19 @@ var datetime = new Date(),
     }
 
 let p0rt = 80,
-    filePath = `./logs/ip${nbLog}.log`,
-    nbUser = 0,
-    logger = log4js.getLogger('trace')
+    filePath = `./logs/ip${nbLog}.log`
+
+//APP.LOGGER_________________________________________________________________
+log4js.configure({
+    appenders: {
+        console: { type: 'console' },
+        file: { type: 'file', filename: `logs/ip${nbLog}.log` }
+    },
+    categories: {
+        file: { appenders: ['file'], level: 'trace' },
+        default: { appenders: ['console'], level: 'trace' }
+    }
+})
 
 //mongoDB
 const MongoClient = require('mongodb').MongoClient,
@@ -79,14 +87,6 @@ client.connect(err => {
         score: '123'
     })*/
     client.close()
-})
-
-//APP.LOGGER_________________________________________________________________
-log4js.configure({
-    appenders: {
-        trace: { type: 'file', filename: `logs/ip${nbLog}.log` }
-    },
-    categories: { default: { appenders: ['trace'], level: 'trace' } }
 })
 
 //APP.FS_________________________________________________________________
@@ -203,7 +203,7 @@ app.use((error, req, res) => {
     res.status(500).render('404.pug')
 })
 
-server.listen(p0rt, '0.0.0.0', () => {
+var listener = app.listen(p0rt, '0.0.0.0', () => {
     //LOGGER
-    console.log(`Listening on ${server.address().address}:${server.address().port}`)
+    console.log(`Listening on ${listener.address().address}:${listener.address().port}`)
 })
