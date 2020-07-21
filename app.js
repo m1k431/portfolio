@@ -20,9 +20,10 @@ Date.prototype.getSecondsFormatted = function () {
 }
 
 var express = require('express'),
-    app = express(),
     session = require('express-session'),
+    FileStore = require('session-file-store')(session),
     uid = require('uid-safe'),
+    bodyParser = require('body-parser'),
     parseurl = require('parseurl'),
     fs = require('fs'),
     favicon = require('serve-favicon'),
@@ -32,13 +33,15 @@ var express = require('express'),
     minify = require('express-minify'),
     compression = require('compression'),
     frameguard = require('frameguard'),
-    FileStore = require('session-file-store')(session),
-    ms = require('ms')
-
-var datetime = new Date(),
+    ms = require('ms'),
+    datetime = new Date(),
     logger = log4js.getLogger('file'),
     nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
     ip, geo,
+    app = express()
+
+let p0rt = 80,
+    filePath = `./logs/ip${nbLog}.log`,
     sess = {
         genid: function (req) {
             return uid.sync(18)
@@ -49,15 +52,12 @@ var datetime = new Date(),
         secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
-            maxage: ms('3600 days')
+            maxAge: ms('90 days')
         },
         horodate: '',
         ip: '',
         geoloc: {}
     }
-
-let p0rt = 80,
-    filePath = `./logs/ip${nbLog}.log`
 
 //APP.LOGGER_________________________________________________________________
 log4js.configure({
@@ -96,6 +96,12 @@ fs.writeFile(filePath, datetime, (err) => {
 })
 
 //APP.USE_________________________________________________________________
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
 app.use(frameguard({
     action: 'sameorigin'
@@ -140,6 +146,7 @@ app.get('/', (req, res) => {
     //LOGGER
     logger.trace(sess)
     console.log(sess)
+    console.log(`expires in: ${(req.session.cookie.maxAge / 1000 / 60 / 60 / 24)} days`)
 })
 
 app.get('/cv', (req, res) => {

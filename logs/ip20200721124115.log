@@ -1,0 +1,230 @@
+Wed Jul 21 2021 12:41:15 GMT+0200 (GMT+02:00)[2020-07-21T12:41:19.469] [TRACE] file - {
+  genid: [Function: genid],
+  store: FileStore {
+    _events: [Object: null prototype] {
+      disconnect: [Function: ondisconnect],
+      connect: [Function: onconnect]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    options: {
+      path: 'sessions',
+      ttl: 3600,
+      retries: 5,
+      factor: 1,
+      minTimeout: 50,
+      maxTimeout: 100,
+      reapInterval: 3600,
+      reapMaxConcurrent: 10,
+      reapAsync: false,
+      reapSyncFallback: false,
+      logFn: [Function: bound consoleCall],
+      encoding: 'utf8',
+      encoder: [Function: stringify],
+      decoder: [Function: parse],
+      encryptEncoding: 'hex',
+      fileExtension: '.json',
+      crypto: [Object],
+      keyFunction: [Function: keyFunction],
+      filePattern: /\.json$/,
+      reapIntervalObject: Timeout {
+        _idleTimeout: 3600000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 328,
+        _onTimeout: [Function],
+        _timerArgs: undefined,
+        _repeat: 3600000,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 6,
+        [Symbol(triggerId)]: 1
+      }
+    },
+    generate: [Function],
+    [Symbol(kCapture)]: false
+  },
+  resave: false,
+  saveUninitialized: false,
+  secret: 'qwerty',
+  cookie: { expires: 1626864075069, maxAge: 3110400000 },
+  horodate: 2020-07-21T12:41:18.935Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  views: { '/': 2 }
+}
+[2020-07-21T12:41:22.486] [TRACE] file - {
+  genid: [Function: genid],
+  store: FileStore {
+    _events: [Object: null prototype] {
+      disconnect: [Function: ondisconnect],
+      connect: [Function: onconnect]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    options: {
+      path: 'sessions',
+      ttl: 3600,
+      retries: 5,
+      factor: 1,
+      minTimeout: 50,
+      maxTimeout: 100,
+      reapInterval: 3600,
+      reapMaxConcurrent: 10,
+      reapAsync: false,
+      reapSyncFallback: false,
+      logFn: [Function: bound consoleCall],
+      encoding: 'utf8',
+      encoder: [Function: stringify],
+      decoder: [Function: parse],
+      encryptEncoding: 'hex',
+      fileExtension: '.json',
+      crypto: [Object],
+      keyFunction: [Function: keyFunction],
+      filePattern: /\.json$/,
+      reapIntervalObject: Timeout {
+        _idleTimeout: 3600000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 328,
+        _onTimeout: [Function],
+        _timerArgs: undefined,
+        _repeat: 3600000,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 6,
+        [Symbol(triggerId)]: 1
+      }
+    },
+    generate: [Function],
+    [Symbol(kCapture)]: false
+  },
+  resave: false,
+  saveUninitialized: false,
+  secret: 'qwerty',
+  cookie: { expires: 1626864075069, maxAge: 3110400000 },
+  horodate: 2020-07-21T12:41:22.372Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  views: { '/': 1 }
+}
+[2020-07-21T12:41:30.420] [TRACE] file - {
+  genid: [Function: genid],
+  store: FileStore {
+    _events: [Object: null prototype] {
+      disconnect: [Function: ondisconnect],
+      connect: [Function: onconnect]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    options: {
+      path: 'sessions',
+      ttl: 3600,
+      retries: 5,
+      factor: 1,
+      minTimeout: 50,
+      maxTimeout: 100,
+      reapInterval: 3600,
+      reapMaxConcurrent: 10,
+      reapAsync: false,
+      reapSyncFallback: false,
+      logFn: [Function: bound consoleCall],
+      encoding: 'utf8',
+      encoder: [Function: stringify],
+      decoder: [Function: parse],
+      encryptEncoding: 'hex',
+      fileExtension: '.json',
+      crypto: [Object],
+      keyFunction: [Function: keyFunction],
+      filePattern: /\.json$/,
+      reapIntervalObject: Timeout {
+        _idleTimeout: 3600000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 328,
+        _onTimeout: [Function],
+        _timerArgs: undefined,
+        _repeat: 3600000,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 6,
+        [Symbol(triggerId)]: 1
+      }
+    },
+    generate: [Function],
+    [Symbol(kCapture)]: false
+  },
+  resave: false,
+  saveUninitialized: false,
+  secret: 'qwerty',
+  cookie: { expires: 1626864075069, maxAge: 3110400000 },
+  horodate: 2020-07-21T12:41:22.372Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  views: { '/': 1, '/cv': 1 }
+}
+[2020-07-21T12:41:32.046] [TRACE] file - {
+  genid: [Function: genid],
+  store: FileStore {
+    _events: [Object: null prototype] {
+      disconnect: [Function: ondisconnect],
+      connect: [Function: onconnect]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    options: {
+      path: 'sessions',
+      ttl: 3600,
+      retries: 5,
+      factor: 1,
+      minTimeout: 50,
+      maxTimeout: 100,
+      reapInterval: 3600,
+      reapMaxConcurrent: 10,
+      reapAsync: false,
+      reapSyncFallback: false,
+      logFn: [Function: bound consoleCall],
+      encoding: 'utf8',
+      encoder: [Function: stringify],
+      decoder: [Function: parse],
+      encryptEncoding: 'hex',
+      fileExtension: '.json',
+      crypto: [Object],
+      keyFunction: [Function: keyFunction],
+      filePattern: /\.json$/,
+      reapIntervalObject: Timeout {
+        _idleTimeout: 3600000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 328,
+        _onTimeout: [Function],
+        _timerArgs: undefined,
+        _repeat: 3600000,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 6,
+        [Symbol(triggerId)]: 1
+      }
+    },
+    generate: [Function],
+    [Symbol(kCapture)]: false
+  },
+  resave: false,
+  saveUninitialized: false,
+  secret: 'qwerty',
+  cookie: { expires: 1626864075069, maxAge: 3110400000 },
+  horodate: 2020-07-21T12:41:31.959Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  views: { '/': 2, '/cv': 1 }
+}

@@ -1,4 +1,4 @@
-Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] file - {
+Wed Jul 21 2021 12:20:53 GMT+0200 (GMT+02:00)[2020-07-21T12:20:56.702] [TRACE] file - {
   genid: [Function: genid],
   store: FileStore {
     _events: [Object: null prototype] {
@@ -31,7 +31,7 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
         _idleTimeout: 3600000,
         _idlePrev: [TimersList],
         _idleNext: [TimersList],
-        _idleStart: 302,
+        _idleStart: 298,
         _onTimeout: [Function],
         _timerArgs: undefined,
         _repeat: 3600000,
@@ -47,153 +47,23 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
   resave: false,
   saveUninitialized: false,
   secret: 'qwerty',
-  cookie: { expires: 1626858251015, maxage: 311040000000 },
-  horodate: 2020-07-21T11:05:21.011Z,
-  ip: '157.55.39.103',
+  cookie: { expires: 1626862853242, maxage: 311040000000 },
+  horodate: 2020-07-21T12:20:56.169Z,
+  ip: '83.202.34.239',
   geoloc: {
-    range: [ 2637637376, 2637637631 ],
-    country: 'US',
-    region: 'WA',
-    eu: '0',
-    timezone: 'America/Los_Angeles',
-    city: '',
-    ll: [ 47.6092, -122.3314 ],
-    metro: 0,
-    area: 1000
-  },
-  views: { '/': 1 }
-}
-[2020-07-21T11:07:19.936] [TRACE] file - {
-  genid: [Function: genid],
-  store: FileStore {
-    _events: [Object: null prototype] {
-      disconnect: [Function: ondisconnect],
-      connect: [Function: onconnect]
-    },
-    _eventsCount: 2,
-    _maxListeners: undefined,
-    options: {
-      path: 'sessions',
-      ttl: 3600,
-      retries: 5,
-      factor: 1,
-      minTimeout: 50,
-      maxTimeout: 100,
-      reapInterval: 3600,
-      reapMaxConcurrent: 10,
-      reapAsync: false,
-      reapSyncFallback: false,
-      logFn: [Function: bound consoleCall],
-      encoding: 'utf8',
-      encoder: [Function: stringify],
-      decoder: [Function: parse],
-      encryptEncoding: 'hex',
-      fileExtension: '.json',
-      crypto: [Object],
-      keyFunction: [Function: keyFunction],
-      filePattern: /\.json$/,
-      reapIntervalObject: Timeout {
-        _idleTimeout: 3600000,
-        _idlePrev: [TimersList],
-        _idleNext: [TimersList],
-        _idleStart: 302,
-        _onTimeout: [Function],
-        _timerArgs: undefined,
-        _repeat: 3600000,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(asyncId)]: 6,
-        [Symbol(triggerId)]: 1
-      }
-    },
-    generate: [Function],
-    [Symbol(kCapture)]: false
-  },
-  resave: false,
-  saveUninitialized: false,
-  secret: 'qwerty',
-  cookie: { expires: 1626858251015, maxage: 311040000000 },
-  horodate: 2020-07-21T11:05:21.011Z,
-  ip: '157.55.39.103',
-  geoloc: {
-    range: [ 2637637376, 2637637631 ],
-    country: 'US',
-    region: 'WA',
-    eu: '0',
-    timezone: 'America/Los_Angeles',
-    city: '',
-    ll: [ 47.6092, -122.3314 ],
-    metro: 0,
-    area: 1000
-  },
-  views: { '/': 229, '/cv': 77, '/adm1n': 98, '/giftedADHD': 49 }
-}
-[2020-07-21T11:38:34.612] [TRACE] file - {
-  genid: [Function: genid],
-  store: FileStore {
-    _events: [Object: null prototype] {
-      disconnect: [Function: ondisconnect],
-      connect: [Function: onconnect]
-    },
-    _eventsCount: 2,
-    _maxListeners: undefined,
-    options: {
-      path: 'sessions',
-      ttl: 3600,
-      retries: 5,
-      factor: 1,
-      minTimeout: 50,
-      maxTimeout: 100,
-      reapInterval: 3600,
-      reapMaxConcurrent: 10,
-      reapAsync: false,
-      reapSyncFallback: false,
-      logFn: [Function: bound consoleCall],
-      encoding: 'utf8',
-      encoder: [Function: stringify],
-      decoder: [Function: parse],
-      encryptEncoding: 'hex',
-      fileExtension: '.json',
-      crypto: [Object],
-      keyFunction: [Function: keyFunction],
-      filePattern: /\.json$/,
-      reapIntervalObject: Timeout {
-        _idleTimeout: 3600000,
-        _idlePrev: [TimersList],
-        _idleNext: [TimersList],
-        _idleStart: 302,
-        _onTimeout: [Function],
-        _timerArgs: undefined,
-        _repeat: 3600000,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(asyncId)]: 6,
-        [Symbol(triggerId)]: 1
-      }
-    },
-    generate: [Function],
-    [Symbol(kCapture)]: false
-  },
-  resave: false,
-  saveUninitialized: false,
-  secret: 'qwerty',
-  cookie: { expires: 1626858251015, maxage: 311040000000 },
-  horodate: 2020-07-21T11:38:34.517Z,
-  ip: '91.175.159.123',
-  geoloc: {
-    range: [ 1537998848, 1538260991 ],
+    range: [ 1405755904, 1405756415 ],
     country: 'FR',
-    region: '',
+    region: 'IDF',
     eu: '1',
     timezone: 'Europe/Paris',
-    city: '',
-    ll: [ 48.8582, 2.3387 ],
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
     metro: 0,
-    area: 500
+    area: 10
   },
-  views: { '/': 48, '/adm1n': 36, '/cv': 23, '/giftedADHD': 7 }
+  views: { '/': 233, '/cv': 77, '/adm1n': 98, '/giftedADHD': 49 }
 }
-[2020-07-21T11:39:16.626] [TRACE] file - {
+[2020-07-21T12:21:02.561] [TRACE] file - {
   genid: [Function: genid],
   store: FileStore {
     _events: [Object: null prototype] {
@@ -226,7 +96,7 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
         _idleTimeout: 3600000,
         _idlePrev: [TimersList],
         _idleNext: [TimersList],
-        _idleStart: 302,
+        _idleStart: 298,
         _onTimeout: [Function],
         _timerArgs: undefined,
         _repeat: 3600000,
@@ -242,23 +112,23 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
   resave: false,
   saveUninitialized: false,
   secret: 'qwerty',
-  cookie: { expires: 1626858251015, maxage: 311040000000 },
-  horodate: 2020-07-21T11:39:16.545Z,
-  ip: '37.166.74.103',
+  cookie: { expires: 1626862853242, maxage: 311040000000 },
+  horodate: 2020-07-21T12:21:02.448Z,
+  ip: '83.202.34.239',
   geoloc: {
-    range: [ 631504896, 631767039 ],
+    range: [ 1405755904, 1405756415 ],
     country: 'FR',
-    region: '',
+    region: 'IDF',
     eu: '1',
     timezone: 'Europe/Paris',
-    city: '',
-    ll: [ 48.8582, 2.3387 ],
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
     metro: 0,
-    area: 500
+    area: 10
   },
-  views: { '/': 49, '/adm1n': 36, '/cv': 23, '/giftedADHD': 7 }
+  views: { '/': 233, '/cv': 77, '/adm1n': 98, '/giftedADHD': 49 }
 }
-[2020-07-21T11:40:13.963] [TRACE] file - {
+[2020-07-21T12:21:04.263] [TRACE] file - {
   genid: [Function: genid],
   store: FileStore {
     _events: [Object: null prototype] {
@@ -291,7 +161,7 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
         _idleTimeout: 3600000,
         _idlePrev: [TimersList],
         _idleNext: [TimersList],
-        _idleStart: 302,
+        _idleStart: 298,
         _onTimeout: [Function],
         _timerArgs: undefined,
         _repeat: 3600000,
@@ -307,23 +177,23 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
   resave: false,
   saveUninitialized: false,
   secret: 'qwerty',
-  cookie: { expires: 1626858251015, maxage: 311040000000 },
-  horodate: 2020-07-21T11:39:16.545Z,
-  ip: '37.166.74.103',
+  cookie: { expires: 1626862853242, maxage: 311040000000 },
+  horodate: 2020-07-21T12:21:04.175Z,
+  ip: '83.202.34.239',
   geoloc: {
-    range: [ 631504896, 631767039 ],
+    range: [ 1405755904, 1405756415 ],
     country: 'FR',
-    region: '',
+    region: 'IDF',
     eu: '1',
     timezone: 'Europe/Paris',
-    city: '',
-    ll: [ 48.8582, 2.3387 ],
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
     metro: 0,
-    area: 500
+    area: 10
   },
-  views: { '/': 49, '/adm1n': 36, '/cv': 24, '/giftedADHD': 7 }
+  views: { '/': 233, '/cv': 77, '/adm1n': 98, '/giftedADHD': 49 }
 }
-[2020-07-21T11:40:21.926] [TRACE] file - {
+[2020-07-21T12:21:05.228] [TRACE] file - {
   genid: [Function: genid],
   store: FileStore {
     _events: [Object: null prototype] {
@@ -356,7 +226,7 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
         _idleTimeout: 3600000,
         _idlePrev: [TimersList],
         _idleNext: [TimersList],
-        _idleStart: 302,
+        _idleStart: 298,
         _onTimeout: [Function],
         _timerArgs: undefined,
         _repeat: 3600000,
@@ -372,19 +242,19 @@ Wed Jul 21 2021 11:04:11 GMT+0200 (GMT+02:00)[2020-07-21T11:05:21.518] [TRACE] f
   resave: false,
   saveUninitialized: false,
   secret: 'qwerty',
-  cookie: { expires: 1626858251015, maxage: 311040000000 },
-  horodate: 2020-07-21T11:39:16.545Z,
-  ip: '37.166.74.103',
+  cookie: { expires: 1626862853242, maxage: 311040000000 },
+  horodate: 2020-07-21T12:21:05.085Z,
+  ip: '83.202.34.239',
   geoloc: {
-    range: [ 631504896, 631767039 ],
+    range: [ 1405755904, 1405756415 ],
     country: 'FR',
-    region: '',
+    region: 'IDF',
     eu: '1',
     timezone: 'Europe/Paris',
-    city: '',
-    ll: [ 48.8582, 2.3387 ],
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
     metro: 0,
-    area: 500
+    area: 10
   },
-  views: { '/': 49, '/adm1n': 37, '/cv': 24, '/giftedADHD': 7 }
+  views: { '/': 233, '/cv': 77, '/adm1n': 98, '/giftedADHD': 49 }
 }
