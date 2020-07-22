@@ -38,7 +38,6 @@ var express = require('express'),
     datetime = new Date(),
     logger = log4js.getLogger('file'),
     nbLog = datetime.getFullYear() + String(datetime.getMonthFormatted()) + String(datetime.getDate()) + String(datetime.getHoursFormatted()) + String(datetime.getMinutesFormatted()) + String(datetime.getSecondsFormatted()),
-    ip, geo,
     app = express()
 
 let p0rt = 80,
@@ -67,8 +66,8 @@ log4js.configure({
         file: { type: 'file', filename: `logs/ip${nbLog}.log` }
     },
     categories: {
-        file: { appenders: ['file'], level: 'trace' },
-        default: { appenders: ['console'], level: 'trace' }
+        default: { appenders: ['console'], level: 'trace' },
+        file: { appenders: ['file'], level: 'trace' }
     }
 })
 
@@ -129,7 +128,6 @@ app.set('views', 'public')
 
 //APP.GET_________________________________________________________________
 app.get('/', (req, res) => {
-    datetime = new Date()
     //VIEWS
     if (!req.session.views) {
         req.session.views = {}
@@ -138,11 +136,9 @@ app.get('/', (req, res) => {
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     //fix UTC+2 hours
     datetime.setUTCHours(datetime.getHours())
-    ip = req.connection.remoteAddress
-    geo = geoip.lookup(ip)
-    sess.horodate = datetime
-    sess.ip = ip
-    sess.geoloc = geo
+    sess.horodate = new Date()
+    sess.ip = req.connection.remoteAddress
+    sess.geoloc = geoip.lookup(sess.ip)
     sess.views = req.session.views
     res.render('index.pug', {})
     //LOGGER
