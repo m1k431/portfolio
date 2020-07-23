@@ -1,1 +1,23 @@
-Fri Jul 23 2021 02:05:35 GMT+0200 (GMT+02:00)
+Fri Jul 23 2021 02:05:35 GMT+0200 (GMT+02:00)[2020-07-23T02:05:38.151] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-21T00:05:38.149Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true
+  },
+  views: { '/': 62, '/cv': 29, '/adm1n': 16, '/giftedADHD': 13 },
+  __lastAccess: 1595462738149,
+  horodate: 2020-07-23T02:05:37.627Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  }
+}

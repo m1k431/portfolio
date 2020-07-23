@@ -1,18 +1,18 @@
 {
   "cookie": {
     "originalMaxAge": 7776000000,
-    "expires": "2020-10-21T00:05:38.149Z",
+    "expires": "2020-10-21T00:12:39.876Z",
     "httpOnly": true,
     "path": "/"
   },
   "views": {
-    "/": 62,
-    "/cv": 29,
-    "/adm1n": 16,
-    "/giftedADHD": 13
+    "/": 66,
+    "/cv": 32,
+    "/adm1n": 18,
+    "/giftedADHD": 14
   },
-  "__lastAccess": 1595462738149,
-  "horodate": "2020-07-23T02:05:37.627Z",
+  "__lastAccess": 1595463159876,
+  "horodate": "2020-07-23T02:12:39.748Z",
   "ip": "83.202.34.239",
   "geoloc": {
     "range": [

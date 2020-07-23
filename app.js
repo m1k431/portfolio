@@ -135,22 +135,16 @@ app.get('/', (req, res) => {
     var pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
     //horodate last visite
-    //datetime.setUTCHours(datetime.getHours())
-    //sess.horodate = new Date()
     req.session.horodate = new Date()
     //fix UTC+2 hours
     req.session.horodate.setUTCHours(req.session.horodate.getHours())
     //ip track
     req.session.ip = req.connection.remoteAddress
     req.session.geoloc = geoip.lookup(req.session.ip)
-    req.session.views = req.session.views
     res.render('index.pug', {})
     //LOGGER
     logger.trace(req.session)
-    //console.log(sess)
     console.log(req.session)
-    console.log(`expires in: ${(req.session.cookie.maxAge / 1000 / 60 / 60 / 24)} days`)
-    console.log(`expires in: ${(sess.cookie.maxAge / 1000 / 60 / 60 / 24)} days`)
 })
 
 app.get('/cv', (req, res) => {
@@ -163,11 +157,10 @@ app.get('/cv', (req, res) => {
     if (req.query.r == 'highScore') {
         //AJax
     }
-    sess.views = req.session.views
     res.render('cv.pug', {})
     //LOGGER
-    logger.trace(sess)
-    console.log(sess)
+    logger.trace(req.session)
+    console.log(req.session)
 })
 
 app.get('/adm1n', (req, res) => {
@@ -180,11 +173,10 @@ app.get('/adm1n', (req, res) => {
     if (req.query.r == 'highScore') {
         //AJax
     }
-    sess.views = req.session.views
     res.render('adm1n.pug', {})
     //LOGGER
-    logger.trace(sess)
-    console.log(sess)
+    logger.trace(req.session)
+    console.log(req.session)
 })
 
 app.get('/giftedADHD', (req, res) => {
@@ -197,11 +189,10 @@ app.get('/giftedADHD', (req, res) => {
     if (req.query.r == 'highScore') {
         //AJax
     }
-    sess.views = req.session.views
     res.render('giftedADHD.pug', {})
     //LOGGER
-    logger.trace(sess)
-    console.log(sess)
+    logger.trace(req.session)
+    console.log(req.session)
 })
 
 //APP.LISTEN______________________________________________________________
