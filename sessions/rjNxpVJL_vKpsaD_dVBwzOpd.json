@@ -1,1 +1,34 @@
-{"cookie":{"originalMaxAge":7776000000,"expires":"2020-10-20T11:15:33.407Z","httpOnly":true,"path":"/"},"views":{"/":23,"/cv":18,"/adm1n":10,"/giftedADHD":9},"__lastAccess":1595416533407}
+{
+  "cookie": {
+    "originalMaxAge": 7776000000,
+    "expires": "2020-10-21T00:05:38.149Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "views": {
+    "/": 62,
+    "/cv": 29,
+    "/adm1n": 16,
+    "/giftedADHD": 13
+  },
+  "__lastAccess": 1595462738149,
+  "horodate": "2020-07-23T02:05:37.627Z",
+  "ip": "83.202.34.239",
+  "geoloc": {
+    "range": [
+      1405755904,
+      1405756415
+    ],
+    "country": "FR",
+    "region": "IDF",
+    "eu": "1",
+    "timezone": "Europe/Paris",
+    "city": "Paris",
+    "ll": [
+      48.8543,
+      2.3527
+    ],
+    "metro": 0,
+    "area": 10
+  }
+}

@@ -71,7 +71,7 @@ log4js.configure({
     }
 })
 
-//mongoDB
+//mongoDB____________________________________________________________________
 const MongoClient = require('mongodb').MongoClient,
     uri = "mongodb+srv://snow:<password>@cluster0-5cwg1.mongodb.net/<dbname>?retryWrites=true&w=majority",
     client = new MongoClient(uri, {
@@ -89,13 +89,13 @@ client.connect(err => {
     client.close()
 })
 
-//APP.FS_________________________________________________________________
+//APP.FS____________________________________________________________________
 fs.writeFile(filePath, datetime, (err) => {
     if (err) throw err
     console.log(`The file ${nbLog}.log was succesfully created`)
 })
 
-//APP.USE_________________________________________________________________
+//APP.USE___________________________________________________________________
 app.use(helmet())
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -134,17 +134,23 @@ app.get('/', (req, res) => {
     }
     var pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
+    //horodate last visite
+    //datetime.setUTCHours(datetime.getHours())
+    //sess.horodate = new Date()
+    req.session.horodate = new Date()
     //fix UTC+2 hours
-    datetime.setUTCHours(datetime.getHours())
-    sess.horodate = new Date()
-    sess.ip = req.connection.remoteAddress
-    sess.geoloc = geoip.lookup(sess.ip)
-    sess.views = req.session.views
+    req.session.horodate.setUTCHours(req.session.horodate.getHours())
+    //ip track
+    req.session.ip = req.connection.remoteAddress
+    req.session.geoloc = geoip.lookup(req.session.ip)
+    req.session.views = req.session.views
     res.render('index.pug', {})
     //LOGGER
-    logger.trace(sess)
-    console.log(sess)
+    logger.trace(req.session)
+    //console.log(sess)
+    console.log(req.session)
     console.log(`expires in: ${(req.session.cookie.maxAge / 1000 / 60 / 60 / 24)} days`)
+    console.log(`expires in: ${(sess.cookie.maxAge / 1000 / 60 / 60 / 24)} days`)
 })
 
 app.get('/cv', (req, res) => {

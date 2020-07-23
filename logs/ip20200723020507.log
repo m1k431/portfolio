@@ -1,0 +1,13 @@
+Fri Jul 23 2021 02:05:07 GMT+0200 (GMT+02:00)[2020-07-23T02:05:11.081] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-21T00:05:11.079Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true
+  },
+  views: { '/': 61, '/cv': 29, '/adm1n': 16, '/giftedADHD': 13 },
+  __lastAccess: 1595462711079,
+  horodate: 2020-07-23T02:05:10.548Z,
+  ip: '83.202.34.239',
+  geoloc: null
+}
