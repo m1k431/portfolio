@@ -1,5 +1,6 @@
 extends layoutNav.pug
 append content
+  canvas.background
   .content
     .table-cell
       #m0ncentrage
@@ -258,3 +259,13 @@ append scripts
     $('#resume').addClass('css3buttonRed')
     $('#admin').removeClass('css3buttonRed')
     $('#admin').addClass('css3button')
+    window.onload = function() {
+      Particles.init({
+        selector: '.background',
+        color: '#EFF4F5',
+        connectParticles: true,
+        maxParticles: 100
+      })
+      console.log(document.querySelector("body").offsetHeight)
+      $('.background').css('height', document.querySelector(".content").offsetHeight)
+      }

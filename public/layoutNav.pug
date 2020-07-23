@@ -15,18 +15,19 @@ html(lang="en")
       link(rel='manifest' href='/static/mikael.manifest')
       link(rel='stylesheet' href='/static/css/styles.css')
       link(rel='stylesheet' href='/static/css/cv.css') 
+  nav#navBar
+    ul
+      li 
+        a#intro.nav(rel='preconnect' href='/' class='css3button') Intro
+      li
+        a#resume.nav(rel='preconnect' href='/cv' class='css3button') CV
+      li
+        a#admin.nav(rel='preconnect' href='/adm1n' class='css3button') aL1v3
+      li
+        a#adhd.nav(rel='preconnect' href='/giftedADHD' class='css3button') ADHD
   body
-    nav#navBar
-      ul
-        li 
-          a#intro.nav(rel='preconnect' href='/' class='css3button') Intro
-        li
-          a#resume.nav(rel='preconnect' href='/cv' class='css3button') CV
-        li
-          a#admin.nav(rel='preconnect' href='/adm1n' class='css3button') aL1v3
-        li
-          a#adhd.nav(rel='preconnect' href='/giftedADHD' class='css3button') ADHD
     block content
+  foot
     block foot
       #footer
         a.minilogL(rel='preconnect' href='https://github.com/m1k431')
@@ -37,4 +38,5 @@ html(lang="en")
     block scripts
       script(src='/static/js/jquery-3.3.1.min.js')
       script(src='/static/js/jquery-ui.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js')
       script(src='/static/js/socket.io.js' async)

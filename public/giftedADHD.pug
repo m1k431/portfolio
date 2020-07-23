@@ -1,5 +1,6 @@
 extends layoutNav.pug
 append content
+	canvas.background
 	.content
 		.table-cell
 			#m0ncentrage
@@ -237,3 +238,13 @@ append scripts
 		$('li').eq(14).css({'background-color':'green', 'color':'white', 'font-weight':'500'})
 		$('li').eq(15).css({'background-color':'blue', 'color':'white', 'font-weight':'500'})
 		$('li').eq(16).css({'background-color':'indigo', 'color':'white', 'font-weight':'500'})
+		window.onload = function() {
+			Particles.init({
+				selector: '.background',
+				color: '#EFF4F5',
+				connectParticles: true,
+				maxParticles: 100
+			})
+			console.log(document.querySelector("body").offsetHeight)
+			$('.background').css('height', document.querySelector(".content").offsetHeight)
+			}

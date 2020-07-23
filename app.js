@@ -114,7 +114,7 @@ app.use(minify({
     cssMatch: /css/
 }))
 app.use('/static', express.static(__dirname + '/public', {
-    maxAge: '1d'
+    maxAge: '0d'
 }))
 
 if (app.get('env') === 'production') {
@@ -154,9 +154,10 @@ app.get('/cv', (req, res) => {
     }
     pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
-    if (req.query.r == 'highScore') {
-        //AJax
-    }
+    //horodate last visite
+    req.session.horodate = new Date()
+    //fix UTC+2 hours
+    req.session.horodate.setUTCHours(req.session.horodate.getHours())
     res.render('cv.pug', {})
     //LOGGER
     logger.trace(req.session)
@@ -170,9 +171,10 @@ app.get('/adm1n', (req, res) => {
     }
     pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
-    if (req.query.r == 'highScore') {
-        //AJax
-    }
+    //horodate last visite
+    req.session.horodate = new Date()
+    //fix UTC+2 hours
+    req.session.horodate.setUTCHours(req.session.horodate.getHours())
     res.render('adm1n.pug', {})
     //LOGGER
     logger.trace(req.session)
@@ -186,9 +188,10 @@ app.get('/giftedADHD', (req, res) => {
     }
     pathname = parseurl(req).pathname
     req.session.views[pathname] = (req.session.views[pathname] || 0) + 1
-    if (req.query.r == 'highScore') {
-        //AJax
-    }
+    //horodate last visite
+    req.session.horodate = new Date()
+    //fix UTC+2 hours
+    req.session.horodate.setUTCHours(req.session.horodate.getHours())
     res.render('giftedADHD.pug', {})
     //LOGGER
     logger.trace(req.session)
