@@ -2,7 +2,7 @@ const monIntro = function () {
     //Bouton de Controle play/pause video jonglage 
     var m4vide0 = document.getElementById('jugglejungle')
     m4vide0.playbackRate = 0.75
-    /*var BtnJs0nPl4Y = document.getElementById('BtnJs0nPl4Y')
+    var BtnJs0nPl4Y = document.getElementById('BtnJs0nPl4Y')
     BtnJs0nPl4Y.innerHTML = 'PAUSE'
     BtnJs0nPl4Y.addEventListener('click', () => {
         if (m4vide0.paused) {
@@ -13,7 +13,7 @@ const monIntro = function () {
             BtnJs0nPl4Y.innerHTML = 'PLAY'
         }
     })
-    BtnJs0nPl4Y.click()*/
+    BtnJs0nPl4Y.click()
     $('#jugglejungle').fadeIn(100)
     
     

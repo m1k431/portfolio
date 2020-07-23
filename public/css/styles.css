@@ -370,7 +370,6 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 0px;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
 }
 
 iframe {
@@ -385,7 +384,6 @@ iframe {
 
 #INDEX {
   border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   text-align: center;
   width: 90%;
@@ -483,7 +481,6 @@ a {
   margin-bottom: 10px;
   background: transparent;
   border: 1px solid white;
-  font-family: monospace;
 }
 
 .css3but:hover {
@@ -492,6 +489,8 @@ a {
 }
 
 .css3button {
+  font-family: monospace;
+  font-size: 1.3em;
   background-image: linear-gradient(to bottom, rgba(52, 152, 219, 0.901), rgba(19, 43, 121, 0.5));
 }
 
@@ -506,7 +505,7 @@ a {
   margin-left: 5px;
   margin-right: 5px;
   color: white;
-  font-size: 1.1em;
+  font-size: 1.3em;
   text-align: center;
   font-family: monospace;
   background-image: linear-gradient(to bottom, rgba(221, 60, 60, 0.9), rgba(221, 60, 60, 0.9));
