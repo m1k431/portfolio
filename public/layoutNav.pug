@@ -27,7 +27,7 @@ html(lang="en")
         a#adhd.nav(rel='preconnect' href='/giftedADHD' class='css3button') ADHD
   body
     block content
-      canvas.background
+    canvas.background
   foot
     block foot
       #footer
@@ -39,8 +39,9 @@ html(lang="en")
     block scripts
       script(src='/static/js/jquery-3.3.1.min.js')
       script(src='/static/js/jquery-ui.min.js')
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js')
-      script(src='/static/js/socket.io.js' async)
+      script(src='./static/js/particles.min.js')
+      //script(src='https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js')
+      //script(src='/static/js/socket.io.js')
       script.
         window.onload = function() {
         Particles.init({

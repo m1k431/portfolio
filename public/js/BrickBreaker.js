@@ -18,7 +18,7 @@ const jeuBreaker = function () {
     //_______________________________Choix_langue____________________________________________________________________________
     $('.english').fadeIn()
     $('#competen').fadeIn()
-
+/*
     window.document.getElementById('french').onclick = () => {
         //play(flagS)
         $('.english').hide()
@@ -32,9 +32,10 @@ const jeuBreaker = function () {
         $('.french').hide()
         $('.spanish').hide()
         $('.english').hide()
+        $('#competen').css('height', 'auto')
         $('.english').fadeIn()
     }
-    
+  */  
     //_____________________________Click_on_START__________________________________________________________________________
     var bStart = window.document.getElementById('metier')
     bStart.addEventListener('click', varsStart, true)
