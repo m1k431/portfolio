@@ -1,5 +1,6 @@
 extends layoutNav.pug
 append content
+	audio#bonnie(src='./static/sound/BONNIE.mp3' autoplay='')
 	.content
 		.table-cell
 			#m0ncentrage
@@ -237,3 +238,5 @@ append scripts
 		$('li').eq(14).css({'background-color':'green', 'color':'white', 'font-weight':'500'})
 		$('li').eq(15).css({'background-color':'blue', 'color':'white', 'font-weight':'500'})
 		$('li').eq(16).css({'background-color':'indigo', 'color':'white', 'font-weight':'500'})
+		var bonnie = window.document.getElementById('bonnie')
+		bonnie.play()
