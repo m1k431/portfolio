@@ -21,12 +21,13 @@ html(lang="en")
         a#intro.nav(rel='preconnect' href='/' class='css3button') Intro
       li
         a#resume.nav(rel='preconnect' href='/cv' class='css3button') CV
-      li
+      //li
         a#admin.nav(rel='preconnect' href='/adm1n' class='css3button') aL1v3
       li
         a#adhd.nav(rel='preconnect' href='/giftedADHD' class='css3button') ADHD
   body
     block content
+      canvas.background
   foot
     block foot
       #footer
@@ -40,3 +41,14 @@ html(lang="en")
       script(src='/static/js/jquery-ui.min.js')
       script(src='https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js')
       script(src='/static/js/socket.io.js' async)
+      script.
+        window.onload = function() {
+        Particles.init({
+        selector: '.background',
+        color: '#EFF4F5',
+        connectParticles: true,
+        maxParticles: 100
+        })
+        console.log(document.querySelector("body").offsetHeight)
+        $('.background').css('height', document.querySelector(".content").offsetHeight)
+        }
