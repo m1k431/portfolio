@@ -1,4 +1,9 @@
 @import "normalize";
+@font-face {
+    font-family: 'ibm';
+    src: url(/static/fonts/IBMLogo.ttf);
+    font-weight: bold;
+  }
 
 $myFont: monospace;
 $colorBody: rgba(2, 106, 243, 0.99);
@@ -119,10 +124,12 @@ h2.how {
 
 h1,
 h2,
+h3,
 nav {
     color: white;
     text-align: center;
-    font-family: $myFont;
+    //font-family: $myFont;
+    font-family: 'ibm';
 }
 
 span {

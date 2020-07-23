@@ -330,6 +330,11 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "ibm";
+  src: url(/static/fonts/IBMLogo.ttf);
+  font-weight: bold;
+}
 #s0leil,
 #jugglejungle {
   display: none;
@@ -431,10 +436,11 @@ h2.how {
 
 h1,
 h2,
+h3,
 nav {
   color: white;
   text-align: center;
-  font-family: monospace;
+  font-family: "ibm";
 }
 
 span {
