@@ -18,13 +18,13 @@ const jeuBreaker = function () {
     //_______________________________Choix_langue____________________________________________________________________________
     $('.english').fadeIn()
     $('#competen').fadeIn()
-/*
+
     window.document.getElementById('french').onclick = () => {
         //play(flagS)
         $('.english').hide()
         $('.spanish').hide()
         $('.french').hide()
-        $('#competen').css('height', 'auto')
+        //$('#competen').css('height', 'auto')
         $('.french').fadeIn()
     }
     window.document.getElementById('english').onclick = () => {
@@ -35,7 +35,7 @@ const jeuBreaker = function () {
         $('#competen').css('height', 'auto')
         $('.english').fadeIn()
     }
-  */  
+ 
     //_____________________________Click_on_START__________________________________________________________________________
     var bStart = window.document.getElementById('metier')
     bStart.addEventListener('click', varsStart, true)
