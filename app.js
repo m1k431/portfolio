@@ -109,12 +109,12 @@ app.use(frameguard({
 }))
 app.use(compression())
 app.use(minify({
-    cache: true,
+    cache: false,
     jsMatch: /js/,
     cssMatch: /css/
 }))
 app.use('/static', express.static(__dirname + '/public', {
-    maxAge: '1d'
+    maxAge: '0d'
 }))
 
 if (app.get('env') === 'production') {

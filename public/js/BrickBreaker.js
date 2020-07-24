@@ -301,10 +301,13 @@ const jeuBreaker = function () {
         //________________________________________________Verif/Gestion_YouWIN______________________________________________________________________________
         var jeuTermine = function () {
             var mesInfosT = window.document.getElementsByClassName('infoT')
+            var competences = window.document.getElementById('competen')
             if (mesInfosT.length < 1) {
                 cancelAnimationFrame(idAni)
-                cancelAnimationFrame(idR)
+                //cancelAnimationFrame(idR)
                 cancelAnimationFrame(idL)
+                cancelAnimationFrame(animMoveBall)
+                cancelAnimationFrame(moveBall)
                 window.document.removeEventListener('mousemove', movepaddle, true)
                 window.document.removeEventListener('click', eTouchStart, true)
                 window.document.removeEventListener('click', eTouchMove, true)
@@ -367,7 +370,7 @@ const jeuBreaker = function () {
         
         //_____________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
-            var ballSpeed = 3
+            var ballSpeed = 2
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'
@@ -412,9 +415,9 @@ const jeuBreaker = function () {
                     //------------Short hand style if---------------
                     score >= 100 ? score -= 100 : score = 0
                     //----------------------------------------------
-                    $('#metier > h1').text('SCORE: ' + score).css({
+                    $('#metier > h2').text(score).css({
                         'color': 'red',
-                        'font-size': '125%'
+                        'font-size': '1.5em'
                     }).fadeIn(375)
                     combo = 1
                     play(miss)
@@ -427,16 +430,15 @@ const jeuBreaker = function () {
                 }
                 brickBroken()
                 jeuTermine()
-
+                
                 if (clickMove == false) {
                     animMoveBall()
                     window.document.removeEventListener('click', animMoveBall, true)
-                    $('#metier > h1').text('SCORE: ' + score).css({
+                    $('#metier > h2').text(score).css({
                         'color': 'black',
-                        'font-size': '125%'
+                        'font-size': '1.5em'
                     }).fadeIn(375)
                 } else {
-                    cancelAnimationFrame(idAni)
                     window.document.addEventListener('click', animMoveBall, true)
                 }
             }

@@ -1,6 +1,7 @@
 extends layoutNav.pug
 append content
-	audio#bonnie(src='./static/sound/BONNIE.mp3' autoplay='')
+	canvas.background
+	//audio#bonnie(src='./static/sound/BONNIE.mp3' autoplay='')
 	.content
 		.table-cell
 			#m0ncentrage
@@ -100,7 +101,7 @@ append content
 								| Hyper-Concentration sur des activités qui l'intéresse au point d'ignorer d'autres responsabilités
 						li
 							span.english Lack of organizational skills
-							span.english Défault de capacité organisationnelle
+							span.french Défault de capacité organisationnelle
 						li
 							span.english Fidgeting or squirming
 							span.french Agitation ou tortillements
@@ -226,6 +227,7 @@ append scripts
 		$('#adhd').removeClass('css3button')
 		$('#adhd').addClass('css3buttonRed')
 		$('#m0ncentrage').show()
+		$('li').eq(3).css({'background-color':'violet', 'color':'black', 'font-weight':'900'})
 		$('li').eq(4).css({'background-color':'red', 'color':'black', 'font-weight':'900'})
 		$('li').eq(5).css({'background-color':'orange', 'color':'black', 'font-weight':'900'})  
 		$('li').eq(6).css({'background-color':'yellow', 'color':'black', 'font-weight':'900'})
@@ -239,5 +241,5 @@ append scripts
 		$('li').eq(14).css({'background-color':'green', 'color':'white', 'font-weight':'500'})
 		$('li').eq(15).css({'background-color':'blue', 'color':'white', 'font-weight':'500'})
 		$('li').eq(16).css({'background-color':'indigo', 'color':'white', 'font-weight':'500'})
-		var bonnie = window.document.getElementById('bonnie')
-		bonnie.play()
+		//var bonnie = window.document.getElementById('bonnie')
+		//bonnie.play()

@@ -1,7 +1,7 @@
 const monIntro = function () {
     //Bouton de Controle play/pause video jonglage 
     var m4vide0 = document.getElementById('jugglejungle')
-    m4vide0.playbackRate = 0.75
+    m4vide0.playbackRate = 0.85
     var BtnJs0nPl4Y = document.getElementById('BtnJs0nPl4Y')
     BtnJs0nPl4Y.innerHTML = 'PAUSE'
     BtnJs0nPl4Y.addEventListener('click', () => {

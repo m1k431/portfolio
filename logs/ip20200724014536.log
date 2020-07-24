@@ -1,0 +1,59 @@
+Sat Jul 24 2021 01:45:36 GMT+0200 (GMT+02:00)[2020-07-24T01:45:39.325] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-21T23:45:39.323Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-23T01:45:38.772Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1595547939323
+}
+[2020-07-24T01:45:51.442] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-21T23:45:51.439Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-23T01:45:51.305Z,
+  ip: '127.0.0.1',
+  geoloc: null,
+  __lastAccess: 1595547951440
+}
+[2020-07-24T01:45:57.778] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-21T23:45:57.778Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true
+  },
+  views: { '/': 2 },
+  horodate: 2020-07-23T01:45:57.689Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1595547957778
+}

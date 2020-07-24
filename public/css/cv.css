@@ -525,6 +525,7 @@ p.flags {
 
 #scoreForm {
   width: 80%;
+  max-width: "400px";
   display: none;
   vertical-align: middle;
   margin-left: 10%;

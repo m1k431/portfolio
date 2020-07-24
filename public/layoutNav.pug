@@ -27,7 +27,7 @@ html(lang="en")
         a#adhd.nav(rel='preconnect' href='/giftedADHD' class='css3button') ADHD
   body
     block content
-    canvas.background
+    //canvas.background
   foot
     block foot
       #footer
@@ -47,7 +47,8 @@ html(lang="en")
         selector: '.background',
         color: '#EFF4F5',
         connectParticles: true,
-        maxParticles: 100
+        maxParticles: 50
         })
-        $('.background').css('height', document.querySelector(".content").offsetHeight)
+        console.log(document.querySelector(".content"))
+        $('.background').css('height', document.querySelector(".content").clientHeight)
         }
