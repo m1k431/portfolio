@@ -15,8 +15,8 @@ const monIntro = function () {
     })
     BtnJs0nPl4Y.click()
     $('#jugglejungle').fadeIn(100)
-    
-    
+
+
     //Blue/red menu button
     $('#intro').removeClass('css3button')
     $('#intro').addClass('css3buttonRed')
@@ -24,7 +24,7 @@ const monIntro = function () {
     $('#INDEX').fadeIn(100)
     $('#m0ncentrage').fadeIn(100)
 
-    
+
     //DIV SOLEILLLLLLLLL
     var m0nsoleil = document.getElementById('s0leil')
     m0nsoleil.style.position = 'relative'
@@ -150,7 +150,7 @@ const monIntro = function () {
     ctxM4col.closePath()
     ctxM4col.stroke()
     ctxM4col.fill()
-    
+
     //SONIC PALM TREEEEEEEE
     var divMonkey = document.createElement('div')
     divMonkey.id = 'divMonkey'
@@ -196,19 +196,67 @@ const monIntro = function () {
     imgSonic.style.left = '-55px'
     imgSonic.style.top = '-21px'
     imgSonic.src = '/static/img/sonic2.png'
+    //BIRD div
+    var divBird = document.createElement('div')
+    divBird.id = 'divBird'
+    divBird.className = 'divbird'
+    divBird.style.position = 'absolute'
+    divBird.overflow = 'hidden'
+    divBird.style.height = '24px'
+    divBird.style.width = '24px'
+    divBird.style.top = '230px'
+    divBird.style.left = '20%'
+    divBird.style.overflow = 'hidden'
+    //bird img
+    var imgBird = document.createElement('img')
+    imgBird.id = 'bird'
+    imgBird.className = 'bird'
+    imgBird.style.position = 'relative'
+    imgBird.style.left = '0px'
+    imgBird.style.top = '0px'
+    imgBird.style.height = '100%'
+    imgBird.src = '/static/img/twitter-bird-sprite.png'
     m0nsoleil.appendChild(divMonkey)
-    divMonkey.appendChild(imgMonkey)
-    divSonic.appendChild(imgSonic)
-    m0nsoleil.appendChild(imgSonicPalm)
+    m0nsoleil.appendChild(divBird)
+    m0nsoleil.appendChild(divSonic)
     m0nsoleil.appendChild(divAtari)
+    m0nsoleil.appendChild(imgSonicPalm)
+    divMonkey.appendChild(imgMonkey)
+    divBird.appendChild(imgBird)
+    divSonic.appendChild(imgSonic)
     divAtari.id = 'atari'
     mon360.appendChild(src360)
     divAtari.appendChild(mon360)
     divAtari.appendChild(m0nimg)
-    m0nsoleil.appendChild(divSonic)
-    var bool1 = false    
+    var bool1 = false
     var bool2 = false
-    var idB, idW, idMU, idMD, idS, idM
+    var bool3 = false
+    var idB, idW, idMU, idMD, idS, idM, idBird, idMB
+    let i = 4
+    var animBird = function () {
+        if (bool3 == false) {
+            imgBird.style.left = '0px'
+            bool3 = true
+        }
+        else {
+            if (parseFloat(imgBird.style.left) > -65) {
+                imgBird.style.left = parseFloat(imgBird.style.left) - 24 + 'px'
+            }
+            else bool3 = false
+        }
+        idBird = requestAnimationFrame(animBird)
+    }
+
+    var moveBird = function () {
+        if (parseFloat(divBird.style.left) < 100) {
+            divBird.style.left = parseFloat(divBird.style.left) + 0.1 + '%'
+        }
+        else {
+            divBird.style.left = '-10%'
+        }
+        idMB = requestAnimationFrame(moveBird)
+    }
+
     var sonicBored = function () {
         if (bool1 == false) {
             imgSonic.style.left = '-55px'
@@ -241,7 +289,9 @@ const monIntro = function () {
 
 
     var moveSonicRight = function () {
-        if (parseFloat(divSonic.style.left) < 100) divSonic.style.left = parseFloat(divSonic.style.left) + 0.2 + '%'
+        if (parseFloat(divSonic.style.left) < 100) {
+            divSonic.style.left = parseFloat(divSonic.style.left) + 0.2 + '%'
+        }
         else {
             divSonic.style.left = '-10%'
         }
@@ -290,6 +340,8 @@ const monIntro = function () {
 
     //snowback control
     let snowBack = document.getElementById('snowB')
+    idBird = requestAnimationFrame(animBird)
+    idMB = requestAnimationFrame(moveBird)
 
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 110) {
@@ -299,51 +351,51 @@ const monIntro = function () {
             ctx.clearRect(0, 0, 40, 40)
             ctxLune.clearRect(0, 0, 40, 40)
             switch (c00rdX) {
-            case 45:
-                $('#space').animate({
-                    backgroundColor: '#0a15db'
-                }, 1000)
-                cancelAnimationFrame(idW)
-                cancelAnimationFrame(idM)
-                //clearInterval(idS)
-                $('#space').fadeOut(1000)
-                break
-            case 52:
-                $('#moon').fadeOut(1500)
-                idMD = requestAnimationFrame(monkeyDown)
-                cancelAnimationFrame(idB)
-                idW = requestAnimationFrame(sonicWalk)
-                idM = requestAnimationFrame(moveSonicRight)
-                snowBack.play()
-                break
-            case 62:
-                cancelAnimationFrame(idMD)
-                idMU = requestAnimationFrame(monkeyUp)
-                break
-            case 78:
-                cancelAnimationFrame(idMU)
-                idMD = requestAnimationFrame(monkeyDown)
-                break
-            case 90:
-                $('#moon').fadeIn(5000)
-                cancelAnimationFrame(idMD)
-                idMU = requestAnimationFrame(monkeyUp)
-                break
-            case 95:
-                cancelAnimationFrame(idM)
-                cancelAnimationFrame(idW)
-                idB = requestAnimationFrame(sonicBored)
-                $('#space').animate({
-                    backgroundColor: '#000000'
-                }, 1500)
-                $('#space').fadeIn(1500)
-                break
-            case 100:
-                cancelAnimationFrame(idB)
-                cancelAnimationFrame(idMU)
-                snowBack.pause()
-                //idS = setInterval(animate, 500)
-                break
+                case 45:
+                    $('#space').animate({
+                        backgroundColor: '#0a15db'
+                    }, 1000)
+                    cancelAnimationFrame(idW)
+                    cancelAnimationFrame(idM)
+                    //clearInterval(idS)
+                    $('#space').fadeOut(1000)
+                    break
+                case 52:
+                    $('#moon').fadeOut(1500)
+                    idMD = requestAnimationFrame(monkeyDown)
+                    cancelAnimationFrame(idB)
+                    idW = requestAnimationFrame(sonicWalk)
+                    idM = requestAnimationFrame(moveSonicRight)
+                    snowBack.play()
+                    break
+                case 62:
+                    cancelAnimationFrame(idMD)
+                    idMU = requestAnimationFrame(monkeyUp)
+                    break
+                case 78:
+                    cancelAnimationFrame(idMU)
+                    idMD = requestAnimationFrame(monkeyDown)
+                    break
+                case 90:
+                    $('#moon').fadeIn(5000)
+                    cancelAnimationFrame(idMD)
+                    idMU = requestAnimationFrame(monkeyUp)
+                    break
+                case 95:
+                    cancelAnimationFrame(idM)
+                    cancelAnimationFrame(idW)
+                    idB = requestAnimationFrame(sonicBored)
+                    $('#space').animate({
+                        backgroundColor: '#000000'
+                    }, 1500)
+                    $('#space').fadeIn(1500)
+                    break
+                case 100:
+                    cancelAnimationFrame(idB)
+                    cancelAnimationFrame(idMU)
+                    snowBack.pause()
+                    //idS = setInterval(animate, 500)
+                    break
             }
             ctx.fillRect(0, 0, 40, 40)
             ctxLune.fillRect(0, 0, 40, 40)
