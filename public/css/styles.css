@@ -360,6 +360,11 @@ body {
   background-color: rgba(2, 106, 243, 0.99);
 }
 
+button, input {
+  overflow: visible;
+  max-width: 300px;
+}
+
 .background {
   position: absolute;
   top: 0;
