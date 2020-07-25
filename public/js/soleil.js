@@ -71,6 +71,7 @@ const monIntro = function () {
     m0nCiel.style.backgroundColor = 'blue'
     m0nCiel.id = 'ci3l'
     m0nsoleil.appendChild(m0nCiel)
+    //soleil
     var m0nCanva = document.createElement('canvas')
     m0nCanva.width = 40
     m0nCanva.height = 40
@@ -78,6 +79,7 @@ const monIntro = function () {
     m0nCanva.id = 'c4nv4'
     m0nCanva.style.position = 'absolute'
     m0nsoleil.appendChild(m0nCanva)
+    //space
     var myStars = document.createElement('canvas')
     myStars.width = 600
     myStars.height = 400
@@ -90,6 +92,7 @@ const monIntro = function () {
     myStars.style.top = '0px'
     myStars.style.left = '0px'
     m0nsoleil.appendChild(myStars)
+    //Lune
     var maLune = document.createElement('canvas')
     maLune.width = 40
     maLune.height = 40
@@ -100,6 +103,7 @@ const monIntro = function () {
     maLune.style.top = '30px'
     maLune.style.right = '10%'
     m0nsoleil.appendChild(maLune)
+    //mer
     var m4m3r = document.createElement('canvas')
     m4m3r.width = 600
     m4m3r.height = 400
@@ -109,6 +113,17 @@ const monIntro = function () {
     m4m3r.style.position = 'absolute'
     m4m3r.style.display = 'block'
     m0nsoleil.appendChild(m4m3r)
+    //cloud img
+    var imgCloud = document.createElement('img')
+    imgCloud.id = 'cloud'
+    imgCloud.className = 'cloud'
+    imgCloud.style.position = 'absolute'
+    imgCloud.style.left = '600px'
+    imgCloud.style.top = '-100px'
+    imgCloud.style.height = '100%'
+    imgCloud.src = '/static/img/cloud.png'
+    m0nsoleil.appendChild(imgCloud)
+    //colline
     var m4colline = document.createElement('canvas')
     m4colline.width = 600
     m4colline.height = 400
@@ -216,16 +231,7 @@ const monIntro = function () {
     imgBird.style.top = '0px'
     imgBird.style.height = '100%'
     imgBird.src = '/static/img/twitter-bird-sprite.png'
-    //cloud img
-    var imgCloud = document.createElement('img')
-    imgCloud.id = 'cloud'
-    imgCloud.className = 'cloud'
-    imgCloud.style.position = 'relative'
-    imgCloud.style.left = '600px'
-    imgCloud.style.top = '-100px'
-    imgCloud.style.height = '100%'
-    imgCloud.src = '/static/img/cloud.png'
-    m0nsoleil.appendChild(imgCloud)
+
     m0nsoleil.appendChild(divMonkey)
     m0nsoleil.appendChild(divBird)
     m0nsoleil.appendChild(divSonic)
@@ -377,11 +383,11 @@ const monIntro = function () {
                     cancelAnimationFrame(idW)
                     cancelAnimationFrame(idM)
                     //clearInterval(idS)
-                    $('#space').fadeOut(100)
-                    //$('#cloud').fadeOut(100)
+                    $('#space').fadeOut(1000)
                     break
                 case 52:
-                    $('#moon').fadeOut(100)
+                    $('#moon').fadeOut(1000)
+                    //$('#cloud').fadeIn(1000)
                     idMD = requestAnimationFrame(monkeyDown)
                     idMB = requestAnimationFrame(moveBird)
                     cancelAnimationFrame(idB)
@@ -409,7 +415,7 @@ const monIntro = function () {
                     $('#space').animate({
                         backgroundColor: '#000000'
                     }, 1500)
-                    $('#space').fadeIn(100)
+                    $('#space').fadeIn(1000)
                     break
                 case 100:
                     cancelAnimationFrame(idB)
@@ -420,7 +426,8 @@ const monIntro = function () {
                     //idS = setInterval(animate, 500)
                     break
                 case 110:
-                    $('#moon').fadeIn(100)
+                    $('#moon').fadeIn(1000)
+                    //$('#cloud').fadeOut(1000)
                     break
             }
             ctx.fillRect(0, 0, 40, 40)
