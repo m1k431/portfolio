@@ -118,9 +118,9 @@ const monIntro = function () {
     imgCloud.id = 'cloud'
     imgCloud.className = 'cloud'
     imgCloud.style.position = 'absolute'
-    imgCloud.style.left = '400px'
-    imgCloud.style.top = '-100px'
-    imgCloud.style.height = '100%'
+    imgCloud.style.left = '700px'
+    imgCloud.style.top = '-410px'
+    imgCloud.style.height = '200%'
     imgCloud.src = '/static/img/cloud.png'
     m0nsoleil.appendChild(imgCloud)
     //colline
@@ -250,11 +250,11 @@ const monIntro = function () {
     var idB, idW, idMU, idMD, idS, idM, idBird, idCloud
     let i = 4
     var moveCloud = function () {
-        if (parseFloat(imgCloud.style.left) > -600) {
+        if (parseFloat(imgCloud.style.left) > -1050) {
             imgCloud.style.left = parseFloat(imgCloud.style.left) - 0.2 + 'px'
         }
         else {
-            imgCloud.style.left = '400px'
+            imgCloud.style.left = '700px'
         }
         idCloud = requestAnimationFrame(moveCloud)
 
