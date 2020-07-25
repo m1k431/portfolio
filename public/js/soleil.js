@@ -245,7 +245,7 @@ const monIntro = function () {
     let i = 4
     var moveCloud = function () {
         if (parseFloat(imgCloud.style.left) > -600) {
-            imgCloud.style.left = parseFloat(imgCloud.style.left) - 0.1 + 'px'
+            imgCloud.style.left = parseFloat(imgCloud.style.left) - 0.2 + 'px'
         }
         else {
             imgCloud.style.left = '600px'
@@ -361,7 +361,7 @@ const monIntro = function () {
     //snowback control
     let snowBack = document.getElementById('snowB')
     idBird = requestAnimationFrame(animBird)
-    
+
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 131) {
             c00rdY = Math.cos(c00rdX / 24) * 54
@@ -380,14 +380,14 @@ const monIntro = function () {
                     $('#space').fadeOut(100)
                     //$('#cloud').fadeOut(100)
                     break
-                    case 52:
-                        $('#moon').fadeOut(100)
-                        idMD = requestAnimationFrame(monkeyDown)
-                        idMB = requestAnimationFrame(moveBird)
-                        cancelAnimationFrame(idB)
-                        idW = requestAnimationFrame(sonicWalk)
-                        idM = requestAnimationFrame(moveSonicRight)
-                        idCloud = requestAnimationFrame(moveCloud)
+                case 52:
+                    $('#moon').fadeOut(100)
+                    idMD = requestAnimationFrame(monkeyDown)
+                    idMB = requestAnimationFrame(moveBird)
+                    cancelAnimationFrame(idB)
+                    idW = requestAnimationFrame(sonicWalk)
+                    idM = requestAnimationFrame(moveSonicRight)
+                    idCloud = requestAnimationFrame(moveCloud)
                     snowBack.play()
                     break
                 case 62:
