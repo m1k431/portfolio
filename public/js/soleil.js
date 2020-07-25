@@ -118,7 +118,7 @@ const monIntro = function () {
     imgCloud.id = 'cloud'
     imgCloud.className = 'cloud'
     imgCloud.style.position = 'absolute'
-    imgCloud.style.left = '600px'
+    imgCloud.style.left = '400px'
     imgCloud.style.top = '-100px'
     imgCloud.style.height = '100%'
     imgCloud.src = '/static/img/cloud.png'
@@ -220,7 +220,7 @@ const monIntro = function () {
     divBird.style.height = '24px'
     divBird.style.width = '24px'
     divBird.style.top = '230px'
-    divBird.style.left = '20%'
+    divBird.style.left = '-10%'
     divBird.style.overflow = 'hidden'
     //bird img
     var imgBird = document.createElement('img')
@@ -247,14 +247,14 @@ const monIntro = function () {
     var bool1 = false
     var bool2 = false
     var bool3 = false
-    var idB, idW, idMU, idMD, idS, idM, idBird, idMB, idCloud
+    var idB, idW, idMU, idMD, idS, idM, idBird, idCloud
     let i = 4
     var moveCloud = function () {
         if (parseFloat(imgCloud.style.left) > -600) {
             imgCloud.style.left = parseFloat(imgCloud.style.left) - 0.2 + 'px'
         }
         else {
-            imgCloud.style.left = '600px'
+            imgCloud.style.left = '400px'
         }
         idCloud = requestAnimationFrame(moveCloud)
 
@@ -271,16 +271,6 @@ const monIntro = function () {
             else bool3 = false
         }
         idBird = requestAnimationFrame(animBird)
-    }
-
-    var moveBird = function () {
-        if (parseFloat(divBird.style.left) < 100) {
-            divBird.style.left = parseFloat(divBird.style.left) + 0.3 + '%'
-        }
-        else {
-            divBird.style.left = '-10%'
-        }
-        idMB = requestAnimationFrame(moveBird)
     }
 
     var sonicBored = function () {
@@ -317,9 +307,11 @@ const monIntro = function () {
     var moveSonicRight = function () {
         if (parseFloat(divSonic.style.left) < 100) {
             divSonic.style.left = parseFloat(divSonic.style.left) + 0.2 + '%'
+            divBird.style.left = parseFloat(divBird.style.left) + 0.2 + '%'
         }
         else {
             divSonic.style.left = '-10%'
+            divBird.style.left = '-10%'
         }
         idM = requestAnimationFrame(moveSonicRight)
     }
@@ -367,6 +359,7 @@ const monIntro = function () {
     //snowback control
     let snowBack = document.getElementById('snowB')
     idBird = requestAnimationFrame(animBird)
+    idCloud = requestAnimationFrame(moveCloud)
 
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 131) {
@@ -382,15 +375,13 @@ const monIntro = function () {
                     }, 500)
                     cancelAnimationFrame(idW)
                     cancelAnimationFrame(idM)
+                    $('#moon').fadeOut(1000)
                     break
                 case 52:
-                    $('#moon').fadeOut(1000)
                     idMD = requestAnimationFrame(monkeyDown)
-                    idMB = requestAnimationFrame(moveBird)
                     cancelAnimationFrame(idB)
                     idW = requestAnimationFrame(sonicWalk)
                     idM = requestAnimationFrame(moveSonicRight)
-                    idCloud = requestAnimationFrame(moveCloud)
                     snowBack.play()
                     break
                 case 62:
@@ -416,11 +407,10 @@ const monIntro = function () {
                 case 100:
                     cancelAnimationFrame(idB)
                     cancelAnimationFrame(idMU)
-                    cancelAnimationFrame(idCloud)
-                    cancelAnimationFrame(idMB)
+                    //cancelAnimationFrame(idCloud)
                     snowBack.pause()
                     break
-                case 110:
+                case 105:
                     $('#moon').fadeIn(500)
                     break
             }
