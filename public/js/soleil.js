@@ -71,14 +71,6 @@ const monIntro = function () {
     m0nCiel.style.backgroundColor = 'blue'
     m0nCiel.id = 'ci3l'
     m0nsoleil.appendChild(m0nCiel)
-    //soleil
-    var m0nCanva = document.createElement('canvas')
-    m0nCanva.width = 40
-    m0nCanva.height = 40
-    m0nCanva.style.width = '40px'
-    m0nCanva.id = 'c4nv4'
-    m0nCanva.style.position = 'absolute'
-    m0nsoleil.appendChild(m0nCanva)
     //space
     var myStars = document.createElement('canvas')
     myStars.width = 600
@@ -92,6 +84,14 @@ const monIntro = function () {
     myStars.style.top = '0px'
     myStars.style.left = '0px'
     m0nsoleil.appendChild(myStars)
+    //soleil
+    var m0nCanva = document.createElement('canvas')
+    m0nCanva.width = 40
+    m0nCanva.height = 40
+    m0nCanva.style.width = '40px'
+    m0nCanva.id = 'c4nv4'
+    m0nCanva.style.position = 'absolute'
+    m0nsoleil.appendChild(m0nCanva)
     //Lune
     var maLune = document.createElement('canvas')
     maLune.width = 40
@@ -371,7 +371,7 @@ const monIntro = function () {
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 131) {
             c00rdY = Math.cos(c00rdX / 24) * 54
-            m0nCanva.style.top = c00rdY * 1.1 + 70 + '%'
+            m0nCanva.style.top = c00rdY * 1.1 + 60 + '%'
             m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
             ctx.clearRect(0, 0, 40, 40)
             ctxLune.clearRect(0, 0, 40, 40)
