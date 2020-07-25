@@ -216,6 +216,16 @@ const monIntro = function () {
     imgBird.style.top = '0px'
     imgBird.style.height = '100%'
     imgBird.src = '/static/img/twitter-bird-sprite.png'
+    //cloud img
+    var imgCloud = document.createElement('img')
+    imgCloud.id = 'cloud'
+    imgCloud.className = 'cloud'
+    imgCloud.style.position = 'relative'
+    imgCloud.style.left = '600px'
+    imgCloud.style.top = '-100px'
+    imgCloud.style.height = '100%'
+    imgCloud.src = '/static/img/cloud.png'
+    m0nsoleil.appendChild(imgCloud)
     m0nsoleil.appendChild(divMonkey)
     m0nsoleil.appendChild(divBird)
     m0nsoleil.appendChild(divSonic)
@@ -231,8 +241,18 @@ const monIntro = function () {
     var bool1 = false
     var bool2 = false
     var bool3 = false
-    var idB, idW, idMU, idMD, idS, idM, idBird, idMB
+    var idB, idW, idMU, idMD, idS, idM, idBird, idMB, idCloud
     let i = 4
+    var moveCloud = function () {
+        if (parseFloat(imgCloud.style.left) > -600) {
+            imgCloud.style.left = parseFloat(imgCloud.style.left) - 0.1 + 'px'
+        }
+        else {
+            imgCloud.style.left = '600px'
+        }
+        idCloud = requestAnimationFrame(moveCloud)
+
+    }
     var animBird = function () {
         if (bool3 == false) {
             imgBird.style.left = '0px'
@@ -249,7 +269,7 @@ const monIntro = function () {
 
     var moveBird = function () {
         if (parseFloat(divBird.style.left) < 100) {
-            divBird.style.left = parseFloat(divBird.style.left) + 0.1 + '%'
+            divBird.style.left = parseFloat(divBird.style.left) + 0.3 + '%'
         }
         else {
             divBird.style.left = '-10%'
@@ -341,10 +361,9 @@ const monIntro = function () {
     //snowback control
     let snowBack = document.getElementById('snowB')
     idBird = requestAnimationFrame(animBird)
-    idMB = requestAnimationFrame(moveBird)
-
+    
     var dessinerM0n = (/*m0ntimestamp*/) => {
-        if (c00rdX < 110) {
+        if (c00rdX < 131) {
             c00rdY = Math.cos(c00rdX / 24) * 54
             m0nCanva.style.top = c00rdY * 1.1 + 60 + '%'
             m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
@@ -358,14 +377,17 @@ const monIntro = function () {
                     cancelAnimationFrame(idW)
                     cancelAnimationFrame(idM)
                     //clearInterval(idS)
-                    $('#space').fadeOut(1000)
+                    $('#space').fadeOut(100)
+                    //$('#cloud').fadeOut(100)
                     break
-                case 52:
-                    $('#moon').fadeOut(1500)
-                    idMD = requestAnimationFrame(monkeyDown)
-                    cancelAnimationFrame(idB)
-                    idW = requestAnimationFrame(sonicWalk)
-                    idM = requestAnimationFrame(moveSonicRight)
+                    case 52:
+                        $('#moon').fadeOut(100)
+                        idMD = requestAnimationFrame(monkeyDown)
+                        idMB = requestAnimationFrame(moveBird)
+                        cancelAnimationFrame(idB)
+                        idW = requestAnimationFrame(sonicWalk)
+                        idM = requestAnimationFrame(moveSonicRight)
+                        idCloud = requestAnimationFrame(moveCloud)
                     snowBack.play()
                     break
                 case 62:
@@ -377,7 +399,6 @@ const monIntro = function () {
                     idMD = requestAnimationFrame(monkeyDown)
                     break
                 case 90:
-                    $('#moon').fadeIn(5000)
                     cancelAnimationFrame(idMD)
                     idMU = requestAnimationFrame(monkeyUp)
                     break
@@ -388,13 +409,18 @@ const monIntro = function () {
                     $('#space').animate({
                         backgroundColor: '#000000'
                     }, 1500)
-                    $('#space').fadeIn(1500)
+                    $('#space').fadeIn(100)
                     break
                 case 100:
                     cancelAnimationFrame(idB)
                     cancelAnimationFrame(idMU)
+                    cancelAnimationFrame(idCloud)
+                    cancelAnimationFrame(idMB)
                     snowBack.pause()
                     //idS = setInterval(animate, 500)
+                    break
+                case 110:
+                    $('#moon').fadeIn(100)
                     break
             }
             ctx.fillRect(0, 0, 40, 40)
@@ -402,7 +428,7 @@ const monIntro = function () {
             c00rdX = (c00rdX * 10 + 0.1 * 10) / 10
         }
         else {
-            c00rdX = 45
+            c00rdX = 20
         }
         requestAnimationFrame(dessinerM0n)
     }
