@@ -347,7 +347,7 @@ const monIntro = function () {
         }
         idMU = requestAnimationFrame(monkeyUp)
     }
-    var c00rdX = 45
+    var c00rdX = 20
     var c00rdY = 2
 
     var ctxLune = maLune.getContext('2d')
@@ -371,7 +371,7 @@ const monIntro = function () {
     var dessinerM0n = (/*m0ntimestamp*/) => {
         if (c00rdX < 131) {
             c00rdY = Math.cos(c00rdX / 24) * 54
-            m0nCanva.style.top = c00rdY * 1.1 + 60 + '%'
+            m0nCanva.style.top = c00rdY * 1.1 + 70 + '%'
             m0nCanva.style.left = c00rdX * 1.3 - 50 + '%'
             ctx.clearRect(0, 0, 40, 40)
             ctxLune.clearRect(0, 0, 40, 40)
@@ -379,15 +379,12 @@ const monIntro = function () {
                 case 45:
                     $('#space').animate({
                         backgroundColor: '#0a15db'
-                    }, 1000)
+                    }, 500)
                     cancelAnimationFrame(idW)
                     cancelAnimationFrame(idM)
-                    //clearInterval(idS)
-                    $('#space').fadeOut(1000)
                     break
                 case 52:
                     $('#moon').fadeOut(1000)
-                    //$('#cloud').fadeIn(1000)
                     idMD = requestAnimationFrame(monkeyDown)
                     idMB = requestAnimationFrame(moveBird)
                     cancelAnimationFrame(idB)
@@ -414,8 +411,7 @@ const monIntro = function () {
                     idB = requestAnimationFrame(sonicBored)
                     $('#space').animate({
                         backgroundColor: '#000000'
-                    }, 1500)
-                    $('#space').fadeIn(1000)
+                    }, 500)
                     break
                 case 100:
                     cancelAnimationFrame(idB)
@@ -423,11 +419,9 @@ const monIntro = function () {
                     cancelAnimationFrame(idCloud)
                     cancelAnimationFrame(idMB)
                     snowBack.pause()
-                    //idS = setInterval(animate, 500)
                     break
                 case 110:
-                    $('#moon').fadeIn(1000)
-                    //$('#cloud').fadeOut(1000)
+                    $('#moon').fadeIn(500)
                     break
             }
             ctx.fillRect(0, 0, 40, 40)
