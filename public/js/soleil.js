@@ -103,16 +103,6 @@ const monIntro = function () {
     maLune.style.top = '30px'
     maLune.style.right = '10%'
     m0nsoleil.appendChild(maLune)
-    //mer
-    var m4m3r = document.createElement('canvas')
-    m4m3r.width = 600
-    m4m3r.height = 400
-    m4m3r.style.width = '100%'
-    m4m3r.style.height = '100%'
-    m4m3r.id = 'm0nC4nvaM3r'
-    m4m3r.style.position = 'absolute'
-    m4m3r.style.display = 'block'
-    m0nsoleil.appendChild(m4m3r)
     //cloud img
     var imgCloud = document.createElement('img')
     imgCloud.id = 'cloud'
@@ -123,6 +113,16 @@ const monIntro = function () {
     imgCloud.style.height = '200%'
     imgCloud.src = '/static/img/cloud.png'
     m0nsoleil.appendChild(imgCloud)
+    //mer
+    var m4m3r = document.createElement('canvas')
+    m4m3r.width = 600
+    m4m3r.height = 400
+    m4m3r.style.width = '100%'
+    m4m3r.style.height = '100%'
+    m4m3r.id = 'm0nC4nvaM3r'
+    m4m3r.style.position = 'absolute'
+    m4m3r.style.display = 'block'
+    m0nsoleil.appendChild(m4m3r)
     //colline
     var m4colline = document.createElement('canvas')
     m4colline.width = 600
