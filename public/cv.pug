@@ -5,16 +5,19 @@ append content
     .table-cell
       #m0ncentrage
         #INDEX
-          //.moi
-          //display-none
-          //p.moiPara Mika&euml;l GARCIA 37 y/o 
-          //img.foto(src='/static/img/photoCV.jpg' alt='Mafoto' height='78' onclick='openlinkedin();')
-          //a.pdf.french(href='/static/img/cvMikaelFr.pdf')
-          //img.pdf.french(src='/static/img/downPdf.svg' alt='download pdf' height='64')
-          //a.pdf.english(href='/static/img/cvMikaelEn.pdf')
-          //img.pdf.english(src='/static/img/downPdf.svg' alt='download pdf' height='64')
-          //p.moiPara +33 695 490 777
-          //p.moiPara garcia.mikael@gmail.com
+          .moi
+            //display-none
+            //a.pdf.french(href='/static/img/cvMikaelFr.pdf')
+            //img.pdf.french(src='/static/img/downPdf.svg' alt='download pdf' height='64')
+            //a.pdf.english(href='/static/img/cvMikaelEn.pdf')
+            //img.pdf.english(src='/static/img/downPdf.svg' alt='download pdf' height='64')
+            img.foto(src='/static/img/photoCV.jpg' alt='Mafoto' height='78' onclick='openlinkedin();')
+            p.moiPara Mika&euml;l GARCIA 37 y/o 
+            p.moiPara 65 rue de la republique 
+            p.moiPara 82000 MONTAUBAN 
+            p.moiPara +33 695 490 777
+            p.moiPara garcia.mikael@gmail.com
+            p.moiPara http://mikael.ml
           #metier
             h1 IBM and Javascript Developer
           p.flags
@@ -28,28 +31,31 @@ append content
               h3.titreH3 Front-End
               .informatiques#informatique
                 .infoJeu ECMAScript 6
-                .infoJeu jade/PUG
                 .infoJeu HTML5
+                .infoJeu jade/PUG
                 .infoJeu JQUERY
                 .infoJeu SCSS
+                .infoJeu PL/SQL
                 .infoJeu BootStrap
                 .infoJeu AngularJS
               h3.titreH3 Back-End
               .informatiques#informatique
+                .infoJeu IBM i
                 .infoJeu NodeJS
+                .infoJeu IBM DB2
                 .infoJeu ExpressJS
                 .infoJeu Ajax
-                .infoJeu DB2
-                .infoJeu mysql
                 .infoJeu mongoDB
-                .infoJeu WebSocket
               h3.titreH3 Tools
               .informatiquesLast#informatique
-                .infoJeu Unix
+                .infoJeu LINUX
+                .infoJeu osX
                 .infoJeu Windows
                 .infoJeu Git
                 .infoJeu bsh/zsh
                 .infoJeu Photoshop
+                .infoJeu IBM RDi
+                .infoJeu ARCAD
             .btp#btp.french.english.spanish
               h3.titreH3.french Techniques Design
               h3.titreH3.english Techniques Design
@@ -79,12 +85,14 @@ append content
             h2.titreH2.english Experiences
             h2.titreH2.spanish Experiencia profesional
             .jobs
-              h3.titreH3 Developpeur logiciel IBM i
+              h3.titreH3.french Developpeur logiciel IBM i
+              h3.titreH3.english IBM i programmer
               .infojob.french Développement sur IBM i (CL, SQL, RPG, arcad, Rdi), Pro a Pro  Montauban, depuis août 2019
               .infojob.english IBM i Developer (CL, SQL, RPG, arcad, Rdi), Pro a Pro  Montauban, depuis août 2019
               .infojob.spanish IBM i Developer (CL, SQL, RPG, arcad, Rdi), Pro a Pro  Montauban, depuis août 2019
             .jobs
-              h3.titreH3 Ingenieur etude et developpement
+              h3.titreH3.french Ingenieur etude et developpement IBM i
+              h3.titreH3.english IBM i software engineer
               .infojob.french Développement sur IBM i (CL, SQL, RPG, arcad, Rdi), OCSI Paris 01, depuis janvier 2019
               .infojob.english IBM i Developer (CL, SQL, RPG, arcad, Rdi), OCSI Paris 01, depuis janvier 2019
               .infojob.spanish IBM i Developer (CL, SQL, RPG, arcad, Rdi), OCSI Paris 01, depuis janvier 2019
@@ -149,8 +157,8 @@ append content
               h3.titreH3.spanish Técnico de esquí y snowboard
               .infojob.spanish Intersport, l&rsquo;Alpe d&rsquo;Huez, 2007-2008
             .jobs
-              h3.titreH3.french Technicien et Administrateur systemes et reseaux microsoft
-              h3.titreH3.english Technician and Administrator Systems and Networks microsoft
+              h3.titreH3.french Technicien systemes et Administrateur reseaux microsoft
+              h3.titreH3.english Systems technician and Microsoft Network Administrator 
               h3.titreH3.spanish Técnico y Administrador de Sistemas y Redes microsoft
               .infojob.french Administration serveurs Windows et clients GNU/LINUX Maintenance et installation systemes informatique Developpement html php (script de backup) SECOB, St Jean-de-la-Ruelle, 2005-2007
               .infojob.english Windows server administration and GNU / LINUX clients Maintenance and installation of computer systems, html php development (backup script), SECOB, St Jean-de-la-Ruelle, 2005-2007
@@ -181,12 +189,11 @@ append content
             h2.titreH2.english Training
             h2.titreH2.spanish Formación
             .jobs
-              h3.titreH3.french Pepiniere IBM
-              h3.titreH3.english Pepiniere IBM
-              h3.titreH3.spanish Pepiniere IBM
-              .infojob.french Développement RPG et CL
-              .infojob.english Développement RPG et CL
-              .infojob.spanish Développement RPG et CL
+              h3.titreH3 Pepiniere IBM
+              span OCSI Paris 01
+              .infojob.french Développement RPGLE et CL
+              .infojob.english Développement RPGLE et CL
+              .infojob.spanish Développement RPGLE et CL
               .infojob.french SQL for IBM db2
               .infojob.english SQL for IBM db2
               .infojob.spanish SQL for IBM db2
@@ -197,6 +204,7 @@ append content
               h3.titreH3.french Developpeur JavaScript FullStack
               h3.titreH3.english FullStack Javascript Developer
               h3.titreH3.spanish Desarollador Javascript de pila completa
+              span IFOCOP Paris 11
               .infojob.french Développement et management d&apos;un projet web
               .infojob.english Development and management of a web project
               .infojob.spanish Desarolla y gestión de un proyecto web
@@ -209,7 +217,8 @@ append content
             .jobs
               h3.titreH3.french TP de technicien etude en batiment option dessin
               h3.titreH3.english Construction Engineer Technician Drawing Option
-              h3.titreH3.spanish Técnico de Ingeniería de Construcción Opción de Dibujo 
+              h3.titreH3.spanish Técnico de Ingeniería de Construcción Opción de Dibujo
+              span AFPA La Valette-du-var
               .infojob Photoshop, Autocad, Archicad, Artlantis
               .infojob.french Design, techniques et normes de construction
               .infojob.english Design, techniques and construction standards
@@ -218,7 +227,8 @@ append content
               .infojob.english Notions of town planning and roads
               .infojob.spanish Nociones de urbanismo y carreteras
             .jobs
-              h3.titreH3 IUT informatique Orleans
+              h3.titreH3 DUT informatique genie logiciel
+              span IUT d'Orléans
               .infojob.french Syst&eacute;mes et R&eacute;seaux: Administration et d&eacute;ploiementent r&eacute;seau de syst&egrave;mes en environnement Linux, regexp/assembleur
               .infojob.french Base de Donn&eacute;es: Analyse (merise), conception (MCD, MCT), maintenance
               .infojob.french Programmation: Langage C, C++, SQL, bsh, assembly language
