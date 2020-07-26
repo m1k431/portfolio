@@ -51,7 +51,7 @@ const monIntro = function () {
     //ATARIIIIIIIIII
     var divAtari = document.createElement('div')
     divAtari.style.position = 'absolute'
-    divAtari.style.top = '80px'
+    divAtari.style.top = '100px'
     divAtari.style.right = '5px'
     var m0nimg = document.createElement('img')
     m0nimg.style.position = 'relative'
@@ -109,7 +109,7 @@ const monIntro = function () {
     imgCloud.className = 'cloud'
     imgCloud.style.position = 'absolute'
     imgCloud.style.left = '700px'
-    imgCloud.style.top = '-410px'
+    imgCloud.style.top = '-460px'
     imgCloud.style.height = '200%'
     imgCloud.src = '/static/img/cloud.png'
     m0nsoleil.appendChild(imgCloud)
@@ -219,8 +219,8 @@ const monIntro = function () {
     divBird.overflow = 'hidden'
     divBird.style.height = '24px'
     divBird.style.width = '24px'
-    divBird.style.top = '230px'
-    divBird.style.left = '-10%'
+    divBird.style.top = '240px'
+    divBird.style.left = '-15%'
     divBird.style.overflow = 'hidden'
     //bird img
     var imgBird = document.createElement('img')
@@ -233,11 +233,11 @@ const monIntro = function () {
     imgBird.src = '/static/img/twitter-bird-sprite.png'
 
     m0nsoleil.appendChild(divMonkey)
-    m0nsoleil.appendChild(divBird)
-    m0nsoleil.appendChild(divSonic)
-    m0nsoleil.appendChild(divAtari)
     m0nsoleil.appendChild(imgSonicPalm)
     divMonkey.appendChild(imgMonkey)
+    m0nsoleil.appendChild(divAtari)
+    m0nsoleil.appendChild(divBird)
+    m0nsoleil.appendChild(divSonic)
     divBird.appendChild(imgBird)
     divSonic.appendChild(imgSonic)
     divAtari.id = 'atari'
@@ -311,7 +311,7 @@ const monIntro = function () {
         }
         else {
             divSonic.style.left = '-10%'
-            divBird.style.left = '-10%'
+            divBird.style.left = '-15%'
         }
         idM = requestAnimationFrame(moveSonicRight)
     }
