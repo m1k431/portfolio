@@ -18,9 +18,9 @@ $colorBody: rgba(2, 106, 243, 0.99);
 
 %css3Button {
     //border: 0.7px solid white;
-    width: 70px;
+    width: 75px;
     border-radius: 28px;
-    padding: 5px 2px 7px 2px;
+    padding: 5px 2px 5px 2px;
 }
 
 body,
@@ -195,8 +195,8 @@ a {
 
 .css3button {
     @extend %css3Button;
-    font-family: $myFont;
-    font-size: 1.3em;
+    font-family: 'ibm';
+    font-size: 1em;
     background-image: linear-gradient(to bottom, rgba(52, 152, 219, 0.901), rgba(19, 43, 121, 0.5));
 }
 
@@ -212,9 +212,10 @@ a {
     margin-left: 5px;
     margin-right: 5px;
     color: white;
-    font-size: 1.3em;
+    font-size: 1em;
     text-align: center;
-    font-family: $myFont;
+    //font-family: $myFont;
+    font-family: 'ibm';
     background-image: linear-gradient(to bottom, rgba(221, 60, 60, 0.9), rgba(221, 60, 60, 0.9));
 }
 
