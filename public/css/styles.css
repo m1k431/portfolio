@@ -407,6 +407,10 @@ iframe {
   text-align: center;
 }
 
+.me {
+  margin: 1.5em;
+}
+
 h1,
 h2,
 h3,
@@ -415,7 +419,7 @@ nav {
   color: white;
   text-align: center;
   font-family: "ibm";
-  margin: 0.5em;
+  margin: 0.3em;
 }
 
 h5 {
@@ -626,6 +630,12 @@ a {
   margin-top: 0.5%;
   padding-bottom: 175px;
   text-align: center;
+}
+
+.auteurs {
+  margin-top: 0;
+  font-size: 1em;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
