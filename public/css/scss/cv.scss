@@ -28,11 +28,6 @@ li {
 /*****
 $$$$$$  BALISES HTML   $$$$$
 ****/
-#CV {
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-}
-
 #metier {
   -webkit-transition: background 1s ease-in-out;
   -ms-transition: background 1s ease-in-out;
@@ -45,33 +40,9 @@ $$$$$$  BALISES HTML   $$$$$
   border: 1px solid #ffffff;
 }
 
-.backgroundRed {
-  //background-color: rgba(255, 0, 0, 0.5);
-  text-align: center;
-  font-family: monospace;
-  background-color: rgba(245, 245, 245, 1);
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-left: 15%;
-  margin-right: 15%;
-  overflow: hidden;
-}
-
-p.jeu {
-  @extend %parag;
-  text-align: center;
-}
-
 p.moiPara {
   @extend %parag;
   text-align: left;
-}
-
-.mail {
-  text-decoration: none;
-  font-family: monospace;
 }
 
 html {
@@ -94,24 +65,6 @@ html {
   font-size: 1em;
 }
 
-/*****
-    $$$$$$  POLICES &&& background:   $$$$$
-****/
-
-.bold {
-  font-weight: bold;
-}
-
-/*a, p {
-  text-decoration: none;
-  margin-top: 1px;
-  margin-bottom: 1px;
-  margin-left: 3px;
-  font-family: $f0nt;
-}
-*/
-/********** CLAAAAAAAÃAaaaaaaaaaaaāaaaaasssssssssssSSSSSSSSSS*****************/
-
 .french {
   display: none;
 }
@@ -122,20 +75,6 @@ html {
 
 .english {
   display: none;
-}
-
-.web {
-  font-family: monospace;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  border-radius: 10px;
-  font-size: 1.2em;
-}
-
-.pdf {
-  position: absolute;
-  margin-top: -3px;
 }
 
 .moi {
@@ -199,15 +138,6 @@ html {
   transform: scale(0, 0) translate(0%, 400%);
 }
 
-.start {
-  position: absolute;
-  height: 60px;
-  width: 10%;
-  left: 45%;
-  right: 45%;
-  top: 15px;
-}
-
 p.flags {
   width: 50%;
   margin: 0;
@@ -268,6 +198,8 @@ p.flags {
 .competen {
   border: 1px solid #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
+  font-family: monospace;
+  font-size: 1.2em;
   color: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   margin: 1%;
@@ -360,30 +292,6 @@ p.flags {
   margin-left: 0.5%;
   margin-right: 0.5%;
   vertical-align: middle;
-  overflow: visible;
-}
-
-.informatiquesIUT {
-  width: 96%;
-  text-align: center;
-  background-color: rgba(245, 247, 246, 0.6);
-  border-radius: 10px;
-  margin: 1%;
-  vertical-align: bottom;
-  display: inline-block;
-  overflow: visible;
-}
-
-.informatiquesT {
-  width: 31.5%;
-  text-align: center;
-  background-color: rgba(245, 247, 246, 0.6);
-  border-radius: 10px;
-  margin-top: 0.1%;
-  margin-bottom: 0.5%;
-  margin-right: 0.5%;
-  vertical-align: top;
-  display: inline-block;
   overflow: visible;
 }
 
@@ -482,20 +390,6 @@ p.flags {
   overflow: visible;
 }
 
-.btpT {
-  width: 31.5%;
-  text-align: center;
-  background-color: rgba(245, 247, 246, 0.6);
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 0.1%;
-  margin-bottom: 0.1%;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  vertical-align: top;
-  overflow: visible;
-}
-
 .commerciales {
   width: 31.5%;
   color: black;
@@ -550,4 +444,18 @@ p.flags {
 #mesData {
   margin: auto;
   text-align: left;
+}
+
+.backgroundRed {
+  //background-color: rgba(255, 0, 0, 0.5);
+  text-align: center;
+  font-family: monospace;
+  background-color: rgba(245, 245, 245, 1);
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 15%;
+  margin-right: 15%;
+  overflow: hidden;
 }

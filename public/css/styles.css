@@ -360,7 +360,8 @@ body {
   background-color: rgba(2, 106, 243, 0.99);
 }
 
-button, input {
+button,
+input {
   overflow: visible;
   max-width: 300px;
 }
@@ -386,12 +387,6 @@ iframe {
   margin-top: 0.5em;
 }
 
-.hack {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 #INDEX {
   border: 1px solid white;
   border-radius: 10px;
@@ -412,33 +407,6 @@ iframe {
   text-align: center;
 }
 
-#ADM1N {
-  border: 1px solid white;
-  background-color: rgba(183, 210, 214, 0.1);
-  border-radius: 10px;
-  margin-bottom: 2.5%;
-  margin-top: 0.5%;
-  text-align: center;
-}
-
-h1.liens {
-  margin-bottom: 0;
-}
-
-.auteurs {
-  margin-top: 0;
-  font-size: 1em;
-  color: white;
-}
-
-p.first {
-  margin-top: 0.3em;
-}
-
-h2.how {
-  margin-bottom: 0;
-}
-
 h1,
 h2,
 h3,
@@ -447,10 +415,11 @@ nav {
   color: white;
   text-align: center;
   font-family: "ibm";
+  margin: 0.5em;
 }
 
-span {
-  font-size: 1.2em;
+h5 {
+  margin: 0.5em;
 }
 
 nav ul {
@@ -482,7 +451,7 @@ a {
   margin-left: 5px;
   margin-right: 5px;
   color: white;
-  font-size: 1.1em;
+  font-size: 1em;
   text-align: center;
   font-family: monospace;
 }
@@ -542,25 +511,8 @@ a {
   margin-bottom: 60px;
 }
 
-#m0ncentrageAdmin {
-  display: block;
-  position: relative;
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-top: 70px;
-  margin-bottom: 100px;
-}
-
 .m0ncentrageParafoot {
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.5%;
-  margin-top: 0.5%;
-  text-align: center;
-}
-
-.m0ncentrage404 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2.5%;
@@ -631,11 +583,49 @@ a {
   margin-right: 8px;
 }
 
-.myclock {
+.complementaireT {
+  margin: 1%;
+  border: 1px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.linkedinT {
+  display: none;
+  border: 2px solid #ffffff;
   position: absolute;
-  font-size: 1em;
-  color: #ffffff;
-  top: 5px;
+  border-radius: 10px;
+  height: 25px;
+  width: 105px;
+  margin: 5px;
+  background-color: black;
+}
+
+.experiencesT {
+  display: none;
+  border: 1px solid #ffffff;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  text-align: center;
+  transform: scale(0, 0) translate(0%, 400%);
+}
+
+.competencesJeu {
+  border: 1px solid #ffffff;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  padding-bottom: 175px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
