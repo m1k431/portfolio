@@ -52,7 +52,8 @@ let p0rt = 80,
         secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
-            maxAge: ms('90 days')
+            maxAge: ms('90 days'),
+            sameSite: 'Lax'
         },
         horodate: '',
         ip: '',
@@ -143,7 +144,9 @@ app.get('/', (req, res) => {
     req.session.geoloc = geoip.lookup(req.session.ip)
     res.render('index.pug', {})
     //LOGGER
+    logger.trace(req.sessionID)
     logger.trace(req.session)
+    console.log(req.sessionID)
     console.log(req.session)
 })
 

@@ -1,0 +1,94 @@
+Thu Jul 29 2021 14:01:58 GMT+0200 (GMT+02:00)[2020-07-29T14:02:00.232] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T12:02:00.226Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T14:01:59.645Z,
+  ip: '31.13.127.11',
+  geoloc: {
+    range: [ 520970240, 520978431 ],
+    country: 'IE',
+    region: '',
+    eu: '1',
+    timezone: 'Europe/Dublin',
+    city: '',
+    ll: [ 53.3472, -6.2439 ],
+    metro: 0,
+    area: 200
+  },
+  __lastAccess: 1596024120226
+}
+[2020-07-29T14:02:00.379] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T12:02:00.379Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    sameSite: 'lax'
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T14:02:00.257Z,
+  ip: '31.13.127.11',
+  geoloc: {
+    range: [ 520970240, 520978431 ],
+    country: 'IE',
+    region: '',
+    eu: '1',
+    timezone: 'Europe/Dublin',
+    city: '',
+    ll: [ 53.3472, -6.2439 ],
+    metro: 0,
+    area: 200
+  },
+  __lastAccess: 1596024120379
+}
+[2020-07-29T14:02:01.609] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T12:02:01.606Z,
+    originalMaxAge: 7775999998,
+    httpOnly: true
+  },
+  views: { '/': 25, '/cv': 37, '/giftedADHD': 1 },
+  horodate: 2020-07-29T14:02:01.520Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596024121609
+}
+[2020-07-29T14:02:19.727] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T12:02:19.723Z,
+    originalMaxAge: 7775999998,
+    httpOnly: true
+  },
+  views: { '/': 26, '/cv': 37, '/giftedADHD': 1 },
+  horodate: 2020-07-29T14:02:19.569Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596024139726
+}
