@@ -1,0 +1,50 @@
+Fri Jul 30 2021 01:24:13 GMT+0200 (GMT+02:00)[2020-07-30T01:24:18.367] [TRACE] file - x8WCoHx5QEToCBrG0AibGViA
+[2020-07-30T01:24:18.367] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:24:18.359Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'Lax'
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:24:17.824Z,
+  ip: '66.249.68.84',
+  geoloc: {
+    range: [ 1123632128, 1123632383 ],
+    country: 'US',
+    region: '',
+    eu: '0',
+    timezone: 'America/Chicago',
+    city: '',
+    ll: [ 37.751, -97.822 ],
+    metro: 0,
+    area: 1000
+  },
+  __lastAccess: 1596065058361
+}
+[2020-07-30T01:24:25.256] [TRACE] file - T3RRTNqECov5f_PeKgcdG6RS
+[2020-07-30T01:24:25.257] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:24:25.254Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'Lax'
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:24:25.140Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596065065255
+}

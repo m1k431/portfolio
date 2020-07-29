@@ -47,13 +47,13 @@ let p0rt = 80,
             return uid.sync(18)
         },
         store: new FileStore(),
-        resave: true,
+        resave: false,
         saveUninitialized: true,
         secret: 'qwerty',
         cookie: {
             expires: datetime.setUTCFullYear(datetime.getFullYear() + 1),
             maxAge: ms('90 days'),
-            sameSite: 'Lax'
+            SameSite: 'Lax'
         },
         horodate: '',
         ip: '',
@@ -120,8 +120,9 @@ app.use('/static', express.static(__dirname + '/public', {
 
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
-    sess.cookie.secure = false // serve secure cookies
+    sess.cookie.secure = true // serve secure cookies
 }
+//sess.store.clear()
 app.use(session(sess))
 
 app.set('view engine', 'pug')
@@ -129,6 +130,7 @@ app.set('views', 'public')
 
 //APP.GET_________________________________________________________________
 app.get('/', (req, res) => {
+
     //VIEWS
     if (!req.session.views) {
         req.session.views = {}

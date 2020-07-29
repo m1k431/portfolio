@@ -1,0 +1,25 @@
+Fri Jul 30 2021 01:38:19 GMT+0200 (GMT+02:00)[2020-07-30T01:38:23.916] [TRACE] file - 1M6OurB_klZcQmVk_AT3F458
+[2020-07-30T01:38:23.917] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:38:23.912Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'Strict'
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:38:23.359Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596065903914
+}

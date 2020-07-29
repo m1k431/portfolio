@@ -1,0 +1,104 @@
+Fri Jul 30 2021 01:34:53 GMT+0200 (GMT+02:00)[2020-07-30T01:34:57.935] [TRACE] file - cqJIO59bghNYP6hE_N_gbuTZ
+[2020-07-30T01:34:57.936] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:34:57.932Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'none',
+    secure: true
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:34:57.384Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596065697933
+}
+[2020-07-30T01:35:00.762] [TRACE] file - LXeb2vR2Gvg1As_dQORz8uHL
+[2020-07-30T01:35:00.762] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:35:00.760Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'none',
+    secure: true
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:35:00.638Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596065700761
+}
+[2020-07-30T01:35:05.596] [TRACE] file - KoUkXG1G2h11wDb04SLxGOtL
+[2020-07-30T01:35:05.596] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:35:05.594Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'none',
+    secure: true
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:35:05.502Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596065705595
+}
+[2020-07-30T01:35:26.795] [TRACE] file - jE0wLv2U3TsgrxQYSVuu9nYx
+[2020-07-30T01:35:26.795] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-27T23:35:26.776Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'none',
+    secure: true
+  },
+  views: { '/': 1 },
+  horodate: 2020-07-29T01:35:26.624Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596065726777
+}
