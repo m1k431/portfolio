@@ -1,0 +1,19 @@
+{
+    "name": "Portfolio Javascript Mikael",
+    "short_name": "Mikael nodeJS dev",
+    "description": "My JavaScript Portfolio",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "16x16",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "blue",
+    "background_color": "blue",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "lang": "en, fr",
+    "scope": "/",
+    "start_url": "/"
+}
