@@ -1,0 +1,22 @@
+Fri Jul 30 2021 08:31:20 GMT+0200 (GMT+02:00)[2020-07-30T08:32:06.828] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-28T06:32:06.826Z,
+    originalMaxAge: 7775999999,
+    httpOnly: true
+  },
+  __lastAccess: 1596090726828,
+  views: { '/cv': 7, '/giftedADHD': 9 },
+  horodate: 2020-07-30T08:32:06.752Z
+}
+[2020-07-30T08:32:42.818] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-28T06:32:42.817Z,
+    originalMaxAge: 7775999999,
+    httpOnly: true
+  },
+  __lastAccess: 1596090762818,
+  views: { '/cv': 8, '/giftedADHD': 9 },
+  horodate: 2020-07-30T08:32:42.720Z
+}

@@ -408,7 +408,7 @@ const jeuBreaker = function () {
 
         //_____________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
-            var ballSpeed = 3
+            var ballSpeed = 4
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'

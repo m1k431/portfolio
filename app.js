@@ -79,6 +79,7 @@ const MongoClient = require('mongodb').MongoClient,
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
+
 client.connect(err => {
     const collection = client.db("m1k431").collection("brickBreaker")
     // perform actions on the collection object
@@ -98,6 +99,7 @@ fs.writeFile(filePath, datetime, (err) => {
 
 //APP.USE___________________________________________________________________
 app.use(helmet())
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -105,23 +107,38 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')))
+
 app.use(frameguard({
     action: 'sameorigin'
 }))
+
 app.use(compression())
+
+//STATIC____________________________________________________________________
+express.static.mime.define(
+    {
+        'text/coffeescript': ['coffee'],
+        'text/less': ['less'],
+        'text/x-scss': ['scss'],
+        'text/stylus': ['styl']
+    })
+
 app.use(minify({
-    cache: true,
+    cache: false,
     jsMatch: /js/,
-    cssMatch: /css/
+    cssMatch: /css/,
+    scssMatch: '/scss/'
 }))
+
 app.use('/static', express.static(__dirname + '/public', {
-    maxAge: '1d'
+    maxAge: '0d'
 }))
 
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1) // trust first proxy
     sess.cookie.secure = true // serve secure cookies
 }
+
 //sess.store.clear()
 app.use(session(sess))
 
@@ -130,7 +147,6 @@ app.set('views', 'public')
 
 //APP.GET_________________________________________________________________
 app.get('/', (req, res) => {
-
     //VIEWS
     if (!req.session.views) {
         req.session.views = {}
