@@ -334,20 +334,15 @@ const jeuBreaker = function () {
             }
         }
         let fuse = 1
+        var stopEvent = false
         //________________________________________________Verif/Gestion_YouWIN______________________________________________________________________________
         var jeuTermine = function () {
             var mesInfosT = window.document.getElementsByClassName('infoT')
             var competences = window.document.getElementById('competen')
             if (!mesInfosT.length && fuse == 1) {
                 fuse--
-                cancelAnimationFrame(idAni)
                 //cancelAnimationFrame(idR)
-                cancelAnimationFrame(idL)
-                cancelAnimationFrame(animMoveBall)
-                cancelAnimationFrame(moveBall)
-                window.document.removeEventListener('mousemove', movepaddle, true)
-                window.document.removeEventListener('click', eTouchStart, true)
-                window.document.removeEventListener('click', eTouchMove, true)
+                stopEvent = true
                 play(youWin)
                 competences.removeChild(divSprite)
                 //$('#divSprite').hide()
@@ -366,7 +361,7 @@ const jeuBreaker = function () {
                 $('.background').css('height', '1400px')
             }
         }
-
+        
         //requete AJAX submit score
         $('#scoreForm').on('submit', function (event) {
             event.preventDefault()
@@ -404,8 +399,8 @@ const jeuBreaker = function () {
                 }
             })
         })
-
-
+        
+        
         //_____________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
             var ballSpeed = 4
@@ -445,7 +440,7 @@ const jeuBreaker = function () {
                     ballY = ballY + 2 * ballSpeed
                     divSprite.style.top = ballY + 'px'
                     if (ballY + divSprite.offsetHeight > linkedIn.offsetTop && ballY < linkedIn.offsetTop + 5)
-                        paddle()
+                    paddle()
                 } else {
                     ballDown = false
                     clickMove = true
@@ -468,8 +463,8 @@ const jeuBreaker = function () {
                 }
                 brickBroken()
                 jeuTermine()
-
-                if (clickMove == false) {
+                
+                if (clickMove == false && fuse == 1) {
                     animMoveBall()
                     window.document.removeEventListener('click', animMoveBall, true)
                     $('#metier > h2').text(score).css({
@@ -479,6 +474,18 @@ const jeuBreaker = function () {
                 } else {
                     window.document.addEventListener('click', animMoveBall, true)
                 }
+                
+                if (stopEvent) {
+                    window.document.removeEventListener('click', animMoveBall, true)
+                    cancelAnimationFrame(idAni)
+                    cancelAnimationFrame(idL)
+                    cancelAnimationFrame(animMoveBall)
+                    cancelAnimationFrame(moveBall)
+                    window.document.removeEventListener('mousemove', movepaddle, true)
+                    window.document.removeEventListener('click', eTouchStart, true)
+                    window.document.removeEventListener('click', eTouchMove, true)
+                }
+            
             }
         }
         //_______________________________________Animation_Déplacement_Balle__________________________________________________________
