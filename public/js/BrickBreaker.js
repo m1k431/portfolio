@@ -77,7 +77,8 @@ const jeuBreaker = function () {
         clearInterval(idInterBlink)
         $div2blink.removeClass('backgroundRed')
         $div2blink.css('background-color', 'rgba(255, 255, 255, 0.4)')
-        $('#metier > h1').text('SCORE: ' + score).fadeIn(375)
+        $('#metier > h2').text('SCORE: ' + score).fadeIn(375)
+        $('#metier > h2').css('font-size', '2em')
         //var linkOff = $('#linkedIn').offset()
 
         //________________________________________DIV FOOTBALL SPRITE_____________________________________________
@@ -403,7 +404,7 @@ const jeuBreaker = function () {
         
         //_____________________MAIN()_____Déplacement_balle_dans_Environnement__________________________
         var moveBall = function () {
-            var ballSpeed = 4
+            var ballSpeed = 2
             window.document.addEventListener('mousemove', movepaddle, true)
             if (!youwin || !clickMove) {
                 divSprite.style.top = ballY + 'px'

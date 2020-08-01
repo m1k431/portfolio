@@ -105,17 +105,6 @@ nav {
     text-align: center;
     //font-family: $myFont;
     font-family: 'ibm';
-    margin: 0.3em;
-}
-
-h2,
-h5 {
-    margin-bottom: 0.5em;
-    margin-top: 1em;
-}
-
-.twitter-follow-button {
-    margin: 1em;
 }
 
 nav {
@@ -162,6 +151,7 @@ a {
     margin-bottom: 10px;
     background: transparent;
     border: 1px solid white;
+    font-size: 0.5em;
     //background-image: linear-gradient(to bottom, rgba(52, 60, 219, 0.476), rgba(43, 32, 173, 0.5));
 }
 

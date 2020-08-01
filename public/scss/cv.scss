@@ -297,7 +297,7 @@ p.flags {
 
 .info {
   font-family: monospace;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 2px;
   margin-top: 2px;
   text-align: center;
@@ -311,7 +311,12 @@ p.flags {
 //expériences
 .infojob {
   font-family: monospace;
-  font-size: 1.2em;
+  font-size: 1em;
+}
+
+.lieu {
+  font-family: monospace;
+  font-size: 0.8em;
 }
 
 .titreJob {
@@ -321,7 +326,7 @@ p.flags {
 
 .infoJeu {
   font-family: monospace;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 2px;
   margin-top: 2px;
   text-align: center;
@@ -336,7 +341,7 @@ p.flags {
   font-family: monospace;
   margin-top: 2px;
   margin-bottom: 2px;
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 5px;
@@ -353,7 +358,7 @@ p.flags {
 
 .infolast {
   font-family: monospace;
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 5px;

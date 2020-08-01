@@ -1,1 +1,31 @@
-{"cookie":{"originalMaxAge":7776000000,"expires":"2020-10-28T08:39:49.146Z","httpOnly":true,"path":"/"},"views":{"/":1},"horodate":"2020-07-30T10:39:49.093Z","ip":"185.221.134.234","geoloc":{"range":[3118302720,3118303231],"country":"US","region":"CA","eu":"0","timezone":"America/Los_Angeles","city":"Los Angeles","ll":[34.0584,-118.278],"metro":803,"area":200},"__lastAccess":1596098389146}
+{
+  "cookie": {
+    "originalMaxAge": 7776000000,
+    "expires": "2020-10-28T08:39:49.146Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "views": {
+    "/": 1
+  },
+  "horodate": "2020-07-30T10:39:49.093Z",
+  "ip": "185.221.134.234",
+  "geoloc": {
+    "range": [
+      3118302720,
+      3118303231
+    ],
+    "country": "US",
+    "region": "CA",
+    "eu": "0",
+    "timezone": "America/Los_Angeles",
+    "city": "Los Angeles",
+    "ll": [
+      34.0584,
+      -118.278
+    ],
+    "metro": 803,
+    "area": 200
+  },
+  "__lastAccess": 1596098389146
+}
