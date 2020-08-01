@@ -4,36 +4,46 @@
 <head>
   <title>IBM RPG &amp; Javascript Developer</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.7">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+  <!--meta(http-equiv="X-UA-Compatible" content="ie=edge")-->
   <meta name="description" content="My Javascript Portfolio">
   <meta property="og:title" content="IBM RPG &amp; Javascript Developer">
+  <meta property="og:type" content="image">
+  <meta property="og:url" content="http://www.mikael.ml">
   <meta property="og:image" content="//mikael.ml/static/img/ogImage.png">
   <meta property="og:description" content="My Javascript Portfolio">
-  <meta property="og:url" content="//mikael.ml">
   <link rel="manifest" href="/static/mikael.manifest">
   <link rel="stylesheet" href="/static/css/styles.css">
   <link rel="stylesheet" href="/static/css/cv.css">
   <link rel="stylesheet" href="/static/css/cv.css">
 </head>
+<nav id="navBar">
+  <ul>
+    <li> <a class="nav css3button" id="intro" rel="preconnect" href="/">Intro</a></li>
+    <li><a class="nav css3button" id="resume" rel="preconnect" href="/cv">CV</a></li>
+    <!--lia#admin.nav(rel='preconnect' href='/adm1n' class='css3button') aL1v3-->
+    <li><a class="nav css3button" id="adhd" rel="preconnect" href="/giftedADHD">ADHD</a></li>
+  </ul>
+</nav>
 
 <body>
-  <nav id="navBar">
-    <ul>
-      <li> <a class="nav css3button" id="intro" rel="preconnect" href="/nomPage?r=index">Intro</a></li>
-      <li><a class="nav css3button" id="resume" rel="preconnect" href="/nomPage?r=cv">CV</a></li>
-      <!--li//a#admin.nav(rel='preconnect' href='/nomPage?r=adm1n' class='css3button') Admin
-        -->
-      <li><a class="nav css3button" id="adhd" rel="preconnect" href="/nomPage?r=giftedADHD">ADHD</a></li>
-    </ul>
-  </nav>
   <div class="content">
     <div class="table-cell">
       <div id="m0ncentrage">
         <div class="m0ncentrageParafoot">
           <div id="INDEX">
-            <h1>Welcome to my devlab</h1>
-            <div id="s0leil"></div>
+            <h2>
+              <div class="english">Welcome to my dev lab</div>
+              <div class="french">Bienvenue dans mon Labo de Dev</div>
+            </h2><video id="jugglejungle" playsinline autoplay muted loop poster="/static/img/kuansiFalls.webp">
+              <source src="/static/video/theOneFinal.webm" type="video/webm"></video><button
+              id="BtnJs0nPl4Y">PLAY</button>
+            <h2 class="me">
+              <div class="english">My name is Mikael </div>
+              <div class="french">Je suis Mikael </div>
+              <div class="english">I am an IBM SQL RPGLE NODEJS Developer</div>
+              <div class="french">Developpeur IBM SQL RPGLE NODEJS</div>
+            </h2>
             <!--extends layoutNav.pug-->
             <link rel="stylesheet" href="/static/css/cv.css">
             <div id="CV">
@@ -43,16 +53,12 @@
               <p class="flags"><img id="english" src="/static/img/uk.svg" alt="English" height="30"><img id="french"
                   src="/static/img/france.svg" alt="Français" height="30"></p>
               <div class="competen" id="competen">
-                <h1 class="highscore" id="score">High Score
-                  <form id="scoreForm" action="/highscore" method="post">
-                    <label class="nom" for="POST-name">name</label><br>
-                    <input id="postName" type="text" name="name"><br>
+                <h1 class="highscore" id="score">High Score<form id="scoreForm" action="/highscore" method="post"><label
+                      class="nom" for="POST-name">name</label><br><input id="postName" type="text" name="name"><br>
                     <!--label.score(for='POST-score') score-->
                     <!--br-->
                     <!--input#postScore(type='hidden' name='score' readonly='yes')-->
-                    <!--br--><br>
-                    <input class="css3but" id="subScore" type="submit" value="ok">
-                  </form>
+                    <!--br--><br><input class="css3but" id="subScore" type="submit" value="ok"></form>
                   <div id="highScore"><br>
                     <table id="mesData">
                       <thead>
@@ -61,53 +67,52 @@
                           <th>Score</th>
                         </tr>
                       </thead>
-                      <!--tbody
-                        //each player in results
-                          //tr
-                            //td=player.name
-                            //td=player.score
-                        -->
+                      <!--tbody//each player in results
+  //tr
+    //td=player.name
+    //td=player.score-->
                     </table>
                   </div>
                 </h1>
                 <!--h2.titreH2.french Comp&eacute;tences-->
                 <!--h2.titreH2.spanish  Competencias-->
                 <h2 class="titreH2" id="skills">Skills</h2>
-                <div class="informatiquesCont french english spanish" id="informatique">
-                  <h3 class="titreH3">Front-End Development</h3>
+                <div class="informatiquesCont" id="informatique">
+                  <h3 class="titreH3">Front-End</h3>
                   <div class="informatiques" id="informatique">
-                    <div class="infoJeu">JavaScript</div>
-                    <div class="infoJeu">jade/PUG</div>
+                    <div class="infoJeu">RPGLE</div>
+                    <div class="infoJeu">CLP</div>
+                    <div class="infoJeu">DB2 SQL</div>
+                    <div class="infoJeu">ECMAScript 6</div>
                     <div class="infoJeu">HTML5</div>
+                    <div class="infoJeu">jade/PUG</div>
                     <div class="infoJeu">JQUERY</div>
                     <div class="infoJeu">SCSS</div>
-                    <div class="infoJeu">BootStrap</div>
+                    <div class="infoJeu">DOM</div>
                     <div class="infoJeu">AngularJS</div>
                   </div>
-                  <h3 class="titreH3">Back-End Development</h3>
+                  <h3 class="titreH3">Back-End</h3>
                   <div class="informatiques" id="informatique">
+                    <div class="infoJeu">IBM i</div>
                     <div class="infoJeu">NodeJS</div>
                     <div class="infoJeu">ExpressJS</div>
                     <div class="infoJeu">Ajax</div>
-                    <div class="infoJeu">DB2</div>
-                    <div class="infoJeu">mysql</div>
                     <div class="infoJeu">mongoDB</div>
-                    <div class="infoJeu">WebSocket</div>
                   </div>
                   <h3 class="titreH3">Tools</h3>
-                  <div class="informatiquesLast">
-                    <div class="infoJeu">IBM i</div>
-                    <div class="infoJeu">Mac OSx</div>
-                    <div class="infoJeu">MS Windows</div>
+                  <div class="informatiquesLast" id="informatique">
+                    <div class="infoJeu">LINUX</div>
+                    <div class="infoJeu">osX</div>
+                    <div class="infoJeu">Windows</div>
                     <div class="infoJeu">Git</div>
-                    <div class="infoJeu">AutoCAD</div>
+                    <div class="infoJeu">bsh/zsh</div>
                     <div class="infoJeu">Photoshop</div>
+                    <div class="infoJeu">IBM RDi</div>
+                    <div class="infoJeu">ARCAD</div>
                   </div>
                 </div>
-                <div class="btp french english spanish" id="btp">
-                  <h3 class="titreH3 french">Techniques &amp; Design</h3>
-                  <h3 class="titreH3 english">Techniques &amp; Design</h3>
-                  <h3 class="titreH3 spanish">Técnicas &amp; diseño</h3>
+                <div class="btp" id="btp">
+                  <h3 class="titreH3">Technics Design</h3>
                   <div class="info french">R&eacute;aliser l&rsquo;&eacute;tude technique d&rsquo;un projet de
                     construction et en estimer le co&ucirc;t</div>
                   <div class="info english">Conduct the technical study of a construction project and estimate the cost
@@ -125,7 +130,7 @@
                   <div class="infolast spanish">Creación de carpetas de detalles de ejecución de proyectos (Autocad,
                     VectorWorks)</div>
                 </div>
-                <div class="commerciales french english spanish" id="commerciales">
+                <div class="commerciales" id="commerciales">
                   <h3 class="titreH3">H to H</h3>
                   <div class="info french">Assistant r&eacute;gie au Palais des Festivals de Cannes et en boite de
                     productions t&eacute;l&eacute;visuelles</div>
@@ -379,52 +384,49 @@
                 <div class="web">www.mikael.ml</div>
               </div>
             </div>
-            <div class="paraFoot">My name is Mikael, I'm an IBM RPG &amp; Javascript Developer.
-              <video id="jugglejungle" playsinline autoplay muted loop poster="/static/img/kuansiFalls.webp">
-                <source src="/static/video/theOneFinal.webm" type="video/webm">
-              </video>
-            </div>
-            <button id="BtnJs0nPl4Y">PLAY</button>
-            <div class="paraFoot">This website hosts my skills, projects and experiences.</div>
+            <h2>
+              <div class="english">This website hosts my experiences and skills</div>
+              <div class="french">Ce site héberge mes sexpériences et compétences</div>
+            </h2>
+            <div id="s0leil"></div><a href="https://twitter.com/K431M1?ref_src=twsrc%5Etfw" data-size="large"
+              data-show-count="false">Follow @K431M1</a><canvas class="background"></canvas>
           </div>
-          <!--include joust.pug-->
-          <!--include adm1n.pug-->
         </div>
       </div>
     </div>
   </div>
+  <!--canvas.background-->
+</body>
+<foot>
   <div id="footer"><a class="minilogL" rel="preconnect" href="https://github.com/m1k431"><img
         src="/static/img/gitHubMark.png" alt="git" height="35"><img src="/static/img/gitHubW.png" alt="git"
-        height="35"></a>
-    <div id="myclock"></div><a class="minilogR" rel="preconnect"
-      href="https://www.linkedin.com/in/mika%C3%ABl-garcia/"><img src="/static/img/LinkedIn_Logo.svg" alt="linkedin"
-        height="35"></a>
-  </div>
+        height="35"></a><a class="minilogR" rel="preconnect" href="https://www.linkedin.com/in/mika%C3%ABl-garcia/"><img
+        src="/static/img/LinkedIn_Logo.svg" alt="linkedin" height="35"></a></div>
   <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script src="/static/js/jquery-ui.min.js"></script>
-  <script src="/static/js/socket.io.js" async></script>
-  <!--script(src='/static/js/layoutNav.js')-->
-  <script src="https://www.googletagmanager.com/gtag/js?id=UA-113167424-1" async></script>
-  <!-- Global site tag (gtag.js) - Google Analytics-->
-  <script>
-    window.dataLayer = window.dataLayer || []
-
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-    gtag('config', 'UA-113167424-1')
-  </script>
-  <script src="/static/js/soleil.js" async></script>
-  <script src="/static/js/BrickBreaker.js" async></script>
-  <script>
-    $('#intro').removeClass('css3button')
+  <script src="./static/js/particles.min.js"></script>
+  <!--script(src='/static/js/socket.io.js')-->
+  <script>window.onload = function () {
+      Particles.init({
+        selector: '.background',
+        color: '#EFF4F5',
+        connectParticles: true,
+        maxParticles: 50
+      })
+      //console.log(document.querySelector(".content").offsetHeight)
+      $('.background').css('height', document.querySelector(".content").clientHeight + 'px')
+    }</script>
+  <script src="/static/js/soleil.js" defer></script>
+  <script src="/static/js/BrickBreaker.js" defer></script>
+  <script src="/static/js/layoutNav.js" defer></script>
+  <script>$('#intro').removeClass('css3button')
     $('#intro').addClass('css3buttonRed')
     $('#resume').removeClass('css3buttonRed')
     $('#resume').addClass('css3button')
     $('#admin').removeClass('css3buttonRed')
     $('#admin').addClass('css3button')
-  </script>
-</body>
+//var bonnie = window.document.getElementById('bonnie')
+//bonnie.play()</script>
+</foot>
 
 </html>

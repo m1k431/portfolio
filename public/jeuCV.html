@@ -1,23 +1,19 @@
 <!--extends layoutNav.pug-->
-<link rel="stylesheet" href="/static/css/cv.css">
+<link rel="stylesheet" href="/static/css/cv.css" />
 <div id="CV">
   <div id="metier">
     <h2>IBM RPG &amp; Javascript Developer</h2>
   </div>
-  <p class="flags"><img id="english" src="/static/img/uk.svg" alt="English" height="30"><img id="french"
-      src="/static/img/france.svg" alt="Français" height="30"></p>
+  <p class="flags"><img id="english" src="/static/img/uk.svg" alt="English" height="30" /><img id="french"
+      src="/static/img/france.svg" alt="Français" height="30" /></p>
   <div class="competen" id="competen">
-    <h1 class="highscore" id="score">High Score
-      <form id="scoreForm" action="/highscore" method="post">
-        <label class="nom" for="POST-name">name</label><br>
-        <input id="postName" type="text" name="name"><br>
+    <h1 class="highscore" id="score">High Score<form id="scoreForm" action="/highscore" method="post"><label class="nom"
+          for="POST-name">name</label><br /><input id="postName" type="text" name="name" /><br />
         <!--label.score(for='POST-score') score-->
         <!--br-->
         <!--input#postScore(type='hidden' name='score' readonly='yes')-->
-        <!--br--><br>
-        <input class="css3but" id="subScore" type="submit" value="ok">
-      </form>
-      <div id="highScore"><br>
+        <!--br--><br /><input class="css3but" id="subScore" type="submit" value="ok" /></form>
+      <div id="highScore"><br />
         <table id="mesData">
           <thead>
             <tr>
@@ -25,53 +21,52 @@
               <th>Score</th>
             </tr>
           </thead>
-          <!--tbody
-          //each player in results
-            //tr
-              //td=player.name
-              //td=player.score
-          -->
+          <!--tbody//each player in results
+  //tr
+    //td=player.name
+    //td=player.score-->
         </table>
       </div>
     </h1>
     <!--h2.titreH2.french Comp&eacute;tences-->
     <!--h2.titreH2.spanish  Competencias-->
     <h2 class="titreH2" id="skills">Skills</h2>
-    <div class="informatiquesCont french english spanish" id="informatique">
-      <h3 class="titreH3">Front-End Development</h3>
+    <div class="informatiquesCont" id="informatique">
+      <h3 class="titreH3">Front-End</h3>
       <div class="informatiques" id="informatique">
-        <div class="infoJeu">JavaScript</div>
-        <div class="infoJeu">jade/PUG</div>
+        <div class="infoJeu">RPGLE</div>
+        <div class="infoJeu">CLP</div>
+        <div class="infoJeu">DB2 SQL</div>
+        <div class="infoJeu">ECMAScript 6</div>
         <div class="infoJeu">HTML5</div>
+        <div class="infoJeu">jade/PUG</div>
         <div class="infoJeu">JQUERY</div>
         <div class="infoJeu">SCSS</div>
-        <div class="infoJeu">BootStrap</div>
+        <div class="infoJeu">DOM</div>
         <div class="infoJeu">AngularJS</div>
       </div>
-      <h3 class="titreH3">Back-End Development</h3>
+      <h3 class="titreH3">Back-End</h3>
       <div class="informatiques" id="informatique">
+        <div class="infoJeu">IBM i</div>
         <div class="infoJeu">NodeJS</div>
         <div class="infoJeu">ExpressJS</div>
         <div class="infoJeu">Ajax</div>
-        <div class="infoJeu">DB2</div>
-        <div class="infoJeu">mysql</div>
         <div class="infoJeu">mongoDB</div>
-        <div class="infoJeu">WebSocket</div>
       </div>
       <h3 class="titreH3">Tools</h3>
-      <div class="informatiquesLast">
-        <div class="infoJeu">IBM i</div>
-        <div class="infoJeu">Mac OSx</div>
-        <div class="infoJeu">MS Windows</div>
+      <div class="informatiquesLast" id="informatique">
+        <div class="infoJeu">LINUX</div>
+        <div class="infoJeu">osX</div>
+        <div class="infoJeu">Windows</div>
         <div class="infoJeu">Git</div>
-        <div class="infoJeu">AutoCAD</div>
+        <div class="infoJeu">bsh/zsh</div>
         <div class="infoJeu">Photoshop</div>
+        <div class="infoJeu">IBM RDi</div>
+        <div class="infoJeu">ARCAD</div>
       </div>
     </div>
-    <div class="btp french english spanish" id="btp">
-      <h3 class="titreH3 french">Techniques &amp; Design</h3>
-      <h3 class="titreH3 english">Techniques &amp; Design</h3>
-      <h3 class="titreH3 spanish">Técnicas &amp; diseño</h3>
+    <div class="btp" id="btp">
+      <h3 class="titreH3">Technics Design</h3>
       <div class="info french">R&eacute;aliser l&rsquo;&eacute;tude technique d&rsquo;un projet de construction et en
         estimer le co&ucirc;t</div>
       <div class="info english">Conduct the technical study of a construction project and estimate the cost</div>
@@ -88,7 +83,7 @@
       <div class="infolast spanish">Creación de carpetas de detalles de ejecución de proyectos (Autocad, VectorWorks)
       </div>
     </div>
-    <div class="commerciales french english spanish" id="commerciales">
+    <div class="commerciales" id="commerciales">
       <h3 class="titreH3">H to H</h3>
       <div class="info french">Assistant r&eacute;gie au Palais des Festivals de Cannes et en boite de productions
         t&eacute;l&eacute;visuelles</div>
@@ -115,7 +110,7 @@
       <div class="infojob english">CL, RPG, db2, OCSI january 2019</div>
       <div class="infojob spanish">CL, RPG, db2, OCSI enero 2019</div>
     </div>
-    <hr>
+    <hr />
     <div class="jobs">
       <h3 class="titreH3">Webmaster</h3>
       <div class="infojob french">Mise &agrave; jour de la base de donn&eacute;es site Ecommerce (magento)
@@ -125,7 +120,7 @@
       <div class="infojob spanish">Actualización de la base de datos del sitio snow-concept.com (magento), Alpe d'Huez,
         diciembre de 2016</div>
     </div>
-    <hr>
+    <hr />
     <div class="jobs">
       <h3 class="titreH3 french">Technicien audio-visuel</h3>
       <div class="infojob french">Accessoiriste: JLA productions, Martigues 2015</div>
@@ -141,7 +136,7 @@
       <div class="infojob spanish">Subgerente: Auteurs Associ&eacute;s, Grasse 2014</div>
       <div class="infojob spanish">Refuerzo de decoración y figuración: Gazelle Cie, DEMD, Europacorp, Marseille 2013
       </div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Dessinateur Projeteur HVAC</h3>
@@ -153,7 +148,7 @@
       <h3 class="titreH3 spanish">Diseñador de HVAC</h3>
       <div class="infojob spanish">Estudio de proyectos de construcción de tiendas "Castorama" Toulouse Union y Antibes,
         ingeniería AUXITEC, Hyères, septiembre de 2012</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Developpeur web</h3>
@@ -165,7 +160,7 @@
       <h3 class="titreH3 spanish">Web developer</h3>
       <div class="infojob spanish">introducción a JavaScript (JQuery) www.stand-service.com Alphabet Stand Service La
         Garde, 2012</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Technicien d&apos;&eacute;tudes en Design et D&eacute;coration</h3>
@@ -174,7 +169,7 @@
       <div class="infojob english">Alphabet Stand Service (MIPCOM/MIPTV, MIDEM, FIF&mldr;), La Garde, 2010-2012</div>
       <h3 class="titreH3 spanish">Técnico de Diseño y Decoración</h3>
       <div class="infojob spanish">Alphabet Stand Service (MIPCOM/MIPTV, MIDEM, FIF&mldr;), La Garde, 2010-2012</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Vendeur et Technicien Ski</h3>
@@ -183,7 +178,7 @@
       <div class="infojob english">Nevada Sports l&rsquo;Alpe d&rsquo;Huez, 2008-2009</div>
       <h3 class="titreH3 spanish">Vendedor de esquí y de material deportivo</h3>
       <div class="infojob spanish">Nevada Sports l&rsquo;Alpe d&rsquo;Huez, 2008-2009</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Technicien ADSL</h3>
@@ -192,7 +187,7 @@
       <div class="infojob english">British Telecom Critical Systems Le Plessis-Robinson, 2008</div>
       <h3 class="titreH3 spanish">Técnico de ADSL</h3>
       <div class="infojob spanish">British Telecom Critical Systems Le Plessis-Robinson, 2008</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Technicien Ski et Snowboard</h3>
@@ -201,7 +196,7 @@
       <div class="infojob english">Intersport, l&rsquo;Alpe d&rsquo;Huez, 2007-2008</div>
       <h3 class="titreH3 spanish">Técnico de esquí y snowboard</h3>
       <div class="infojob spanish">Intersport, l&rsquo;Alpe d&rsquo;Huez, 2007-2008</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Technicien et Administrateur syst&egrave;mes et r&eacute;seaux microsoft</h3>
@@ -214,7 +209,7 @@
       <div class="infojob spanish">Administración de servidores Windows y clientes GNU / LINUX Mantenimiento e
         instalación de sistemas infojobrmáticos, desarollamiento html php (script de copia de seguridad), SECOB, St
         Jean-de-la-Ruelle, 2005-2007</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Technicien Syst&egrave;mes et R&eacute;seaux</h3>
@@ -226,7 +221,7 @@
       <h3 class="titreH3 spanish">Técnico de Sistemas y Redes</h3>
       <div class="infojob spanish">Mantenimiento e instalación de sistemas infojobrmáticos PHP html desarrollo de un
         sitio de cotizaciones seguras Emergence, Orléans, 2004</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Adjoint au responsable de magasin</h3>
@@ -235,7 +230,7 @@
       <div class="infojob english">Micromania, St Jean de la Ruelle, 2003</div>
       <h3 class="titreH3 spanish">Asistente del gerente de la tienda</h3>
       <div class="infojob spanish">Micromania, St Jean de la Ruelle, 2003</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Emplois &eacute;tudiant</h3>
@@ -257,7 +252,7 @@
       <h3 class="titreH3">IBM i Engineer</h3>
       <h5>2018, Pepiniere IBM Paris I</h5>
       <div class="infojob">RPG IV, CL, SQL, webservices</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3">FullStack Javascript Developer</h3>
@@ -271,7 +266,7 @@
       <div class="infojob french">Cr&eacute;ation d&apos;applications web et mobiles riche backend JS</div>
       <div class="infojob english">Creating rich web and mobile applications backend JS</div>
       <div class="infojob spanish">Creación de aplicaciones web y móviles ricas en el back-end de JS</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">TP de technicien d&rsquo;&eacute;tude en b&acirc;timent option dessin</h3>
@@ -287,7 +282,7 @@
       <div class="infojob french">Notions d&apos;urbanisme et de voirie</div>
       <div class="infojob english">Notions of town planning and roads</div>
       <div class="infojob spanish">Nociones de urbanismo y carreteras</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3">IUT informatique</h3>
@@ -304,7 +299,7 @@
         Linux, nociones de ensamblador regexp </div>
       <div class="infojob spanish">Base de Datos: Análisis (merise), diseño (MCD, MCT), mantenimiento</div>
       <div class="infojob spanish">Programación: Langage C, C++, SQL, bsh, assembly language</div>
-      <hr>
+      <hr />
     </div>
     <div class="jobs">
       <h3 class="titreH3 french">Baccalaur&eacute;at Scientifique</h3>
