@@ -1,0 +1,25 @@
+Mon Aug 02 2021 13:51:30 GMT+0200 (GMT+02:00)[2020-08-02T13:51:34.656] [TRACE] file - IzFMYkWrxbRhTMfPqWBpKp4N
+[2020-08-02T13:51:34.656] [TRACE] file - Session {
+  cookie: {
+    path: '/',
+    _expires: 2020-10-31T11:51:34.652Z,
+    originalMaxAge: 7776000000,
+    httpOnly: true,
+    SameSite: 'Lax'
+  },
+  views: { '/': 1 },
+  horodate: 2020-08-02T13:51:34.126Z,
+  ip: '83.202.34.239',
+  geoloc: {
+    range: [ 1405755904, 1405756415 ],
+    country: 'FR',
+    region: 'IDF',
+    eu: '1',
+    timezone: 'Europe/Paris',
+    city: 'Paris',
+    ll: [ 48.8543, 2.3527 ],
+    metro: 0,
+    area: 10
+  },
+  __lastAccess: 1596369094652
+}

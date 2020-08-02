@@ -1,28 +1,26 @@
 extends layoutNav.pug
 append content
-  .content
-    .table-cell
-      #m0ncentrage
-        .m0ncentrageParafoot
-          #INDEX
-            h2
-              .english Welcome to my dev lab
-              .french Bienvenue dans mon Labo de Dev
-            video#jugglejungle(playsinline autoplay muted loop poster='/static/img/kuansiFalls.webp')
-              source( src='/static/video/theOneFinal.webm' type='video/webm')
-            button#BtnJs0nPl4Y PLAY
-            h2.me
-              .english My name is Mikael 
-              .french Je suis Mikael 
-              .english I am an IBM SQL RPGLE NODEJS Developer
-              .french Developpeur IBM SQL RPGLE NODEJS
-            include jeuCV.pug
-            h2
-              .english This website hosts my experiences and skills
-              .french Ce site héberge mes sexpériences et compétences
-            #s0leil
-            a(href='https://twitter.com/K431M1?ref_src=twsrc%5Etfw' data-size='large' data-show-count='false') Follow @K431M1
-            canvas.background
+  - var name = 'Mikael'
+    #m0ncentrage
+      #INDEX
+        h2
+          .english Welcome to my dev lab
+          .french Bienvenue dans mon Labo de Dev
+        video#jugglejungle(playsinline autoplay muted loop poster='/static/img/kuansiFalls.webp')
+          source( src='/static/video/theOneFinal.webm' type='video/webm')
+        button#BtnJs0nPl4Y PLAY
+        h2.me
+          .english My name is #{name} 
+          .french Je suis Mikael 
+          .english I am an IBM SQL RPGLE NODEJS Developer
+        include jeuCV.pug
+          .french Developpeur IBM SQL RPGLE NODEJS
+        h2
+          .english This website hosts my experiences and skills
+          .french Ce site héberge mes sexpériences et compétences
+        #s0leil
+        a(href='https://twitter.com/K431M1?ref_src=twsrc%5Etfw' data-size='large' data-show-count='false') Follow @K431M1
+        canvas.background
 append scripts
   script(src='/static/js/soleil.js' defer)
   script(src='/static/js/BrickBreaker.js' defer)

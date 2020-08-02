@@ -233,7 +233,7 @@ p.flags {
 }
 
 .informatiquesCont {
-  width: 31.5%;
+  width: 30%;
   text-align: center;
   background-color: rgba(245, 247, 246, 0.2);
   border-radius: 10px;
@@ -374,7 +374,7 @@ p.flags {
 }
 
 .btp {
-  width: 31.5%;
+  width: 30%;
   text-align: center;
   background-color: rgba(245, 247, 246, 0.2);
   border-radius: 10px;
@@ -388,7 +388,7 @@ p.flags {
 }
 
 .commerciales {
-  width: 31.5%;
+  width: 30%;
   color: black;
   text-align: center;
   background-color: rgba(245, 247, 246, 0.2);
@@ -402,7 +402,7 @@ p.flags {
 }
 
 .commercialesT {
-  width: 31.5%;
+  width: 30%;
   color: black;
   text-align: center;
   background-color: rgba(245, 247, 246, 0.6);
